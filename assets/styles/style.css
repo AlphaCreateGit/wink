@@ -1661,7 +1661,9 @@ ul {
 }
 
 .chit-chat__content h6,
-.about__wink h6 {
+.about__wink h6,
+.rewards-list h6,
+.newsletter h6 {
   margin-bottom: 16px;
 }
 .chit-chat__content {

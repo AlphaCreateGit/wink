@@ -817,7 +817,7 @@ function scrollWinkRewards() {
         pixelValue,
         viewportWidth
       );
-      applyClipPathAnimation(clipPathValue, "top 7%", "bottom bottom");
+      applyClipPathAnimation(clipPathValue, "top 8%", "bottom bottom");
     }
   }
 }

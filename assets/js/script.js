@@ -26,7 +26,19 @@ $(document).ready(function () {
   customAnimation();
   displayRatings();
   swiperRoomSuites();
+  scrollFreezeCtaMess();
 });
+function scrollFreezeCtaMess() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.create({
+    trigger: ".footer",
+    start: "top bottom",
+    end: "bottom 80vh",
+    toggleClass: "freeze",
+    scrub: 1,
+  });
+}
 function displayRatings() {
   $(".rating-number").each(function () {
     const rating = parseFloat($(this).text().trim());
@@ -71,13 +83,13 @@ function customAnimation() {
       {
         scrollTrigger: {
           trigger: element,
-          start: "top 59%",
-          end: "bottom 59%",
+          start: "top 80%",
+          end: "bottom 80%",
         },
         opacity: 1,
         y: 0,
         duration: 1,
-        ease: "sine.out",
+        ease: "circ.out",
         stagger: 0.1,
       }
     );
@@ -222,22 +234,16 @@ function scrollFeedBack() {
   $(window).on("load", initializeScrollTrigger);
 }
 function scrollMess() {
-  let btnMess;
-
   function initializeScrollTrigger() {
-    btnMess = gsap
-      .from(".cta-mess", {
-        x: "200%",
-        paused: true,
-        duration: 0.5,
-      })
-      .progress(1);
-
     ScrollTrigger.create({
       start: "top top",
       end: 99999,
       onUpdate: (self) => {
-        self.direction === -1 ? btnMess.play() : btnMess.reverse();
+        if (self.direction === -1) {
+          $(".cta-mess").removeClass("hide");
+        } else {
+          $(".cta-mess").addClass("hide");
+        }
       },
     });
   }

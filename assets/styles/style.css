@@ -68,6 +68,7 @@ body {
   min-height: 100vh;
   background-color: var(--color-gray-10);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 ul {
   list-style-type: none;
@@ -246,7 +247,11 @@ ul {
   position: fixed;
   right: 40px;
   bottom: 40px;
-  z-index: 999;
+  z-index: 99;
+  transition: all 0.4s;
+}
+.cta-mess.hide {
+  right: -50px;
 }
 .cta-mess .mess-icon a {
   width: 44px;
@@ -1607,6 +1612,17 @@ ul {
 /* end css experience */
 
 /* start css footer */
+.footer {
+  position: relative;
+}
+.footer.freeze .cta-mess {
+  position: absolute !important;
+  bottom: unset !important;
+  top: -80px !important;
+  right: 40px !important;
+  transform: translate(0) !important;
+  transition: all 0.4s;
+}
 .footer__container--top {
   background-color: var(--color-black);
   background-image: url("../images/image-w.svg");

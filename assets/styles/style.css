@@ -3251,7 +3251,7 @@ section.spacer {
   .box-desc
   .desc
   ul:has(+ .check:checked) {
-  max-height: max-content;
+  max-height: 700px;
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc .check {
   position: absolute;

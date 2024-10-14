@@ -3217,7 +3217,6 @@ section.spacer {
   padding: 32px;
   z-index: 2;
   background-color: var(--color-white);
-  transition: all 1s ease;
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .overlay {
   height: 285px;
@@ -3246,12 +3245,21 @@ section.spacer {
   position: relative;
   transition: max-height 1s ease;
 }
+.page-tpl-suites
+  .wink-room__suites
+  .box
+  .box-desc
+  .desc
+  ul:has(+ .check:checked) {
+  max-height: max-content;
+}
 .page-tpl-suites .wink-room__suites .box .box-desc .desc .check {
   position: absolute;
   top: 100px;
   left: 15px;
   appearance: none;
   -webkit-appearance: none;
+  transition: all 1s ease;
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover {
   cursor: pointer;
@@ -3274,14 +3282,7 @@ section.spacer {
   .check:checked::before {
   content: attr(data-less);
 }
-.page-tpl-suites
-  .wink-room__suites
-  .box
-  .box-desc
-  .desc
-  ul:has(+ .check:checked) {
-  max-height: max-content;
-}
+
 .page-tpl-suites
   .wink-room__suites
   .box

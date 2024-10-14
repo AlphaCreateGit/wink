@@ -2778,6 +2778,8 @@ section.spacer {
 }
 .amenities__top .swiper-amenities {
   height: 100vh;
+  width: 100%;
+  background-color: red;
 }
 .amenities__top .swiper-amenities .swiper__img {
   width: 100%;

@@ -2618,6 +2618,7 @@ section.spacer {
 }
 .wink-room__slider .box-desc .wink-name {
   margin-bottom: 12px;
+  text-transform: uppercase;
 }
 .wink-room__slider .box-desc .wink-facilities {
   margin-bottom: 24px;
@@ -3194,3 +3195,155 @@ section.spacer {
   letter-spacing: 0.4px;
 }
 /* end css map */
+/* css page suites */
+.page-tpl-suites .wink-detail-sec .wink-detail__desc .desc {
+  margin-bottom: 0;
+}
+.page-tpl-suites .wink-room__suites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.page-tpl-suites .wink-room__suites .box {
+  width: calc((100% - 40px) / 2);
+  position: relative;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc {
+  background-color: var(--color-white);
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .box-read {
+  position: absolute;
+  bottom: 0;
+  padding: 32px;
+  z-index: 2;
+  background-color: var(--color-white);
+  transition: all 1s ease;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .overlay {
+  height: 285px;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .wink-name {
+  margin-bottom: 12px;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .wink-facilities ul {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .wink-facilities {
+  margin-bottom: 24px;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .desc {
+  position: relative;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .desc ul {
+  list-style-type: disc;
+  padding-left: 15px;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .desc ul {
+  max-height: 70px;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 1s ease;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .desc .check {
+  position: absolute;
+  top: 100px;
+  left: 15px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover {
+  cursor: pointer;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .desc .check:checked {
+  bottom: -29px;
+  top: unset;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .desc .check::before {
+  content: attr(data-more);
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 900;
+}
+.page-tpl-suites
+  .wink-room__suites
+  .box
+  .box-desc
+  .desc
+  .check:checked::before {
+  content: attr(data-less);
+}
+.page-tpl-suites
+  .wink-room__suites
+  .box
+  .box-desc
+  .desc
+  ul:has(+ .check:checked) {
+  max-height: max-content;
+}
+.page-tpl-suites
+  .wink-room__suites
+  .box
+  .box-desc
+  .wink-facilities
+  ul
+  li
+  .item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .desc h5 {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 26px;
+  letter-spacing: 0.04em;
+}
+.swiper-suites {
+  position: relative;
+}
+.swiper-suites .img {
+  width: 100%;
+  height: 340px;
+}
+.swiper-suites .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-suites .swiper-button-next,
+.swiper-suites .swiper-button-prev {
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-white);
+  top: unset;
+  bottom: 0;
+}
+.swiper-suites .swiper-button-next {
+  right: 0;
+}
+.swiper-suites .swiper-button-prev {
+  left: auto;
+  right: 44px;
+}
+.swiper-suites .swiper-button-next.swiper-button-disabled,
+.swiper-suites .swiper-button-prev.swiper-button-disabled {
+  opacity: 1;
+}
+.swiper-suites .swiper-pagination-fraction {
+  background-color: var(--color-black);
+  width: 60px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
+  color: var(--color-white);
+  bottom: 0;
+  left: auto;
+  right: 88px;
+}
+/* end css page suites */

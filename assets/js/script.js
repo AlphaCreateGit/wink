@@ -28,6 +28,7 @@ $(document).ready(function () {
   swiperRoomSuites();
   scrollFreezeCtaMess();
   amentities();
+  swiperSuites();
 });
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
@@ -914,4 +915,27 @@ function amentities() {
       $(".amenities__top .amen-right .box-detail").removeClass("active");
     }
   );
+}
+function swiperSuites() {
+  if ($(".wink-room__suites").length) {
+  }
+  var swiperSuites = $(".swiper-suites");
+  swiperSuites.each(function () {
+    var $this = $(this); // Cache the current Swiper element
+    console.log($this[0]);
+
+    // Initialize Swiper for each element
+    new Swiper($this[0], {
+      slidesPerView: 1,
+      allowTouchMove: false,
+      pagination: {
+        el: $this.find(".swiper-pagination")[0],
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: $this.find(".swiper-button-next")[0],
+        prevEl: $this.find(".swiper-button-prev")[0],
+      },
+    });
+  });
 }

@@ -2581,7 +2581,7 @@ section.spacer {
   right: 44px;
 }
 .swiper-child-img .swiper-button-next.swiper-button-disabled,
-.swiper-button-prev.swiper-button-disabled {
+.swiper-child-img .swiper-button-prev.swiper-button-disabled {
   opacity: 1;
 }
 .swiper-child-img .swiper-pagination-fraction {
@@ -2800,6 +2800,9 @@ section.spacer {
   justify-content: space-between;
   border-bottom: 2px solid #c2c2c2;
 }
+.amenities__title .item.active {
+  border-bottom: 2px solid var(--color-black);
+}
 .amenities__title .item p .amenities__title .item svg path {
   transition: all 0.3s;
 }
@@ -2817,6 +2820,84 @@ section.spacer {
 .amenities__title .item.active svg path {
   fill: var(--color-primary);
 }
+.amenities__top .amen-right {
+  position: relative;
+}
+.amenities__top .amen-right .box-detail {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-white);
+}
+.amenities__top .amen-right .box-detail .head {
+  position: relative;
+  margin-bottom: 56px;
+}
+.amenities__top .amen-right .box-detail .head .icon-close {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-black);
+}
+.amenities__top .amen-right .box-detail .head h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  line-height: 36px;
+  white-space: nowrap;
+}
+.amenities__top .amen-right .box-detail .box-slide {
+  padding: 0 40px;
+  position: relative;
+}
+.amenities__top .amen-right .box-detail .box-slide .swiper-button-prev {
+  left: 40px;
+  top: unset;
+  bottom: -56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 70px;
+  height: 18px;
+}
+.amenities__top .amen-right .box-detail .box-slide .swiper-button-next {
+  left: 155px;
+  top: unset;
+  bottom: -56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 70px;
+  height: 18px;
+}
+.amenities__top .amen-right .box-detail .box-slide .swiper-pagination {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
+  color: var(--color-black);
+  letter-spacing: 0.05px;
+  top: unset;
+  bottom: -56px;
+  left: 100px;
+  width: max-content;
+}
+.amenities__top .amen-right .box-detail .swiper-amen-box h4 {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 32px;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+.amenities__top .amen-right .box-detail .swiper-amen-box .location {
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
 /* css page hotels details */
 
 /* css map */

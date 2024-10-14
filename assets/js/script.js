@@ -866,6 +866,18 @@ function amentities() {
     slidesPerView: "auto",
     centeredSlides: true,
   });
+  var swiperAmenContent = new Swiper(".swiper-amenities-content", {
+    slidesPerView: 1,
+
+    pagination: {
+      el: ".amen-right .swiper-pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".amen-right .swiper-button-next",
+      prevEl: ".amen-right .swiper-button-prev",
+    },
+  });
   const $contents = $(".amenities__title .item");
   let $activeElement = $contents.first();
 

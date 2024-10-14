@@ -903,7 +903,6 @@ function amentities() {
     // click
     $(this).on("click", function () {
       swiperAmenContent.slideTo(index);
-      console.log(index);
       $(".amenities__top .amen-right .box-detail").addClass("active");
     });
   });

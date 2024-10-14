@@ -2846,6 +2846,13 @@ section.spacer {
   justify-content: center;
   align-items: center;
   background-color: var(--color-black);
+  transition: all 0.3s;
+}
+.amenities__top .amen-right .box-detail .head .icon-close:hover {
+  cursor: pointer;
+}
+.amenities__top .amen-right .box-detail .head .icon-close:hover svg path {
+  fill: var(--color-primary);
 }
 .amenities__top .amen-right .box-detail .head h3 {
   position: absolute;

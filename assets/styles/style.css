@@ -2743,7 +2743,29 @@ section.spacer {
 .amenities__container {
   padding: 0 40px;
 }
-.amenities__container h3 {
+
+.amenities__img {
+  width: 100%;
+  height: 375px;
+}
+.amenities__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.amenities__content {
+  max-width: 450px;
+  width: 100%;
+}
+.amenities__content .title {
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.amenities__bottom .row:first-child {
+  margin-bottom: 120px;
+}
+.amenities__content.--second .desc {
   margin-bottom: 56px;
 }
 /* css page hotels details */

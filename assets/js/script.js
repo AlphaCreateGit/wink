@@ -891,6 +891,7 @@ function amentities() {
   $contents.each(function (index) {
     $(this).on("mouseover", function () {
       swiperAmen.slideTo(index);
+      console.log(index);
 
       if ($activeElement.length) {
         $activeElement.removeClass("active");
@@ -899,5 +900,17 @@ function amentities() {
       $(this).addClass("active");
       $activeElement = $(this);
     });
+    // click
+    $(this).on("click", function () {
+      swiperAmenContent.slideTo(index);
+      console.log(index);
+      $(".amenities__top .amen-right .box-detail").addClass("active");
+    });
   });
+  $(".amenities__top .amen-right .box-detail .head .icon-close").on(
+    "click",
+    function () {
+      $(".amenities__top .amen-right .box-detail").removeClass("active");
+    }
+  );
 }

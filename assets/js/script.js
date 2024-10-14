@@ -863,8 +863,8 @@ function swiperRoomSuites() {
 function amentities() {
   var swiperAmen = new Swiper(".swiper-amenities", {
     effect: "fade",
-    slidesPerView: "auto",
-    centeredSlides: true,
+    slidesPerView: 1,
+    allowTouchMove: false,
   });
   var swiperAmenContent = new Swiper(".swiper-amenities-content", {
     slidesPerView: 1,
@@ -876,6 +876,9 @@ function amentities() {
     navigation: {
       nextEl: ".amen-right .swiper-button-next",
       prevEl: ".amen-right .swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiperAmen,
     },
   });
   const $contents = $(".amenities__title .item");

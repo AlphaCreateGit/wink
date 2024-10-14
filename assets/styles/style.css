@@ -180,12 +180,12 @@ ul {
 }
 .h5-bold {
   font-size: 20px;
-  line-height: 28px;
+  line-height: 32px;
   font-weight: 900;
 }
 .h5-font {
   font-size: 20px;
-  line-height: 28px;
+  line-height: 32px;
   font-weight: 400;
 }
 
@@ -3353,3 +3353,37 @@ section.spacer {
   right: 88px;
 }
 /* end css page suites */
+/* css page experience */
+.experience-sec .experience__img {
+  width: 100%;
+  height: 375px;
+}
+.experience-sec .experience__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.experience-sec .experience__content {
+  max-width: 450px;
+  width: 100%;
+}
+.experience-sec .experience__content .tag {
+  margin-bottom: 64px;
+}
+.experience-sec .experience__content .title {
+  margin-bottom: 12px;
+}
+.experience-sec .experience__content .sub {
+  margin-bottom: 24px;
+}
+.experience-sec .experience__content .time {
+  gap: 12px;
+  margin-top: 24px;
+}
+.experience-sec .experience__container {
+  padding: 0 40px;
+}
+.experience-sec .experience__container .row {
+  margin-bottom: 120px;
+}
+/* end css page experience */

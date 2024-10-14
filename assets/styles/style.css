@@ -1484,7 +1484,7 @@ ul {
 }
 .deals__content .deals__content--bottom .btn-more:hover {
   color: var(--color-primary);
-  gap: 20px;
+  gap: 16px;
 }
 .deals__content .deals__content--bottom .btn-more svg path {
   transition: all 0.2s ease;
@@ -1504,7 +1504,7 @@ ul {
 }
 .deals__item:hover .deals__content--bottom .btn-more {
   color: var(--color-primary);
-  gap: 20px;
+  gap: 16px;
 }
 .deals__item:hover .deals__content .deals__content--bottom .btn-more svg path {
   color: var(--color-primary);
@@ -2304,11 +2304,11 @@ ul {
 }
 .hotels__btn--view a:hover {
   color: var(--color-primary);
-  gap: 20px;
+  gap: 16px;
 }
 .hotels__box:hover .hotels__btn--view a {
   color: var(--color-primary);
-  gap: 20px;
+  gap: 16px;
 }
 
 .hotels__btn--book {
@@ -2874,6 +2874,50 @@ section.spacer {
   gap: 12px;
   width: 70px;
   height: 18px;
+}
+.amenities__top .amen-right .box-detail .box-slide .swiper-button-next span,
+.amenities__top .amen-right .box-detail .box-slide .swiper-button-prev span {
+  transition: all 0.3s;
+}
+.amenities__top .amen-right .box-detail .box-slide .swiper-button-next svg path,
+.amenities__top
+  .amen-right
+  .box-detail
+  .box-slide
+  .swiper-button-prev
+  svg
+  path {
+  transition: all 0.3s;
+}
+.amenities__top
+  .amen-right
+  .box-detail
+  .box-slide
+  .swiper-button-next:hover
+  svg
+  path,
+.amenities__top
+  .amen-right
+  .box-detail
+  .box-slide
+  .swiper-button-prev:hover
+  svg
+  path {
+  fill: var(--color-primary);
+}
+.amenities__top
+  .amen-right
+  .box-detail
+  .box-slide
+  .swiper-button-next:hover
+  span,
+.amenities__top
+  .amen-right
+  .box-detail
+  .box-slide
+  .swiper-button-prev:hover
+  span {
+  color: var(--color-primary);
 }
 .amenities__top .amen-right .box-detail .box-slide .swiper-pagination {
   font-size: 12px;

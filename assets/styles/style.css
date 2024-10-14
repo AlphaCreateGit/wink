@@ -2745,7 +2745,7 @@ section.spacer {
   background-color: var(--color-white);
 }
 .amenities__container {
-  padding: 0 40px;
+  padding-left: 40px;
 }
 
 .amenities__img {
@@ -2767,6 +2767,7 @@ section.spacer {
 }
 .amenities__bottom {
   padding: 120px 0;
+  padding-right: 40px;
 }
 
 .amenities__bottom .row:first-child {
@@ -2774,6 +2775,47 @@ section.spacer {
 }
 .amenities__content.--second .desc {
   margin-bottom: 56px;
+}
+.amenities__top .swiper-amenities {
+  height: 100vh;
+}
+.amenities__top .swiper-amenities .swiper__img {
+  width: 100%;
+  height: 100%;
+}
+.amenities__top .swiper-amenities .swiper__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.amenities__top .box h2 {
+  padding-top: 32px;
+  padding-left: 40px;
+  margin-bottom: 32px;
+}
+.amenities__title .item {
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #c2c2c2;
+}
+.amenities__title .item p .amenities__title .item svg path {
+  transition: all 0.3s;
+}
+.amenities__title .item p {
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.03px;
+}
+.amenities__title .item:hover {
+  cursor: pointer;
+}
+.amenities__title .item.active p {
+  color: var(--color-primary);
+}
+.amenities__title .item.active svg path {
+  fill: var(--color-primary);
 }
 /* css page hotels details */
 

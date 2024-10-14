@@ -27,6 +27,7 @@ $(document).ready(function () {
   displayRatings();
   swiperRoomSuites();
   scrollFreezeCtaMess();
+  amentities();
 });
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
@@ -858,4 +859,30 @@ function swiperRoomSuites() {
       });
     });
   }
+}
+function amentities() {
+  var swiperAmen = new Swiper(".swiper-amenities", {
+    effect: "fade",
+    slidesPerView: "auto",
+    centeredSlides: true,
+  });
+  const $contents = $(".amenities__title .item");
+  let $activeElement = $contents.first();
+
+  if ($activeElement.length) {
+    $activeElement.addClass("active");
+  }
+
+  $contents.each(function (index) {
+    $(this).on("mouseover", function () {
+      swiperAmen.slideTo(index);
+
+      if ($activeElement.length) {
+        $activeElement.removeClass("active");
+      }
+
+      $(this).addClass("active");
+      $activeElement = $(this);
+    });
+  });
 }

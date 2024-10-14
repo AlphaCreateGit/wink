@@ -3208,6 +3208,15 @@ section.spacer {
   width: calc((100% - 40px) / 2);
   position: relative;
 }
+.page-tpl-suites .wink-room__suites .box:hover .wink-name {
+  color: var(--color-primary);
+}
+.page-tpl-suites .wink-room__suites .box:hover .custom__btn::before {
+  clip-path: polygon(6% 0, 100% 0, 94% 100%, 0% 100%);
+}
+.page-tpl-suites .wink-room__suites .box:hover .custom__btn span {
+  color: var(--color-white);
+}
 .page-tpl-suites .wink-room__suites .box .box-desc {
   background-color: var(--color-white);
 }
@@ -3263,9 +3272,7 @@ section.spacer {
 .page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover {
   cursor: pointer;
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check:checked {
-  bottom: -29px;
-}
+
 .page-tpl-suites .wink-room__suites .box .box-desc .desc .check::before {
   content: attr(data-more);
   white-space: nowrap;

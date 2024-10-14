@@ -903,7 +903,9 @@ function amentities() {
     // click
     $(this).on("click", function () {
       swiperAmenContent.slideTo(index);
-      $(".amenities__top .amen-right .box-detail").addClass("active");
+      setTimeout(function () {
+        $(".amenities__top .amen-right .box-detail").addClass("active");
+      }, 300);
     });
   });
   $(".amenities__top .amen-right .box-detail .head .icon-close").on(

@@ -3255,18 +3255,16 @@ section.spacer {
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc .check {
   position: absolute;
-  top: 100px;
+  bottom: -29px;
   left: 15px;
   appearance: none;
   -webkit-appearance: none;
-  transition: all 1s ease;
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover {
   cursor: pointer;
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc .check:checked {
   bottom: -29px;
-  top: unset;
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc .check::before {
   content: attr(data-more);

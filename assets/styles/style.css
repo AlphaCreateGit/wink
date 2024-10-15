@@ -3590,4 +3590,7 @@ section.spacer {
   background-position: center;
   height: 570px;
 }
+.swiper-suites .swiper-slide {
+  overflow: hidden;
+}
 /* end page event */

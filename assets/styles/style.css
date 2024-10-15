@@ -3584,14 +3584,15 @@ section.spacer {
   max-width: 670px;
 }
 .rewards-sec-event .rewards-sec__container {
-  /* background: url("../images/bg_rewards.svg"),
+  background: url("../images/bg_rewards_medium.svg"),
     linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.8) 0.5px,
       var(--color-primary) 1px
-    ); */
+    );
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 570px;
 }
 /* end page event */

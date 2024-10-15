@@ -32,6 +32,49 @@
     <!-- end import link custom css -->
   </head>
   <body>
+    <!-- modal contact -->
+    <div
+      class="modal fade"
+      id="modalContactUsEvent"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modalContactUsEventLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalContactUsEventLabel">
+              Modal title
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="box"></div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end contact -->
     <!-- start feeback -->
     <div class="feedback">
       <div class="feedback__text b2-font color-white">FEEDBACK</div>
@@ -998,9 +1041,14 @@
                 </div>
 
                 <div class="rewards-sec__button d-flex justify-content-center">
-                  <a href="" class="custom__btn long-medium">
+                  <button
+                    type="button"
+                    class="custom__btn long-medium"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalContactUsEvent"
+                  >
                     <span class="b3-font color-black d-block">CONTACT US</span>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

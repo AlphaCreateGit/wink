@@ -796,6 +796,7 @@ function scrollWinkRewards() {
       startTrigger,
       endTrigger
     ) {
+      const pinValue = $(section).hasClass("rewards-sec-event") ? false : true;
       gsap.to($(section).find(".rewards-sec__img"), {
         clipPath: clipPathValue,
         duration: 1,
@@ -805,7 +806,7 @@ function scrollWinkRewards() {
           end: endTrigger,
           scrub: 1,
           toggleActions: "play reverse play reverse",
-          pin: true,
+          pin: pinValue,
         },
       });
     }
@@ -830,8 +831,8 @@ function scrollWinkRewards() {
       } else {
         // Kiểm tra nếu section có class 'rewards-sec-event'
         const startValue = $(section).hasClass("rewards-sec-event")
-          ? "top 20%"
-          : "top 9%";
+          ? "top 30%"
+          : "top 15%";
 
         applyClipPathAnimation(
           section,

@@ -976,7 +976,7 @@ function amentities() {
 }
 function swiperSuites() {
   if ($(".wink-room__suites").length) {
-    let interleaveOffsetSuites = 0.94;
+    let interleaveOffsetSuites = 0.9;
     var swiperSuites = $(".swiper-suites");
     swiperSuites.each(function () {
       var $this = $(this); // Cache the current Swiper element

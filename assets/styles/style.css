@@ -3414,6 +3414,12 @@ section.spacer {
 .rewards__box .title {
   margin-bottom: 24px;
 }
+.rewards__box .desc p {
+  margin-bottom: 24px;
+}
+.rewards__box .desc p:last-child {
+  margin-bottom: 0;
+}
 .rewards__box .desc {
   margin-bottom: 48px;
 }
@@ -3428,6 +3434,7 @@ section.spacer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
+  padding-top: 40px;
 }
 .rewards__social .social__item {
   width: 100%;
@@ -3534,3 +3541,21 @@ section.spacer {
   background-color: var(--color-black);
 }
 /* end  css page rewards */
+/* css page event */
+.meeting-sec {
+  padding: 0 40px;
+}
+.meeting-sec .faqs {
+  padding-top: 40px;
+}
+.meeting-sec .faqs .accordion-button {
+  background-color: var(--color-gray-10);
+}
+.meeting-sec .faqs .accordion-body {
+  background-color: var(--color-gray-10);
+}
+
+.meeting-sec .faqs .accordion-body .desc {
+  margin-bottom: 24px;
+}
+/* end page event */

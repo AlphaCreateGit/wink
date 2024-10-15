@@ -828,10 +828,15 @@ function scrollWinkRewards() {
           "bottom bottom"
         );
       } else {
+        // Kiểm tra nếu section có class 'rewards-sec-event'
+        const startValue = $(section).hasClass("rewards-sec-event")
+          ? "top 20%"
+          : "top 9%";
+
         applyClipPathAnimation(
           section,
           clipPathValue,
-          "top 8%",
+          startValue,
           "bottom bottom"
         );
       }

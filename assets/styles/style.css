@@ -3574,19 +3574,22 @@ section.spacer {
   list-style-type: disc;
   padding-left: 15px;
 }
+.rewards-sec-event {
+  overflow: hidden;
+}
 .rewards-sec-event .rewards-sec__img {
   background-color: var(--color-gray-10);
 }
 .rewards-sec-event .rewards-sec__box {
   max-width: 670px;
 }
-.rewards-sec__container {
-  background: url("../images/bg_rewards.svg"),
+.rewards-sec-event .rewards-sec__container {
+  /* background: url("../images/bg_rewards.svg"),
     linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.8) 1px,
+      rgba(255, 255, 255, 0.8) 0.5px,
       var(--color-primary) 1px
-    );
+    ); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

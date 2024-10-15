@@ -790,12 +790,17 @@ function scrollWinkRewards() {
       }% 90%, ${pixelValue}px 90%)`;
     }
 
-    function applyClipPathAnimation(clipPathValue, startTrigger, endTrigger) {
-      gsap.to(".rewards-sec__img", {
+    function applyClipPathAnimation(
+      section,
+      clipPathValue,
+      startTrigger,
+      endTrigger
+    ) {
+      gsap.to($(section).find(".rewards-sec__img"), {
         clipPath: clipPathValue,
         duration: 1,
         scrollTrigger: {
-          trigger: ".rewards-sec",
+          trigger: section,
           start: startTrigger,
           end: endTrigger,
           scrub: 1,
@@ -808,19 +813,29 @@ function scrollWinkRewards() {
     const viewportWidth = window.innerWidth;
     const pixelValue = viewportWidth <= 767 ? 24 : 80;
 
-    if (viewportWidth <= 767) {
+    $(".rewards-sec").each(function () {
+      const section = this;
       const clipPathValue = getClipPathForSmallScreens(
         pixelValue,
         viewportWidth
       );
-      applyClipPathAnimation(clipPathValue, "top 30%", "bottom bottom");
-    } else {
-      const clipPathValue = getClipPathForSmallScreens(
-        pixelValue,
-        viewportWidth
-      );
-      applyClipPathAnimation(clipPathValue, "top 8%", "bottom bottom");
-    }
+
+      if (viewportWidth <= 767) {
+        applyClipPathAnimation(
+          section,
+          clipPathValue,
+          "top 30%",
+          "bottom bottom"
+        );
+      } else {
+        applyClipPathAnimation(
+          section,
+          clipPathValue,
+          "top 8%",
+          "bottom bottom"
+        );
+      }
+    });
   }
 }
 

@@ -424,12 +424,13 @@ function bookingForm() {
   });
   //----------------------------------------------------
 
-  var pickerExprie = new Lightpick({
-    field: document.getElementById("expireDate"),
-    minDate: moment().startOf("day"),
-    singleDate: false,
-    // numberOfMonths: 1,
-  });
+  if ($(".modalContactUsEvent").length) {
+    var pickerExprie = new Lightpick({
+      field: document.getElementById("expireDate"),
+      minDate: moment().startOf("day"),
+      singleDate: false,
+    });
+  }
 
   //----------------------------------------------------
   // select hotels
@@ -662,11 +663,12 @@ function commingSoon() {
     const panels = gsap.utils.toArray(".animate-right");
     const content = gsap.utils.toArray(".animate-left");
     const numberStart = $(".number-start");
+    const numberEnd = $(".number-end");
     const totalSlides = $(".panel").length;
     let currentSlide = 1;
 
     numberStart.text(currentSlide);
-
+    numberEnd.text(totalSlides);
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".comming-soon",

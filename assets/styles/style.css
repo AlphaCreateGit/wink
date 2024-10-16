@@ -1727,6 +1727,9 @@ ul {
   text-decoration: none;
   position: relative;
 }
+.about__wink ul li a.active::before {
+  transform: scaleX(1);
+}
 
 .about__wink ul li a::before {
   content: "";
@@ -3643,3 +3646,22 @@ section.spacer {
   max-width: 895px;
 }
 /* end page event */
+/* css page company */
+.about-company .rewards__box .title {
+  margin-bottom: 48px;
+}
+.about-company .rewards__content {
+  position: static;
+}
+.about-company .about-company__desc {
+  padding-top: 40px;
+}
+.about-company__desc br {
+  content: "" !important;
+  margin-bottom: 24px !important;
+  display: block !important;
+}
+.comming-soon-company .comming-soon-company {
+  margin-top: 32px;
+}
+/* end  page company */

@@ -4,6 +4,7 @@
   --color-black: #000000;
   --color-white: #ffffff;
   --color-gray-10: #f2f2f2;
+  --color-gray-20: #c2c2c2;
   --color-gray-50: #7f7f7f;
   --color-gray: #808080;
   --color-black-50: rgba(0, 0, 0, 0.5);
@@ -224,6 +225,9 @@ ul {
 }
 .color-black-50 {
   color: var(--color-black-50);
+}
+.color-gray-20 {
+  color: var(--color-gray-20);
 }
 .color-grey {
   color: var(--color-grey);
@@ -888,7 +892,7 @@ ul {
   color: var(--color-primary);
 }
 .sub-menu__item:hover .sub-menu__image img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .sub-menu__item .sub-menu__image img {
   width: 100%;
@@ -1517,7 +1521,7 @@ ul {
   margin-bottom: 32px;
 }
 .deals__item:hover .deals__img img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .deals__item:hover .deals__content--top .title {
   color: var(--color-primary);
@@ -3789,5 +3793,71 @@ section.spacer {
 }
 .deals-hotels .hotels__item:hover .hotels__title {
   color: var(--color-primary);
+}
+.deals-details-sec {
+  padding: 200px 40px 120px;
+}
+.deals-details-sec .box .name {
+  margin-bottom: 32px;
+}
+.deals-details-sec .box .img {
+  width: 100%;
+  aspect-ratio: 668 / 375;
+  margin-bottom: 32px;
+}
+.deals-details-sec .box .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.deals-details-sec .box .desc br {
+  content: "" !important;
+  display: block !important;
+  margin-bottom: 24px !important;
+}
+.deals-details-sec .box ul {
+  margin-top: 12px;
+  list-style-type: disc;
+  padding-left: 15px;
+}
+.deals-details-sec .hot-deals {
+  background-color: var(--color-white);
+  position: sticky;
+  top: 120px;
+  padding: 40px;
+}
+.deals-details-sec .hot-deals h4 {
+  margin-bottom: 40px;
+}
+.deals-details-sec .hot-deals ul li .item {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  padding-top: 12px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--color-gray-20);
+}
+.deals-details-sec .hot-deals ul li:last-child .item {
+  padding-bottom: 0;
+}
+.deals-details-sec .hot-deals .item .desc ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.deals-details-sec .hot-deals .item .note {
+  color: #a9a9a9;
+  margin-top: 12px;
+}
+.deals-details-sec .hot-deals .item .desc ul li p {
+  transition: all 0.3s;
+}
+.deals-details-sec .hot-deals .item .desc ul li p:hover {
+  color: var(--color-primary);
+}
+.deals-details-sec .hot-deals ul li:first-child .item {
+  border-top: 1px solid var(--color-gray-20);
+}
+.deals-details-sec .hot-deals ul li:last-child .item {
+  border-bottom: none;
 }
 /* end page deals */

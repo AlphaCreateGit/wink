@@ -122,6 +122,12 @@ ul {
   font-weight: normal;
   letter-spacing: 0.04rem;
 }
+.b1-bold {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 900;
+  letter-spacing: 0.04rem;
+}
 
 .b2-font {
   font-size: 12px;
@@ -3679,3 +3685,46 @@ section.spacer {
   position: relative;
 }
 /* end css page career */
+/* css page wink earth */
+.wink-earth .banner-hero__heading {
+  bottom: 40px;
+}
+.earth-sec .about-company__desc {
+  padding-top: 40px;
+}
+.our-reports__content .title {
+  margin-bottom: 32px;
+}
+.our-reports__content .desc {
+  margin-bottom: 24px;
+}
+.our-reports__content .reports-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 40px;
+}
+.our-reports__content .reports-item ul {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.our-reports__content .reports-item ul li a {
+  position: relative;
+}
+.our-reports__content .reports-item ul li a:hover {
+  color: var(--color-primary);
+}
+.our-reports__content .reports-item ul li a::before {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 1.5px;
+  background-color: var(--color-grey);
+  right: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.our-reports__content .reports-item ul li:last-child a::before {
+  content: unset;
+}
+/* css page wink earth */

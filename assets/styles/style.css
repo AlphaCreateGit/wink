@@ -3665,3 +3665,17 @@ section.spacer {
   margin-top: 32px;
 }
 /* end  page company */
+/* css page career */
+.career-sec .career-list .career-item {
+  width: 100%;
+  height: 335px;
+  background-color: red;
+  margin-bottom: 40px;
+}
+.career-sec .career-list .career-item:nth-child(even) {
+  background-color: yellow !important;
+}
+.career-list {
+  position: relative;
+}
+/* end css page career */

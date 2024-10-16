@@ -29,6 +29,7 @@ $(document).ready(function () {
   scrollFreezeCtaMess();
   amentities();
   swiperSuites();
+  carrersSticky();
 });
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
@@ -1044,4 +1045,19 @@ function swiperSuites() {
       });
     });
   }
+}
+
+function carrersSticky() {
+  // gsap.registerPlugin(ScrollTrigger);
+  // const items = gsap.utils.toArray(".career-item");
+  // const tl = gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: ".career-sec",
+  //     start: "top 20%",
+  //     end: () => "+=" + 100 * items.length + "%",
+  //     pin: true,
+  //     scrub: true,
+  //     markers: true,
+  //   },
+  // });
 }

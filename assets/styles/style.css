@@ -3596,4 +3596,50 @@ section.spacer {
 .swiper-suites .swiper-slide {
   overflow: hidden;
 }
+#modalContactUsEvent .modal-body .box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 40px;
+}
+#modalContactUsEvent .form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-gray-50);
+  padding-bottom: 12px;
+}
+#modalContactUsEvent .modal-body .group {
+  position: relative;
+}
+
+#modalContactUsEvent .modal-body .group .form-label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  pointer-events: none;
+  transition: all 0.3s;
+  margin-bottom: 0;
+}
+#modalContactUsEvent .form-input:not(:placeholder-shown) + .form-label {
+  top: -12px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 18px;
+}
+#modalContactUsEvent .form-input:focus + .form-label {
+  top: -12px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 18px;
+}
+#modalContactUsEvent .form-input::placeholder {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--color-black);
+  letter-spacing: 0.04px;
+}
+#modalContactUsEvent .modal-dialog {
+  max-width: 895px;
+}
 /* end page event */

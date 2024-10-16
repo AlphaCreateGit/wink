@@ -423,6 +423,14 @@ function bookingForm() {
     },
   });
   //----------------------------------------------------
+
+  var pickerExprie = new Lightpick({
+    field: document.getElementById("expireDate"),
+    minDate: moment().startOf("day"),
+    singleDate: false,
+    // numberOfMonths: 1,
+  });
+
   //----------------------------------------------------
   // select hotels
   $(".dropdown-custom__hotels").on("click", function (e) {

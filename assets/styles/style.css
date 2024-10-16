@@ -98,6 +98,11 @@ ul {
 
 /* end custom scroll bar */
 /* css classname */
+.h0-bold {
+  font-size: 48px;
+  line-height: 68px;
+  font-weight: 900;
+}
 .h1-bold {
   font-size: 36px;
   line-height: 48px;
@@ -3728,3 +3733,42 @@ section.spacer {
   content: unset;
 }
 /* css page wink earth */
+/* css page deals */
+.hero-deals .hero-deals__inner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.hero-deals__img {
+  width: 100%;
+  height: 100%;
+  padding: 160px 40px 40px;
+  position: relative;
+}
+.hero-deals__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-deals__img::before {
+  content: "";
+  position: absolute;
+  inset: 160px 40px 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.hero-deals__content {
+  position: absolute;
+  z-index: 2;
+  left: 80px;
+  bottom: 80px;
+  max-width: 600px;
+  width: 100%;
+}
+.hero-deals__content .box .name,
+.hero-deals__content .box .title {
+  margin-bottom: 12px;
+}
+.hero-deals__content .box .desc {
+  margin-bottom: 32px;
+}
+/* end page deals */

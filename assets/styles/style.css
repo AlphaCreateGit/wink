@@ -232,6 +232,9 @@ ul {
 .spacing-75 {
   height: 75px;
 }
+.spacing-80 {
+  height: 80px;
+}
 
 .spacing-120 {
   height: 120px;
@@ -2200,6 +2203,10 @@ ul {
   gap: 0 40px;
   margin-bottom: 40px;
 }
+.hotels__filter--location .dropdown-custom__menu,
+.hotels__filter--opening .dropdown-custom__menu {
+  top: 24px;
+}
 
 .hotels__filter .head {
   display: flex;
@@ -3770,5 +3777,17 @@ section.spacer {
 }
 .hero-deals__content .box .desc {
   margin-bottom: 32px;
+}
+.deals-hotels .hotels__item .hotels__content .tag {
+  margin-bottom: 12px;
+}
+.deals-hotels .hotels__item .hotels__content .hotels__title {
+  margin-bottom: 24px;
+}
+.deals-hotels .hotels__item .hotels__title {
+  transition: all 0.3s;
+}
+.deals-hotels .hotels__item:hover .hotels__title {
+  color: var(--color-primary);
 }
 /* end page deals */

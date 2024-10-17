@@ -663,7 +663,8 @@ function commingSoon() {
   if ($(".cooming-sec").length) {
     gsap.registerPlugin(ScrollTrigger);
 
-    const panels = gsap.utils.toArray(".animate-right");
+    // const panels = gsap.utils.toArray(".animate-right");
+    const panels = gsap.utils.toArray(".panel").slice(1);
     const content = gsap.utils.toArray(".animate-left");
     const numberStart = $(".number-start");
     const numberEnd = $(".number-end");
@@ -703,6 +704,7 @@ function commingSoon() {
           yPercent: 100,
           ease: "none",
           duration: 1,
+          stagger: 0.5,
         },
         "+=0.5"
       );

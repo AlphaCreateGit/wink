@@ -3834,6 +3834,45 @@ section.spacer {
 .why-join-sec .facilities__item p {
   max-width: 100%;
 }
+.positions-hiring {
+  background-color: var(--color-white);
+  padding: 120px 0;
+}
+.positions-hiring__container .title {
+  margin-bottom: 56px;
+}
+.position-list .position-item {
+  display: grid;
+  grid-template-columns: 3fr 2fr 1.5fr 1.5fr;
+}
+.position-list .position-item .position-item-sub {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: end;
+}
+.position-list .position-filters {
+  border-bottom: 2px solid #a9a9a9;
+  padding-bottom: 24px;
+}
+.position-list .position-item .position-item-sub:first-child {
+  justify-content: start;
+}
+.position-list .position-item.sub {
+  padding: 12px 0;
+  border-bottom: 2px solid #a9a9a9;
+}
+.position-list .position-item.sub .position-item-sub {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+  letter-spacing: 0.04px;
+}
+.position-list .position-item.sub .position-item-sub:first-child {
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 900;
+}
 /* end css page career */
 /* css page wink earth */
 .wink-earth .banner-hero__heading {

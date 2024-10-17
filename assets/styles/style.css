@@ -4059,7 +4059,9 @@ section.spacer {
 .contact-sec .contact__form {
   background-color: var(--color-white);
   padding: 160px 40px 100px;
-  height: 100%;
+  height: max-content;
+  position: sticky;
+  top: 0px;
 }
 .contact-sec .contact__form h3 {
   margin-bottom: 24px;

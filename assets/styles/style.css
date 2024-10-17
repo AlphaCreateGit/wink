@@ -2338,6 +2338,23 @@ ul {
   align-items: center;
   gap: 12px;
 }
+.hotels__btn--view .btn-more {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hotels__btn--view .btn-more:hover {
+  color: var(--color-primary);
+  gap: 16px;
+}
+.hotels__box:hover .hotels__btn--view .btn-more {
+  color: var(--color-primary);
+  gap: 16px;
+}
 .hotels__btn--view a:hover {
   color: var(--color-primary);
   gap: 16px;
@@ -3633,6 +3650,69 @@ section.spacer {
 .swiper-suites .swiper-slide {
   overflow: hidden;
 }
+#modalBookRoom .modal-header {
+  position: relative;
+  border: none;
+  padding: 0;
+}
+#modalBookRoom .modal-footer {
+  border: none;
+}
+#modalBookRoom .modal-header .btn-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-100%);
+  width: 48px;
+  height: 48px;
+  background-image: none;
+  background-color: var(--color-black);
+  opacity: 1;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#modalBookRoom .modal-dialog {
+  max-width: 670px;
+}
+#modalBookRoom .modal-header .btn-close:focus {
+  box-shadow: none;
+}
+#modalBookRoom .modal-body {
+  padding: 40px;
+}
+#modalBookRoom .modal-body .head {
+  margin-bottom: 40px;
+}
+#modalBookRoom .modal-body .body .img {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 24px;
+}
+#modalBookRoom .modal-body .body .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#modalBookRoom .modal-body .body .desc h5 {
+  margin-bottom: 12px;
+}
+#modalBookRoom .modal-body .body .desc ul {
+  list-style-type: disc;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-left: 15px;
+}
+#modalBookRoom .modal-body .deals__view {
+  margin-top: 40px;
+}
+#modalBookRoom .modal-content {
+  border-radius: 0;
+}
+
 #modalContactUsEvent .modal-header {
   position: relative;
   border: none;

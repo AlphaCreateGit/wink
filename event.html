@@ -119,21 +119,70 @@
               </div>
             </form>
           </div>
-          <!-- <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Understood</button>
-          </div> -->
         </div>
       </div>
     </div>
 
     <!-- end contact -->
+    <!-- modal book room -->
+    <div
+      class="modal fade"
+      id="modalBookRoom"
+      tabindex="-1"
+      aria-labelledby="modalBookRoomLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <img src="./assets/images/ic_close_white.svg" alt="icon" />
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="box">
+              <div
+                class="head d-flex align-items-center justify-content-between"
+              >
+                <h4 class="h5-bold color-black">SEE OUR SPACE</h4>
+                <img src="./assets/images/ic_logo_popup.svg" alt="" />
+              </div>
+              <div class="body">
+                <div class="img">
+                  <img src="./assets/images/wink_book.png" alt="image" />
+                </div>
+                <div class="desc">
+                  <h5 class="b1-bold color-black">In your meeting room:</h5>
+                  <ul>
+                    <li>
+                      <p class="b1-font color-black">Up to 20 chairs</p>
+                    </li>
+                    <li>
+                      <p class="b1-font color-black">Up to 20 chairs</p>
+                    </li>
+                    <li>
+                      <p class="b1-font color-black">Up to 20 chairs</p>
+                    </li>
+                    <li>
+                      <p class="b1-font color-black">Up to 20 chairs</p>
+                    </li>
+                    <li>
+                      <p class="b1-font color-black">Up to 20 chairs</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end book room -->
     <!-- start feeback -->
     <div class="feedback">
       <div class="feedback__text b2-font color-white">FEEDBACK</div>
@@ -568,7 +617,11 @@
                           </p>
                         </div>
                         <div class="hotels__btn--view">
-                          <a href="" class="btn-more b3-font color-black">
+                          <button
+                            class="btn-more b3-font color-black"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalBookRoom"
+                          >
                             SEE OUR SPACE
                             <span>
                               <svg
@@ -584,7 +637,7 @@
                                 ></path>
                               </svg>
                             </span>
-                          </a>
+                          </button>
                         </div>
                       </div>
                     </div>

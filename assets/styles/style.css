@@ -3633,6 +3633,43 @@ section.spacer {
 .swiper-suites .swiper-slide {
   overflow: hidden;
 }
+#modalContactUsEvent .modal-header {
+  position: relative;
+  border: none;
+  padding: 0;
+}
+#modalContactUsEvent .modal-footer {
+  border: none;
+}
+#modalContactUsEvent .modal-header .btn-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-100%);
+  width: 48px;
+  height: 48px;
+  background-image: none;
+  background-color: var(--color-black);
+  opacity: 1;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#modalContactUsEvent .modal-header .btn-close:focus {
+  box-shadow: none;
+}
+#modalContactUsEvent .modal-body {
+  padding: 40px;
+}
+#modalContactUsEvent .modal-body .deals__view {
+  margin-top: 40px;
+}
+#modalContactUsEvent .modal-content {
+  border-radius: 0;
+}
 #modalContactUsEvent .modal-body .box {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -3655,7 +3692,7 @@ section.spacer {
   transform: translateY(-50%);
   user-select: none;
   pointer-events: none;
-  transition: all 0.3s;
+  transition: top 0.3s;
   margin-bottom: 0;
 }
 #modalContactUsEvent .form-input:not(:placeholder-shown) + .form-label {
@@ -3663,12 +3700,14 @@ section.spacer {
   display: inline-block;
   font-size: 12px;
   line-height: 18px;
+  font-weight: 900;
 }
 #modalContactUsEvent .form-input:focus + .form-label {
   top: -12px;
   display: inline-block;
   font-size: 12px;
   line-height: 18px;
+  font-weight: 900;
 }
 #modalContactUsEvent .form-input::placeholder {
   font-size: 16px;

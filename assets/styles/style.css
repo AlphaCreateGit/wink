@@ -2540,8 +2540,6 @@ ul {
 }
 .panels {
   width: 50%;
-  /* height: 100vh; */
-  background: lime;
   overflow: hidden;
   position: relative;
 }

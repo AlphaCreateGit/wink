@@ -171,16 +171,11 @@ ul {
   font-weight: 900;
   /* font-style: italic; */
 }
-.h3-font {
-  font-size: 20px;
-  line-height: 32px;
-  font-weight: 900;
-  letter-spacing: 0.03rem;
-}
+
 .h3-bold {
   font-weight: 900;
-  font-size: 24px;
-  line-height: 40px;
+  font-size: 28px;
+  line-height: 36px;
   letter-spacing: 0.03rem;
 }
 
@@ -3553,6 +3548,12 @@ section.spacer {
   border-color: var(--color-white);
   box-shadow: none;
 }
+.faqs .accordion-button:hover::after {
+  background-image: url(../images/ic_arrow_down_red.svg);
+}
+.faqs .accordion-item .accordion-button:hover {
+  color: var(--color-primary);
+}
 .faqs .accordion-button:not(.collapsed) {
   box-shadow: none;
 }
@@ -4040,3 +4041,108 @@ section.spacer {
   margin-bottom: 32px;
 }
 /* css blogs detail */
+/* css page contact */
+
+.contact-sec .faqs .accordion-item .accordion-button,
+.contact-sec .faqs .accordion-body {
+  background-color: var(--color-gray-10);
+}
+.contact-sec .faqs .accordion-body .hotels__btn--view {
+  margin-top: 24px;
+}
+.contact-sec .contact__content {
+  padding-top: 160px;
+}
+.contact-sec .contact__content .title {
+  margin-bottom: 40px;
+}
+.contact-sec .contact__form {
+  background-color: var(--color-white);
+  padding: 160px 40px 100px;
+  height: 100%;
+}
+.contact-sec .contact__form h3 {
+  margin-bottom: 24px;
+}
+.contact-sec .contact__form .desc {
+  margin-bottom: 32px;
+}
+.contact-sec .contact__form .group {
+  position: relative;
+  margin-bottom: 32px;
+}
+.contact-sec .contact__form .group input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #a9a9a9;
+  padding-bottom: 8px;
+}
+.contact-sec .contact__form .group textarea {
+  border: none;
+  resize: none;
+  width: 100%;
+  border-bottom: 1px solid #a9a9a9;
+}
+.contact-sec .contact__form .select-head {
+  border-bottom: 1px solid #a9a9a9;
+}
+.contact-sec .contact__form .group .form-label {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  user-select: none;
+  pointer-events: none;
+  transition: top 0.3s;
+  margin-bottom: 0;
+}
+.contact-sec .contact__form .form-input:not(:placeholder-shown) + .form-label {
+  top: -16px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
+  color: var(--color-black-50);
+}
+.contact-sec .contact__form .form-input:focus + .form-label {
+  top: -16px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
+  color: var(--color-black-50);
+}
+.contact-sec .dropdown-custom__menu {
+  left: 0;
+  width: 100%;
+  background-color: var(--color-gray-10);
+}
+.contact-sec .contact__form .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 56px;
+}
+.contact-sec .contact__form .checkbox .ic-check {
+  position: relative;
+}
+.contact-sec .contact__form .checkbox .ic-check .check-mark {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  background-color: #d9d9d9;
+  display: block;
+}
+.contact-sec .contact__form .checkbox .ic-check input[type="checkbox"] {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+}
+.contact-sec
+  .contact__form
+  .checkbox
+  .ic-check
+  input[type="checkbox"]:checked
+  + .check-mark {
+  background-color: var(--color-primary);
+}
+/* css page contact */

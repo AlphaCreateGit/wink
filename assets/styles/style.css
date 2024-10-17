@@ -343,7 +343,7 @@ ul {
   position: absolute;
   inset: 0;
   background-color: var(--color-primary);
-  clip-path: polygon(13% 0, 23% 0, 10% 100%, 0% 100%);
+  clip-path: polygon(10% 0, 18% 0, 8% 100%, 0% 100%);
   z-index: -1;
   transition: all 0.3s ease-in-out;
 }
@@ -373,7 +373,7 @@ ul {
   clip-path: polygon(6% 0, 100% 0, 94% 100%, 0% 100%);
 }
 .custom__btn:hover::before {
-  clip-path: polygon(13% 0, 100% 0, 87% 100%, 0% 100%);
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
 }
 .custom__btn span {
   transition: all 0.3s ease;
@@ -3555,6 +3555,10 @@ section.spacer {
 .faqs .accordion-item:first-of-type .accordion-button {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.faqs .accordion-button:not(.collapsed):hover::after {
+  transform: unset !important;
+  background-image: url(../images/ic_arrow_up.svg);
 }
 .faqs .accordion-item .accordion-button {
   padding: 16px 0;

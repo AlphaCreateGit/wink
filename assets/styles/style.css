@@ -3831,6 +3831,9 @@ section.spacer {
 .career-list {
   position: relative;
 }
+.why-join-sec .facilities__item p {
+  max-width: 100%;
+}
 /* end css page career */
 /* css page wink earth */
 .wink-earth .banner-hero__heading {

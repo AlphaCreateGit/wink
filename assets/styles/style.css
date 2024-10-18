@@ -272,6 +272,23 @@ ul {
 
 /* end css classname */
 /* custom style button */
+.cta-share {
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+  z-index: 99;
+  transition: all 0.4s;
+}
+.cta-share .share-icon a {
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
 .cta-mess {
   position: fixed;
   right: 40px;
@@ -1017,6 +1034,12 @@ ul {
   width: 100%;
   height: 100vh;
   position: relative;
+}
+.banner-hero__container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.06%, #000000 100%);
 }
 .banner-hero__container .img {
   width: 100%;

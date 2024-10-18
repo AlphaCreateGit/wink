@@ -97,6 +97,69 @@ function customAnimation() {
       }
     );
   });
+  gsap.utils.toArray(".data-fade-top").forEach((element, i) => {
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 70%",
+          end: "bottom 70%",
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "circ.out",
+        stagger: 0.1,
+      }
+    );
+  });
+  gsap.utils.toArray(".data-fade-right").forEach((element, i) => {
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        x: 100,
+      },
+      {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+          end: "bottom 80%",
+        },
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "circ.out",
+        stagger: 0.1,
+      }
+    );
+  });
+  gsap.utils.toArray(".data-fade-left").forEach((element, i) => {
+    gsap.fromTo(
+      element,
+      {
+        opacity: 0,
+        x: -100,
+      },
+      {
+        scrollTrigger: {
+          trigger: element,
+          start: "top 75%",
+          end: "bottom 75%",
+        },
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "circ.out",
+        stagger: 0.1,
+      }
+    );
+  });
 }
 function scrollHeader() {
   let height;

@@ -11,7 +11,10 @@
   --color-grey: #777777;
   --color-header-hotels: #e6e6e6;
 }
-
+::selection {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
 *,
 *:before,
 *:after {
@@ -103,23 +106,27 @@ ul {
   font-size: 48px;
   line-height: 68px;
   font-weight: 900;
+  letter-spacing: 0.04rem;
 }
 .h1-bold {
   font-size: 36px;
   line-height: 48px;
   font-weight: 900;
+  letter-spacing: 0.04rem;
 }
 
 .h1-light {
   font-size: 48px;
   line-height: 68px;
   font-weight: 300;
+  letter-spacing: 0.04rem;
 }
 
 .h2-font {
   font-size: 36px;
   line-height: 54px;
   font-weight: 900;
+  letter-spacing: 0.04rem;
 }
 
 .b1-font {
@@ -139,23 +146,27 @@ ul {
   font-size: 12px;
   line-height: 18px;
   font-weight: 900;
+  letter-spacing: 0.04rem;
 }
 .b3-font {
   font-size: 12px;
   line-height: 18px;
   font-weight: 900;
+  letter-spacing: 0.04rem;
 }
 
 .b2-italic {
   font-size: 13px;
   line-height: 24px;
   font-weight: 300;
+  letter-spacing: 0.04rem;
   /* font-style: italic; */
 }
 
 .b2-bold {
-  font-size: 13px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.04rem;
   font-weight: 900;
 }
 
@@ -163,12 +174,14 @@ ul {
   font-size: 12px;
   line-height: 18px;
   font-weight: 900;
+  letter-spacing: 0.04rem;
 }
 
 .h3-italic {
   font-size: 24px;
   line-height: 40px;
   font-weight: 900;
+  letter-spacing: 0.04rem;
   /* font-style: italic; */
 }
 
@@ -177,23 +190,26 @@ ul {
   font-size: 28px;
   line-height: 36px;
   letter-spacing: 0.03rem;
+  letter-spacing: 0.04rem;
 }
 
 .h4-font {
   font-size: 20px;
   line-height: 28px;
   font-weight: 900;
-  letter-spacing: 0.03rem;
+  letter-spacing: 0.04rem;
 }
 .h5-bold {
   font-size: 20px;
   line-height: 32px;
   font-weight: 900;
+  letter-spacing: 0.04rem;
 }
 .h5-font {
   font-size: 20px;
   line-height: 32px;
   font-weight: 400;
+  letter-spacing: 0.04rem;
 }
 
 .color-black {
@@ -2045,6 +2061,12 @@ ul {
   flex-direction: column;
   gap: 16px;
 }
+.rewards__item p {
+  transition: all 0.3s;
+}
+.rewards__item:hover p {
+  color: var(--color-primary);
+}
 .rewards__item .icon {
   width: 72px;
   height: 72px;
@@ -2240,7 +2262,20 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
-
+.hotels__box {
+  position: relative;
+}
+.hotels__box .hotels__tag {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  z-index: 2;
+}
+.hotels__box .hotels__tag .tag {
+  background-color: var(--color-black);
+  display: inline-block;
+  padding: 12px 24px;
+}
 .hotels__box:hover .hotels__image img {
   transform: scale(1.05);
 }

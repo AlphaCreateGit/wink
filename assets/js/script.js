@@ -1,3 +1,5 @@
+"use strict";
+$ = jQuery;
 $(document).ready(function () {
   const originalTitle = document.title;
 
@@ -863,6 +865,7 @@ function swiperRoomSuites() {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 40,
+      speed: 1000,
       // loop: true,
       pagination: {
         el: ".swiper-control-parent .swiper-pagination",
@@ -988,7 +991,7 @@ function amentities() {
 }
 function swiperSuites() {
   if ($(".wink-room__suites").length) {
-    let interleaveOffsetSuites = 0.9;
+    let interleaveOffsetSuites = 0.8;
     var swiperSuites = $(".swiper-suites");
     swiperSuites.each(function () {
       var $this = $(this); // Cache the current Swiper element
@@ -998,6 +1001,7 @@ function swiperSuites() {
       new Swiper($this[0], {
         slidesPerView: 1,
         allowTouchMove: false,
+        speed: 1000,
         pagination: {
           el: $this.find(".swiper-pagination")[0],
           type: "fraction",
@@ -1072,6 +1076,7 @@ function swiperBookRoom() {
     new Swiper($this[0], {
       slidesPerView: 1,
       allowTouchMove: false,
+      speed: 1000,
       pagination: {
         el: $this.find(".swiper-pagination")[0],
         type: "fraction",

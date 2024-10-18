@@ -1589,9 +1589,9 @@ ul {
   gap: 64px 0;
   padding-left: 64px;
 }
-.experience__container .row {
+/* .experience__container .row {
   overflow: hidden;
-}
+} */
 
 .experience__heading {
   max-width: 580px;
@@ -3668,8 +3668,8 @@ section.spacer {
   right: 0;
   top: 0;
   transform: translateY(-100%);
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   background-image: none;
   background-color: var(--color-black);
   opacity: 1;
@@ -3682,21 +3682,22 @@ section.spacer {
 }
 #modalBookRoom .modal-dialog {
   max-width: 670px;
+  transform: translateY(30px);
 }
 #modalBookRoom .modal-header .btn-close:focus {
   box-shadow: none;
 }
 #modalBookRoom .modal-body {
   padding: 40px;
+  border-bottom: 6px solid var(--color-primary);
 }
 #modalBookRoom .modal-body .head {
   margin-bottom: 40px;
 }
-#modalBookRoom .modal-body .body .img {
-  width: 100%;
-  height: 300px;
-  margin-bottom: 24px;
+#modalBookRoom .modal-body .desc {
+  margin-top: 24px;
 }
+
 #modalBookRoom .modal-body .body .img img {
   width: 100%;
   height: 100%;
@@ -3731,8 +3732,8 @@ section.spacer {
   right: 0;
   top: 0;
   transform: translateY(-100%);
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   background-image: none;
   background-color: var(--color-black);
   opacity: 1;
@@ -3748,6 +3749,7 @@ section.spacer {
 }
 #modalContactUsEvent .modal-body {
   padding: 40px;
+  border-bottom: 6px solid var(--color-primary);
 }
 #modalContactUsEvent .modal-body .deals__view {
   margin-top: 40px;
@@ -3802,6 +3804,55 @@ section.spacer {
 }
 #modalContactUsEvent .modal-dialog {
   max-width: 895px;
+}
+.swiper-book-room {
+  position: relative;
+}
+.swiper-book-room .swiper-slide {
+  overflow: hidden;
+}
+.swiper-book-room .img {
+  width: 100%;
+  height: 340px;
+}
+.swiper-book-room .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-book-room .swiper-button-next,
+.swiper-book-room .swiper-button-prev {
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-white);
+  top: unset;
+  bottom: 0;
+}
+.swiper-book-room .swiper-button-next {
+  right: 0;
+}
+.swiper-book-room .swiper-button-prev {
+  left: auto;
+  right: 44px;
+}
+.swiper-book-room .swiper-button-next.swiper-button-disabled,
+.swiper-book-room .swiper-button-prev.swiper-button-disabled {
+  opacity: 1;
+}
+.swiper-book-room .swiper-pagination-fraction {
+  background-color: var(--color-black);
+  width: 60px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
+  color: var(--color-white);
+  bottom: 0;
+  left: auto;
+  right: 88px;
 }
 /* end page event */
 /* css page company */
@@ -4266,8 +4317,31 @@ section.spacer {
   transition: top 0.3s;
   margin-bottom: 0;
 }
+.custom-file-input {
+  color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: attr(text-input);
+  color: var(--color-black);
+  display: inline-block;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.custom-file-input:active {
+  outline: 0;
+}
+
 .contact-sec .contact__form .form-input:not(:placeholder-shown) + .form-label {
-  top: -16px;
+  top: -17px;
   display: inline-block;
   font-size: 12px;
   line-height: 18px;
@@ -4275,13 +4349,14 @@ section.spacer {
   color: var(--color-black-50);
 }
 .contact-sec .contact__form .form-input:focus + .form-label {
-  top: -16px;
+  top: -17px;
   display: inline-block;
   font-size: 12px;
   line-height: 18px;
   font-weight: 900;
   color: var(--color-black-50);
 }
+
 .contact-sec .dropdown-custom__menu {
   left: 0;
   width: 100%;
@@ -4319,3 +4394,42 @@ section.spacer {
   background-color: var(--color-primary);
 }
 /* css page contact */
+
+/* page career detail */
+.career-content-sec .contact__form {
+  padding: 40px;
+  top: 120px;
+}
+.career-content-sec .career-box .title {
+  margin-bottom: 32px;
+}
+.career-content-sec .career-table {
+  margin-bottom: 32px;
+}
+.career-content-sec .career-table ul li .item {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  padding: 16px 0;
+  border-bottom: 2px solid #a9a9a9;
+}
+.career-content-sec .career-desc ul {
+  list-style-type: disc;
+  padding-left: 15px;
+  margin: 0;
+}
+.career-content-sec .career-desc ul li p {
+  margin-bottom: 0;
+}
+.career-content-sec .career-desc p {
+  margin-bottom: 12px;
+}
+.career-content-sec .career-desc br {
+  content: "" !important;
+  display: block !important;
+  margin-bottom: 32px !important;
+}
+.career-content-sec .career-table ul li:first-child .item {
+  border-top: 2px solid #a9a9a9;
+}
+
+/* page career detail */

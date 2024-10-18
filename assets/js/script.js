@@ -11,7 +11,6 @@ $(document).ready(function () {
   scrollHeader();
   subMenuHeader();
   swiperBanner();
-  scrollRoom();
   scrollFeedBack();
   scrollMess();
   menubar();
@@ -30,6 +29,7 @@ $(document).ready(function () {
   amentities();
   swiperSuites();
   carrersSticky();
+  swiperBookRoom();
 });
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
@@ -318,72 +318,6 @@ function scrollMess() {
 
   // Re-initialize ScrollTrigger when page is refreshed
   $(window).on("load", initializeScrollTrigger);
-}
-
-function scrollRoom() {
-  gsap.registerPlugin(ScrollTrigger);
-
-  // First animation: height from 0 to 365
-  // Tạo timeline GSAP với ScrollTrigger
-  const tl1 = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".wink-room",
-      start: "-10px 60%",
-      end: "-10px 60%",
-      scrub: 1,
-      // markers: true,
-    },
-  });
-
-  if (window.innerWidth <= 767) {
-    tl1.to(".before-elements", {
-      height: 189,
-      duration: 1,
-      ease: "none",
-    });
-  } else {
-    tl1.to(".before-elements", {
-      height: 365,
-      duration: 1,
-      ease: "none",
-    });
-  }
-
-  // Second animation with scrub
-  const tl2 = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".wink-room",
-      start: "400px 80%", // Start after the first animation completes
-      end: "bottom 80%",
-      scrub: 1,
-      toggleActions: "play reverse play reverse",
-      // markers: true,
-    },
-  });
-  if (window.innerWidth <= 767) {
-    const heightSlider = $(".wink-room__slide").height();
-    const targetY = heightSlider + 250;
-    tl2.to(".before-elements", {
-      width: 32,
-      height: 27,
-      left: 0,
-      x: 0,
-      y: targetY,
-      duration: 1,
-    });
-  } else {
-    const heightSlider = $(".wink-room__slide").height();
-    const targetY = heightSlider + 450;
-    tl2.to(".before-elements", {
-      width: 32,
-      height: 27,
-      left: -24,
-      x: 0,
-      y: targetY,
-      duration: 1,
-    });
-  }
-  ScrollTrigger.refresh();
 }
 
 function menubar() {
@@ -1127,4 +1061,62 @@ function carrersSticky() {
   //     markers: true,
   //   },
   // });
+}
+function swiperBookRoom() {
+  let interleaveOffsetChild = 0.9;
+  var swiperChildImage = $(".swiper-book-room");
+  swiperChildImage.each(function () {
+    var $this = $(this); // Cache the current Swiper element
+
+    // Initialize Swiper for each element
+    new Swiper($this[0], {
+      slidesPerView: 1,
+      allowTouchMove: false,
+      pagination: {
+        el: $this.find(".swiper-pagination")[0],
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: $this.find(".swiper-button-next")[0],
+        prevEl: $this.find(".swiper-button-prev")[0],
+      },
+      watchSlidesProgress: true,
+      mousewheelControl: true,
+      keyboardControl: true,
+      // loop: true,
+
+      on: {
+        progress: function (swiper) {
+          swiper.slides.forEach(function (slide) {
+            var slideProgress = slide.progress || 0;
+            var innerOffset = swiper.width * interleaveOffsetChild;
+            var innerTranslate = slideProgress * innerOffset;
+            // Kiểm tra nếu innerTranslate không phải là NaN
+            if (!isNaN(innerTranslate)) {
+              var slideInner = slide.querySelector(".slide-banner");
+              if (slideInner) {
+                slideInner.style.transform =
+                  "translate3d(" + innerTranslate + "px, 0, 0)";
+              }
+            }
+          });
+        },
+        touchStart: function (swiper) {
+          swiper.slides.forEach(function (slide) {
+            slide.style.transition = "";
+          });
+        },
+        setTransition: function (swiper, speed) {
+          var easing = "cubic-bezier(0.25, 0.1, 0.25, 1)";
+          swiper.slides.forEach(function (slide) {
+            slide.style.transition = speed + "ms " + easing;
+            var slideInner = slide.querySelector(".slide-banner");
+            if (slideInner) {
+              slideInner.style.transition = speed + "ms " + easing;
+            }
+          });
+        },
+      },
+    });
+  });
 }

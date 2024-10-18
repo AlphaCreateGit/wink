@@ -865,7 +865,7 @@ function swiperRoomSuites() {
       slidesPerView: 2,
       slidesPerGroup: 2,
       spaceBetween: 40,
-      speed: 1000,
+
       // loop: true,
       pagination: {
         el: ".swiper-control-parent .swiper-pagination",
@@ -885,6 +885,7 @@ function swiperRoomSuites() {
       new Swiper($this[0], {
         slidesPerView: 1,
         allowTouchMove: false,
+        speed: 1000,
         pagination: {
           el: $this.find(".swiper-pagination")[0],
           type: "fraction",

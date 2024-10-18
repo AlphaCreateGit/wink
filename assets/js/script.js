@@ -97,7 +97,7 @@ function customAnimation() {
       }
     );
   });
-  gsap.utils.toArray(".data-fade-top").forEach((element, i) => {
+  gsap.utils.toArray(".data-fade-up").forEach((element, i) => {
     gsap.fromTo(
       element,
       {
@@ -123,13 +123,13 @@ function customAnimation() {
       element,
       {
         opacity: 0,
-        x: 100,
+        x: 200,
       },
       {
         scrollTrigger: {
           trigger: element,
-          start: "top 80%",
-          end: "bottom 80%",
+          start: "top 75%",
+          end: "bottom 75%",
         },
         opacity: 1,
         x: 0,
@@ -144,7 +144,7 @@ function customAnimation() {
       element,
       {
         opacity: 0,
-        x: -100,
+        x: -200,
       },
       {
         scrollTrigger: {
@@ -154,7 +154,7 @@ function customAnimation() {
         },
         opacity: 1,
         x: 0,
-        duration: 1,
+        duration: 1.5,
         ease: "circ.out",
         stagger: 0.1,
       }

@@ -1589,6 +1589,9 @@ ul {
   gap: 64px 0;
   padding-left: 64px;
 }
+.experience__container .row {
+  overflow: hidden;
+}
 
 .experience__heading {
   max-width: 580px;

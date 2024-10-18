@@ -3847,6 +3847,9 @@ section.spacer {
   display: grid;
   grid-template-columns: 3fr 2fr 1.5fr 1.5fr;
 }
+.position-list .position-link:hover {
+  color: var(--color-primary);
+}
 .position-list .position-item .position-item-sub {
   display: flex;
   align-items: center;

@@ -4673,4 +4673,32 @@ section.spacer {
 .member-contact-overlay {
   height: 970px;
 }
+.review-sec .hotels__grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 24px;
+}
+.review-sec .hotels__container {
+  padding-top: 160px;
+}
+.sign-in-sec .member-contact {
+  padding-top: 160px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: var(--color-white);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.sign-in-sec .member-contact h3 {
+  margin-bottom: 24px;
+}
+.sign-in-sec .member-contact .desc {
+  margin-bottom: 40px;
+}
+.sign-in-sec .member-contact .group {
+  margin-bottom: 32px;
+}
+.sign-in-sec .member-contact .checkbox {
+  margin-bottom: 56px;
+}
 /* css page member login */

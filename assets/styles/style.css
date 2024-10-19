@@ -289,6 +289,15 @@ ul {
   border-radius: 50%;
   transition: all 0.3s ease;
 }
+.cta-share .share-icon a:hover {
+  background-color: var(--color-black);
+}
+.cta-share .share-icon a:hover svg path {
+  fill: var(--color-white);
+}
+.cta-share.hide {
+  left: -50px;
+}
 .cta-mess {
   position: fixed;
   right: 40px;
@@ -1705,6 +1714,14 @@ ul {
 /* start css footer */
 .footer {
   position: relative;
+}
+.footer.freeze .cta-share {
+  position: absolute !important;
+  bottom: unset !important;
+  top: -80px !important;
+  left: 40px !important;
+  transform: translate(0) !important;
+  transition: all 0.4s;
 }
 .footer.freeze .cta-mess {
   position: absolute !important;

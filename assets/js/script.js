@@ -14,7 +14,7 @@ $(document).ready(function () {
   subMenuHeader();
   swiperBanner();
   scrollFeedBack();
-  scrollMess();
+  scrollCTA();
   menubar();
   selectMap();
   bookingForm();
@@ -301,7 +301,7 @@ function scrollFeedBack() {
   // Re-initialize ScrollTrigger when page is refreshed
   $(window).on("load", initializeScrollTrigger);
 }
-function scrollMess() {
+function scrollCTA() {
   function initializeScrollTrigger() {
     ScrollTrigger.create({
       start: "top top",
@@ -309,8 +309,10 @@ function scrollMess() {
       onUpdate: (self) => {
         if (self.direction === -1) {
           $(".cta-mess").removeClass("hide");
+          $(".cta-share").removeClass("hide");
         } else {
           $(".cta-mess").addClass("hide");
+          $(".cta-share").addClass("hide");
         }
       },
     });

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Careers Details</title>
+    <title>Member Login</title>
     <!-- import favicon -->
     <link
       rel="icon"
@@ -32,9 +32,6 @@
     <!-- end import link custom css -->
   </head>
   <body>
-    <!-- modal contact -->
-
-    <!-- end contact -->
     <!-- start feeback -->
     <div class="feedback">
       <div class="feedback__text b2-font color-white">FEEDBACK</div>
@@ -102,7 +99,9 @@
           <nav>
             <ul>
               <li>
-                <a href="./hotels.html" class="b3-font color-black">HOTELS</a>
+                <a href="./hotels.html" class="b3-font color-black active"
+                  >HOTELS</a
+                >
               </li>
 
               <li>
@@ -114,7 +113,7 @@
                 >
               </li>
               <li>
-                <a href="./wink-rewards.html" class="b3-font color-black"
+                <a href="./experience.html" class="b3-font color-black"
                   >WINK REWARDS LIFESTYLE</a
                 >
               </li>
@@ -270,240 +269,205 @@
       </div>
     </header>
     <!-- end header -->
-    <main class="page-details-career">
+    <main class="page-tpl-member-login">
       <!-- start section hero banner -->
-      <section class="banner-hero wink-earth">
+      <section class="banner-hero member-login">
         <div class="container-fluid p-0">
           <div class="banner-hero__container">
-            <div class="swiper swiper-banner">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="slide-banner">
-                    <div class="banner-hero__image">
-                      <img src="./assets/images/hero-banner.webp" alt="" />
-                    </div>
-                    <div class="banner-hero__heading">
-                      <h1 class="h1-bold color-white">
-                        STAY 24-HOURS WITH 24/7 SELF-SERVICES
-                      </h1>
-                    </div>
+            <div class="img">
+              <img src="./assets/images/e_3.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="member-contact-overlay"></div>
+      <section class="member-contact">
+        <div class="container-fluid p-0">
+          <div class="row g-0">
+            <div class="col-md-10 offset-md-1">
+              <div class="member-box">
+                <div class="head">
+                  <h2 class="h1-bold color-primary">
+                    Join Wink Rewards Lifestyle For Free
+                  </h2>
+                  <div class="desc h5-font color-black">
+                    <p>
+                      Join Wink’s Community of One. Everyone is rewarded in our
+                      tier-less Loyalty Program. Get free nights fast.​
+                    </p>
                   </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="slide-banner">
-                    <div class="banner-hero__image">
-                      <img src="./assets/images/room-2.webp" alt="" />
+                <div class="social">
+                  <ul>
+                    <li>
+                      <div class="item">
+                        <div class="icon">
+                          <img
+                            src="./assets/images/ic_free_night.svg"
+                            alt="icon"
+                          />
+                        </div>
+                        <p class="h5-bold color-black">Earn Free Nights</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item">
+                        <div class="icon">
+                          <img
+                            src="./assets/images/ic_member_rates.svg"
+                            alt="icon"
+                          />
+                        </div>
+                        <p class="h5-bold color-black">Member Rates</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item">
+                        <div class="icon">
+                          <img src="./assets/images/ic_f_b.svg" alt="icon" />
+                        </div>
+                        <p class="h5-bold color-black">F&B discounts</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item">
+                        <div class="icon">
+                          <img src="./assets/images/ic_offer.svg" alt="icon" />
+                        </div>
+                        <p class="h5-bold color-black">Exclusive offers</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="form">
+                  <form action="">
+                    <div class="box">
+                      <div class="group">
+                        <input type="text" class="form-input" placeholder="" />
+                        <label for="name" class="form-label b1-font color-gray"
+                          >First name</label
+                        >
+                      </div>
+                      <div class="group">
+                        <input type="text" class="form-input" placeholder="" />
+                        <label for="name" class="form-label b1-font color-gray"
+                          >Last name</label
+                        >
+                      </div>
+
+                      <div class="group">
+                        <input type="text" class="form-input" placeholder="" />
+                        <label for="name" class="form-label b1-font color-gray"
+                          >Email address</label
+                        >
+                      </div>
+                      <div class="group">
+                        <input type="text" class="form-input" placeholder="" />
+                        <label for="name" class="form-label b1-font color-gray"
+                          >Phone number</label
+                        >
+                      </div>
+                      <div class="group input-password">
+                        <input
+                          type="password"
+                          class="form-input"
+                          placeholder=""
+                        />
+                        <label for="name" class="form-label b1-font color-gray"
+                          >Password</label
+                        >
+                        <div class="icon-eye"></div>
+                      </div>
+                      <div class="group input-password">
+                        <input
+                          type="password"
+                          class="form-input"
+                          placeholder=""
+                        />
+                        <label for="name" class="form-label b1-font color-gray"
+                          >Confirm password</label
+                        >
+                        <div class="icon-eye"></div>
+                      </div>
                     </div>
-                    <div class="banner-hero__heading">
-                      <h1 class="h1-bold color-white">
-                        STAY 24-HOURS WITH 24/7 SELF-SERVICES
-                      </h1>
+                    <div class="note">
+                      <ul>
+                        <li>
+                          <p class="b1-font color-black">
+                            Password should be 8-20 characters
+                          </p>
+                        </li>
+                        <li>
+                          <p class="b1-font color-black">
+                            Password should have an upper case letter
+                          </p>
+                        </li>
+                        <li>
+                          <p class="b1-font color-black">
+                            Password should have a lower case letter
+                          </p>
+                        </li>
+                        <li>
+                          <p class="b1-font color-black">
+                            Password should have a number or acceptable
+                            character $ ! # & @ ? % = _
+                          </p>
+                        </li>
+                      </ul>
                     </div>
-                  </div>
+                    <div class="tick">
+                      <div class="checkbox">
+                        <div class="ic-check">
+                          <input type="checkbox" name="checklist" />
+                          <span class="check-mark"></span>
+                        </div>
+                        <label for="checklist" class="b2-bold color-black-50">
+                          Remember me</label
+                        >
+                      </div>
+                      <div class="checkbox">
+                        <div class="ic-check">
+                          <input type="checkbox" name="checklist" />
+                          <span class="check-mark"></span>
+                        </div>
+                        <label for="checklist" class="b2-bold color-black-50">
+                          I would like to receive peronalized communications,
+                          including offers, details about promotions, and
+                          travel-related products from Wink Hotel vie
+                          email</label
+                        >
+                      </div>
+                    </div>
+                    <p class="b2-bold color-black">
+                      By signing up, I agree to Wink Hotel Terms of Use. I also
+                      acknowledge Wink Hotel Privacy Statement located in the
+                      Privacy Wink Hotel
+                    </p>
+                    <div
+                      class="form-submit d-flex align-items-center justify-content-between"
+                    >
+                      <div class="sign-in b3-bold color-black">
+                        Already a Member?
+                        <span>
+                          <a href="" class="color-primary">Sign in</a>
+                        </span>
+                      </div>
+                      <div class="deals__view">
+                        <button class="custom__btn">
+                          <span class="b3-font color-black d-block"
+                            >SIGN UP</span
+                          >
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
-              <!-- <div class="swiper-button-next swiper-button-white"></div>
-              <div class="swiper-button-prev swiper-button-white"></div> -->
             </div>
           </div>
         </div>
       </section>
       <!-- end section hero banner -->
-      <div class="spacing"></div>
-      <section class="career-content-sec contact-sec">
-        <div class="container-fluid p-0">
-          <div class="row g-0">
-            <div class="col-md-6 offset-md-1">
-              <div class="career-box">
-                <h2 class="h1-bold color-black title">General Manager</h2>
-                <div class="career-table">
-                  <ul>
-                    <li>
-                      <div class="item">
-                        <div class="b2-bold color-black">PROPERTY</div>
-                        <div class="desc b1-bold">Wink Hotel Hai Phong</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="item">
-                        <div class="b2-bold color-black">LOCATION</div>
-                        <div class="desc b1-bold">Hai Phong</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="item">
-                        <div class="b2-bold color-black">DEPARTMENT</div>
-                        <div class="desc b1-bold">Operation</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="item">
-                        <div class="b2-bold color-black">DEADLINE</div>
-                        <div class="desc b1-bold">20/05/2025</div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="career-desc b1-font color-black">
-                  <p>Job Description:</p>
-                  <ul>
-                    <li>
-                      <p>
-                        The General Manager is an Executive and the appointment
-                        is of critical nature and of utmost importance to the
-                        Management of Wink Hotels. Business leader of the
-                        property with responsibility for all aspects of the
-                        operation, including guest and employee satisfaction,
-                        human resources, financial performance, sales, marketing
-                        and revenue, etc. Hotel General Manager will report
-                        directly to Director of operations and will be
-                        responsible for overseeing all operation activities of
-                        the Hotel.
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Business leader of the property with responsibility for
-                        all aspects of the operation, including guest and
-                        employee satisfaction, human resources, financial
-                        performance, sales, marketing and revenue, etc.
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Hotel General Manager will report directly to Director
-                        of operations and will be responsible for overseeing all
-                        operation activities of the Hotel.
-                      </p>
-                    </li>
-                  </ul>
-                  <br />
-                  <p>Job Requirements:</p>
-                  <ul>
-                    <li>
-                      <p>
-                        The General Manager is an Executive and the appointment
-                        is of critical nature and of utmost importance to the
-                        Management of Wink Hotels. Business leader of the
-                        property with responsibility for all aspects of the
-                        operation, including guest and employee satisfaction,
-                        human resources, financial performance, sales, marketing
-                        and revenue, etc. Hotel General Manager will report
-                        directly to Director of operations and will be
-                        responsible for overseeing all operation activities of
-                        the Hotel.
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Business leader of the property with responsibility for
-                        all aspects of the operation, including guest and
-                        employee satisfaction, human resources, financial
-                        performance, sales, marketing and revenue, etc.
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        Hotel General Manager will report directly to Director
-                        of operations and will be responsible for overseeing all
-                        operation activities of the Hotel.
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 offset-md-1">
-              <div class="contact__form career-sec">
-                <h3 class="h3-bold color-primary">Job Application</h3>
-
-                <form action="">
-                  <div class="box">
-                    <div class="group">
-                      <input
-                        type="text"
-                        class="form-input b1-font"
-                        placeholder=""
-                      />
-                      <label
-                        for="name"
-                        class="form-label b1-font color-black-50"
-                        >Full name</label
-                      >
-                    </div>
-
-                    <div class="group">
-                      <input
-                        type="text"
-                        class="form-input b1-font"
-                        placeholder=""
-                      />
-                      <label
-                        for="name"
-                        class="form-label b1-font color-black-50"
-                        >Number phone</label
-                      >
-                    </div>
-                    <div class="group">
-                      <input
-                        type="text"
-                        class="form-input b1-font"
-                        placeholder=""
-                      />
-                      <label
-                        for="name"
-                        class="form-label b1-font color-black-50"
-                        >Email</label
-                      >
-                    </div>
-                    <div class="group">
-                      <input
-                        class="form-input b1-font custom-file-input"
-                        type="file"
-                        text-input="Select file"
-                      />
-
-                      <label
-                        for="name"
-                        class="form-label b1-font color-black-50 form-label-file"
-                        >Upload CV</label
-                      >
-                    </div>
-                    <div class="group">
-                      <textarea
-                        type="text"
-                        class="form-input b1-font"
-                        placeholder=""
-                        rows="4"
-                      ></textarea>
-                      <label
-                        for="name"
-                        class="form-label b1-font color-black-50"
-                        >Message</label
-                      >
-                    </div>
-                    <div class="checkbox">
-                      <div class="ic-check">
-                        <input type="checkbox" name="checklist" />
-                        <span class="check-mark"></span>
-                      </div>
-                      <label for="checklist" class="b2-bold color-black-50">
-                        If the desired position is no longer available</label
-                      >
-                    </div>
-                    <div class="deals__view d-flex justify-content-end">
-                      <button class="custom__btn">
-                        <span class="b3-font color-black d-block">SEND</span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="spacing"></div>
     </main>
     <!-- start footer -->
     <footer class="footer">
@@ -523,25 +487,6 @@
                 fill-rule="evenodd"
                 clip-rule="evenodd"
                 d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 11.8001 0.475633 13.4891 1.30809 14.9482L0.924447 19.827L6 19.1679C7.22493 19.7031 8.57779 20 10 20ZM4 13.3158L8.10526 7.78947L11.2632 10.1579L16 7L11.2632 13.3158L8.10526 11.2105L4 13.3158Z"
-                fill="#C22033"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-      <!-- nút share chỉ có ở page career details  -->
-      <div class="cta-share">
-        <div class="share-icon">
-          <a href="">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.75022 8.75086C6.23247 8.75082 5.72219 8.87449 5.2619 9.11156C4.8016 9.34863 4.40461 9.69224 4.10398 10.1138C3.80335 10.5353 3.60778 11.0226 3.53356 11.535C3.45935 12.0474 3.50863 12.5701 3.6773 13.0596C3.84598 13.5492 4.12917 13.9913 4.50328 14.3492C4.8774 14.7071 5.33161 14.9705 5.82811 15.1174C6.3246 15.2642 6.84899 15.2904 7.35762 15.1936C7.86625 15.0968 8.34439 14.8798 8.75222 14.5609L8.82022 14.6149L13.5502 17.9269C13.4098 18.7096 13.5613 19.5167 13.9759 20.1953C14.3905 20.8739 15.0396 21.3769 15.8002 21.6091C16.5608 21.8413 17.3801 21.7866 18.1031 21.4553C18.826 21.124 19.4024 20.5391 19.7232 19.8114C20.0439 19.0837 20.0866 18.2636 19.8434 17.5065C19.6001 16.7494 19.0877 16.1077 18.4031 15.703C17.7185 15.2983 16.9093 15.1587 16.1287 15.3105C15.3481 15.4623 14.6502 15.8951 14.1672 16.5269L9.68822 13.3919C9.88822 12.9709 10.0002 12.4989 10.0002 12.0009C10.0002 11.5029 9.88822 11.0309 9.68822 10.6099L14.1682 7.47386C14.6512 8.10564 15.3491 8.5384 16.1297 8.69023C16.9103 8.84205 17.7195 8.70239 18.4041 8.29768C19.0887 7.89298 19.6011 7.25133 19.8444 6.4942C20.0876 5.73708 20.0449 4.91703 19.7242 4.18932C19.4034 3.46161 18.827 2.87674 18.1041 2.54545C17.3811 2.21415 16.5618 2.15943 15.8012 2.39163C15.0406 2.62383 14.3915 3.12685 13.9769 3.80544C13.5623 4.48403 13.4108 5.2911 13.5512 6.07386L8.82022 9.38786L8.75222 9.44086C8.18101 8.99312 7.476 8.75014 6.75022 8.75086Z"
                 fill="#C22033"
               />
             </svg>

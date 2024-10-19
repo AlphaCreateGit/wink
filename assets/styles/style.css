@@ -601,6 +601,9 @@ ul {
   color: var(--color-primary);
   /* background-position: 0%; */
 }
+.header__btn-sign-in:hover {
+  color: var(--color-white);
+}
 
 .header__nav nav ul li a::before {
   content: "";
@@ -2623,7 +2626,7 @@ ul {
 }
 .comming-soon .panels .panel {
   background-size: cover;
-  background-position: 50% 100%;
+  background-position: 50% 0%;
   height: 100vh;
   background-image: var(--img);
 }
@@ -4517,3 +4520,157 @@ section.spacer {
 }
 
 /* page career detail */
+/* css page member login */
+.member-login .banner-hero__container {
+  height: 540px;
+}
+.member-login .banner-hero__container::before {
+  content: unset;
+}
+.member-contact .member-box {
+  background-color: var(--color-white);
+  padding: 80px 115px 80px;
+}
+.member-contact .member-box .head {
+  text-align: center;
+  margin-bottom: 56px;
+  padding: 0 100px;
+}
+.member-contact .member-box .head h2 {
+  margin-bottom: 32px;
+}
+.member-contact .member-box .social ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.member-contact .member-box .social ul li .item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.member-contact .form {
+  margin-top: 36px;
+}
+.member-contact .form .box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 40px;
+}
+.member-contact .form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-gray-50);
+  padding-bottom: 8px;
+}
+.member-contact .group {
+  position: relative;
+}
+.member-contact .group .icon-eye {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/ic_eye_hidden.svg");
+  transition: background-image 0.3s;
+}
+.member-contact .group .icon-eye.change-icon {
+  background-image: url("../images/ic_eye_show.svg");
+}
+.member-contact .group .form-label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  pointer-events: none;
+  transition: top 0.3s;
+  margin-bottom: 0;
+}
+.member-contact .form-input:not(:placeholder-shown) + .form-label {
+  top: -12px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
+}
+.member-contact .form-input:focus + .form-label {
+  top: -12px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
+}
+.member-contact .form-input::placeholder {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--color-black);
+  letter-spacing: 0.04px;
+}
+.member-contact .form .box {
+  margin-bottom: 24px;
+}
+.member-contact .form .note {
+  margin-bottom: 40px;
+}
+.member-contact .form .note ul {
+  list-style-type: disc;
+  padding-left: 15px;
+}
+.member-contact .tick {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin-bottom: 40px;
+}
+.member-contact .checkbox {
+  display: flex;
+  gap: 12px;
+}
+.member-contact .checkbox .ic-check {
+  position: relative;
+}
+.member-contact .checkbox .ic-check .check-mark {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  background-color: #d9d9d9;
+  display: block;
+}
+.member-contact .checkbox .ic-check input[type="checkbox"] {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+}
+.member-contact
+  .checkbox
+  .ic-check
+  input[type="checkbox"]:checked
+  + .check-mark {
+  background-color: var(--color-primary);
+}
+.member-contact .deals__view {
+  margin-top: 0;
+}
+.member-contact .form-submit {
+  margin-top: 56px;
+}
+.member-contact .form-submit .sign-in a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+.page-tpl-member-login {
+  position: relative;
+}
+.page-tpl-member-login .member-contact {
+  position: absolute;
+  top: 420px;
+}
+.member-contact-overlay {
+  height: 970px;
+}
+/* css page member login */

@@ -32,6 +32,7 @@ $(document).ready(function () {
   swiperSuites();
   carrersSticky();
   swiperBookRoom();
+  showOrHidePasswords();
 });
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
@@ -1122,5 +1123,17 @@ function swiperBookRoom() {
         },
       },
     });
+  });
+}
+function showOrHidePasswords() {
+  let valueInput = $(".input-password .form-input");
+  $(".input-password .icon-eye").on("click", function () {
+    if (valueInput.attr("type") === "password") {
+      valueInput.attr("type", "text");
+      $(this).addClass("change-icon");
+    } else {
+      valueInput.attr("type", "password");
+      $(this).removeClass("change-icon");
+    }
   });
 }

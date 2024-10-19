@@ -682,13 +682,11 @@ function commingSoon() {
         pin: true,
         scrub: true,
         onUpdate: (self) => {
-          // Xác định slide hiện tại dựa trên progress của ScrollTrigger
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),
             totalSlides
           );
 
-          // Cập nhật số đếm khi có thay đổi slide
           if (newSlide !== currentSlide) {
             currentSlide = newSlide;
             numberStart.text(currentSlide); // Thay đổi số đếm
@@ -698,7 +696,6 @@ function commingSoon() {
     });
 
     panels.forEach((panel, index) => {
-      // Hiệu ứng cho .animate-right như trước
       tl.from(
         panel,
         {
@@ -710,7 +707,6 @@ function commingSoon() {
         "+=0.5"
       );
 
-      // Thay đổi .animate-left thành dạng fade
       tl.from(
         content[index],
         {

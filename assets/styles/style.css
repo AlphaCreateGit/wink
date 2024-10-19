@@ -4701,6 +4701,9 @@ section.spacer {
 .sign-in-sec .member-contact .checkbox {
   margin-bottom: 56px;
 }
+.sign-in-sec .note-list ul li a:hover {
+  color: var(--color-primary);
+}
 
 /* Change the white to any color */
 input:-webkit-autofill,

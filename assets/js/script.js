@@ -35,6 +35,7 @@ $(document).ready(function () {
   showOrHidePasswords();
   commingCareer();
   stickyFilter();
+  mapCompany();
 });
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
@@ -1222,4 +1223,67 @@ function stickyFilter() {
       $(this).data("previousScroll", currentScroll);
     }
   });
+}
+function mapCompany() {
+  if ($(".map-new").length) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".map-new",
+        start: "top 8%",
+        end: "bottom top",
+        pin: true,
+        scrub: true,
+        markers: true,
+      },
+    });
+
+    // Animate .ic-wink-head (fade in and move up)
+    tl.fromTo(
+      ".ic-wink-head",
+      { opacity: 0, yPercent: 20 },
+      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" } // Fade in
+    );
+
+    // Animate .wink-head-office (fade in and move up)
+    tl.fromTo(
+      ".wink-head-office",
+      { opacity: 0, yPercent: 20 },
+      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" } // Fade in
+    ).to(
+      ".wink-head-office",
+      {
+        opacity: 0,
+        duration: 1,
+        ease: "power1.inOut",
+        delay: 1,
+        yPercent: -20,
+      },
+      "-=0.25"
+    ); // Start fading out .wink-head-office halfway through .ic-wink-head fade in
+
+    // Fade out .ic-wink-head after .wink-head-office has faded out
+    tl.to(".ic-wink-head", {
+      opacity: 0, // Fade out
+      duration: 0.5,
+      ease: "power1.inOut",
+    });
+
+    tl.fromTo(
+      ".marker-detail",
+      { opacity: 0, yPercent: 20 },
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 0.25,
+        stagger: {
+          amount: 0.5,
+          from: "end",
+          ease: "none",
+        },
+      },
+      "<+=0.5"
+    );
+  }
 }

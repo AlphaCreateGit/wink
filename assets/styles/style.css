@@ -3387,6 +3387,12 @@ section.spacer {
 .map-content .box .box-body .item:hover::after{
   width: 100%;
 }
+.map-content .box .box-body .item:hover{
+  color: var(--color-primary);
+}
+.map-content .box .box-body .item:hover svg path{
+  fill: var(--color-primary);
+}
 .map-content-detail {
   position: absolute;
   right: 0;

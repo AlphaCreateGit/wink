@@ -1267,7 +1267,7 @@ function mapCompany() {
     // Fade out .ic-wink-head after .wink-head-office has faded out
     tl.to(".ic-wink-head", {
       opacity: 0, // Fade out
-      duration: 0.5,
+      duration: 1,
       ease: "power1.inOut",
     });
 
@@ -1277,14 +1277,19 @@ function mapCompany() {
       {
         opacity: 1,
         yPercent: 0,
-        duration: 0.25,
+        duration: 0.5,
         stagger: {
           amount: 0.5,
-          from: "end",
-          ease: "none",
+          from: "start",
+          ease: "power1.inOut",
         },
       },
       "<+=0.5"
+    );
+    tl.fromTo(
+      ".map-new .map-content",
+      { opacity: 0 },
+      { opacity: 1, duration: 1, ease: "none" } // Fade in
     );
   }
 }

@@ -4817,6 +4817,10 @@ select:-webkit-autofill:focus {
   visibility: visible;
 }
 .map-new .map-content {
-  /* opacity: 1;
-  visibility: visible; */
+  opacity: 0;
+  visibility: hidden;
+}
+.map-new .map-content.show {
+  opacity: 0;
+  visibility: hidden;
 }

@@ -485,10 +485,14 @@ function bookingForm() {
   // select adults
   const unitsDisplay = $(".units-display");
   const selectBox = $(".select-box");
-  
+
   function updateDisplay(thisItem) {
-    const adultValElement = thisItem.closest(".units").find('span[name="adult-val"]');
-    const childValElement = thisItem.closest(".units").find('span[name="child-val"]');
+    const adultValElement = thisItem
+      .closest(".units")
+      .find('span[name="adult-val"]');
+    const childValElement = thisItem
+      .closest(".units")
+      .find('span[name="child-val"]');
     const adultVal = thisItem.closest(".select-box").find(".adult .val");
     const childVal = thisItem.closest(".select-box").find(".child .val");
     const totalSum = thisItem.closest(".units").find("#total-sum");
@@ -512,7 +516,7 @@ function bookingForm() {
     const valElement = $(this).next();
     const thisItem = $(this);
     let currentValue = parseInt(valElement.text());
-    
+
     if (currentValue > 0) {
       valElement.text(--currentValue);
       updateDisplay(thisItem);
@@ -1265,7 +1269,16 @@ function mapCompany() {
         end: "bottom 60%", // Change here
         pin: true,
         scrub: true,
-        markers: true,
+        // markers: true,
+      },
+      onComplete: () => {
+        console.log("Animation completed!"); // Check if this logs
+
+        // Remove 'show' class from the map-content element
+        $(".map-new .map-content-detail ").removeClass("show");
+      },
+      onUpdate: (self) => {
+        self.direction === -1 ? btn.play() : btn.reverse();
       },
     });
 
@@ -1309,7 +1322,7 @@ function mapCompany() {
         duration: 0.5,
         stagger: {
           amount: 0.5,
-          from: "start",
+          from: "end",
           ease: "power1.inOut",
         },
       },
@@ -1323,20 +1336,20 @@ function mapCompany() {
   }
 }
 
-function toggleSubmenuMobile(){
-  if( $(window).width() > 768 ) return;
+function toggleSubmenuMobile() {
+  if ($(window).width() > 768) return;
 
-  $("header .menu-item > a").on("click", function(event){
-    if( !$(this).closest(".menu-item-has-children").length ) return;
+  $("header .menu-item > a").on("click", function (event) {
+    if (!$(this).closest(".menu-item-has-children").length) return;
 
     event.preventDefault();
-    
-    $(this).closest(".menu-item-has-children").addClass("open");
-  })
 
-  $("header .menu-item .btn-back").on("click", function(){
+    $(this).closest(".menu-item-has-children").addClass("open");
+  });
+
+  $("header .menu-item .btn-back").on("click", function () {
     $(this).closest(".menu-item-has-children").removeClass("open");
-  })
+  });
 }
 
 function scrollToolbarMobile() {
@@ -1366,7 +1379,7 @@ function scrollToolbarMobile() {
   $(window).on("load", initializeScrollTrigger);
 }
 
-function toggleModalFindingRoom(event){
+function toggleModalFindingRoom(event) {
   let target = $(event.target);
   let dataModal = target.data("modal");
 

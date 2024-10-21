@@ -3001,7 +3001,7 @@ section.spacer {
   margin-bottom: 32px;
 }
 .amenities__title .item {
-  padding: 24px 40px;
+  padding: 24px 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -3212,7 +3212,7 @@ section.spacer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 40px;
+  padding: 24px 60px;
   position: relative;
   border-bottom: 2px solid #c2c2c2;
 }

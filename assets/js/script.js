@@ -33,6 +33,7 @@ $(document).ready(function () {
   carrersSticky();
   swiperBookRoom();
   showOrHidePasswords();
+  commingCareer();
 });
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
@@ -1136,4 +1137,53 @@ function showOrHidePasswords() {
       $(this).removeClass("change-icon");
     }
   });
+}
+
+function commingCareer() {
+  if ($(".career-intro-sec").length) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // const panels = gsap.utils.toArray(".animate-right");
+    const panels = gsap.utils.toArray(".panel").slice(1);
+    const numberStart = $(".number-start");
+    const numberEnd = $(".number-end");
+    const totalSlides = $(".panel").length;
+    let currentSlide = 1;
+
+    numberStart.text(currentSlide);
+    numberEnd.text(totalSlides);
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".career-intro-sec",
+        start: "top 3%",
+        end: () => "+=" + 100 * panels.length + "%",
+        pin: true,
+        scrub: true,
+        onUpdate: (self) => {
+          const newSlide = Math.min(
+            Math.max(1, Math.ceil(self.progress * totalSlides)),
+            totalSlides
+          );
+
+          if (newSlide !== currentSlide) {
+            currentSlide = newSlide;
+            numberStart.text(currentSlide); // Thay đổi số đếm
+          }
+        },
+      },
+    });
+
+    panels.forEach((panel, index) => {
+      tl.from(
+        panel,
+        {
+          // yPercent: 10,
+          autoAlpha: 0,
+          ease: "none",
+        },
+        "+=0.5"
+      );
+    });
+    ScrollTrigger.refresh();
+  }
 }

@@ -432,8 +432,8 @@ function bookingForm() {
       },
     });
   }
-  
-  if($(".modal-booking").length){
+
+  if ($(".modal-booking").length) {
     var pickerMobile = new Lightpick({
       field: document.getElementById("startdayMobile"),
       secondField: document.getElementById("enddayMobile"),
@@ -870,7 +870,7 @@ function scrollWinkRewards() {
         // Kiểm tra nếu section có class 'rewards-sec-event'
         const startValue = $(section).hasClass("rewards-sec-event")
           ? "top 30%"
-          : "top 15%";
+          : "top 8%";
 
         applyClipPathAnimation(
           section,
@@ -1363,8 +1363,8 @@ function toggleModalFindingRoom(event) {
   $(`.modal[data-modal='${dataModal}']`).toggleClass("active");
 }
 
-function toggleOpenDescWinkFacilities(){
-  $(".wink-room-sec .box input[type='checkbox']").on("click", function(){
+function toggleOpenDescWinkFacilities() {
+  $(".wink-room-sec .box input[type='checkbox']").on("click", function () {
     $(this).closest(".box").toggleClass("open");
-  })
+  });
 }

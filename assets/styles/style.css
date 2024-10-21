@@ -3372,6 +3372,20 @@ section.spacer {
   justify-content: space-between;
   padding: 24px 60px;
   border-bottom: 2px solid #c2c2c2;
+  position: relative;
+}
+.map-content .box .box-body .item::after{
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  background-color: var(--color-primary);
+  transition: all 0.5s ease;
+}
+.map-content .box .box-body .item:hover::after{
+  width: 100%;
 }
 .map-content-detail {
   position: absolute;

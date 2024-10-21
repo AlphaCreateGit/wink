@@ -489,9 +489,30 @@ ul {
 .header-hotels__details .hotels__details--right .map {
   gap: 8px;
 }
+.header-hotels__details .hotels__details--right .phone a::before,
+.header-hotels__details .hotels__details--right .map a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .header-hotels__details .hotels__details--right .phone a,
 .header-hotels__details .hotels__details--right .map a {
   transition: all 0.3s ease;
+  position: relative;
+}
+.header-hotels__details .hotels__details--right .phone:hover a::before,
+.header-hotels__details .hotels__details--right .map:hover a::before,
+.header-hotels__details .hotels__details--right .phone a:hover::before,
+.header-hotels__details .hotels__details--right .map a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .header-hotels__details .hotels__details--right .phone:hover a,
 .header-hotels__details .hotels__details--right .map:hover a {
@@ -604,6 +625,25 @@ ul {
   color: var(--color-primary);
   /* background-position: 0%; */
 }
+.header__btn-sign-in {
+  position: relative;
+}
+.header__btn-sign-in::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-white);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header__btn-sign-in:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 .header__btn-sign-in:hover {
   color: var(--color-white);
 }
@@ -614,7 +654,7 @@ ul {
   width: 100%;
   height: 2px;
   background-color: var(--color-primary);
-  bottom: -21px;
+  bottom: -4px;
   left: 0;
   transform: scaleX(0);
   transform-origin: bottom right;
@@ -644,7 +684,7 @@ ul {
   display: inline-block;
   text-decoration: none;
   background-color: var(--color-primary);
-  padding: 18px 0;
+  padding: 20px 0 18px;
   width: 165px;
   height: 60px;
   clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
@@ -1097,11 +1137,7 @@ ul {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 55.37%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.06%, #000000 100%);
 }
 
 .banner-hero__image img {
@@ -1783,10 +1819,10 @@ ul {
   content: "";
   position: absolute;
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: var(--color-white);
   left: 0;
-  bottom: 0;
+  bottom: -4px;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1823,10 +1859,10 @@ ul {
   content: "";
   position: absolute;
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: var(--color-white);
   left: 0;
-  bottom: -2px;
+  bottom: -4px;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1991,10 +2027,10 @@ ul {
   content: "";
   position: absolute;
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: var(--color-gray-50);
   left: 0;
-  bottom: -2px;
+  bottom: -4px;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2032,10 +2068,10 @@ ul {
   content: "";
   position: absolute;
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: var(--color-gray-50);
   left: 0;
-  bottom: -2px;
+  bottom: -4px;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);

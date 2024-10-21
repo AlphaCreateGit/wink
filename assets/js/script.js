@@ -30,7 +30,6 @@ $(document).ready(function () {
   scrollFreezeCtaMess();
   amentities();
   swiperSuites();
-  carrersSticky();
   swiperBookRoom();
   showOrHidePasswords();
   commingCareer();
@@ -1088,78 +1087,66 @@ function swiperSuites() {
   }
 }
 
-function carrersSticky() {
-  // gsap.registerPlugin(ScrollTrigger);
-  // const items = gsap.utils.toArray(".career-item");
-  // const tl = gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: ".career-sec",
-  //     start: "top 20%",
-  //     end: () => "+=" + 100 * items.length + "%",
-  //     pin: true,
-  //     scrub: true,
-  //     markers: true,
-  //   },
-  // });
-}
 function swiperBookRoom() {
-  let interleaveOffsetChild = 0.9;
-  var swiperChildImage = $(".swiper-book-room");
-  swiperChildImage.each(function () {
-    var $this = $(this); // Cache the current Swiper element
+  if ($(".img-room").length) {
+    let interleaveOffsetRoom = 0.76;
+    var swiperChildRoom = $(".swiper-book-room");
+    swiperChildRoom.each(function () {
+      var $this = $(this); // Cache the current Swiper element
 
-    // Initialize Swiper for each element
-    new Swiper($this[0], {
-      slidesPerView: 1,
-      allowTouchMove: false,
-      speed: 1000,
-      pagination: {
-        el: $this.find(".swiper-pagination")[0],
-        type: "fraction",
-      },
-      navigation: {
-        nextEl: $this.find(".swiper-button-next")[0],
-        prevEl: $this.find(".swiper-button-prev")[0],
-      },
-      watchSlidesProgress: true,
-      mousewheelControl: true,
-      keyboardControl: true,
-      // loop: true,
+      // Initialize Swiper for each element
+      new Swiper($this[0], {
+        slidesPerView: "auto",
+        allowTouchMove: false,
+        speed: 1000,
+        pagination: {
+          el: $this.find(".swiper-pagination")[0],
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: $this.find(".swiper-button-next")[0],
+          prevEl: $this.find(".swiper-button-prev")[0],
+        },
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        keyboardControl: true,
+        loop: true,
 
-      on: {
-        progress: function (swiper) {
-          swiper.slides.forEach(function (slide) {
-            var slideProgress = slide.progress || 0;
-            var innerOffset = swiper.width * interleaveOffsetChild;
-            var innerTranslate = slideProgress * innerOffset;
-            // Kiểm tra nếu innerTranslate không phải là NaN
-            if (!isNaN(innerTranslate)) {
+        on: {
+          progress: function (swiper) {
+            swiper.slides.forEach(function (slide) {
+              var slideProgress = slide.progress || 0;
+              var innerOffset = swiper.width * interleaveOffsetRoom;
+              var innerTranslate = slideProgress * innerOffset;
+              // Kiểm tra nếu innerTranslate không phải là NaN
+              if (!isNaN(innerTranslate)) {
+                var slideInner = slide.querySelector(".slide-banner");
+                if (slideInner) {
+                  slideInner.style.transform =
+                    "translate3d(" + innerTranslate + "px, 0, 0)";
+                }
+              }
+            });
+          },
+          touchStart: function (swiper) {
+            swiper.slides.forEach(function (slide) {
+              slide.style.transition = "";
+            });
+          },
+          setTransition: function (swiper, speed) {
+            var easing = "cubic-bezier(0.25, 0.1, 0.25, 1)";
+            swiper.slides.forEach(function (slide) {
+              slide.style.transition = speed + "ms " + easing;
               var slideInner = slide.querySelector(".slide-banner");
               if (slideInner) {
-                slideInner.style.transform =
-                  "translate3d(" + innerTranslate + "px, 0, 0)";
+                slideInner.style.transition = speed + "ms " + easing;
               }
-            }
-          });
+            });
+          },
         },
-        touchStart: function (swiper) {
-          swiper.slides.forEach(function (slide) {
-            slide.style.transition = "";
-          });
-        },
-        setTransition: function (swiper, speed) {
-          var easing = "cubic-bezier(0.25, 0.1, 0.25, 1)";
-          swiper.slides.forEach(function (slide) {
-            slide.style.transition = speed + "ms " + easing;
-            var slideInner = slide.querySelector(".slide-banner");
-            if (slideInner) {
-              slideInner.style.transition = speed + "ms " + easing;
-            }
-          });
-        },
-      },
+      });
     });
-  });
+  }
 }
 function showOrHidePasswords() {
   let valueInput = $(".input-password .form-input");

@@ -1178,8 +1178,9 @@ function commingCareer() {
       tl.from(
         panel,
         {
-          // yPercent: 10,
+          yPercent: 10,
           autoAlpha: 0,
+          duration: 0.8,
           ease: "none",
         },
         "+=0.5"

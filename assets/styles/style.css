@@ -3999,6 +3999,8 @@ section.spacer {
   width: 100%;
   position: static;
   align-items: start;
+  justify-content: unset;
+  padding-top: 175px;
 }
 .career-intro-sec .container-page .box h5 {
   margin-bottom: 24px;
@@ -4011,10 +4013,17 @@ section.spacer {
 }
 .career-intro-sec .panel {
   background-color: var(--color-primary);
+  justify-content: unset;
 }
 .career-intro-sec .panels .box {
   max-width: 440px;
-  /* background-color: #777777; */
+  padding-top: 175px;
+}
+.career-intro-sec .panels .box p {
+  margin-bottom: 24px;
+}
+.career-intro-sec .container-page .box h2 {
+  margin-bottom: 32px;
 }
 .career-intro-sec .comming-soon .panels .panel {
   /* background-color: var(--color-primary); */

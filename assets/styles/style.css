@@ -104,13 +104,13 @@ ul {
 /* css classname */
 .h0-bold {
   font-size: 48px;
-  line-height: 68px;
+  line-height: 56px;
   font-weight: 900;
   letter-spacing: 0.04rem;
 }
 .h0-font {
   font-size: 48px;
-  line-height: 68px;
+  line-height: 56px;
   font-weight: 400;
   letter-spacing: 0.04rem;
 }
@@ -2286,6 +2286,24 @@ ul {
   gap: 0 40px;
   margin-bottom: 40px;
 }
+.hotels__filter.fixed {
+  position: fixed;
+  z-index: 100;
+  background-color: var(--color-gray-10);
+  transition: top 0.9s;
+  padding: 16px 40px;
+  left: 0;
+  right: 0;
+}
+.hotels__filter.fixed .hotels__filter--location .dropdown-custom__menu {
+  top: 34px;
+}
+.hotels__filter.scrolling-down {
+  top: 60px;
+}
+.hotels__filter.scrolling-up {
+  top: 120px;
+}
 .hotels__filter--location .dropdown-custom__menu,
 .hotels__filter--opening .dropdown-custom__menu {
   top: 24px;
@@ -2299,7 +2317,7 @@ ul {
 
 .hotels__filter .head h5 {
   font-size: 12px;
-  line-height: 16px;
+  line-height: 18px;
   font-weight: 900;
   letter-spacing: 0.05rem;
   color: var(--color-black);
@@ -2535,6 +2553,7 @@ ul {
   transition: all 0.3s ease;
   z-index: 3;
   left: -5px;
+  width: 100%;
 }
 
 .dropdown-custom__menu .dropdown-custom__item {
@@ -2542,10 +2561,12 @@ ul {
   padding: 5px 10px;
   white-space: nowrap;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s;
   font-size: 12px;
-  line-height: 16px;
+  line-height: 18px;
   text-transform: uppercase;
+  font-weight: 900;
+  color: var(--color-grey);
 }
 
 .dropdown-custom__menu .dropdown-custom__item:hover {
@@ -3988,9 +4009,16 @@ section.spacer {
 .career-intro-sec .panels {
   background-color: var(--color-primary);
 }
+.career-intro-sec .panel {
+  background-color: var(--color-primary);
+}
 .career-intro-sec .panels .box {
   max-width: 440px;
   /* background-color: #777777; */
+}
+.career-intro-sec .comming-soon .panels .panel {
+  /* background-color: var(--color-primary); */
+  /* justify-content: start; */
 }
 .career-sec .career-list .career-item {
   width: 100%;

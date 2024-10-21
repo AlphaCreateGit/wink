@@ -186,7 +186,18 @@
   /* end mobile header */
   /* mobile banner */
   .banner-hero__heading {
-    bottom: 40px;
+    bottom: 32px;
+  }
+
+  .banner-hero__container{
+    height: 440px;
+  }
+
+  .banner-hero__heading h1{
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+    padding: 0 15px;
   }
   /* end mobile banner */
 
@@ -213,11 +224,12 @@
   /* mobile experience */
   .experience__container {
     padding: 0;
+    gap: 32px;
   }
   .experience__grid {
     /* flex-wrap: nowrap; */
     flex-direction: column;
-    gap: 48px 0;
+    gap: 32px 0;
     overflow: hidden;
   }
 
@@ -246,16 +258,50 @@
     flex-direction: column;
   }
 
+  .experience__item:nth-child(even) .experience__box{
+    transform: translateX(35px);
+  }
+
   .experience__item .experience__box .experience__image {
     margin-bottom: 15px;
+    aspect-ratio: 300 / 170;
+    height: unset;
+    max-height: 200px;
+  }
+
+  .experience__desc h5{
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.6px;
+    margin-bottom: 4px;
+  }
+
+  .experience__desc p{
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.56px;
+    font-weight: 400;
+    color: var(--color-black);
   }
 
   .experience__heading {
-    padding: 0 24px;
+    padding: 0 16px;
   }
   .experience__text {
     max-width: 210px;
     width: 100%;
+  }
+
+  .experience__heading h3{
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+  }
+
+  .experience__heading p{
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 0.6px;
   }
   /* end mobile experience */
   /* mobile wink guide */
@@ -485,4 +531,157 @@
     margin-bottom: 24px;
   }
   /* end mobile footer */
+
+  /* cta */
+  .cta-mess{
+    bottom: 70px;
+    right: 32px;
+  }
+  /* end cta */
+
+  /* feedback */
+  .feedback{
+    bottom: 150px;
+    background-color: var(--color-black);
+    padding: 16px 7px 8px 7px;
+    gap: 12px;
+  }
+  /* end feedback */
+
+  /* tool bar */
+  .toolbar-mobile{
+    width: 100vw;
+    height: max-content;
+    background-color: var(--color-white);
+    padding: 8px;
+    z-index: 100;
+  }
+
+  .btn-booking__mobile{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    padding: 8px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  /* end tool bar */
+
+  /* modal finfing booking */
+  .modal-booking{
+    transition-property: opacity, visibility;
+    transition-timing-function: cubic-bezier(0.4,0,0.2,1);
+    transition-duration: 150ms;
+    transition-delay: 300ms;
+    transition-duration: 0.5s;
+
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    background-color: var(--color-white);
+  }
+
+  .modal-booking.active{
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+
+  .modal-booking .modal-form{
+    height: 100vh;
+    position: relative;
+  }
+
+  .modal-booking .modal-form form{
+    padding: 24px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .modal-booking .modal-close{
+    position: absolute;
+    top: 80px;
+    right: 24px;
+  }
+
+  .modal-booking .modal-close::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+
+  .modal-booking .date input{
+    width: 105px;
+    border: none;
+    border-bottom: 1px solid var(--black-color);
+  }
+
+  .modal-booking .select-box{
+    display: block;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: var(--color-white);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    padding: 5px 10px;
+    z-index: 3;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  .modal-booking .select-box .adult,
+  .modal-booking .select-box .child{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .modal-booking .select-box .select{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .modal-booking .select-box.active{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-booking .people{
+    position: relative;
+  }
+
+  .modal-booking button{
+    padding: 9px;
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 18px;
+    letter-spacing: 0.6px;
+    margin-top: 10px;
+  }
+
+  .modal-booking .dropdown-custom__menu{
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    top: 55px;
+  }
+  /* end modal finding booking */
 }

@@ -35,6 +35,7 @@ $(document).ready(function () {
   showOrHidePasswords();
   commingCareer();
   toggleSubmenuMobile();
+  scrollToolbarMobile();
 });
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
@@ -459,13 +460,14 @@ function bookingForm() {
   // select adults
   const unitsDisplay = $(".units-display");
   const selectBox = $(".select-box");
-  const adultValElement = $('span[name="adult-val"]');
-  const childValElement = $('span[name="child-val"]');
-  const adultVal = $(".adult .val");
-  const childVal = $(".child .val");
-  const totalSum = $("#total-sum");
+  
+  function updateDisplay(thisItem) {
+    const adultValElement = thisItem.closest(".units").find('span[name="adult-val"]');
+    const childValElement = thisItem.closest(".units").find('span[name="child-val"]');
+    const adultVal = thisItem.closest(".select-box").find(".adult .val");
+    const childVal = thisItem.closest(".select-box").find(".child .val");
+    const totalSum = thisItem.closest(".units").find("#total-sum");
 
-  function updateDisplay() {
     adultValElement.text(adultVal.text());
     childValElement.text(childVal.text());
     const totalSumVal = parseInt(adultVal.text()) + parseInt(childVal.text());
@@ -483,18 +485,21 @@ function bookingForm() {
 
   $(".select .min").on("click", function () {
     const valElement = $(this).next();
+    const thisItem = $(this);
     let currentValue = parseInt(valElement.text());
+    
     if (currentValue > 0) {
       valElement.text(--currentValue);
-      updateDisplay();
+      updateDisplay(thisItem);
     }
   });
 
   $(".select .plus").on("click", function () {
     const valElement = $(this).prev();
+    const thisItem = $(this);
     let currentValue = parseInt(valElement.text());
     valElement.text(++currentValue);
-    updateDisplay();
+    updateDisplay(thisItem);
   });
 
   $(document).on("click", function (e) {
@@ -1194,7 +1199,7 @@ function toggleSubmenuMobile(){
 
   $("header .menu-item > a").on("click", function(event){
     if( !$(this).closest(".menu-item-has-children").length ) return;
-    
+
     event.preventDefault();
     
     $(this).closest(".menu-item-has-children").addClass("open");
@@ -1203,4 +1208,38 @@ function toggleSubmenuMobile(){
   $("header .menu-item .btn-back").on("click", function(){
     $(this).closest(".menu-item-has-children").removeClass("open");
   })
+}
+
+function scrollToolbarMobile() {
+  let btn;
+
+  function initializeScrollTrigger() {
+    btn = gsap
+      .from(".toolbar-mobile", {
+        y: "100%",
+        paused: true,
+        duration: 0.5,
+      })
+      .progress(1);
+
+    ScrollTrigger.create({
+      start: "top top",
+      end: 99999,
+      onUpdate: (self) => {
+        self.direction === -1 ? btn.play() : btn.reverse();
+      },
+    });
+  }
+
+  initializeScrollTrigger();
+
+  // Re-initialize ScrollTrigger when page is refreshed
+  $(window).on("load", initializeScrollTrigger);
+}
+
+function toggleModalFindingRoom(event){
+  let target = $(event.target);
+  let dataModal = target.data("modal");
+
+  $(`.modal[data-modal='${dataModal}']`).toggleClass("active");
 }

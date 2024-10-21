@@ -34,6 +34,7 @@ $(document).ready(function () {
   swiperBookRoom();
   showOrHidePasswords();
   commingCareer();
+  toggleSubmenuMobile();
 });
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
@@ -1186,4 +1187,20 @@ function commingCareer() {
     });
     ScrollTrigger.refresh();
   }
+}
+
+function toggleSubmenuMobile(){
+  if( $(window).width() > 768 ) return;
+
+  $("header .menu-item > a").on("click", function(event){
+    if( !$(this).closest(".menu-item-has-children").length ) return;
+    
+    event.preventDefault();
+    
+    $(this).closest(".menu-item-has-children").addClass("open");
+  })
+
+  $("header .menu-item .btn-back").on("click", function(){
+    $(this).closest(".menu-item-has-children").removeClass("open");
+  })
 }

@@ -37,6 +37,7 @@ $(document).ready(function () {
   scrollToolbarMobile();
   stickyFilter();
   mapCompany();
+  toggleOpenDescWinkFacilities();
 });
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
@@ -1360,4 +1361,10 @@ function toggleModalFindingRoom(event) {
   let dataModal = target.data("modal");
 
   $(`.modal[data-modal='${dataModal}']`).toggleClass("active");
+}
+
+function toggleOpenDescWinkFacilities(){
+  $(".wink-room-sec .box input[type='checkbox']").on("click", function(){
+    $(this).closest(".box").toggleClass("open");
+  })
 }

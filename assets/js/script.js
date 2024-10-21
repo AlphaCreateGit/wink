@@ -1232,7 +1232,8 @@ function mapCompany() {
       scrollTrigger: {
         trigger: ".map-new",
         start: "top 8%",
-        end: "bottom top",
+        // Adjust the end position to add 100 pixels
+        end: "bottom 60%", // Change here
         pin: true,
         scrub: true,
         markers: true,

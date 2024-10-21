@@ -3426,6 +3426,8 @@ section.spacer {
 .page-tpl-suites .wink-room__suites .box .box-desc .box-read {
   position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
   padding: 32px;
   z-index: 2;
   background-color: var(--color-white);
@@ -3455,8 +3457,12 @@ section.spacer {
   max-height: 70px;
   overflow: hidden;
   position: relative;
-  transition: max-height 1s ease;
+  transition: max-height 0.5s;
+  display: block;
 }
+/* .page-tpl-suites .wink-room__suites .box .box-desc ul:has(+ .check:checked) {
+  height: 700px;
+} */
 .page-tpl-suites
   .wink-room__suites
   .box
@@ -3481,7 +3487,28 @@ section.spacer {
   white-space: nowrap;
   font-size: 12px;
   font-weight: 900;
+  transition: content 0.5s;
 }
+.page-tpl-suites .wink-room__suites .box .box-desc .desc .check::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover {
+  color: var(--color-primary);
+}
+.page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .page-tpl-suites
   .wink-room__suites
   .box

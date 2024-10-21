@@ -36,6 +36,8 @@ $(document).ready(function () {
   commingCareer();
   toggleSubmenuMobile();
   scrollToolbarMobile();
+  stickyFilter();
+  mapCompany();
 });
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
@@ -184,7 +186,7 @@ function scrollHeader() {
         y: height,
         paused: true,
         duration: 0.5,
-        ease: "power1.out",
+        ease: "none",
         trigger: "header",
       })
       .progress(1);
@@ -1183,14 +1185,113 @@ function commingCareer() {
       tl.from(
         panel,
         {
-          // yPercent: 10,
+          yPercent: 10,
           autoAlpha: 0,
+          duration: 0.8,
           ease: "none",
         },
         "+=0.5"
       );
     });
     ScrollTrigger.refresh();
+  }
+}
+function stickyFilter() {
+  $(window).scroll(function () {
+    if ($(".hotels__filter").length) {
+      let heightHeader = $(".header").height();
+      let currentScroll = $(window).scrollTop();
+      let hotelsOffset = $(".hotels__container").offset().top - heightHeader;
+
+      // Thêm biến để lưu giá trị cuộn trước đó
+      let previousScroll = $(this).data("previousScroll") || 0;
+
+      if (currentScroll >= hotelsOffset) {
+        $(".hotels__filter").addClass("fixed");
+
+        // Kiểm tra hướng cuộn
+        if (currentScroll > previousScroll) {
+          // Cuộn xuống
+          $(".hotels__filter")
+            .addClass("scrolling-down")
+            .removeClass("scrolling-up");
+        } else {
+          // Cuộn lên
+          $(".hotels__filter")
+            .addClass("scrolling-up")
+            .removeClass("scrolling-down");
+        }
+      } else {
+        $(".hotels__filter").removeClass("fixed scrolling-down scrolling-up");
+      }
+
+      // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo
+      $(this).data("previousScroll", currentScroll);
+    }
+  });
+}
+function mapCompany() {
+  if ($(".map-new").length) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".map-new",
+        start: "top 8%",
+        // Adjust the end position to add 100 pixels
+        end: "bottom 60%", // Change here
+        pin: true,
+        scrub: true,
+        markers: true,
+      },
+    });
+
+    // Animate .ic-wink-head (fade in and move up)
+    tl.fromTo(
+      ".ic-wink-head",
+      { opacity: 0, yPercent: 20 },
+      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" } // Fade in
+    );
+
+    // Animate .wink-head-office (fade in and move up)
+    tl.fromTo(
+      ".wink-head-office",
+      { opacity: 0, yPercent: 20 },
+      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" } // Fade in
+    ).to(
+      ".wink-head-office",
+      {
+        opacity: 0,
+        duration: 1,
+        ease: "power1.inOut",
+        delay: 1,
+        yPercent: -20,
+      },
+      "-=0.25"
+    ); // Start fading out .wink-head-office halfway through .ic-wink-head fade in
+
+    // Fade out .ic-wink-head after .wink-head-office has faded out
+    tl.to(".ic-wink-head", {
+      opacity: 0, // Fade out
+      duration: 0.5,
+      ease: "power1.inOut",
+    });
+
+    tl.fromTo(
+      ".marker-detail",
+      { opacity: 0, yPercent: 20 },
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 0.25,
+        stagger: {
+          amount: 0.5,
+          from: "end",
+          ease: "none",
+        },
+      },
+      "<+=0.5"
+    );
   }
 }
 

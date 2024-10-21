@@ -158,6 +158,7 @@
     letter-spacing: 0.48px;
     line-height: 26px;
     position: relative;
+    width: max-content;
   }
 
   .sub-menu__grid .btn-back::before{

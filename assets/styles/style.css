@@ -1613,6 +1613,19 @@ section {
   margin-bottom: 12px;
   transition: color 0.3s ease;
 }
+.deals__content a:hover .title{
+  color: var(--color-primary);
+}
+.deals-sec .swiper-slide:hover .title{
+  color: var(--color-primary);
+}
+.deals-sec .swiper-slide:hover .btn-more{
+  color: var(--color-primary);
+  gap: 16px;
+}
+.deals-sec .swiper-slide:hover .btn-more svg path{
+  color: var(--color-primary);
+}
 .deals__content .btn-more {
   display: flex;
   gap: 12px;

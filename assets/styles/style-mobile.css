@@ -94,6 +94,16 @@
   .bar span {
     background-color: white;
   }
+
+  .header__sub-menu {
+    top: 60px;
+    height: calc(100vh - 60px);
+    /* overflow-y: scroll; */
+  }
+
+  .header{
+    transform: translate(0) !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -149,9 +159,6 @@
   }
   /* end css button find room */
   /* mobile header */
-  .header{
-    transform: translate(0) !important;
-  }
   .button__book {
     display: none;
   }
@@ -159,12 +166,6 @@
   .header__logo {
     position: static;
     transform: none;
-  }
-
-  .header__sub-menu {
-    top: 60px;
-    height: calc(100vh - 60px);
-    /* overflow-y: scroll; */
   }
 
   .header__sub-menu::-webkit-scrollbar {

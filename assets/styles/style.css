@@ -1242,6 +1242,7 @@ ul {
 }
 .header__btn-language .dropdown-custom__menu {
   top: 22px;
+  width: max-content;
 }
 .header__btn-language .dropdown-custom__menu .dropdown-custom__item {
   padding: 5px;

@@ -13,11 +13,6 @@
     max-width: 70%;
     margin: 0 auto;
   }
-
-  .rewards-sec .desc{
-    width: 70%;
-    margin: 0 auto;
-  }
 }
 
 @media (max-width: 1024px){
@@ -836,7 +831,7 @@
   }
 
   .rewards-sec__top h3{
-    max-width: 80%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 32px;
@@ -844,6 +839,7 @@
 
   .rewards-sec__top{
     margin-bottom: 48px;
+    max-width: 80%;
   }
 
   .pin-spacer:has(.rewards-sec){

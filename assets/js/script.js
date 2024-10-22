@@ -671,7 +671,7 @@ function toggleDropdown() {
 function swiperDeals() {
   if ($(".swiper-deals").length) {
     const swiperDeals = new Swiper(".swiper-deals", {
-      slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 40,
       // loop: true,
       pagination: {
@@ -682,6 +682,14 @@ function swiperDeals() {
         nextEl: ".deals__list .swiper-button-next",
         prevEl: ".deals__list .swiper-button-prev",
       },
+      breakpoints: {
+        767: {
+          slidesPerView: 2,
+        },
+        1023: {
+          slidesPerView: 3,
+        }
+      }
     });
   }
 }

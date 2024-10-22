@@ -1,3 +1,12 @@
+/* deal section */
+.deals__content .desc p{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 @media (max-width: 767px) {
   .spacing-200 {
     height: 80px;

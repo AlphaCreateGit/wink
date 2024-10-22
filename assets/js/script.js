@@ -423,10 +423,10 @@ function bookingForm() {
         var calendar = picker.el;
         if (rect.top >= window.innerHeight / 2) {
           calendar.style.top =
-            rect.top + window.scrollY - calendar.offsetHeight + "px";
+            rect.top + window.scrollY - calendar.offsetHeight - 38 + "px";
           calendar.style.left = rect.left + window.scrollX + "px";
         } else {
-          calendar.style.top = rect.bottom + window.scrollY + "px";
+          calendar.style.top = rect.bottom + window.scrollY + 20 + "px";
           calendar.style.left = rect.left + window.scrollX + "px";
         }
       },

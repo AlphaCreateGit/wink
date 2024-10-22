@@ -1277,13 +1277,14 @@ section {
   justify-content: space-between;
 }
 .banner-hero__form form .select-hotel .dropdown-custom__menu {
-  left: 0;
+  left: -24px;
   right: 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
 .banner-hero__form form .select-hotel .dropdown-custom__menu.dropdown-up {
-  top: -165px;
+  top: unset;
+  bottom: calc(100% + 20px);
 }
 
 .banner-hero__form form .select-hotel .select-head h5 {

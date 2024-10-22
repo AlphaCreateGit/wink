@@ -18,6 +18,7 @@ $(document).ready(function () {
   menubar();
   selectMap();
   bookingForm();
+  mapCompany();
   commingSoon();
   swiperRoom();
   scrollWinkRewards();
@@ -36,7 +37,6 @@ $(document).ready(function () {
   toggleSubmenuMobile();
   scrollToolbarMobile();
   stickyFilter();
-  mapCompany();
   toggleOpenDescWinkFacilities();
 });
 function scrollFreezeCtaMess() {
@@ -717,6 +717,7 @@ function commingSoon() {
         end: () => "+=" + 100 * panels.length + "%",
         pin: true,
         scrub: true,
+        markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),

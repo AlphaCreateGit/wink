@@ -3015,8 +3015,7 @@ section.spacer {
   left: unset;
   width: max-content;
 }
-
-.room-facilities {
+.room-facilities.--details {
   padding: 0 40px;
 }
 .room-facilities__container h3 {

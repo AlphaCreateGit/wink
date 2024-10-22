@@ -2017,6 +2017,30 @@ section {
   margin-bottom: 24px;
 }
 
+.footer__container--right .download-app img{
+  transition: all 0.4s ease;
+}
+
+.footer__container--right .download-app a{
+  position: relative;
+}
+
+.footer__container--right .download-app img.img-hover{
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  inset: 0;
+}
+
+.footer__container--right .download-app a:hover img{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.footer__container--right .download-app a:hover img.img-hover{
+  opacity: 1;
+  visibility: visible;
+}
 .footer__container--right .download-app ul {
   display: flex;
   align-items: center;

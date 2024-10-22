@@ -1236,18 +1236,34 @@ function mapCompany() {
   if ($(".map-new").length) {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Update the last scroll position for future comparison
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".map-new",
         start: "top 8%",
-        // Adjust the end position to add 100 pixels
-        end: "bottom 60%", // Change here
+        end: "bottom 60%",
         pin: true,
         scrub: true,
-        markers: true,
-      },
-      onComplete: () => {
-        console.log("Animation completed!"); // Check if this logs
+        onUpdate: (self) => {
+          // Use self.scroll() to get the current scroll position and compare with previous scroll
+          const scrollDirection = self.direction; // 1 for down, -1 for up
+
+          if (scrollDirection === -1) {
+            // -1 means scrolling up
+            document.querySelectorAll(".marker-detail").forEach((marker) => {
+              marker.classList.remove("active");
+            });
+            document
+              .querySelectorAll(".map-content-detail")
+              .forEach((marker) => {
+                marker.classList.remove("show");
+              });
+            console.log("Scrolling up, active class removed");
+          }
+        },
+        onComplete: () => {
+          console.log("Animation completed!"); // Check if this logs
+        },
       },
     });
 

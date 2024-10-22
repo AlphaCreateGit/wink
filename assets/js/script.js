@@ -690,8 +690,8 @@ function swiperDeals() {
         1023: {
           slidesPerView: 3,
           spaceBetween: 40,
-        }
-      }
+        },
+      },
     });
   }
 }
@@ -833,7 +833,9 @@ function scrollWinkRewards() {
       const percentage = (pixelValue / viewportWidth) * 100;
       const pixelValueTop = viewportWidth < 991 ? 4 : 10;
       const pixelValueBottom = viewportWidth < 991 ? 96 : 90;
-      return `polygon(${pixelValue}px ${pixelValueTop}%, ${100 - percentage}% ${pixelValueTop}%, ${
+      return `polygon(${pixelValue}px ${pixelValueTop}%, ${
+        100 - percentage
+      }% ${pixelValueTop}%, ${
         100 - percentage
       }% ${pixelValueBottom}%, ${pixelValue}px ${pixelValueBottom}%)`;
     }
@@ -845,10 +847,10 @@ function scrollWinkRewards() {
       endTrigger
     ) {
       let pinValue = $(section).hasClass("rewards-sec-event") ? false : true;
-      if(pinValue){
+      if (pinValue) {
         pinValue = viewportWidth > 990;
       }
-      
+
       gsap.to($(section).find(".rewards-sec__img"), {
         clipPath: clipPathValue,
         duration: 1,
@@ -1206,7 +1208,6 @@ function commingCareer() {
         {
           yPercent: 10,
           autoAlpha: 0,
-          duration: 0.8,
           ease: "none",
         },
         "+=0.5"
@@ -1261,6 +1262,7 @@ function mapCompany() {
         end: "bottom 60%",
         pin: true,
         scrub: true,
+        // markers: true,
         onUpdate: (self) => {
           // Use self.scroll() to get the current scroll position and compare with previous scroll
           const scrollDirection = self.direction; // 1 for down, -1 for up

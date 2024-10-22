@@ -1613,17 +1613,17 @@ section {
   margin-bottom: 12px;
   transition: color 0.3s ease;
 }
-.deals__content a:hover .title{
+.deals__content a:hover .title {
   color: var(--color-primary);
 }
-.deals-sec .swiper-slide:hover .title{
+.deals-sec .swiper-slide:hover .title {
   color: var(--color-primary);
 }
-.deals-sec .swiper-slide:hover .btn-more{
+.deals-sec .swiper-slide:hover .btn-more {
   color: var(--color-primary);
   gap: 16px;
 }
-.deals-sec .swiper-slide:hover .btn-more svg path{
+.deals-sec .swiper-slide:hover .btn-more svg path {
   color: var(--color-primary);
 }
 .deals__content .btn-more {
@@ -2979,9 +2979,7 @@ section.spacer {
   left: unset;
   width: max-content;
 }
-.room-facilities__container {
-  padding: 0 40px;
-}
+
 .room-facilities__container h3 {
   margin-bottom: 56px;
 }
@@ -4230,6 +4228,7 @@ section.spacer {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateX(-16px);
 }
 .career-intro-sec .container-page .box {
   max-width: 440px;
@@ -4311,6 +4310,24 @@ section.spacer {
 .position-list .position-item.sub {
   padding: 12px 0;
   border-bottom: 2px solid #a9a9a9;
+  position: relative;
+}
+.position-list .position-item.sub::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+.position-list .position-item.sub:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .position-list .position-item.sub .position-item-sub {
   font-size: 16px;
@@ -4321,7 +4338,7 @@ section.spacer {
 .position-list .position-item.sub .position-item-sub:first-child {
   font-size: 20px;
   line-height: 36px;
-  font-weight: 900;
+  font-weight: 400;
 }
 /* end css page career */
 /* css page wink earth */

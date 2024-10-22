@@ -717,7 +717,7 @@ function commingSoon() {
         end: () => "+=" + 100 * panels.length + "%",
         pin: true,
         scrub: true,
-        markers: true,
+        // markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),

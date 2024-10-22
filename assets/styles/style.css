@@ -5164,4 +5164,83 @@ select:-webkit-autofill:focus {
   .hotels__content {
     padding: 24px;
   }
+  .spacing-80 {
+    height: 48px;
+  }
+  .contact-sec .contact__form {
+    padding: 24px;
+  }
+  .contact-sec {
+    padding: 84px 16px 0px;
+  }
+  .contact-sec .contact__form .desc {
+    margin-bottom: 24px;
+  }
+  .deals__view {
+    margin-top: 24px;
+  }
+  .contact-sec .contact__form .checkbox {
+    margin-bottom: 24px;
+  }
+  .contact-sec .contact__content {
+    padding-top: 64px;
+  }
+  .contact-sec .contact__content .title {
+    margin-bottom: 32px;
+  }
+  .hero-deals__img {
+    padding: 76px 16px 0;
+  }
+  .hero-deals__img::before {
+    inset: 76px 16px 0px;
+  }
+  .hero-deals__content {
+    left: 40px;
+    right: 40px;
+    width: auto;
+    bottom: 24px;
+  }
+  .hero-deals__content .box .title {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 24px;
+  }
+  .hotels__filter {
+    margin-bottom: 16px;
+  }
+  .hotels__text {
+    margin-bottom: 24px;
+  }
+  .hotels__image {
+    min-height: 190px;
+    padding-top: unset;
+  }
+  .hotels__image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .hero-deals .hero-deals__inner {
+    height: 540px;
+  }
+  .hero-deals__content .box .desc {
+    margin-bottom: 24px;
+  }
+  .deals-details-sec {
+    padding: 108px 16px 64px;
+  }
+  .deals-details-sec .box {
+    margin-bottom: 64px;
+  }
+  .deals-details-sec .hot-deals {
+    padding: 24px;
+  }
+  .deals-details-sec .hot-deals ul li .item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .deals-details-sec .box ul {
+    padding-left: 20px;
+  }
 }

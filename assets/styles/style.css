@@ -3556,12 +3556,12 @@ section.spacer {
   max-height: 70px;
   overflow: hidden;
   position: relative;
-  transition: max-height 0.8s ease-in-out;
+  transition: max-height 0.8s;
   display: block;
 }
 .page-tpl-suites .wink-room__suites .box.open .box-desc .desc ul {
   max-height: 700px;
-  transition: max-height 0.8s ease-in-out;
+  transition: max-height 0.8s;
 }
 .page-tpl-suites .wink-room__suites .box .swiper::after {
   content: "";

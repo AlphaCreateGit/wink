@@ -3770,8 +3770,27 @@ section.spacer {
 .rewards__box .rewards-button {
   margin-bottom: 24px;
 }
+.rewards__box .rewards-note a {
+  position: relative;
+}
+.rewards__box .rewards-note a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-primary);
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+.rewards__box .rewards-note a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 .rewards__box .rewards-note a:hover {
-  text-decoration: underline;
   color: var(--color-primary);
 }
 .rewards__social {

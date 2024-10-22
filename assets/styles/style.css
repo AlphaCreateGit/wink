@@ -4256,11 +4256,15 @@ section.spacer {
 }
 /* end  page company */
 /* css page career */
+.career-intro-sec{
+  background-color: var(--color-gray-10);
+}
 .career-intro-sec .container-page {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  transform: translateX(-16px);
+  align-items: center; */
+  margin-left: 8.33333333%;
+  width: calc(50% - 8.33333333%);
 }
 .career-intro-sec .container-page .box {
   max-width: 440px;

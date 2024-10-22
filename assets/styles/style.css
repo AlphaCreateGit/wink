@@ -912,7 +912,7 @@ ul {
   height: 3px;
   background-color: var(--color-primary);
   left: 0;
-  bottom: 10px;
+  bottom: 4px;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1016,7 +1016,7 @@ ul {
   height: 2px;
   background-color: var(--color-primary);
   left: 0;
-  bottom: 0;
+  bottom: -4px;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);

@@ -1254,9 +1254,6 @@ function mapCompany() {
         // Remove 'show' class from the map-content element
         $(".map-new .map-content-detail ").removeClass("show");
       },
-      onUpdate: (self) => {
-        self.direction === -1 ? btn.play() : btn.reverse();
-      },
     });
 
     // Animate .ic-wink-head (fade in and move up)

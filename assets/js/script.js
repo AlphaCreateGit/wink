@@ -672,7 +672,7 @@ function swiperDeals() {
   if ($(".swiper-deals").length) {
     const swiperDeals = new Swiper(".swiper-deals", {
       slidesPerView: 1,
-      spaceBetween: 40,
+      spaceBetween: 24,
       // loop: true,
       pagination: {
         el: ".deals-sec .swiper-pagination",
@@ -685,9 +685,11 @@ function swiperDeals() {
       breakpoints: {
         767: {
           slidesPerView: 2,
+          spaceBetween: 40,
         },
         1023: {
           slidesPerView: 3,
+          spaceBetween: 40,
         }
       }
     });

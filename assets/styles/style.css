@@ -2149,21 +2149,41 @@ ul {
   height: 184px;
   flex-direction: column;
   gap: 16px;
+  transition: background-color 0.4s ease;
 }
 .rewards__item p {
-  transition: all 0.3s;
+  transition: all 0.4s ease;
+}
+.rewards__item:hover{
+  background-color: var(--color-primary);
 }
 .rewards__item:hover p {
-  color: var(--color-primary);
+  color: var(--color-white);
+}
+.rewards__item:hover img{
+  opacity: 0;
+  visibility: hidden;
+}
+.rewards__item:hover .icon img.img-hover{
+  opacity: 1;
+  visibility: visible;
 }
 .rewards__item .icon {
   width: 72px;
   height: 72px;
+  position: relative;
 }
 .rewards__item .icon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  inset: 0;
+  transition: all 0.4s ease;
+}
+.rewards__item .icon img.img-hover{
+  opacity: 0;
+  visibility: hidden;
 }
 .rewards__item p {
   text-transform: uppercase;

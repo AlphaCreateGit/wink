@@ -146,7 +146,11 @@
                         >
                         <div class="sub-menu__container">
                           <div class="sub-menu__grid">
-                            <div class="btn-back text-uppercase d-md-none d-block">Go back</div>
+                            <div
+                              class="btn-back text-uppercase d-md-none d-block"
+                            >
+                              Go back
+                            </div>
                             <div class="sub-menu__item">
                               <div class="sub-menu__image">
                                 <img src="./assets/images/wink_sg.png" alt="" />
@@ -255,9 +259,15 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="sub-menu__cta mobile d-flex d-md-none align-items-center justify-content-between">
+                  <div
+                    class="sub-menu__cta mobile d-flex d-md-none align-items-center justify-content-between"
+                  >
                     <a href="#" class="color-black b2-bold">Member Login</a>
-                    <a href="#" class="b2-font color-white text-uppercase primary">Book Now</a>
+                    <a
+                      href="#"
+                      class="b2-font color-white text-uppercase primary"
+                      >Book Now</a
+                    >
                   </div>
                 </div>
               </div>
@@ -273,21 +283,45 @@
     </header>
     <!-- end header -->
     <!-- Begin toolbar mobile -->
-     <div class="toolbar-mobile position-fixed bottom-0 left-0 z-30 w-full d-block d-md-none">
-      <div class="btn-booking__mobile d-flex align-content-center justify-content-center text-uppercase" data-modal="findingRoom" onclick="toggleModalFindingRoom(event)">
+    <div
+      class="toolbar-mobile position-fixed bottom-0 left-0 z-30 w-full d-block d-md-none"
+    >
+      <div
+        class="btn-booking__mobile d-flex align-content-center justify-content-center text-uppercase"
+        data-modal="findingRoom"
+        onclick="toggleModalFindingRoom(event)"
+      >
         Find room
       </div>
-     </div>
+    </div>
     <!-- End toolbar mobile -->
     <!-- Begin finding room modal mobile -->
-     <div class="modal modal-booking" data-modal="findingRoom">
+    <div class="modal modal-booking" data-modal="findingRoom">
       <div class="modal-wrapper flex items-end">
         <div class="modal-wrapper__inner h-auto">
           <div class="modal-form">
-            <div class="modal-close" onclick="toggleModalFindingRoom(event)" data-modal="findingRoom">
-              <svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.55859 1L23.4392 21.8806" stroke="black" stroke-width="2"/>
-                <path d="M2.55859 21.8809L23.4392 1.00025" stroke="black" stroke-width="2"/>
+            <div
+              class="modal-close"
+              onclick="toggleModalFindingRoom(event)"
+              data-modal="findingRoom"
+            >
+              <svg
+                width="26"
+                height="23"
+                viewBox="0 0 26 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.55859 1L23.4392 21.8806"
+                  stroke="black"
+                  stroke-width="2"
+                />
+                <path
+                  d="M2.55859 21.8809L23.4392 1.00025"
+                  stroke="black"
+                  stroke-width="2"
+                />
               </svg>
             </div>
             <form action="">
@@ -300,9 +334,7 @@
                   >
                     <div class="d-flex flex-column w-100">
                       <p class="b3-font color-black-50">Hotel</p>
-                      <div
-                        class="d-flex align-items-center"
-                      >
+                      <div class="d-flex align-items-center">
                         <img src="./assets/images/ic_location.svg" alt="" />
                         <p
                           class="dropdown-custom__text b1-font color-black"
@@ -359,9 +391,7 @@
               >
                 <p class="b3-font color-black-50">Guests</p>
                 <p id="total-sum" class="d-none" name=""></p>
-                <div
-                  class="d-flex align-items-center justify-content-start"
-                >
+                <div class="d-flex align-items-center justify-content-start">
                   <img src="./assets/images/ic_people.svg" alt="" />
                   <div class="units-display">
                     <span
@@ -390,14 +420,12 @@
                 </div>
               </div>
 
-              <button class="find-room color-white b3-font">
-                FIND ROOM
-              </button>
+              <button class="find-room color-white b3-font">FIND ROOM</button>
             </form>
           </div>
         </div>
       </div>
-     </div>
+    </div>
     <!-- End finding room modal mobile -->
     <main>
       <!-- start section hero banner -->
@@ -558,7 +586,7 @@
                     <h3 class="h2-font color-black data-fade-in">
                       The Wink Experience
                     </h3>
-                    <p class="b1-font color-black data-fade-in">
+                    <p class="h5-font color-black data-fade-in">
                       What sets Wink apart is its contemporary ethos of chic +
                       creative design, deep functionality and traditional
                       Vietnamese values. Quá đỉnh!
@@ -570,6 +598,7 @@
                   <!-- item -->
                   <div class="experience__item data-fade-in">
                     <div class="experience__box">
+                      <!-- link qua các bài ở trang experience và cuộn đến bài đó -->
                       <a href="" class="experience__image">
                         <img src="./assets/images/room-2.webp" alt="" />
                       </a>
@@ -1953,7 +1982,7 @@
         </div>
       </section>
       <!-- end section comming soon -->
-      <div class="spacing-120"></div>
+
       <!-- start section wink guide -->
       <section class="rewards-sec">
         <div class="container-fluid p-0">
@@ -1974,6 +2003,7 @@
                 <div class="rewards-sec__bottom">
                   <div class="rewards__list">
                     <div class="rewards__item">
+                      <!-- sẽ có 2 image để có trạng thái hover -->
                       <div class="icon">
                         <img src="./assets/images/ic_pillow.svg" alt="icon" />
                       </div>

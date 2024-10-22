@@ -1550,9 +1550,12 @@ ul {
 }
 .deals__list .swiper-slide {
   height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  --h: 240;
 }
 .deals__item {
-  --h: 240;
   height: 100%;
 }
 .deals__list .swiper-pagination {
@@ -1572,7 +1575,7 @@ ul {
   height: calc(100% - var(--h) * 1px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .deals__img {
   width: 100%;
@@ -1585,47 +1588,48 @@ ul {
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-.deals__content .deals__content--top .location {
+.deals__content .location {
   text-transform: uppercase;
   letter-spacing: 0.05rem;
 }
-.deals__content .deals__content--top .location,
-.deals__content .deals__content--top .title {
+.deals__content .location,
+.deals__content .title {
   margin-bottom: 12px;
   transition: color 0.3s ease;
 }
-.deals__content .deals__content--bottom .btn-more {
+.deals__content .btn-more {
   display: flex;
   gap: 12px;
   align-items: center;
   text-decoration: none;
   transition: all 0.3s ease;
+  margin-top: auto;
 }
-.deals__content .deals__content--bottom .btn-more:hover {
+.deals__content .btn-more:hover {
   color: var(--color-primary);
   gap: 16px;
 }
-.deals__content .deals__content--bottom .btn-more svg path {
+.deals__content .btn-more svg path {
   transition: all 0.2s ease;
   color: var(--color-black);
 }
-.deals__content .deals__content--bottom .btn-more:hover svg path {
+.deals__content .btn-more:hover svg path {
   color: var(--color-primary);
 }
-.deals__content .deals__content--bottom .desc {
+.deals__content .desc {
   margin-bottom: 32px;
 }
 .deals__item:hover .deals__img img {
   transform: scale(1.05);
 }
-.deals__item:hover .deals__content--top .title {
+.deals__item:hover .title {
   color: var(--color-primary);
 }
-.deals__item:hover .deals__content--bottom .btn-more {
+.deals__item:hover .btn-more {
   color: var(--color-primary);
   gap: 16px;
 }
-.deals__item:hover .deals__content .deals__content--bottom .btn-more svg path {
+.deals__item:hover .deals__content .btn-more svg path {
   color: var(--color-primary);
 }
 .deals__list .swiper-control .icon {
@@ -2946,7 +2950,7 @@ section.spacer {
 .other-wink-sec .deals__title h2 {
   margin-bottom: 0;
 }
-.other-wink-sec .deals__content .deals__content--top .location {
+.other-wink-sec .deals__content .location {
   gap: 12px;
 }
 .amenities-sec {

@@ -619,6 +619,9 @@ ul {
   letter-spacing: 0.65px;
   position: relative;
   transition: all 0.3s ease-in-out;
+
+  min-width: max-content;
+  white-space: nowrap;
 }
 
 .header__nav nav ul li a:hover,

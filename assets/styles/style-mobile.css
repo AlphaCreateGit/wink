@@ -1,13 +1,121 @@
 /* deal section */
 .deals__content .desc p{
   display: -webkit-box;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
+@media (max-width: 1200px){
+  .rewards__list{
+    grid-template-columns: repeat(2,1fr);
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  .rewards-sec .desc{
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1024px){
+  .header__nav{
+    left: 45%;
+  }
+}
+
+@media (max-width: 990px){
+  .rewards-sec__box{
+    padding: 60px 0;
+  }
+
+  .rewards-sec__container{
+    height: 100%;
+  }
+
+  .deals__list .swiper-control .swiper-button-prev{
+    left: 50%;
+    right: unset;
+    bottom: -48px;
+    width: 70px;
+    height: 18px;
+    top: unset;
+    transform: translate(-95px, 0);
+  }
+
+  .deals__list .swiper-control .swiper-button-next{
+    right: 50%;
+    left: unset;
+    bottom: -48px;
+    width: 70px;
+    height: 18px;
+    top: unset;
+    transform: translate(95px,0);
+  }
+
+  .deals__list .swiper-pagination{
+    top: unset;
+    bottom: -48px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .deals__view{
+    margin-top: 80px;
+  }
+
+  /* header tablet */
+  .header__top-bar {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .header__main {
+    display: none;
+  }
+
+  .header__btn-sign-in {
+    display: none !important;
+  }
+
+  .header-top__container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+
+  .bar span {
+    background-color: white;
+  }
+}
+
 @media (max-width: 767px) {
+  /* General */
+  .h5-font{
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.64px;
+  }
+  .b2-font{
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .h1-bold{
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .h2-font{
+    font-size: 28px;
+    line-height: 36px;
+  }
+  /* End general */
   .spacing-200 {
     height: 80px;
   }
@@ -41,41 +149,16 @@
   }
   /* end css button find room */
   /* mobile header */
+  .header{
+    transform: translate(0) !important;
+  }
   .button__book {
     display: none;
-  }
-
-  .header__top-bar {
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .header__main {
-    display: none;
-  }
-
-  .header__btn-sign-in {
-    display: none !important;
-  }
-
-  .bar span {
-    background-color: white;
   }
 
   .header__logo {
     position: static;
     transform: none;
-  }
-
-  .header-top__container {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
   }
 
   .header__sub-menu {
@@ -363,6 +446,24 @@
     cursor: auto;
   }
 
+  .comming-soon__content{
+    padding: 16px;
+  }
+
+  .comming-soon__content .box{
+    padding: 30px;
+    background-color: var(--color-white);
+  }
+
+  .comming-soon__content .box .img-mobile{
+    width: 100%;
+    aspect-ratio: 280 / 290;
+  }
+
+  .comming-soon__content .box .desc{
+    margin-top: 40px;
+  }
+
   .comming-soon .img__container img:nth-child(2) {
     top: 40px;
     left: 25px;
@@ -379,6 +480,15 @@
     display: flex;
     justify-content: center;
     gap: 15px;
+  }
+
+  .comming-soon__content .box h5{
+    margin-bottom: 8px;
+  }
+
+  .comming-soon__content .box h2{
+    font-size: 28px;
+    line-height: 36px;
   }
 
   .comming-soon__btn-prev,
@@ -420,7 +530,7 @@
 
   /* mobile section deals */
   .deals__container {
-    padding: 0 24px;
+    padding: 0 16px;
   }
 
   .deals__header .deals__btn {
@@ -693,4 +803,72 @@
     top: 55px;
   }
   /* end modal finding booking */
+  /* comming soon section */
+  .cooming-sec .panels{
+    display: none;
+  }
+
+  .cooming-sec .container-page{
+    width: 100%;
+  }
+
+  .comming-soom__count{
+    display: none;
+  }
+  /* end comming soon section */
+  /* deals section */
+  .deals__title{
+    align-items: flex-start !important;
+    margin-bottom: 48px;
+  }
+  .deals__title h2{
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  /* end deals section */
+  .rewards-sec{
+    height: auto !important;
+    max-height: unset !important;
+  }
+
+  .rewards-sec__top h3{
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+  }
+
+  .rewards-sec__top{
+    margin-bottom: 48px;
+  }
+
+  .pin-spacer:has(.rewards-sec){
+    height: auto !important;
+  }
+
+  .rewards__list{
+    gap: 9px;
+    max-width: 100%;
+    padding: 0 40px;
+  }
+
+  .rewards__item .icon{
+    width: 64px;
+    height: 64px;
+  }
+
+  .rewards__item{
+    padding: 12px;
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1;
+    max-height: 184px;
+  }
+
+  .rewards-sec__button{
+    margin-top: 32px;
+  }
 }

@@ -700,7 +700,6 @@ function commingSoon() {
   if ($(".cooming-sec").length) {
     gsap.registerPlugin(ScrollTrigger);
 
-    // const panels = gsap.utils.toArray(".animate-right");
     const panels = gsap.utils.toArray(".panel").slice(1);
     const content = gsap.utils.toArray(".animate-left");
     const numberStart = $(".number-start");
@@ -710,30 +709,32 @@ function commingSoon() {
 
     numberStart.text(currentSlide);
     numberEnd.text(totalSlides);
-    const tl = gsap.timeline({
+
+    // Timeline for panels with scrub true
+    const panelTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".comming-soon",
         start: "top 3%",
         end: () => "+=" + 100 * panels.length + "%",
         pin: true,
-        scrub: true,
+        scrub: true, // Scrub for panels
         // markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),
             totalSlides
           );
-
           if (newSlide !== currentSlide) {
             currentSlide = newSlide;
-            numberStart.text(currentSlide); // Thay đổi số đếm
+            numberStart.text(currentSlide); // Update slide count
           }
         },
       },
     });
 
+    // Animate panels with scrub effect
     panels.forEach((panel, index) => {
-      tl.from(
+      panelTl.from(
         panel,
         {
           yPercent: 100,
@@ -743,17 +744,31 @@ function commingSoon() {
         },
         "+=0.5"
       );
+    });
 
-      tl.from(
+    // Separate animations for content with no scrub but still reverse effect
+    panels.forEach((panel, index) => {
+      gsap.fromTo(
         content[index],
         {
           yPercent: 10,
           autoAlpha: 0,
-          ease: "none",
         },
-        "<"
+        {
+          yPercent: 0,
+          autoAlpha: 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: panel,
+            start: "top 40%",
+            end: "bottom 40%",
+            toggleActions: "play reverse play reverse", // Play on scroll down, reverse on scroll up
+            markers: false,
+          },
+        }
       );
     });
+
     ScrollTrigger.refresh();
   }
 }
@@ -1395,7 +1410,7 @@ function toggleOpenDescWinkFacilities() {
   $(".wink-room-sec .box input[type='checkbox']").on("click", function () {
     const $box = $(this).closest(".box");
     const $desc = $box.find(".box-desc .desc ul");
-    
+
     $box.toggleClass("open");
 
     if ($box.hasClass("open")) {

@@ -1246,13 +1246,10 @@ function mapCompany() {
         end: "bottom 60%", // Change here
         pin: true,
         scrub: true,
-        // markers: true,
+        markers: true,
       },
       onComplete: () => {
         console.log("Animation completed!"); // Check if this logs
-
-        // Remove 'show' class from the map-content element
-        $(".map-new .map-content-detail ").removeClass("show");
       },
     });
 
@@ -1272,7 +1269,7 @@ function mapCompany() {
       ".wink-head-office",
       {
         opacity: 0,
-        duration: 1,
+        duration: 0.5,
         ease: "power1.inOut",
         delay: 1,
         yPercent: -20,
@@ -1289,19 +1286,19 @@ function mapCompany() {
 
     tl.fromTo(
       ".marker-detail",
-      { opacity: 0, yPercent: 20 },
+      { opacity: 0, yPercent: 10 },
       {
         opacity: 1,
         yPercent: 0,
         duration: 0.5,
         stagger: {
-          amount: 0.5,
+          amount: 0.25,
           from: "end",
-          ease: "power1.inOut",
+          ease: "none",
         },
-      },
-      "<+=0.5"
+      }
     );
+
     tl.fromTo(
       ".map-new .map-content",
       { opacity: 0 },

@@ -1364,7 +1364,7 @@ ul {
   font-size: 0;
   background-image: url("../images/ic_arrow_white.svg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 55% 50%;
   background-color: var(--color-primary);
   margin: 0;
 }
@@ -3009,7 +3009,7 @@ section.spacer {
   gap: 40px;
   position: relative;
 }
-.amenities__title .item::after{
+.amenities__title .item::after {
   content: "";
   height: 2px;
   bottom: -2px;
@@ -3019,7 +3019,7 @@ section.spacer {
   background-color: var(--color-primary);
   transition: all 0.5s ease;
 }
-.amenities__title .item.active::after, 
+.amenities__title .item.active::after,
 .amenities__title .item:hover::after {
   width: 100%;
 }
@@ -3216,7 +3216,7 @@ section.spacer {
   position: relative;
   border-bottom: 2px solid #c2c2c2;
 }
-.map__marker .marker-content::after{
+.map__marker .marker-content::after {
   content: "";
   width: 100%;
   height: 2px;
@@ -3225,7 +3225,7 @@ section.spacer {
   left: 0;
   bottom: -2px;
   width: 0;
-  transition: all 0.5s ease ;
+  transition: all 0.5s ease;
 }
 .map__marker .marker-content:hover {
   cursor: pointer;
@@ -3233,10 +3233,10 @@ section.spacer {
 .map__marker .marker-content:hover::after {
   width: 100%;
 }
-.map__marker .marker-content:hover .name-city{
+.map__marker .marker-content:hover .name-city {
   color: var(--color-primary);
 }
-.map__marker .marker-content:hover .icon svg path{
+.map__marker .marker-content:hover .icon svg path {
   fill: var(--color-primary);
 }
 .map__marker .marker-content .name-city {
@@ -3374,7 +3374,7 @@ section.spacer {
   border-bottom: 2px solid #c2c2c2;
   position: relative;
 }
-.map-content .box .box-body .item::after{
+.map-content .box .box-body .item::after {
   content: "";
   width: 0;
   height: 2px;
@@ -3384,13 +3384,13 @@ section.spacer {
   background-color: var(--color-primary);
   transition: all 0.5s ease;
 }
-.map-content .box .box-body .item:hover::after{
+.map-content .box .box-body .item:hover::after {
   width: 100%;
 }
-.map-content .box .box-body .item:hover{
+.map-content .box .box-body .item:hover {
   color: var(--color-primary);
 }
-.map-content .box .box-body .item:hover svg path{
+.map-content .box .box-body .item:hover svg path {
   fill: var(--color-primary);
 }
 .map-content-detail {
@@ -3518,7 +3518,7 @@ section.spacer {
   max-height: 700px;
   transition: max-height 0.8s ease-in-out;
 }
-.page-tpl-suites .wink-room__suites .box .swiper::after{
+.page-tpl-suites .wink-room__suites .box .swiper::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -3530,9 +3530,9 @@ section.spacer {
   visibility: hidden;
   transition: all 0.4s ease;
 }
-.page-tpl-suites .wink-room__suites .box.open .swiper::after{
+.page-tpl-suites .wink-room__suites .box.open .swiper::after {
   opacity: 1;
-  visibility: visible
+  visibility: visible;
 }
 /* .page-tpl-suites .wink-room__suites .box .box-desc ul:has(+ .check:checked) {
   height: 700px;
@@ -4928,6 +4928,7 @@ select:-webkit-autofill:focus {
   visibility: hidden;
   transition: all 0.2s ease;
 }
+
 .map-new .wink-head-office {
   position: absolute;
   right: 64px;

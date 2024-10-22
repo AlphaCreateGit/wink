@@ -6,7 +6,7 @@
   --color-gray-10: #f2f2f2;
   --color-gray-20: #c2c2c2;
   --color-gray-50: #7f7f7f;
-  --color-stroke-2: #ECECEC;
+  --color-stroke-2: #ececec;
   --color-gray: #808080;
   --color-black-50: rgba(0, 0, 0, 0.5);
   --color-grey: #777777;
@@ -3035,7 +3035,7 @@ section.spacer {
   gap: 40px;
   position: relative;
 }
-.amenities__title .item::before{
+.amenities__title .item::before {
   content: "";
   width: 100%;
   height: 2px;
@@ -3044,8 +3044,8 @@ section.spacer {
   left: 0;
   background-color: var(--color-stroke-2);
 }
-.amenities__title .item.active::before{
-  background-color: var(--color-gray-20);
+.amenities__title .item.active::before {
+  /* background-color: var(--color-gray-20); */
 }
 .amenities__title .item::after {
   content: "";
@@ -3054,7 +3054,7 @@ section.spacer {
   position: absolute;
   left: 0;
   width: 100%;
-  background-color: var(--color-gray-20);
+  background-color: var(--color-black);
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3261,7 +3261,7 @@ section.spacer {
   width: 100%;
   height: 2px;
   transform: scaleX(0);
-  background-color: var(--color-gray-20);
+  background-color: var(--color-black);
   position: absolute;
   left: 0;
   bottom: -2px;
@@ -3423,7 +3423,7 @@ section.spacer {
   position: absolute;
   left: 0;
   bottom: -2px;
-  background-color: var(--color-gray-20);
+  background-color: var(--color-black);
   transform-origin: bottom right;
   transform: scaleX(0);
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);

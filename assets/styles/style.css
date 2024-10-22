@@ -130,8 +130,8 @@ section {
 }
 
 .h1-light {
-  font-size: 48px;
-  line-height: 68px;
+  font-size: 36px;
+  line-height: 48px;
   font-weight: 300;
   letter-spacing: 0.04rem;
 }
@@ -263,6 +263,10 @@ section {
 }
 .spacing-80 {
   height: 80px;
+}
+.spacing-64 {
+  height: 64px;
+  background-color: var(--color-gray-10);
 }
 
 .spacing-120 {
@@ -1614,17 +1618,17 @@ section {
   margin-bottom: 12px;
   transition: color 0.3s ease;
 }
-.deals__content a:hover .title{
+.deals__content a:hover .title {
   color: var(--color-primary);
 }
-.deals-sec .swiper-slide:hover .title{
+.deals-sec .swiper-slide:hover .title {
   color: var(--color-primary);
 }
-.deals-sec .swiper-slide:hover .btn-more{
+.deals-sec .swiper-slide:hover .btn-more {
   color: var(--color-primary);
   gap: 16px;
 }
-.deals-sec .swiper-slide:hover .btn-more svg path{
+.deals-sec .swiper-slide:hover .btn-more svg path {
   color: var(--color-primary);
 }
 .deals__content .btn-more {
@@ -2018,27 +2022,27 @@ section {
   margin-bottom: 24px;
 }
 
-.footer__container--right .download-app img{
+.footer__container--right .download-app img {
   transition: all 0.4s ease;
 }
 
-.footer__container--right .download-app a{
+.footer__container--right .download-app a {
   position: relative;
 }
 
-.footer__container--right .download-app img.img-hover{
+.footer__container--right .download-app img.img-hover {
   opacity: 0;
   visibility: hidden;
   position: absolute;
   inset: 0;
 }
 
-.footer__container--right .download-app a:hover img{
+.footer__container--right .download-app a:hover img {
   opacity: 0;
   visibility: hidden;
 }
 
-.footer__container--right .download-app a:hover img.img-hover{
+.footer__container--right .download-app a:hover img.img-hover {
   opacity: 1;
   visibility: visible;
 }
@@ -2264,6 +2268,9 @@ section {
   max-width: 60%;
   margin-left: auto;
   margin-right: auto;
+}
+.rewards-sec-event .rewards-sec__top {
+  max-width: 100%;
 }
 .rewards-sec__top h3 {
   margin-bottom: 32px;
@@ -3012,7 +3019,7 @@ section.spacer {
   left: unset;
   width: max-content;
 }
-.room-facilities__container {
+.room-facilities.--details {
   padding: 0 40px;
 }
 .room-facilities__container h3 {
@@ -3076,8 +3083,12 @@ section.spacer {
 .amenities__content.--second .desc {
   margin-bottom: 56px;
 }
+.amenities__top {
+  border-top: 1px solid var(--color-grey);
+  border-bottom: 1px solid var(--color-grey);
+}
 .amenities__top .swiper-amenities {
-  height: 100vh;
+  height: 640px;
   width: 100%;
   background-color: red;
 }
@@ -3092,7 +3103,7 @@ section.spacer {
 }
 .amenities__top .box h2 {
   padding-top: 32px;
-  padding-left: 40px;
+  padding-left: 60px;
   margin-bottom: 32px;
 }
 .amenities__title .item {
@@ -3166,7 +3177,7 @@ section.spacer {
 }
 .amenities__top .amen-right .box-detail .head {
   position: relative;
-  margin-bottom: 56px;
+  margin-bottom: 40px;
 }
 .amenities__top .amen-right .box-detail .head .icon-close {
   width: 60px;
@@ -3184,20 +3195,22 @@ section.spacer {
   fill: var(--color-primary);
 }
 .amenities__top .amen-right .box-detail .head h3 {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   font-size: 28px;
   line-height: 36px;
   white-space: nowrap;
+  padding: 0 60px;
+  margin-top: 40px;
 }
 .amenities__top .amen-right .box-detail .box-slide {
-  padding: 0 40px;
+  padding: 0 60px;
   position: relative;
 }
 .amenities__top .amen-right .box-detail .box-slide .swiper-button-prev {
-  left: 40px;
+  left: 60px;
   top: unset;
   bottom: -56px;
   display: flex;
@@ -3208,7 +3221,7 @@ section.spacer {
   height: 18px;
 }
 .amenities__top .amen-right .box-detail .box-slide .swiper-button-next {
-  left: 155px;
+  left: 175px;
   top: unset;
   bottom: -56px;
   display: flex;
@@ -3270,7 +3283,7 @@ section.spacer {
   letter-spacing: 0.05px;
   top: unset;
   bottom: -56px;
-  left: 100px;
+  left: 120px;
   width: max-content;
 }
 .amenities__top .amen-right .box-detail .swiper-amen-box h4 {
@@ -4039,6 +4052,9 @@ section.spacer {
 .swiper-suites .swiper-slide {
   overflow: hidden;
 }
+.modal {
+  background-color: rgba(0, 0, 0, 0.85);
+}
 #modalBookRoom .modal-header {
   position: relative;
   border: none;
@@ -4259,10 +4275,15 @@ section.spacer {
 }
 /* end  page company */
 /* css page career */
+.career-intro-sec {
+  background-color: var(--color-gray-10);
+}
 .career-intro-sec .container-page {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  margin-left: 8.33333333%;
+  width: calc(50% - 8.33333333%);
 }
 .career-intro-sec .container-page .box {
   max-width: 440px;
@@ -4335,7 +4356,7 @@ section.spacer {
   justify-content: end;
 }
 .position-list .position-filters {
-  border-bottom: 2px solid #a9a9a9;
+  border-bottom: 2px solid #ececec;
   padding-bottom: 24px;
 }
 .position-list .position-item .position-item-sub:first-child {
@@ -4343,7 +4364,25 @@ section.spacer {
 }
 .position-list .position-item.sub {
   padding: 12px 0;
-  border-bottom: 2px solid #a9a9a9;
+  border-bottom: 2px solid #ececec;
+  position: relative;
+}
+.position-list .position-item.sub::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-black);
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+.position-list .position-item.sub:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .position-list .position-item.sub .position-item-sub {
   font-size: 16px;
@@ -4354,7 +4393,7 @@ section.spacer {
 .position-list .position-item.sub .position-item-sub:first-child {
   font-size: 20px;
   line-height: 36px;
-  font-weight: 900;
+  font-weight: 400;
 }
 /* end css page career */
 /* css page wink earth */

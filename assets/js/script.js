@@ -782,7 +782,6 @@ function selectMap() {
   }
   $(".box-body .item").on("click", function (e) {
     const city = $(this).data("city-item");
-    console.log(city);
     $(".marker-detail").removeClass("active");
     $(`.marker-detail[data-city="${city}"]`).addClass("active");
     $(`.map-content-detail[data-hotel="${city}"]`).addClass("show");
@@ -791,7 +790,6 @@ function selectMap() {
   $(".marker-detail").on("click", function (e) {
     const city = $(this).data("city");
     const citys = $(this).data("v2-city");
-    console.log(city, citys);
 
     // Xóa các lớp 'show' và 'active' trước
     // $(".map-content").removeClass("show");

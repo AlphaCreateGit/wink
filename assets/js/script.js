@@ -1393,6 +1393,15 @@ function toggleModalFindingRoom(event) {
 
 function toggleOpenDescWinkFacilities() {
   $(".wink-room-sec .box input[type='checkbox']").on("click", function () {
-    $(this).closest(".box").toggleClass("open");
+    const $box = $(this).closest(".box");
+    const $desc = $box.find(".box-desc .desc ul");
+    
+    $box.toggleClass("open");
+
+    if ($box.hasClass("open")) {
+      $desc.css("height", $desc.prop("scrollHeight") + "px");
+    } else {
+      $desc.css("height", "70");
+    }
   });
 }

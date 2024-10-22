@@ -736,7 +736,7 @@ function commingSoon() {
       tl.from(
         content[index],
         {
-          // yPercent: 10,
+          yPercent: 10,
           autoAlpha: 0,
           ease: "none",
         },

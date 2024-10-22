@@ -831,9 +831,11 @@ function scrollWinkRewards() {
 
     function getClipPathForSmallScreens(pixelValue, viewportWidth) {
       const percentage = (pixelValue / viewportWidth) * 100;
-      return `polygon(${pixelValue}px 10%, ${100 - percentage}% 10%, ${
+      const pixelValueTop = viewportWidth < 991 ? 4 : 10;
+      const pixelValueBottom = viewportWidth < 991 ? 96 : 90;
+      return `polygon(${pixelValue}px ${pixelValueTop}%, ${100 - percentage}% ${pixelValueTop}%, ${
         100 - percentage
-      }% 90%, ${pixelValue}px 90%)`;
+      }% ${pixelValueBottom}%, ${pixelValue}px ${pixelValueBottom}%)`;
     }
 
     function applyClipPathAnimation(
@@ -842,7 +844,11 @@ function scrollWinkRewards() {
       startTrigger,
       endTrigger
     ) {
-      const pinValue = $(section).hasClass("rewards-sec-event") ? false : true;
+      let pinValue = $(section).hasClass("rewards-sec-event") ? false : true;
+      if(pinValue){
+        pinValue = viewportWidth > 990;
+      }
+      
       gsap.to($(section).find(".rewards-sec__img"), {
         clipPath: clipPathValue,
         duration: 1,
@@ -858,8 +864,9 @@ function scrollWinkRewards() {
     }
 
     const viewportWidth = window.innerWidth;
-    const pixelValue = viewportWidth <= 767 ? 24 : 80;
+    const pixelValue = viewportWidth < 991 ? 24 : 80;
 
+    // 24px 4%, 93.6% 4%, 93.6% 96%, 24px 96%
     $(".rewards-sec").each(function () {
       const section = this;
       const clipPathValue = getClipPathForSmallScreens(
@@ -871,7 +878,7 @@ function scrollWinkRewards() {
         applyClipPathAnimation(
           section,
           clipPathValue,
-          "top 30%",
+          "top 20%",
           "bottom bottom"
         );
       } else {

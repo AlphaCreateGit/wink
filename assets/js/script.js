@@ -628,6 +628,7 @@ function toggleDropdown() {
       e.stopPropagation();
       closeAllDropdowns($dropdown);
       $dropdownMenu.toggleClass("dropdown--active");
+      $btnDropdown.toggleClass("active");
     });
 
     $(document).on("click", function () {
@@ -662,6 +663,7 @@ function toggleDropdown() {
         const $menu = $(this).find(".dropdown-custom__menu");
         if (!exception || !$(this).is(exception)) {
           $menu.removeClass("dropdown--active");
+          $btnDropdown.removeClass("active");
         }
       });
     }
@@ -1204,7 +1206,7 @@ function commingCareer() {
         end: () => "+=" + 100 * panels.length + "%", // Extend the timeline based on the number of panels
         pin: true,
         scrub: true,
-        markers: true,
+        // markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),

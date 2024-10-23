@@ -1270,6 +1270,29 @@ section {
 }
 .header__btn-language .dropdown-custom__menu .dropdown-custom__item {
   padding: 5px;
+  position: relative;
+}
+.dropdown-custom__menu .dropdown-custom__item {
+  position: relative;
+}
+.header__btn-language .dropdown-custom__menu .dropdown-custom__item::before {
+  content: unset;
+}
+.dropdown-custom__menu .dropdown-custom__item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  left: 0;
+  bottom: 0px;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dropdown-custom__menu .dropdown-custom__item:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .select-hotel .dropdown-custom__menu .dropdown-custom__item {
   font-size: 16px;
@@ -2677,8 +2700,15 @@ section {
 /* end css page hotels */
 
 /* custom dropdown select */
+
 .dropdown-custom__btn h5 {
   text-transform: uppercase;
+}
+.dropdown-custom__btn img {
+  transition: all 0.3s;
+}
+.dropdown-custom__btn.active .ic img {
+  transform: rotate(180deg);
 }
 
 .dropdown-custom {
@@ -2694,9 +2724,12 @@ section {
   transition: all 0.3s ease;
   z-index: 3;
   left: -5px;
-  width: 100%;
+  width: max-content;
 }
-
+.hotels__filter--location .dropdown-custom__menu,
+.hotels__filter--opening .dropdown-custom__menu {
+  padding-bottom: 4px;
+}
 .dropdown-custom__menu .dropdown-custom__item {
   width: 100%;
   padding: 5px 10px;
@@ -2711,8 +2744,7 @@ section {
 }
 
 .dropdown-custom__menu .dropdown-custom__item:hover {
-  color: var(--color-white);
-  background-color: var(--color-primary);
+  color: var(--color-primary);
 }
 .header__btn-language .dropdown-custom__menu .dropdown-custom__item:hover {
   background-color: var(--color-white);

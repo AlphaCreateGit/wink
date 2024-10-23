@@ -10,6 +10,7 @@ $(document).ready(function () {
       document.title = originalTitle;
     }
   });
+
   scrollHeader();
   subMenuHeader();
   swiperBanner();
@@ -49,6 +50,20 @@ function scrollFreezeCtaMess() {
     toggleClass: "freeze",
     scrub: 1,
   });
+}
+function openAlert(event) {
+  event.preventDefault();
+
+  const alter = $(".alert-success");
+  const progress = $(".progress-type");
+  alter.addClass("show");
+  progress.addClass("show");
+  setTimeout(() => {
+    alter.removeClass("show");
+  }, 5000);
+  setTimeout(() => {
+    progress.removeClass("show");
+  }, 5300);
 }
 function displayRatings() {
   $(".rating-number").each(function () {

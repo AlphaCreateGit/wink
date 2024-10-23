@@ -32,6 +32,19 @@
     <!-- end import link custom css -->
   </head>
   <body>
+    <!-- alter success -->
+    <div class="alert-success">
+      <div class="alert-inner">
+        <div class="alert-text">
+          <div>
+            <p class="b2-font">Bạn đã nộp CV thành công</p>
+            <p class="b2-r">Chúng tôi sẽ nhanh chóng liên hệ bạn</p>
+          </div>
+        </div>
+        <div class="progress-type"></div>
+      </div>
+    </div>
+    <!-- end alter success -->
     <!-- start feeback -->
     <div class="feedback">
       <div class="feedback__text b2-font color-white">FEEDBACK</div>
@@ -395,7 +408,7 @@
                       >
                     </div>
                     <div class="deals__view d-flex justify-content-end">
-                      <button class="custom__btn">
+                      <button class="custom__btn" onclick="openAlert(event)">
                         <span class="b3-font color-black d-block">SEND</span>
                       </button>
                     </div>

@@ -4597,6 +4597,7 @@ section.map {
 /* css page blogs */
 .blogs-sec {
   padding: 200px 40px 120px;
+  background-color: var(--color-gray-10);
 }
 .blogs__item .name-city {
   margin-bottom: 56px;
@@ -4618,12 +4619,18 @@ section.map {
 .blogs__grid .blogs__grid--col--box {
   position: relative;
 }
+.blogs__grid--col--box .link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
 .blogs__grid .blogs__grid--col--box .content {
   position: absolute;
   inset: 0;
   padding: 32px;
   display: flex;
   flex-direction: column;
+  z-index: 2;
 }
 .blogs__grid .blogs__grid--col--box .content h3 {
   text-transform: uppercase;
@@ -4665,6 +4672,7 @@ section.map {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 .blogs__grid .blogs__grid--col--box img {
   width: 100%;

@@ -718,7 +718,7 @@ function commingSoon() {
         end: () => "+=" + 100 * panels.length + "%",
         pin: true,
         scrub: true, // Scrub for panels
-        // markers: true,
+        markers: false,
         onUpdate: (self) => {
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),
@@ -763,7 +763,7 @@ function commingSoon() {
             start: "top 40%",
             end: "bottom 40%",
             toggleActions: "play reverse play reverse", // Play on scroll down, reverse on scroll up
-            markers: false,
+            //markers: true,
           },
         }
       );
@@ -774,6 +774,8 @@ function commingSoon() {
 }
 function selectMap() {
   let activeMarker = null;
+
+  $(window).width() < 768 ? $(".map-content-wrapper").addClass("show") : null;
 
   $(".marker").on("click", function (e) {
     $(".marker").addClass("hidden");

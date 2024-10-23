@@ -1207,7 +1207,7 @@ function commingCareer() {
         start: "top 3%",
         end: () => "+=" + 100 * panels.length + "%", // Extend the timeline based on the number of panels
         pin: true,
-        scrub: 0.2,
+        scrub: 1,
         // markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(

@@ -4345,7 +4345,7 @@ section.map {
   justify-content: unset;
 }
 .career-intro-sec .panels .box {
-  max-width: 440px;
+  max-width: 70%;
   padding-top: 175px;
 }
 .career-intro-sec .panels .box p {

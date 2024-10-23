@@ -1205,7 +1205,7 @@ function commingCareer() {
         start: "top 3%",
         end: () => "+=" + 100 * panels.length + "%", // Extend the timeline based on the number of panels
         pin: true,
-        scrub: true,
+        scrub: 0.2,
         // markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
@@ -1226,13 +1226,13 @@ function commingCareer() {
       tl.fromTo(
         panel,
         {
-          autoAlpha: 0, // Start with opacity 0
-          yPercent: 20, // Start slightly below
+          autoAlpha: 0,
+          yPercent: 10,
         },
         {
-          autoAlpha: 1, // Fade in
-          yPercent: 0, // Move to its final position
-          ease: "none", // Remove easing for smooth transition
+          autoAlpha: 1,
+          yPercent: 0,
+          ease: "none",
         },
         "+=0.5"
       );

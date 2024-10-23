@@ -118,6 +118,12 @@
 
   .comming-soon__content .box{
     padding: 0 16px;
+    padding-right: 70px;
+  }
+
+  .map-content-detail .box-head .icon-back-lv2{
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -464,6 +470,7 @@
 
   .comming-soon__content{
     padding: 16px;
+    max-height: max-content;
   }
 
   .comming-soon__content .box{
@@ -482,6 +489,10 @@
 
   .comming-soon .img__container img {
     height: initial;
+  }
+
+  .comming-soon{
+    height: 600px !important;
   }
 
   .spacing-120 {
@@ -542,6 +553,15 @@
   /* mobile section deals */
   .deals__container {
     padding: 0 16px;
+  }
+
+  .deals__content{
+    padding: 24px;
+  }
+
+  .deals__content .title{
+    line-height: 28px;
+    margin-bottom: 24px;
   }
 
   .deals__header .deals__btn {
@@ -901,5 +921,23 @@
 
   .map-content{
     display: none;
+  }
+
+  .map-content-detail{
+    width: 100%;
+  }
+
+  .map-content-detail .box-body .content{
+    padding: 40px 16px;
+  }
+
+  .map-content-detail .box-body .content h5{
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px){
+  .comming-soon{
+    height: 650px !important;
   }
 }

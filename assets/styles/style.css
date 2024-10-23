@@ -260,9 +260,11 @@ section {
 
 .spacing-75 {
   height: 75px;
+  background-color: var(--color-gray-10);
 }
 .spacing-80 {
   height: 80px;
+  background-color: var(--color-gray-10);
 }
 .spacing-64 {
   height: 64px;
@@ -271,18 +273,22 @@ section {
 
 .spacing-120 {
   height: 120px;
+  background-color: var(--color-gray-10);
 }
 
 .spacing-40 {
   height: 40px;
+  background-color: var(--color-gray-10);
 }
 
 .spacing {
   height: 120px;
+  background-color: var(--color-gray-10);
 }
 
 .spacing-200 {
   height: 200px;
+  background-color: var(--color-gray-10);
 }
 .transition-item {
   transition: all 0.3s ease;
@@ -1961,7 +1967,7 @@ section {
   width: 100%;
 }
 .footer__container--right .news-group {
-  gap: 35px;
+  gap: 32px;
 }
 .footer__container--right .btn-join {
   z-index: 0;
@@ -3301,7 +3307,7 @@ section.spacer {
 /* css page hotels details */
 
 /* css map */
-section.map{
+section.map {
   border: 1px solid var(--color-grey);
 }
 .map__wrapper {
@@ -5372,4 +5378,25 @@ select:-webkit-autofill:focus {
   .deals-details-sec .box ul {
     padding-left: 20px;
   }
+  .newsletter .news-group {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  .newsletter .news-group .content {
+    margin-bottom: 0 !important;
+  }
+  .page-details-deals .other-wink-sec,
+  .page-details-blogs .other-wink-sec {
+    padding-bottom: 48px;
+  }
+  .blogs-detail-content .content {
+    padding: 0 16px;
+  }
+  .blogs-detail-content {
+    padding-bottom: 24px;
+  }
+}
+.footer__container--bottom-overlay .footer__container--bottom {
+  position: static;
+  opacity: 0;
 }

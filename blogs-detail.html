@@ -43,16 +43,16 @@
     <!-- start header -->
     <header class="header">
       <div class="header__top-bar">
-        <div class="header__burgers mobile d-block d-md-none">
-          <div class="box">
-            <div class="bar">
-              <span></span>
-              <span></span>
-              <span></span>
+        <div class="header-top__container">
+          <div class="header__burgers mobile d-block d-lg-none">
+            <div class="box">
+              <div class="bar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="header-top__container">
           <div class="header__logo">
             <a href="./index.html">
               <img src="./assets/images/logo.svg" alt="logo" />
@@ -99,9 +99,7 @@
           <nav>
             <ul>
               <li>
-                <a href="./hotels.html" class="b3-font color-black active"
-                  >HOTELS</a
-                >
+                <a href="./hotels.html" class="b3-font color-black">HOTELS</a>
               </li>
 
               <li>
@@ -113,7 +111,7 @@
                 >
               </li>
               <li>
-                <a href="./experience.html" class="b3-font color-black"
+                <a href="./wink-rewards.html" class="b3-font color-black"
                   >WINK REWARDS LIFESTYLE</a
                 >
               </li>
@@ -148,6 +146,11 @@
                         >
                         <div class="sub-menu__container">
                           <div class="sub-menu__grid">
+                            <div
+                              class="btn-back text-uppercase d-md-none d-block"
+                            >
+                              Go back
+                            </div>
                             <div class="sub-menu__item">
                               <div class="sub-menu__image">
                                 <img src="./assets/images/wink_sg.png" alt="" />
@@ -264,9 +267,19 @@
                       </li>
                     </ul>
                   </div>
+                  <div
+                    class="sub-menu__cta mobile d-flex d-md-none align-items-center justify-content-between"
+                  >
+                    <a href="#" class="color-black b2-bold">Member Login</a>
+                    <a
+                      href="#"
+                      class="b2-font color-white text-uppercase primary"
+                      >Book Now</a
+                    >
+                  </div>
                 </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 d-none d-md-block">
                 <div class="box-img">
                   <img src="./assets/images/hero-banner.webp" alt="" />
                 </div>
@@ -692,7 +705,9 @@
                         >
                       </li>
                       <li>
-                        <a href="./contact.html" class="b2-bold color-white"
+                        <a
+                          href="./contact.html"
+                          class="b2-bold color-white active"
                           >CONTACT</a
                         >
                       </li>
@@ -962,7 +977,76 @@
               </div>
             </div>
           </div>
-          <div class="footer__container--bottom-overlay"></div>
+          <div class="footer__container--bottom-overlay">
+            <div class="footer__container--bottom">
+              <div class="row g-0">
+                <div class="col-md-5">
+                  <div class="wink">
+                    <p class="b3-bold color-white">© 2024 WINK HOTELS</p>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="row g-0">
+                    <div class="col-md-9">
+                      <div class="terms">
+                        <div class="terms__desc color-gray-50 b2-bold">
+                          The Wink Hotel may update this policy from time to
+                          time. We will always post the then-current version of
+                          this policy on our websites and will indicate at the
+                          top of the policy the date on which the latest version
+                          took effect. Please review this policy from time to
+                          time to stay updated on our privacy practices and keep
+                          your personal information safe and secured in one of
+                          the best hotels in Saigon.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <!-- footer container bottom left -->
+                      <div class="footer__container--bl">
+                        <div class="bct">
+                          <img src="./assets/images/logo-bct.svg" alt="" />
+                        </div>
+
+                        <!-- end footer bottom left -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row g-0">
+                    <div class="col-md-8 terms">
+                      <ul class="d-flex align-items-center">
+                        <li>
+                          <a href="" class="b2-bold color-gray-50"
+                            >TERMS & CONDITIONS</a
+                          >
+                        </li>
+                        <li>
+                          <a href="" class="b2-bold color-gray-50"
+                            >PAYMENT METHOD</a
+                          >
+                        </li>
+                        <li>
+                          <a href="" class="b2-bold color-gray-50"
+                            >PRIVACY POLICY</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="d-md-block d-none text-end author-alpha">
+                        <a
+                          href="https://alphacreative.vn/"
+                          class="b2-bold color-gray-50"
+                        >
+                          DIGITAL EXPERIENCE BY ALPHA CREATIVE</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

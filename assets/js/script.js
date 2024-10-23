@@ -1190,8 +1190,7 @@ function commingCareer() {
   if ($(".career-intro-sec").length) {
     gsap.registerPlugin(ScrollTrigger);
 
-    // const panels = gsap.utils.toArray(".animate-right");
-    const panels = gsap.utils.toArray(".panel").slice(1);
+    const panels = gsap.utils.toArray(".panel").slice(1); // Get all panels except the first one
     const numberStart = $(".number-start");
     const numberEnd = $(".number-end");
     const totalSlides = $(".panel").length;
@@ -1199,13 +1198,15 @@ function commingCareer() {
 
     numberStart.text(currentSlide);
     numberEnd.text(totalSlides);
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".career-intro-sec",
         start: "top 3%",
-        end: () => "+=" + 100 * panels.length + "%",
+        end: () => "+=" + 100 * panels.length + "%", // Extend the timeline based on the number of panels
         pin: true,
         scrub: true,
+        markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),
@@ -1214,26 +1215,33 @@ function commingCareer() {
 
           if (newSlide !== currentSlide) {
             currentSlide = newSlide;
-            numberStart.text(currentSlide); // Thay đổi số đếm
+            numberStart.text(currentSlide); // Update the current slide number
           }
         },
       },
     });
 
+    // Animate the panels on scroll without mouse interaction
     panels.forEach((panel, index) => {
-      tl.from(
+      tl.fromTo(
         panel,
         {
-          yPercent: 10,
-          autoAlpha: 0,
-          ease: "none",
+          autoAlpha: 0, // Start with opacity 0
+          yPercent: 20, // Start slightly below
+        },
+        {
+          autoAlpha: 1, // Fade in
+          yPercent: 0, // Move to its final position
+          ease: "none", // Remove easing for smooth transition
         },
         "+=0.5"
       );
     });
-    ScrollTrigger.refresh();
+
+    ScrollTrigger.refresh(); // Refresh ScrollTrigger after setting up animations
   }
 }
+
 function stickyFilter() {
   $(window).scroll(function () {
     if ($(".hotels__filter").length) {

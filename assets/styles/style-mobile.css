@@ -130,6 +130,18 @@
   .hotels__filter.scrolling-up{
     top: 60px;
   }
+
+  /* hotel detail */
+  .room-facilities__list{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .facilities__item{
+    width: calc(25% - 24px);
+    height: auto;
+    aspect-ratio: 1;
+  }
 }
 
 @media (max-width: 767px) {
@@ -669,7 +681,7 @@
   }
 
   .footer__container--bottom .row {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .footer__container--bl {
@@ -684,11 +696,10 @@
   .footer__container--bottom .terms ul {
     flex-wrap: wrap;
     gap: 8px 24px;
-    margin-bottom: 24px;
   }
 
   .footer__container--bottom .wink {
-    margin-top: 24px;
+    margin-bottom: 24px;
   }
 
   .footer__container--right .newsletter .content {
@@ -947,6 +958,20 @@
 
   .map-content-detail .box-body .content h5{
     margin-bottom: 20px;
+  }
+
+  /* page hotel detail */
+  .header__booking{
+    display: none;
+  }
+
+  .facilities__item{
+    width: calc(100% / 3 - 16px);
+    min-width: 190px;
+  }
+
+  .room-facilities__list{
+    justify-content: center;
   }
 }
 

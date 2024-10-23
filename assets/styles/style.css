@@ -1304,6 +1304,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 .banner-hero__form form .select-hotel .dropdown-custom__menu {
   left: -24px;
@@ -2739,8 +2740,8 @@ section {
   font-size: 12px;
   line-height: 18px;
   text-transform: uppercase;
-  font-weight: 900;
-  color: var(--color-grey);
+  font-weight: 400;
+  color: var(--color-black);
 }
 
 .dropdown-custom__menu .dropdown-custom__item:hover {
@@ -5531,4 +5532,13 @@ select:-webkit-autofill:focus {
 .footer__container--bottom-overlay .footer__container--bottom {
   position: static;
   opacity: 0;
+}
+
+.lightpick{
+  border-radius: 0;
+}
+
+.select-box .min,
+.select-box .plus{
+  cursor: pointer;
 }

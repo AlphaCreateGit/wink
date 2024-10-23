@@ -5379,6 +5379,16 @@ select:-webkit-autofill:focus {
   .newsletter .news-group .content {
     margin-bottom: 0 !important;
   }
+  .page-details-deals .other-wink-sec,
+  .page-details-blogs .other-wink-sec {
+    padding-bottom: 48px;
+  }
+  .blogs-detail-content .content {
+    padding: 0 16px;
+  }
+  .blogs-detail-content {
+    padding-bottom: 24px;
+  }
 }
 .footer__container--bottom-overlay .footer__container--bottom {
   position: static;

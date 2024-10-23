@@ -628,6 +628,7 @@ function toggleDropdown() {
       e.stopPropagation();
       closeAllDropdowns($dropdown);
       $dropdownMenu.toggleClass("dropdown--active");
+      $btnDropdown.toggleClass("active");
     });
 
     $(document).on("click", function () {
@@ -662,6 +663,7 @@ function toggleDropdown() {
         const $menu = $(this).find(".dropdown-custom__menu");
         if (!exception || !$(this).is(exception)) {
           $menu.removeClass("dropdown--active");
+          $btnDropdown.removeClass("active");
         }
       });
     }
@@ -1205,8 +1207,8 @@ function commingCareer() {
         start: "top 3%",
         end: () => "+=" + 100 * panels.length + "%", // Extend the timeline based on the number of panels
         pin: true,
-        scrub: true,
-        markers: true,
+        scrub: 0.2,
+        // markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),
@@ -1226,13 +1228,13 @@ function commingCareer() {
       tl.fromTo(
         panel,
         {
-          autoAlpha: 0, // Start with opacity 0
-          yPercent: 20, // Start slightly below
+          autoAlpha: 0,
+          yPercent: 10,
         },
         {
-          autoAlpha: 1, // Fade in
-          yPercent: 0, // Move to its final position
-          ease: "none", // Remove easing for smooth transition
+          autoAlpha: 1,
+          yPercent: 0,
+          ease: "none",
         },
         "+=0.5"
       );

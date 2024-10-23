@@ -5435,6 +5435,33 @@ select:-webkit-autofill:focus {
   .blogs-detail-content {
     padding-bottom: 24px;
   }
+  .meeting-list-sec {
+    padding-top: 56px;
+  }
+  .experience-sec .experience__container {
+    padding: 0 16px;
+  }
+
+  .meeting-list-sec .experience__content .title {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .experience-sec .experience__container .row {
+    margin-bottom: 64px;
+  }
+  .our-reports__content {
+    padding: 0 16px;
+  }
+  .our-reports__content .reports-list {
+    grid-template-columns: 1fr;
+    gap: 24px 0;
+  }
+  .our-reports__content .reports-item ul {
+    flex-wrap: wrap;
+    gap: 0 18px;
+  }
 }
 .footer__container--bottom-overlay .footer__container--bottom {
   position: static;

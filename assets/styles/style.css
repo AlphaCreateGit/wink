@@ -999,7 +999,7 @@ section {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
 }
 
 .sub-menu__item .sub-menu__image {

@@ -928,9 +928,9 @@ function scrollWinkRewards() {
 function swiperRoomSuites() {
   if ($(".wink-room-sec").length) {
     const swiperParentRoom = new Swiper(".swiper-parent-room", {
-      slidesPerView: 2,
+      slidesPerView: 1,
       slidesPerGroup: 2,
-      spaceBetween: 40,
+      spaceBetween: 24,
 
       // loop: true,
       pagination: {
@@ -941,6 +941,12 @@ function swiperRoomSuites() {
         nextEl: ".swiper-control-parent .swiper-button-next",
         prevEl: ".swiper-control-parent .swiper-button-prev",
       },
+      breakpoints: {
+        768:{
+          slidesPerView: 2,
+          spaceBetween: 40,
+        }
+      }
     });
     let interleaveOffsetChild = 0.9;
     var swiperChildImage = $(".swiper-child-img");

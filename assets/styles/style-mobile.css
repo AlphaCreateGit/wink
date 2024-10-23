@@ -142,6 +142,10 @@
     height: auto;
     aspect-ratio: 1;
   }
+
+  .header__booking .banner-hero__form{
+    padding: 16px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -165,6 +169,9 @@
   }
   .spacing-mb-32{
     height: 32px;
+  }
+  .spacing-mb-120{
+    height: 120px;
   }
   /* End general */
   .spacing-200 {
@@ -973,10 +980,31 @@
   .room-facilities__list{
     justify-content: center;
   }
+
+  .room-facilities.--details{
+    padding: 0 16px;
+  }
 }
 
 @media (max-width: 480px){
   .comming-soon{
     height: 650px !important;
+  }
+
+  .facilities__item{
+    width: calc(100% / 2 - 4px);
+    min-width: unset;
+  }
+
+  .room-facilities__list{
+    gap: 8px;
+  }
+
+  .amenities__bottom{
+    padding: 64px 16px;
+  }
+
+  .amenities__bottom .row:first-child{
+    margin-bottom: 64px;
   }
 }

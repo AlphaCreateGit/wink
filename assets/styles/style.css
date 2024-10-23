@@ -4805,6 +4805,11 @@ section.map {
   position: relative;
   margin-bottom: 32px;
 }
+.contact-sec .contact__form .group.up-file .icon {
+  position: absolute;
+  right: 0;
+  top: 7px;
+}
 .contact-sec .contact__form .group input {
   width: 100%;
   border: none;
@@ -5245,10 +5250,9 @@ select:-webkit-autofill:focus {
   opacity: 0;
   visibility: hidden;
 }
-
-@media (max-width: 767px) {
-  .blogs-sec {
-    padding: 108px 16px 64px;
+@media (max-width: 991px) {
+  .contact__content {
+    padding: 0 40px;
   }
   .blogs__grid--col,
   .blogs__item.grid-reverse .blogs__grid--col {
@@ -5275,12 +5279,6 @@ select:-webkit-autofill:focus {
   .blogs__grid .blogs__grid--col--box .content {
     padding: 24px;
   }
-  .blogs__list {
-    gap: 64px;
-  }
-  .blogs__grid--col {
-    gap: 24px 0;
-  }
   .blogs__item.grid-reverse .blogs__grid--col--box:last-child {
     grid-column: 1 / span 1;
     grid-row: 3 / span 1;
@@ -5289,6 +5287,71 @@ select:-webkit-autofill:focus {
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
   }
+  .blogs-detail-content .content {
+    padding: 0 40px;
+  }
+  .hotels__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .amenities__content .title {
+    margin-top: 40px;
+  }
+  .amenities__content {
+    max-width: 100%;
+  }
+  .deals-details-sec .box {
+    margin-bottom: 80px;
+  }
+  .meeting-list-sec .experience__content .title {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .wink-rewards-sec {
+    padding: 0 16px;
+  }
+  .rewards__social .social__item .rewards__name {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .rewards__box .rewards-button {
+    margin-bottom: 0;
+  }
+  .rewards__content .rewards__box .title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .rewards-sec-event .rewards-sec__top .desc {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  .rewards__social {
+    padding-top: 64px;
+    gap: 8px;
+  }
+  .rewards__social .social__item {
+    padding: 10px 14px;
+  }
+  .blogs-sec {
+    padding: 108px 16px 64px;
+  }
+  .rewards__box .desc {
+    margin-bottom: 48px;
+  }
+  .wink-rewards-faqs {
+    padding: 64px 16px;
+  }
+  .wink-rewards-faqs .title {
+    margin-bottom: 24px;
+  }
+
+  .blogs__list {
+    gap: 64px;
+  }
+  .blogs__grid--col {
+    gap: 24px 0;
+  }
+
   .meeting-sec {
     padding: 0 16px;
   }
@@ -5361,7 +5424,9 @@ select:-webkit-autofill:focus {
     padding-top: 64px;
   }
   .contact-sec .contact__content .title {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    font-size: 28px;
+    line-height: 36px;
   }
   .hero-deals__img {
     padding: 76px 16px 0;
@@ -5434,6 +5499,33 @@ select:-webkit-autofill:focus {
   }
   .blogs-detail-content {
     padding-bottom: 24px;
+  }
+  .meeting-list-sec {
+    padding-top: 56px;
+  }
+  .experience-sec .experience__container {
+    padding: 0 16px;
+  }
+
+  .meeting-list-sec .experience__content .title {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .experience-sec .experience__container .row {
+    margin-bottom: 64px;
+  }
+  .our-reports__content {
+    padding: 0 16px;
+  }
+  .our-reports__content .reports-list {
+    grid-template-columns: 1fr;
+    gap: 24px 0;
+  }
+  .our-reports__content .reports-item ul {
+    flex-wrap: wrap;
+    gap: 0 18px;
   }
 }
 .footer__container--bottom-overlay .footer__container--bottom {

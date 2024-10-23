@@ -2933,7 +2933,7 @@ section.spacer {
   transition: all 0.4s ease;
 }
 .swiper-child-img .swiper-button-next:hover,
-.swiper-child-img .swiper-button-prev:hover{
+.swiper-child-img .swiper-button-prev:hover {
   background-color: var(--color-header-hotels);
 }
 .swiper-child-img .swiper-button-next {
@@ -4891,23 +4891,11 @@ section.map {
   transition: top 0.3s;
   margin-bottom: 0;
 }
-.custom-file-input {
-  color: transparent;
-}
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
 }
-.custom-file-input::before {
-  content: attr(text-input);
-  color: var(--color-black);
-  display: inline-block;
-  outline: none;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  cursor: pointer;
-  font: 16px;
-  line-height: 26px;
-  font-weight: 400;
+.custom-file-input::file-selector-button {
+  display: none;
 }
 
 .custom-file-input:active {

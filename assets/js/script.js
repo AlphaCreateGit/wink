@@ -715,11 +715,13 @@ function commingSoon() {
     numberStart.text(currentSlide);
     numberEnd.text(totalSlides);
 
+    const postionPinSection = $(window).width() > 767 ? "5%" : "40px";
+
     // Timeline for panels with scrub true
     const panelTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".comming-soon",
-        start: "top 3%",
+        start: `top ${postionPinSection}`,
         end: () => "+=" + 100 * panels.length + "%",
         pin: true,
         scrub: true, // Scrub for panels

@@ -1005,6 +1005,10 @@
     padding: 16px;
   }
 
+  .amenities__top .swiper-amenities{
+    height: auto;
+  }
+
   .amenities__top .swiper-amenities .swiper__img{
     width: 100%;
     aspect-ratio: 375 / 269;

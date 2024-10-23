@@ -628,7 +628,7 @@ function toggleDropdown() {
       e.stopPropagation();
       closeAllDropdowns($dropdown);
       $dropdownMenu.toggleClass("dropdown--active");
-      $btnDropdown.toggleClass("active");
+      $btnDropdown.toggleClass("--active");
     });
 
     $(document).on("click", function () {
@@ -659,11 +659,14 @@ function toggleDropdown() {
     });
 
     function closeAllDropdowns(exception) {
+      $(".dropdown-custom__btn").removeClass("active");
+      console.log("1");
       $dropdowns.each(function () {
         const $menu = $(this).find(".dropdown-custom__menu");
+        const $ic = $(this).find(".dropdown-custom__btn");
         if (!exception || !$(this).is(exception)) {
           $menu.removeClass("dropdown--active");
-          $btnDropdown.removeClass("active");
+          $ic.removeClass("--active");
         }
       });
     }
@@ -1273,6 +1276,42 @@ function stickyFilter() {
         }
       } else {
         $(".hotels__filter").removeClass("fixed scrolling-down scrolling-up");
+      }
+
+      // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo
+      $(this).data("previousScroll", currentScroll);
+    }
+  });
+
+  $(window).scroll(function () {
+    if ($(".positions-hiring").length) {
+      let heightHeader = $(".header").height();
+      let currentScroll = $(window).scrollTop();
+      let hotelsOffset =
+        $(".positions-hiring__container .position-list").offset().top -
+        heightHeader +
+        56;
+
+      // Thêm biến để lưu giá trị cuộn trước đó
+      let previousScroll = $(this).data("previousScroll") || 0;
+
+      if (currentScroll >= hotelsOffset) {
+        $(".position-filters").addClass("fixed");
+
+        // Kiểm tra hướng cuộn
+        if (currentScroll > previousScroll) {
+          // Cuộn xuống
+          $(".position-filters")
+            .addClass("scrolling-down")
+            .removeClass("scrolling-up");
+        } else {
+          // Cuộn lên
+          $(".position-filters")
+            .addClass("scrolling-up")
+            .removeClass("scrolling-down");
+        }
+      } else {
+        $(".position-filters").removeClass("fixed scrolling-down scrolling-up");
       }
 
       // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo

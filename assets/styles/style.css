@@ -4805,6 +4805,11 @@ section.map {
   position: relative;
   margin-bottom: 32px;
 }
+.contact-sec .contact__form .group.up-file .icon {
+  position: absolute;
+  right: 0;
+  top: 7px;
+}
 .contact-sec .contact__form .group input {
   width: 100%;
   border: none;

@@ -942,27 +942,41 @@ function scrollWinkRewards() {
 
 function swiperRoomSuites() {
   if ($(".wink-room-sec").length) {
-    const swiperParentRoom = new Swiper(".swiper-parent-room", {
-      slidesPerView: 1,
-      slidesPerGroup: 2,
-      spaceBetween: 24,
-
-      // loop: true,
-      pagination: {
-        el: ".swiper-control-parent .swiper-pagination",
-        type: "fraction",
-      },
-      navigation: {
-        nextEl: ".swiper-control-parent .swiper-button-next",
-        prevEl: ".swiper-control-parent .swiper-button-prev",
-      },
-      breakpoints: {
-        768:{
-          slidesPerView: 2,
-          spaceBetween: 40,
+    let swiperParentRoom;
+    function initSliderWinkRoom(){
+      const swiperParentRoom = new Swiper(".swiper-parent-room", {
+        slidesPerView: 1,
+        slidesPerGroup: 2,
+        spaceBetween: 24,
+  
+        // loop: true,
+        pagination: {
+          el: ".swiper-control-parent .swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-control-parent .swiper-button-next",
+          prevEl: ".swiper-control-parent .swiper-button-prev",
+        },
+        breakpoints: {
+          768:{
+            slidesPerView: 2,
+            spaceBetween: 40,
+          }
         }
+      });
+    }
+    if (window.innerWidth < 768) {
+      if (swiperParentRoom) {
+        swiperParentRoom.destroy(true, true); // Destroy the Swiper instance
+        swiperParentRoom = null; // Reset the instance
       }
-    });
+    } else {
+      if (!swiperParentRoom) {
+        initSliderWinkRoom(); // Initialize if Swiper isn't already created
+      }
+    }
+
     let interleaveOffsetChild = 0.9;
     var swiperChildImage = $(".swiper-child-img");
     swiperChildImage.each(function () {

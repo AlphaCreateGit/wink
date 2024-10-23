@@ -150,6 +150,18 @@
   .header__booking .banner-hero__form{
     padding: 16px;
   }
+
+  .wink-room__slider .box-desc .desc p{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .amenities__bottom > .row{
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1042,6 +1054,19 @@
   .wink-room__slider .box-desc{
     padding: 24px;
   }
+
+  .swiper-parent-room > .swiper-wrapper{
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .amenities__bottom{
+    padding: 64px 16px;
+  }
+
+  .amenities__bottom > .row{
+    flex-direction: row !important;
+  }
 }
 
 @media (max-width: 480px){
@@ -1064,5 +1089,9 @@
 
   .amenities__bottom .row:first-child{
     margin-bottom: 64px;
+  }
+
+  .swiper-child-img .img{
+    height: 190px;
   }
 }

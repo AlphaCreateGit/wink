@@ -5296,8 +5296,14 @@ select:-webkit-autofill:focus {
   visibility: hidden;
 }
 @media (max-width: 991px) {
+  .contact-sec {
+    padding: 100px 40px 0;
+  }
   .contact__content {
     padding: 0 40px;
+  }
+  .career-box {
+    margin-bottom: 80px;
   }
   .blogs__grid--col,
   .blogs__item.grid-reverse .blogs__grid--col {
@@ -5352,6 +5358,20 @@ select:-webkit-autofill:focus {
   }
 }
 @media (max-width: 767px) {
+  .review-sec .hotels__grid {
+    grid-template-columns: 1fr;
+    gap: 24px 0;
+  }
+  .review-sec .hotels__container {
+    padding-top: 64px;
+  }
+  .sign-in-sec .member-contact {
+    padding: 108px 16px 64px;
+    height: auto;
+  }
+  .career-box {
+    margin-bottom: 64px;
+  }
   #modalContactUsEvent .modal-body {
     padding: 24px 24px 40px;
   }
@@ -5502,7 +5522,7 @@ select:-webkit-autofill:focus {
     padding: 24px;
   }
   .contact-sec {
-    padding: 84px 16px 0px;
+    padding: 0px 16px 0px;
   }
   .contact-sec .contact__form .desc {
     margin-bottom: 24px;

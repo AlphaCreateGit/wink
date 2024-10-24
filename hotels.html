@@ -480,6 +480,7 @@
                           <div
                             class="d-flex align-items-center justify-content-between"
                           >
+                          <input type="hidden" class="dropdown-custom__text">
                             <p
                               class="dropdown-custom__text b1-font color-black"
                               name=""
@@ -535,14 +536,15 @@
                     class="units people d-flex flex-column justify-content-center"
                   >
                     <p class="b3-font color-black-50">Guests</p>
-                    <p id="total-sum" class="d-none" name=""></p>
+                    <!-- <p id="total-sum" class="d-none" name=""></p> -->
+                    <input type="hidden" id="total-sum">
                     <div
                       class="d-flex align-items-center justify-content-between"
                     >
                       <div class="units-display">
                         <span
-                          ><span name="adult-val ">1</span> Adults,
-                          <span name="child-val ">0</span> Child
+                          ><span name="adult-val">1</span> Adults,
+                          <span name="child-val">0</span> Child
                         </span>
                       </div>
                       <img src="./assets/images/ic_people.svg" alt="" />

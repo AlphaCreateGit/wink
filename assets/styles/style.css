@@ -3741,6 +3741,9 @@ section.map {
   opacity: 1;
   visibility: visible;
 }
+.contact-sec .dropdown-custom__menu{
+  top: 50px;
+}
 /* .page-tpl-suites .wink-room__suites .box .box-desc ul:has(+ .check:checked) {
   height: 700px;
 } */
@@ -4209,6 +4212,14 @@ section.map {
   border: none;
   padding: 0;
 }
+#modalContactUsEvent .dropdown-custom__menu{
+  top: 50px;
+  width: 100%;
+  background-color: var(--color-gray-10);
+}
+#modalContactUsEvent .select-head{
+  padding-bottom: var(--color-gray-50);
+}
 #modalContactUsEvent .modal-footer {
   border: none;
 }
@@ -4246,6 +4257,7 @@ section.map {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px 40px;
+  align-items: flex-end;
 }
 #modalContactUsEvent .form-input {
   width: 100%;

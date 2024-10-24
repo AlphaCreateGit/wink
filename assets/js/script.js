@@ -14,6 +14,7 @@ $(document).ready(function () {
   scrollHeader();
   subMenuHeader();
   swiperBanner();
+  gsapIntro();
   scrollFeedBack();
   scrollCTA();
   menubar();
@@ -40,6 +41,47 @@ $(document).ready(function () {
   stickyFilter();
   toggleOpenDescWinkFacilities();
 });
+function gsapIntro() {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.set(".image-signature .box", { scale: 0 });
+
+  const tl = gsap.timeline({
+    onComplete: () => {
+      // Hide the intro section after the animation completes
+      gsap.to(".intro", {
+        scaleY: 0,
+        transformOrigin: "center top",
+        ease: "expo.inOut",
+        duration: 1.5,
+        onComplete: () => {
+          // Optionally remove the element from the DOM
+          // document.querySelector('.intro').style.display = 'none';
+        },
+      });
+    },
+  });
+
+  // First animation: image-container img
+  tl.to(".image-container img", {
+    scale: 3,
+    transformOrigin: "center center",
+    ease: "power1.inOut",
+    duration: 2.5, // Optional duration for the first animation
+  });
+
+  // Second animation: image-signature .box, starts simultaneously with the first animation
+  tl.to(
+    ".image-signature .box",
+    {
+      scale: 5,
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+      ease: "none",
+      duration: 1.5, // Optional duration for the second animation
+    },
+    1
+  ); // Start at the same time as the previous animation
+}
+
 function scrollFreezeCtaMess() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -943,12 +985,12 @@ function scrollWinkRewards() {
 function swiperRoomSuites() {
   if ($(".wink-room-sec").length) {
     let swiperParentRoom;
-    function initSliderWinkRoom(){
+    function initSliderWinkRoom() {
       const swiperParentRoom = new Swiper(".swiper-parent-room", {
         slidesPerView: 1,
         slidesPerGroup: 2,
         spaceBetween: 24,
-  
+
         // loop: true,
         pagination: {
           el: ".swiper-control-parent .swiper-pagination",
@@ -959,11 +1001,11 @@ function swiperRoomSuites() {
           prevEl: ".swiper-control-parent .swiper-button-prev",
         },
         breakpoints: {
-          768:{
+          768: {
             slidesPerView: 2,
             spaceBetween: 40,
-          }
-        }
+          },
+        },
       });
     }
     if (window.innerWidth < 768) {

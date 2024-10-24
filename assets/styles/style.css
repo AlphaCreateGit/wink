@@ -4237,7 +4237,7 @@ section.map {
   background-color: var(--color-gray-10);
 }
 #modalContactUsEvent .select-head{
-  padding-bottom: var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-50);
 }
 #modalContactUsEvent .modal-footer {
   border: none;
@@ -4343,6 +4343,11 @@ section.map {
   background-color: var(--color-white);
   top: unset;
   bottom: 0;
+  transition: all 0.4s ease;
+}
+.swiper-book-room .swiper-button-next:hover,
+.swiper-book-room .swiper-button-prev:hover{
+  background-color: var(--color-header-hotels);
 }
 .swiper-book-room .swiper-button-next {
   right: 0;

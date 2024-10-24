@@ -3712,6 +3712,7 @@ section.map {
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc {
   position: relative;
+  margin-bottom: 32px;
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc ul {
   list-style-type: disc;
@@ -3753,7 +3754,7 @@ section.map {
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc .check {
   position: absolute;
-  bottom: -29px;
+  bottom: -60px;
   left: 15px;
   appearance: none;
   -webkit-appearance: none;
@@ -3835,6 +3836,10 @@ section.map {
   background-color: var(--color-white);
   top: unset;
   bottom: 0;
+  transition: all 0.4s ease;
+}
+.swiper-suites .swiper-button-next:hover, .swiper-suites .swiper-button-prev:hover{
+  background-color: var(--color-header-hotels);
 }
 .swiper-suites .swiper-button-next {
   right: 0;

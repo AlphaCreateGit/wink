@@ -1,16 +1,6 @@
 "use strict";
 $ = jQuery;
 $(document).ready(function () {
-  const originalTitle = document.title;
-
-  $(document).on("visibilitychange", function () {
-    if (document.hidden) {
-      document.title = "Quay lại đi! 😢";
-    } else {
-      document.title = originalTitle;
-    }
-  });
-
   scrollHeader();
   subMenuHeader();
   swiperBanner();
@@ -40,19 +30,64 @@ $(document).ready(function () {
   scrollToolbarMobile();
   stickyFilter();
   toggleOpenDescWinkFacilities();
+  handlePageVisibilityAndFavicon();
 });
+function handlePageVisibilityAndFavicon() {
+  const originalTitle = document.title;
+  let faviconInterval;
+
+  // Xử lý thay đổi tiêu đề khi tab/cửa sổ thay đổi trạng thái hiển thị
+  $(document).on("visibilitychange", function () {
+    if (document.hidden) {
+      document.title = "Quay lại đi! 😢";
+    } else {
+      document.title = originalTitle;
+    }
+  });
+
+  function changeFavicon(src) {
+    var link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    }
+    link.href = src;
+  }
+
+  $(window).focus(function () {
+    clearInterval(faviconInterval);
+    changeFavicon("./assets/images/icon-signature-red.svg");
+  });
+
+  $(window).blur(function () {
+    const favicons = [
+      "./assets/images/icon-signature-red.svg",
+      "./assets/images/logo.svg",
+    ];
+    let faviconIndex = 0;
+    faviconInterval = setInterval(function () {
+      changeFavicon(favicons[faviconIndex]);
+      faviconIndex = (faviconIndex + 1) % favicons.length; //
+    }, 200);
+  });
+}
+
 function gsapIntro() {
   gsap.registerPlugin(ScrollTrigger);
-  gsap.set(".image-signature .box", { scale: 0 });
+  gsap.set(".image-signature .box", {
+    scale: 0,
+  });
 
   const tl = gsap.timeline({
     onComplete: () => {
       // Hide the intro section after the animation completes
       gsap.to(".intro", {
+        // autoAlpha: 0,
         scaleY: 0,
         transformOrigin: "center top",
         ease: "expo.inOut",
-        duration: 1.5,
+        duration: 1,
         onComplete: () => {
           // Optionally remove the element from the DOM
           // document.querySelector('.intro').style.display = 'none';
@@ -73,12 +108,12 @@ function gsapIntro() {
   tl.to(
     ".image-signature .box",
     {
-      scale: 200,
-      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-      ease: "none",
-      duration: 2, // Optional duration for the second animation
+      scale: 340,
+      transformOrigin: "center center",
+      ease: "power2.inOut",
+      duration: 1.5, // Optional duration for the second animation
     },
-    1.5
+    1
   ); // Start at the same time as the previous animation
 }
 
@@ -755,7 +790,7 @@ function swiperDeals() {
         },
         992: {
           spaceBetween: 24,
-        }
+        },
       },
     });
   }

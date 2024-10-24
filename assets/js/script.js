@@ -1336,7 +1336,7 @@ function commingCareer() {
         start: "top 3%",
         end: () => "+=" + 100 * panels.length + "%", // Extend the timeline based on the number of panels
         pin: true,
-        scrub: 1,
+        scrub: true,
         // markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
@@ -1364,8 +1364,7 @@ function commingCareer() {
           autoAlpha: 1,
           yPercent: 0,
           ease: "none",
-        },
-        "+=0.5"
+        }
       );
     });
 
@@ -1447,21 +1446,18 @@ function mapCompany() {
   if ($(".map-new").length) {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Update the last scroll position for future comparison
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".map-new",
         start: "top 8%",
-        end: "bottom 60%",
+        end: "bottom top",
         pin: true,
         scrub: true,
-        // markers: true,
+        markers: true,
         onUpdate: (self) => {
-          // Use self.scroll() to get the current scroll position and compare with previous scroll
           const scrollDirection = self.direction; // 1 for down, -1 for up
 
           if (scrollDirection === -1) {
-            // -1 means scrolling up
             document.querySelectorAll(".marker-detail").forEach((marker) => {
               marker.classList.remove("active");
             });
@@ -1470,45 +1466,45 @@ function mapCompany() {
               .forEach((marker) => {
                 marker.classList.remove("show");
               });
-            console.log("Scrolling up, active class removed");
           }
         },
         onComplete: () => {
           console.log("Animation completed!"); // Check if this logs
         },
+        onLeave: () => {
+          $(".map-new").addClass("remove-spacing");
+        },
       },
     });
 
-    // Animate .ic-wink-head (fade in and move up)
+    // Your animation steps here...
     tl.fromTo(
       ".ic-wink-head",
       { opacity: 0, yPercent: 20 },
-      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" } // Fade in
+      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" }
     );
 
-    // Animate .wink-head-office (fade in and move up)
     tl.fromTo(
       ".wink-head-office",
       { opacity: 0, yPercent: 20 },
-      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" } // Fade in
-    ).to(
-      ".wink-head-office",
-      {
+      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" }
+    )
+      .to(
+        ".wink-head-office",
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power1.inOut",
+          delay: 1,
+          yPercent: -20,
+        },
+        "-=0.25"
+      )
+      .to(".ic-wink-head", {
         opacity: 0,
-        duration: 0.5,
+        duration: 1,
         ease: "power1.inOut",
-        delay: 1,
-        yPercent: -20,
-      },
-      "-=0.25"
-    ); // Start fading out .wink-head-office halfway through .ic-wink-head fade in
-
-    // Fade out .ic-wink-head after .wink-head-office has faded out
-    tl.to(".ic-wink-head", {
-      opacity: 0, // Fade out
-      duration: 1,
-      ease: "power1.inOut",
-    });
+      });
 
     tl.fromTo(
       ".marker-detail",
@@ -1528,7 +1524,7 @@ function mapCompany() {
     tl.fromTo(
       ".map-new .map-content",
       { opacity: 0 },
-      { opacity: 1, duration: 1, ease: "none" } // Fade in
+      { opacity: 1, duration: 1, ease: "none" }
     );
   }
 }

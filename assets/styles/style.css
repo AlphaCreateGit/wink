@@ -672,6 +672,7 @@ section {
 }
 .header__btn-sign-in {
   position: relative;
+  text-transform: uppercase;
 }
 .header__btn-sign-in::before {
   content: "";
@@ -1685,6 +1686,10 @@ section {
 .deals-sec .swiper-slide:hover .btn-more svg path {
   color: var(--color-primary);
 }
+.hero-deals__inner:hover .btn-more {
+  color: var(--color-white);
+  gap: 16px;
+}
 .deals__content .btn-more {
   display: flex;
   gap: 12px;
@@ -2655,6 +2660,9 @@ section {
 .hotels__box:hover .hotels__btn--view a {
   color: var(--color-primary);
   gap: 16px;
+}
+.hero-deals .hotels__btn--view a{
+  color: var(--color-white) !important;
 }
 
 .hotels__btn--book {
@@ -4698,6 +4706,12 @@ section.map {
   inset: 0;
   z-index: 3;
 }
+.blogs__grid--col--box .link:hover + .img img{
+  transform: scale(1.05);
+}
+.blogs__grid--col--box .link:hover + .img + .content .hotels__btn--view .btn-more{
+  gap: 16px;
+}
 .blogs__grid .blogs__grid--col--box .content {
   position: absolute;
   inset: 0;
@@ -4737,6 +4751,7 @@ section.map {
   width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden;
 }
 .blogs__grid .blogs__grid--col--box .img::before {
   content: "";
@@ -4752,6 +4767,9 @@ section.map {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1);
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
 }
 .blogs__grid .blogs__grid--col--box.highlight .content {
   display: flex;

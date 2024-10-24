@@ -5417,11 +5417,12 @@ select:-webkit-autofill:focus {
   z-index: 2;
 }
 .intro .intro-inner .image-signature .box {
-  width: 10px;
-  height: 15px;
+  width: 100px;
+  height: 150px;
   background-color: var(--color-primary);
   overflow: hidden;
   clip-path: polygon(30% 0, 100% 0, 70% 100%, 0% 100%);
+  transform: skew(-15deg);
 }
 
 @media (max-width: 991px) {

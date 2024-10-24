@@ -5424,7 +5424,17 @@ select:-webkit-autofill:focus {
   clip-path: polygon(30% 0, 100% 0, 70% 100%, 0% 100%);
   transform: skew(-15deg);
 }
-
+.content-terms {
+  padding-top: 180px;
+}
+.content-terms .title {
+  margin-bottom: 56px;
+}
+.content-terms .desc ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 24px;
+}
 @media (max-width: 991px) {
   .experience-sec {
     overflow-x: hidden;
@@ -5508,6 +5518,9 @@ select:-webkit-autofill:focus {
   }
 }
 @media (max-width: 767px) {
+  .content-terms {
+    padding: 108px 16px 0px;
+  }
   .page-details-career .career-content-sec {
     padding-top: 0;
   }

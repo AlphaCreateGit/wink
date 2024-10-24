@@ -3574,8 +3574,8 @@ section.map {
   margin-top: 68px;
 }
 .map-content .box .icon-back {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background-color: var(--color-black);
   display: flex;
   justify-content: center;
@@ -3642,8 +3642,8 @@ section.map {
   position: relative;
 }
 .map-content-detail .box-head .icon-back-lv2 {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background-color: var(--color-black);
   display: flex;
   justify-content: center;

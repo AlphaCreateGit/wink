@@ -43,7 +43,9 @@ $(document).ready(function () {
 });
 function gsapIntro() {
   gsap.registerPlugin(ScrollTrigger);
-  gsap.set(".image-signature .box", { scale: 0 });
+  gsap.set(".image-signature .box", {
+    scale: 0,
+  });
 
   const tl = gsap.timeline({
     onComplete: () => {
@@ -52,7 +54,7 @@ function gsapIntro() {
         scaleY: 0,
         transformOrigin: "center top",
         ease: "expo.inOut",
-        duration: 1.5,
+        duration: 1,
         onComplete: () => {
           // Optionally remove the element from the DOM
           // document.querySelector('.intro').style.display = 'none';
@@ -73,12 +75,12 @@ function gsapIntro() {
   tl.to(
     ".image-signature .box",
     {
-      scale: 200,
-      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-      ease: "none",
-      duration: 2, // Optional duration for the second animation
+      scale: 340,
+      // clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+      ease: "power2.inOut",
+      duration: 1.5, // Optional duration for the second animation
     },
-    1.5
+    1
   ); // Start at the same time as the previous animation
 }
 
@@ -755,7 +757,7 @@ function swiperDeals() {
         },
         992: {
           spaceBetween: 24,
-        }
+        },
       },
     });
   }

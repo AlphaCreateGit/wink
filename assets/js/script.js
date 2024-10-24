@@ -1445,7 +1445,7 @@ function mapCompany() {
 }
 
 function toggleSubmenuMobile() {
-  if ($(window).width() > 768) return;
+  if ($(window).width() > 991) return;
 
   $("header .menu-item > a").on("click", function (event) {
     if (!$(this).closest(".menu-item-has-children").length) return;

@@ -477,6 +477,7 @@ section {
 /* end custom style button */
 /* start css feedback */
 .feedback {
+  display: none !important;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -4887,7 +4888,7 @@ section.map {
 }
 .contact-sec .contact__form {
   background-color: var(--color-white);
-  padding: 160px 40px 100px;
+  padding: 160px 40px 40px;
   height: max-content;
   position: sticky;
   top: 0px;

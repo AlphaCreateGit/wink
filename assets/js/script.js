@@ -51,8 +51,9 @@ function gsapIntro() {
     onComplete: () => {
       // Hide the intro section after the animation completes
       gsap.to(".intro", {
-        scaleY: 0,
-        transformOrigin: "center top",
+        autoAlpha: 0,
+        // scaleY: 0,
+        // transformOrigin: "center top",
         ease: "expo.inOut",
         duration: 1,
         onComplete: () => {
@@ -76,7 +77,7 @@ function gsapIntro() {
     ".image-signature .box",
     {
       scale: 340,
-      // clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+      transformOrigin: "center center",
       ease: "power2.inOut",
       duration: 1.5, // Optional duration for the second animation
     },

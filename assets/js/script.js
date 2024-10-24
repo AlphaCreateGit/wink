@@ -1091,6 +1091,14 @@ function amentities() {
     }
   );
 }
+function removeBoxDetail(event){
+  event.preventDefault();
+
+  let target = $(event.target);
+  if(target.length){
+    target.closest(".box-detail").removeClass("active");
+  }
+}
 function swiperSuites() {
   if ($(".wink-room__suites").length) {
     let interleaveOffsetSuites = 0.8;

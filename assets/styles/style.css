@@ -338,7 +338,11 @@ section {
 .cta-mess.hide {
   right: -50px;
 }
-.cta-mess .mess-icon a {
+.cta-mess .phone-icon{
+  margin-bottom: 16px;
+}
+.cta-mess .mess-icon a,
+.cta-mess .phone-icon a {
   width: 44px;
   height: 44px;
   background-color: var(--color-white);
@@ -348,14 +352,24 @@ section {
   border-radius: 50%;
   transition: all 0.3s ease;
 }
-.cta-mess .mess-icon a:hover {
+.cta-mess .phone-icon a{
   background-color: var(--color-black);
 }
-.cta-mess .mess-icon svg path {
+.cta-mess .phone-icon a:hover{
+  background-color: var(--color-white);
+}
+.cta-mess .mess-icon a:hover{
+  background-color: var(--color-black);
+}
+.cta-mess .mess-icon svg path,
+.cta-mess .phone-icon svg path {
   transition: all 0.3s ease;
 }
-.cta-mess .mess-icon:hover svg path {
+.cta-mess .mess-icon:hover svg path  {
   fill: var(--color-white);
+}
+.cta-mess .phone-icon:hover svg path{
+  fill: var(--color-primary);
 }
 .btn-custom {
   display: block;
@@ -3168,6 +3182,9 @@ section.spacer {
   gap: 40px;
   position: relative;
 }
+.amenities__title .item svg{
+  min-width: 5px;
+}
 .amenities__title .item::before {
   content: "";
   width: 100%;
@@ -5494,7 +5511,6 @@ select:-webkit-autofill:focus {
   .amenities__img {
     min-height: unset;
     height: 190px;
-    margin-bottom: 24px;
   }
   .blogs-service .row {
     padding-bottom: 64px;

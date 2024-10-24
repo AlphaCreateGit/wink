@@ -4887,7 +4887,7 @@ section.map {
 }
 .contact-sec .contact__form {
   background-color: var(--color-white);
-  padding: 160px 40px 100px;
+  padding: 160px 40px 40px;
   height: max-content;
   position: sticky;
   top: 0px;

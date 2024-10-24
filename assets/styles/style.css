@@ -75,6 +75,7 @@ body {
 main {
   position: relative;
   z-index: 3;
+  background-color: var(--color-gray-10);
 }
 ul {
   list-style-type: none;
@@ -4445,14 +4446,15 @@ section.map {
   left: 0;
   z-index: 99;
   transition: top 0.9s;
+  box-shadow: 0 1px 10px 0 #e6e6e6;
 }
 .position-list .position-filters.scrolling-up {
   top: 120px;
-  background-color: var(--color-gray-10);
+  background-color: var(--color-white);
 }
 .position-list .position-filters.scrolling-down {
   top: 60px;
-  background-color: var(--color-gray-10);
+  background-color: var(--color-white);
 }
 .position-list .position-item .position-item-sub:first-child {
   justify-content: start;
@@ -5296,11 +5298,27 @@ select:-webkit-autofill:focus {
   visibility: hidden;
 }
 @media (max-width: 991px) {
+  .experience-sec {
+    overflow-x: hidden;
+  }
+  .latest-stories-sec .hotels__container .title {
+    margin-bottom: 16px;
+  }
+  .hotels__filter--opening .dropdown-custom__menu {
+    left: unset;
+    right: 0;
+  }
+  .blogs-sec {
+    padding-top: 108px;
+  }
+  .contact-sec .contact__content {
+    padding-top: 64px;
+  }
   .contact-sec {
-    padding: 100px 40px 0;
+    padding: 100px 40px 64px;
   }
   .contact__content {
-    padding: 0 40px;
+    padding: 0px;
   }
   .career-box {
     margin-bottom: 80px;
@@ -5343,6 +5361,7 @@ select:-webkit-autofill:focus {
   }
   .hotels__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
   .amenities__content .title {
     margin-top: 40px;
@@ -5522,7 +5541,7 @@ select:-webkit-autofill:focus {
     padding: 24px;
   }
   .contact-sec {
-    padding: 0px 16px 0px;
+    padding: 108px 16px 64px;
   }
   .contact-sec .contact__form .desc {
     margin-bottom: 24px;
@@ -5535,6 +5554,8 @@ select:-webkit-autofill:focus {
   }
   .contact-sec .contact__content {
     padding-top: 64px;
+    padding-left: 0;
+    padding-right: 0;
   }
   .contact-sec .contact__content .title {
     margin-bottom: 24px;

@@ -341,6 +341,25 @@ section {
 }
 .cta-mess .phone-icon {
   margin-bottom: 16px;
+  position: relative;
+}
+.cta-mess .phone-icon .img-hover{
+  opacity: 0;
+  visibility: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: all 0.3s ease;
+}
+.cta-mess .phone-icon a:hover svg{
+  opacity: 0;
+  visibility: hidden;
+}
+.cta-mess .phone-icon a:hover svg.img-hover{
+  opacity: 1;
+  visibility: visible;
 }
 .cta-mess .mess-icon a,
 .cta-mess .phone-icon a {
@@ -3712,6 +3731,7 @@ section.map {
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc {
   position: relative;
+  margin-bottom: 32px;
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc ul {
   list-style-type: disc;
@@ -3740,6 +3760,9 @@ section.map {
   opacity: 1;
   visibility: visible;
 }
+.contact-sec .dropdown-custom__menu{
+  top: 50px;
+}
 /* .page-tpl-suites .wink-room__suites .box .box-desc ul:has(+ .check:checked) {
   height: 700px;
 } */
@@ -3753,7 +3776,7 @@ section.map {
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .desc .check {
   position: absolute;
-  bottom: -29px;
+  bottom: -60px;
   left: 15px;
   appearance: none;
   -webkit-appearance: none;
@@ -3835,6 +3858,10 @@ section.map {
   background-color: var(--color-white);
   top: unset;
   bottom: 0;
+  transition: all 0.4s ease;
+}
+.swiper-suites .swiper-button-next:hover, .swiper-suites .swiper-button-prev:hover{
+  background-color: var(--color-header-hotels);
 }
 .swiper-suites .swiper-button-next {
   right: 0;
@@ -4204,6 +4231,14 @@ section.map {
   border: none;
   padding: 0;
 }
+#modalContactUsEvent .dropdown-custom__menu{
+  top: 50px;
+  width: 100%;
+  background-color: var(--color-gray-10);
+}
+#modalContactUsEvent .select-head{
+  padding-bottom: var(--color-gray-50);
+}
 #modalContactUsEvent .modal-footer {
   border: none;
 }
@@ -4241,6 +4276,7 @@ section.map {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px 40px;
+  align-items: flex-end;
 }
 #modalContactUsEvent .form-input {
   width: 100%;

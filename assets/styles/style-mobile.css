@@ -1262,6 +1262,10 @@
     font-size: 28px;
     line-height: 36px;
   }
+
+  .about-company .about-company__desc{
+    display: none;
+  }
 }
 
 @media (max-width: 480px){

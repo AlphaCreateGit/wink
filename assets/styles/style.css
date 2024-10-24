@@ -341,6 +341,25 @@ section {
 }
 .cta-mess .phone-icon {
   margin-bottom: 16px;
+  position: relative;
+}
+.cta-mess .phone-icon .img-hover{
+  opacity: 0;
+  visibility: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: all 0.3s ease;
+}
+.cta-mess .phone-icon a:hover svg{
+  opacity: 0;
+  visibility: hidden;
+}
+.cta-mess .phone-icon a:hover svg.img-hover{
+  opacity: 1;
+  visibility: visible;
 }
 .cta-mess .mess-icon a,
 .cta-mess .phone-icon a {

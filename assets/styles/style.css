@@ -477,6 +477,7 @@ section {
 /* end custom style button */
 /* start css feedback */
 .feedback {
+  display: none !important;
   position: fixed;
   left: 0;
   bottom: 0;

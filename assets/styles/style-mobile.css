@@ -240,7 +240,7 @@
 
     position: fixed;
     left: 0;
-    top: calc(100vh - 53px);
+    top: calc(100dvh - 53px);
   }
     
   .sub-menu__cta a{
@@ -289,6 +289,29 @@
   .comming-soom__count{
     height: 90px;
   }
+
+  /* tool bar */
+  .toolbar-mobile{
+    width: 100vw;
+    height: max-content;
+    background-color: var(--color-white);
+    z-index: 100;
+  }
+
+  .btn-booking__mobile{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    padding: 13px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .cta-mess{
+    bottom: 60px;
+  }
+  /* end tool bar */
 }
 
 @media (max-width: 767px) {
@@ -542,7 +565,7 @@
   }
 
   .comming-soon__content{
-    padding: 16px;
+    padding: 0;
     max-height: max-content;
   }
 
@@ -775,25 +798,6 @@
     gap: 12px;
   }
   /* end feedback */
-
-  /* tool bar */
-  .toolbar-mobile{
-    width: 100vw;
-    height: max-content;
-    background-color: var(--color-white);
-    z-index: 100;
-  }
-
-  .btn-booking__mobile{
-    font-size: 12px;
-    line-height: 18px;
-    font-weight: 900;
-    letter-spacing: 0.6px;
-    padding: 13px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-  }
-  /* end tool bar */
 
   /* modal finfing booking */
   .modal-booking{

@@ -73,12 +73,12 @@ function gsapIntro() {
   tl.to(
     ".image-signature .box",
     {
-      scale: 5,
+      scale: 200,
       clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
       ease: "none",
-      duration: 1.5, // Optional duration for the second animation
+      duration: 2, // Optional duration for the second animation
     },
-    1
+    1.5
   ); // Start at the same time as the previous animation
 }
 
@@ -1133,11 +1133,11 @@ function amentities() {
     }
   );
 }
-function removeBoxDetail(event){
+function removeBoxDetail(event) {
   event.preventDefault();
 
   let target = $(event.target);
-  if(target.length){
+  if (target.length) {
     target.closest(".box-detail").removeClass("active");
   }
 }

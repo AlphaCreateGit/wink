@@ -339,7 +339,7 @@ section {
 .cta-mess.hide {
   right: -50px;
 }
-.cta-mess .phone-icon{
+.cta-mess .phone-icon {
   margin-bottom: 16px;
 }
 .cta-mess .mess-icon a,
@@ -353,23 +353,23 @@ section {
   border-radius: 50%;
   transition: all 0.3s ease;
 }
-.cta-mess .phone-icon a{
+.cta-mess .phone-icon a {
   background-color: var(--color-black);
 }
-.cta-mess .phone-icon a:hover{
+.cta-mess .phone-icon a:hover {
   background-color: var(--color-white);
 }
-.cta-mess .mess-icon a:hover{
+.cta-mess .mess-icon a:hover {
   background-color: var(--color-black);
 }
 .cta-mess .mess-icon svg path,
 .cta-mess .phone-icon svg path {
   transition: all 0.3s ease;
 }
-.cta-mess .mess-icon:hover svg path  {
+.cta-mess .mess-icon:hover svg path {
   fill: var(--color-white);
 }
-.cta-mess .phone-icon:hover svg path{
+.cta-mess .phone-icon:hover svg path {
   fill: var(--color-primary);
 }
 .btn-custom {
@@ -3181,7 +3181,7 @@ section.spacer {
   gap: 40px;
   position: relative;
 }
-.amenities__title .item svg{
+.amenities__title .item svg {
   min-width: 5px;
 }
 .amenities__title .item::before {
@@ -5755,8 +5755,8 @@ select:-webkit-autofill:focus {
   z-index: 99;
 }
 .intro .intro-inner .image-signature .box {
-  width: 400px;
-  height: 500px;
+  width: 10px;
+  height: 15px;
   background-color: var(--color-primary);
-  clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+  clip-path: polygon(30% 0, 100% 0, 70% 100%, 0% 100%);
 }

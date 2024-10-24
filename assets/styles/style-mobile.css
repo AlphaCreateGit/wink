@@ -35,9 +35,9 @@
   }
 
   .deals__list .swiper-control .swiper-button-prev{
-    left: 50%;
-    right: unset;
-    bottom: -48px;
+    left: unset;
+    right: 16px;
+    bottom: -55px;
     width: 70px;
     height: 18px;
     top: unset;
@@ -45,24 +45,26 @@
   }
 
   .deals__list .swiper-control .swiper-button-next{
-    right: 50%;
+    right: 8px;
     left: unset;
-    bottom: -48px;
+    bottom: -55px;
     width: 70px;
     height: 18px;
     top: unset;
-    transform: translate(95px,0);
+    transform: translate(0);
   }
 
   .deals__list .swiper-pagination{
     top: unset;
-    bottom: -48px;
-    left: 50%;
+    bottom: -55px;
+    left: unset;
     transform: translate(-50%, 0);
   }
 
   .deals__view{
-    margin-top: 80px;
+    margin-top: 32px;
+    padding: 0 16px;
+    justify-content: flex-start !important;
   }
 
   /* header tablet */
@@ -624,7 +626,7 @@
 
   /* mobile section deals */
   .deals__container {
-    padding: 0 16px;
+    padding: 0;
   }
 
   .deals__content{
@@ -921,6 +923,11 @@
   .deals__title{
     align-items: flex-start !important;
     margin-bottom: 32px;
+    padding: 0 16px;
+  }
+  .deals__list{
+    padding: 0;
+    padding-left: 16px;
   }
   .deals__title h2{
     font-size: 28px;

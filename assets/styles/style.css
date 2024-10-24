@@ -2745,6 +2745,7 @@ section {
 
 .dropdown-custom {
   position: relative;
+  cursor: default;
 }
 
 .dropdown-custom__menu {
@@ -3113,7 +3114,7 @@ section.spacer {
   align-items: center;
   flex-direction: column;
   gap: 16px;
-  padding: 22px 0;
+  padding: 22px 10px;
 }
 .facilities__item p {
   text-transform: uppercase;
@@ -4457,9 +4458,7 @@ section.map {
 .position-list .position-filters {
   padding-bottom: 20px;
   padding-top: 20px;
-}
-.position-list .list {
-  border-top: 2px solid #ececec;
+  border-bottom: 2px solid var(--color-black);
 }
 
 .position-list .position-filters.fixed {
@@ -4469,7 +4468,7 @@ section.map {
   left: 0;
   z-index: 99;
   transition: top 0.9s;
-  box-shadow: 0 1px 10px 0 #e6e6e6;
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.05);
 }
 .position-list .position-filters.scrolling-up {
   top: 120px;
@@ -4509,6 +4508,7 @@ section.map {
   line-height: 26px;
   font-weight: 400;
   letter-spacing: 0.04px;
+  text-align: right;
 }
 .position-list .position-item.sub .position-item-sub:first-child {
   font-size: 20px;

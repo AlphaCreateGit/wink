@@ -237,8 +237,6 @@
     width: 100vw;
     height: auto;
     z-index: 99999;
-    padding: 8px;
-    gap: 8px;
 
     position: fixed;
     left: 0;
@@ -246,7 +244,7 @@
   }
     
   .sub-menu__cta a{
-    width: calc(50% - 12px);
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -254,7 +252,10 @@
     line-height: 150%;
     letter-spacing: 0.6px;
     border: 1px solid var(--color-black);
-    padding: 9px;
+    padding: 13px;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    text-transform: uppercase;
   }
 
   .sub-menu__cta a.primary{
@@ -283,6 +284,10 @@
 
   .amenities__top .amen-right .box-detail .box-slide{
     padding: 0 16px;
+  }
+
+  .comming-soom__count{
+    height: 90px;
   }
 }
 
@@ -1158,6 +1163,104 @@
 
   .amenities__bottom > .row{
     flex-direction: row !important;
+  }
+
+  .positions-hiring__container{
+    padding: 0 16px;
+  }
+
+  .position-filters .position-item-sub:nth-child(2),
+  .position-filters .position-item-sub:nth-child(4){
+    display: none;
+  }
+
+  .position-list .position-item.sub .position-item-sub:nth-child(2),
+  .position-list .position-item.sub .position-item-sub:nth-child(4){
+    display: none;
+  }
+
+  .position-list .position-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .positions-hiring__container .title{
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+    font-weight: 900;
+    margin-bottom: 32px;
+  }
+
+  .position-list .position-item.sub .position-item-sub:first-child{
+    font-weight: 900;
+    text-align: left;
+  }
+
+  .positions-hiring{
+    padding: 64px 0;
+  }
+
+  .position-list .position-filters.scrolling-up{
+    top: 60px;
+  }
+
+  .room-facilities.why-join-sec{
+    padding: 0 16px;
+  }
+
+  .position-list .position-item .position-item-sub .dropdown-custom__menu{
+    right: 0;
+    left: unset;
+  }
+
+  .career-intro-sec .comming-soon{
+    flex-direction: column;
+  }
+
+  .career-intro-sec .container-page .box{
+    padding-top: 60px;
+    padding-bottom: 64px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .career-intro-sec .container-page{
+    margin: 0;
+    padding: 0 16px;
+    width: 100%;
+  }
+
+  .career-intro-sec .container-page .box h5{
+    margin-bottom: 8px;
+  }
+
+  .career-intro-sec .container-page .box h2{
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+    margin-bottom: 24px;
+  }
+
+  .career-intro-sec .container-page .box .desc{
+    margin-bottom: 0;
+  }
+
+  .career-intro-sec .panels{
+    width: 100%;
+    height: 100%;
+  }
+
+  .career-intro-sec .panels .box{
+    width: 100%;
+    max-width: 100%;
+    padding: 67px 16px 0;
+  }
+
+  .career-intro-sec .panels .box h1{
+    font-size: 28px;
+    line-height: 36px;
   }
 }
 

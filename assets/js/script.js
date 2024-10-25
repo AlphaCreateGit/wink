@@ -118,17 +118,6 @@ function gsapIntro() {
   ); // Start at the same time as the previous animation
 }
 
-function scrollFreezeCtaMess() {
-  gsap.registerPlugin(ScrollTrigger);
-
-  ScrollTrigger.create({
-    trigger: ".footer",
-    start: "top bottom",
-    end: "bottom 80vh",
-    toggleClass: "freeze",
-    scrub: 1,
-  });
-}
 function openAlert(event) {
   event.preventDefault();
 
@@ -421,6 +410,17 @@ function scrollCTA() {
 
   // Re-initialize ScrollTrigger when page is refreshed
   $(window).on("load", initializeScrollTrigger);
+}
+function scrollFreezeCtaMess() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.create({
+    trigger: ".footer__container--bottom-overlay",
+    start: "top bottom",
+    end: "bottom 95vh", // Adjust end point for more controlled placement
+    toggleClass: "freeze",
+    scrub: 1,
+  });
 }
 
 function menubar() {

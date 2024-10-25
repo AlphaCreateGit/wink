@@ -339,9 +339,7 @@ section {
   z-index: 99;
   transition: all 0.4s;
 }
-.cta-mess.hide {
-  right: -50px;
-}
+
 .cta-mess .phone-icon {
   margin-bottom: 16px;
   position: relative;
@@ -1911,10 +1909,14 @@ section {
   transform: translate(0) !important;
   transition: all 0.4s;
 }
-.footer.freeze .cta-mess {
+.footer__container--bottom-overlay {
+  position: relative;
+  z-index: 9;
+}
+.footer__container--bottom-overlay.freeze .cta-mess {
   position: absolute !important;
   bottom: unset !important;
-  top: -80px !important;
+  top: -100px !important;
   right: 40px !important;
   transform: translate(0) !important;
   transition: all 0.4s;
@@ -1928,7 +1930,7 @@ section {
   padding: 80px 40px 60px;
   border-bottom: 1px solid var(--color-white);
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 .footer__container--left {
@@ -5578,7 +5580,7 @@ select:-webkit-autofill:focus {
   .contact-sec {
     padding: 100px 40px 64px;
   }
-  .contact-sec.career-content-sec{
+  .contact-sec.career-content-sec {
     padding-top: 0;
   }
   .contact__content {
@@ -5683,7 +5685,7 @@ select:-webkit-autofill:focus {
     padding-top: 0;
     padding-bottom: 0;
   }
-  .page-details-career .career-content-sec .deals__view{
+  .page-details-career .career-content-sec .deals__view {
     justify-content: flex-end !important;
   }
   .review-sec .hotels__grid {
@@ -5815,12 +5817,12 @@ select:-webkit-autofill:focus {
   .blogs-map .map-text .desc {
     text-align: left;
   }
-  .blogs-map .map-text .title{
+  .blogs-map .map-text .title {
     font-size: 28px;
     line-height: 36px;
     letter-spacing: 0.84px;
   }
-  .blogs-map .map-text{
+  .blogs-map .map-text {
     margin-bottom: 32px;
   }
   .blogs-service {
@@ -5979,4 +5981,7 @@ select:-webkit-autofill:focus {
     flex-wrap: wrap;
     gap: 0 18px;
   }
+}
+ .cta-mess.hide {
+  right: -50px !important;
 }

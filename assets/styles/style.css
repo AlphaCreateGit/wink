@@ -4944,15 +4944,13 @@ section.map {
 .blogs-service {
   padding: 0 40px;
   background-color: var(--color-white);
+  overflow-x: hidden;
 }
 .blogs-service .row {
   padding-bottom: 120px;
 }
 .latest-stories-sec .hotels__container .title {
-  margin-bottom: 56px;
-}
-.latest-stories-sec .hotels__filter--opening .dropdown-custom__menu {
-  width: auto;
+  margin-bottom: 40px;
 }
 .latest-stories-sec .hotels__filter {
   justify-content: space-between;
@@ -5802,6 +5800,14 @@ select:-webkit-autofill:focus {
   .blogs-map .map-text .title,
   .blogs-map .map-text .desc {
     text-align: left;
+  }
+  .blogs-map .map-text .title{
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+  }
+  .blogs-map .map-text{
+    margin-bottom: 32px;
   }
   .blogs-service {
     padding: 0 16px;

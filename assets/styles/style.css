@@ -1349,6 +1349,12 @@ section {
   line-height: 26px;
   text-transform: none;
 }
+.select-hotel .dropdown-custom__menu {
+  width: 100%;
+}
+.select-hotel .dropdown-custom__menu .dropdown-custom__item {
+  padding-left: 24px;
+}
 
 .banner-hero__form form .select-hotel .select-head {
   display: flex;
@@ -4737,10 +4743,11 @@ section.map {
   color: #a9a9a9;
   margin-top: 12px;
 }
-.deals-details-sec .hot-deals .item .desc ul li p {
+.deals-details-sec .hot-deals .item .desc ul li a {
   transition: all 0.3s;
+  color: var(--color-black);
 }
-.deals-details-sec .hot-deals .item .desc ul li p:hover {
+.deals-details-sec .hot-deals .item .desc ul li a:hover {
   color: var(--color-primary);
 }
 .deals-details-sec .hot-deals ul li:first-child .item {

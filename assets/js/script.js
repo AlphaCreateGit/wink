@@ -1453,7 +1453,7 @@ function mapCompany() {
         end: "bottom top",
         pin: true,
         scrub: true,
-        markers: true,
+        // markers: true,
         onUpdate: (self) => {
           const scrollDirection = self.direction; // 1 for down, -1 for up
 

@@ -32,6 +32,19 @@
     <!-- end import link custom css -->
   </head>
   <body>
+    <!-- alter success -->
+    <div class="alert-success">
+      <div class="alert-inner">
+        <div class="alert-text">
+          <div>
+            <p class="b2-font">You have successfully registered</p>
+            <p class="b2-r">We will contact you shortly</p>
+          </div>
+        </div>
+        <div class="progress-type"></div>
+      </div>
+    </div>
+    <!-- end alter success -->
     <!-- start feeback -->
     <div class="feedback">
       <div class="feedback__text b2-font color-white">FEEDBACK</div>
@@ -476,7 +489,7 @@
                         </span>
                       </div>
                       <div class="deals__view">
-                        <button class="custom__btn">
+                        <button class="custom__btn" onclick="openAlert(event)">
                           <span class="b3-font color-black d-block"
                             >SIGN UP</span
                           >

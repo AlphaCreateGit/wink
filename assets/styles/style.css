@@ -3401,7 +3401,8 @@ section.spacer {
 
 /* css map */
 section.map {
-  border: 1px solid var(--color-grey);
+  border-top: 1px solid var(--color-gray-20);
+  border-bottom: 1px solid var(--color-gray-20);
 }
 .map__wrapper {
   width: 100%;
@@ -3428,7 +3429,7 @@ section.map {
 }
 .map__marker h2 {
   padding-top: 40px;
-  padding-inline: 40px;
+  padding-inline: 60px;
   margin-bottom: 32px;
 }
 .map__marker .marker-content {
@@ -3571,7 +3572,7 @@ section.map {
 }
 .map-content .box .box-head .name-city-hotel {
   padding-left: 60px;
-  margin-top: 68px;
+  margin-top: 8px;
 }
 .map-content .box .icon-back {
   width: 60px;

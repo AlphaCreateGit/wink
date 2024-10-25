@@ -343,21 +343,21 @@ section {
   margin-bottom: 16px;
   position: relative;
 }
-.cta-mess .phone-icon .img-hover{
+.cta-mess .phone-icon .img-hover {
   opacity: 0;
   visibility: hidden;
 
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   transition: all 0.3s ease;
 }
-.cta-mess .phone-icon a:hover svg{
+.cta-mess .phone-icon a:hover svg {
   opacity: 0;
   visibility: hidden;
 }
-.cta-mess .phone-icon a:hover svg.img-hover{
+.cta-mess .phone-icon a:hover svg.img-hover {
   opacity: 1;
   visibility: visible;
 }
@@ -3717,7 +3717,7 @@ section.map {
   background-color: var(--color-white);
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .overlay {
-  height: 285px;
+  height: 320px;
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .wink-name {
   margin-bottom: 12px;
@@ -3761,7 +3761,7 @@ section.map {
   opacity: 1;
   visibility: visible;
 }
-.contact-sec .dropdown-custom__menu{
+.contact-sec .dropdown-custom__menu {
   top: 50px;
 }
 /* .page-tpl-suites .wink-room__suites .box .box-desc ul:has(+ .check:checked) {
@@ -3861,7 +3861,8 @@ section.map {
   bottom: 0;
   transition: all 0.4s ease;
 }
-.swiper-suites .swiper-button-next:hover, .swiper-suites .swiper-button-prev:hover{
+.swiper-suites .swiper-button-next:hover,
+.swiper-suites .swiper-button-prev:hover {
   background-color: var(--color-header-hotels);
 }
 .swiper-suites .swiper-button-next {
@@ -4232,12 +4233,12 @@ section.map {
   border: none;
   padding: 0;
 }
-#modalContactUsEvent .dropdown-custom__menu{
+#modalContactUsEvent .dropdown-custom__menu {
   top: 50px;
   width: 100%;
   background-color: var(--color-gray-10);
 }
-#modalContactUsEvent .select-head{
+#modalContactUsEvent .select-head {
   border-bottom: 1px solid var(--color-gray-50);
 }
 #modalContactUsEvent .modal-footer {
@@ -4347,7 +4348,7 @@ section.map {
   transition: all 0.4s ease;
 }
 .swiper-book-room .swiper-button-next:hover,
-.swiper-book-room .swiper-button-prev:hover{
+.swiper-book-room .swiper-button-prev:hover {
   background-color: var(--color-header-hotels);
 }
 .swiper-book-room .swiper-button-next {

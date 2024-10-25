@@ -4522,6 +4522,7 @@ section.map {
 }
 .position-list .position-item .position-item-sub .dropdown-custom__item {
   color: var(--color-white);
+  text-align: right;
 }
 .position-list .position-item .position-item-sub .dropdown-custom__item:hover {
   color: var(--color-primary);
@@ -5643,7 +5644,7 @@ select:-webkit-autofill:focus {
     height: 0;
   }
 
-  .contact-sec .contact__form{
+  .contact-sec .contact__form {
     padding: 40px;
   }
 }

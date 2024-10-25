@@ -5572,6 +5572,9 @@ select:-webkit-autofill:focus {
   .contact-sec {
     padding: 100px 40px 64px;
   }
+  .contact-sec.career-content-sec{
+    padding-top: 0;
+  }
   .contact__content {
     padding: 0px;
   }
@@ -5672,6 +5675,10 @@ select:-webkit-autofill:focus {
   }
   .page-details-career .career-content-sec {
     padding-top: 0;
+    padding-bottom: 0;
+  }
+  .page-details-career .career-content-sec .deals__view{
+    justify-content: flex-end !important;
   }
   .review-sec .hotels__grid {
     grid-template-columns: 1fr;

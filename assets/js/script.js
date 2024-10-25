@@ -98,7 +98,7 @@ function gsapIntro() {
 
   // First animation: image-container img
   tl.to(".image-container img", {
-    scale: 5,
+    scale: 4,
     transformOrigin: "center center",
     ease: "power1.inOut",
     duration: 2, // Optional duration for the first animation
@@ -112,7 +112,7 @@ function gsapIntro() {
       transform: "skew(0deg)",
       transformOrigin: "center center",
       ease: "power2.inOut",
-      duration: 1.5, // Optional duration for the second animation
+      duration: 2, // Optional duration for the second animation
     },
     0.65
   ); // Start at the same time as the previous animation

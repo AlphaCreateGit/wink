@@ -1521,6 +1521,9 @@ function mapCompany() {
       }
     );
 
+    // Add a delay of 3 seconds after the marker-detail animation
+    tl.call(() => {}, {}, "+=3");
+
     tl.fromTo(
       ".map-new .map-content",
       { opacity: 0 },

@@ -78,6 +78,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    z-index: 10;
   }
   
   .header__main {
@@ -244,7 +245,7 @@
 
     position: fixed;
     left: 0;
-    top: calc(100dvh - 53px);
+    top: calc(100dvh - 46px);
   }
     
   .sub-menu__cta a{
@@ -1334,6 +1335,10 @@
   #modalContactUsEvent .modal-header .btn-close{
     width: 48px;
     height: 48px;
+  }
+
+  .sub-menu__grid{
+    padding-bottom: 150px;
   }
 }
 

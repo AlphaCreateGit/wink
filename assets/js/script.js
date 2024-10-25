@@ -461,6 +461,9 @@ function menubar() {
       menuTl.play();
     }
     $(".header__sub-menu").toggleClass("active");
+    setTimeout(() => {
+      $(".menu-item-has-children").removeClass("open");
+    }, 1000);
     // check when menu active
     const $body = $("body");
     const $header = $("header");

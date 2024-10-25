@@ -4593,13 +4593,32 @@ section.map {
 .our-reports__content .reports-item ul {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 5px 18px;
+  flex-wrap: wrap;
 }
 .our-reports__content .reports-item ul li a {
   position: relative;
+  min-width: max-content;
+  display: block;
 }
 .our-reports__content .reports-item ul li a:hover {
   color: var(--color-primary);
+}
+.our-reports__content .reports-item ul li a::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.our-reports__content .reports-item ul li a:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .our-reports__content .reports-item ul li a::before {
   content: "";
@@ -4618,13 +4637,14 @@ section.map {
 /* css page deals */
 .hero-deals .hero-deals__inner {
   position: relative;
-  width: 100%;
-  height: 100vh;
+  width: calc(100% - 80px);
+  margin: 160px auto 40px;
+  height: calc(100vh - 160px);
 }
 .hero-deals__img {
   width: 100%;
   height: 100%;
-  padding: 160px 40px 40px;
+  /* padding: 160px 40px 40px; */
   position: relative;
 }
 .hero-deals__img img {
@@ -4635,7 +4655,8 @@ section.map {
 .hero-deals__img::before {
   content: "";
   position: absolute;
-  inset: 160px 40px 40px;
+  /* inset: 160px 40px 40px; */
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.4);
 }
 .hero-deals__content {
@@ -5847,6 +5868,8 @@ select:-webkit-autofill:focus {
   }
   .hero-deals .hero-deals__inner {
     height: 540px;
+    margin: 0;
+    width: 100%;
   }
   .hero-deals__content .box .desc {
     margin-bottom: 24px;

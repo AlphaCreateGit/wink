@@ -312,6 +312,10 @@
     bottom: 60px;
   }
   /* end tool bar */
+
+  .experience__container{
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -638,6 +642,15 @@
   /* end mobile comming soon */
 
   /* css mobile hotels */
+  .hotels__box .hotels__tag{
+    top: 20px;
+    left: 24px;
+  }
+
+  .hotels__box .hotels__tag .tag{
+    padding: 7px 15px;
+  }
+
   .hotels__container {
     padding: 0 16px;
   }
@@ -1148,6 +1161,10 @@
     margin-bottom: 32px;
   }
 
+  .wink-detail-sec .wink-detail__desc .desc{
+    margin-bottom: 24px;
+  }
+
   .swiper-control-parent{
     display: none;
   }
@@ -1269,6 +1286,10 @@
 
   .about-company .about-company__desc{
     display: none;
+  }
+
+  .swiper-suites .img{
+    height: 190px;
   }
 }
 

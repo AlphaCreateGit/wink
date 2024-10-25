@@ -3038,7 +3038,7 @@ section.spacer {
 .wink-room__slider .box-desc .wink-facilities ul {
   display: flex;
   align-items: center;
-  gap: 4px 32px;
+  gap: 6px 32px;
   flex-wrap: wrap;
 }
 .wink-room__slider .box-desc .wink-facilities ul li .item {

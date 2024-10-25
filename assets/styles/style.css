@@ -5233,10 +5233,10 @@ section.map {
 .member-contact .form-submit {
   margin-top: 56px;
 }
-.member-contact .form-submit .sign-in a{
+.member-contact .form-submit .sign-in a {
   position: relative;
 }
-.member-contact .form-submit .sign-in a::after{
+.member-contact .form-submit .sign-in a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -5252,7 +5252,7 @@ section.map {
   color: var(--color-primary);
   text-decoration: none;
 }
-.member-contact .form-submit .sign-in a:hover::after{
+.member-contact .form-submit .sign-in a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -5586,8 +5586,36 @@ select:-webkit-autofill:focus {
   .alert-success {
     top: 60px;
   }
+  .member-contact .tick {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .page-tpl-member-login .member-contact {
+    position: static;
+  }
+  .member-contact-overlay {
+    height: 0;
+  }
 }
 @media (max-width: 767px) {
+  .member-contact .member-box {
+    padding: 80px 16px 64px;
+    margin-top: 0;
+  }
+  .member-login .banner-hero__container {
+    height: 440px;
+  }
+  .member-contact .member-box .social ul {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .member-contact .form .box {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .member-contact .member-box .head {
+    padding: 0;
+  }
   .content-terms {
     padding: 108px 16px 0px;
   }

@@ -5094,6 +5094,7 @@ section.map {
 .member-contact .member-box {
   background-color: var(--color-white);
   padding: 80px 115px 80px;
+  margin-top: -120px;
 }
 .member-contact .member-box .head {
   text-align: center;
@@ -5228,9 +5229,28 @@ section.map {
 .member-contact .form-submit {
   margin-top: 56px;
 }
+.member-contact .form-submit .sign-in a{
+  position: relative;
+}
+.member-contact .form-submit .sign-in a::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .member-contact .form-submit .sign-in a:hover {
   color: var(--color-primary);
-  text-decoration: underline;
+  text-decoration: none;
+}
+.member-contact .form-submit .sign-in a:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .page-tpl-member-login {
   position: relative;

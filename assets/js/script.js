@@ -1593,3 +1593,13 @@ function toggleOpenDescWinkFacilities() {
     }
   });
 }
+
+function handleFilePDFSelect(event, infoElementId) {
+  const file = event.target.files[0];
+  const infoElement = document.getElementById(infoElementId);
+  const maxSize = 20 * 1024 * 1024; // 20MB in bytes
+
+  if (file && file.size > maxSize) {
+    infoElement.textContent = `File is too large. Maximum size is 20MB.`;
+  }
+}

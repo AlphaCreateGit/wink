@@ -89,6 +89,9 @@ section {
 .spacing-120 {
   background-color: var(--color-gray-10);
 }
+.error{
+  color: red;
+}
 /* end css reset */
 /* custom scroll bar */
 

@@ -1449,8 +1449,8 @@ function mapCompany() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".map-new",
-        start: "top 8%",
-        end: "bottom top",
+        start: "top 60px",
+        end: "+=120%",
         pin: true,
         scrub: true,
         // markers: true,
@@ -1480,8 +1480,8 @@ function mapCompany() {
     // Your animation steps here...
     tl.fromTo(
       ".ic-wink-head",
-      { opacity: 0, yPercent: 20 },
-      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" }
+      { opacity: 0, yPercent: 20, zIndex: 2 },
+      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut", zIndex: 0 }
     );
 
     tl.fromTo(

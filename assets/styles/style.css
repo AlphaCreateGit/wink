@@ -4349,6 +4349,7 @@ section.map {
 }
 #modalContactUsEvent .modal-dialog {
   max-width: 895px;
+  padding-top: 70px;
 }
 .swiper-book-room {
   position: relative;
@@ -5695,7 +5696,7 @@ select:-webkit-autofill:focus {
     margin-bottom: 64px;
   }
   #modalContactUsEvent .modal-body {
-    padding: 24px 24px 40px;
+    padding: 48px 24px 40px;
   }
   #modalBookRoom .modal-body {
     padding: 16px;

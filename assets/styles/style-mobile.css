@@ -1325,6 +1325,16 @@
   .career-content-sec .career-table ul li .item{
     grid-template-columns: 1fr;
   }
+
+  #modalContactUsEvent .modal-body .deals__view{
+    padding: 0;
+    justify-content: flex-end !important;
+  }
+
+  #modalContactUsEvent .modal-header .btn-close{
+    width: 48px;
+    height: 48px;
+  }
 }
 
 @media (max-width: 480px){

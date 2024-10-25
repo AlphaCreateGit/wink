@@ -844,6 +844,7 @@ function commingSoon() {
           ease: "none",
           duration: 1,
           stagger: 0.5,
+          scaleX: 1.1,
         },
         "+=0.5"
       );

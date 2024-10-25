@@ -32,6 +32,19 @@
     <!-- end import link custom css -->
   </head>
   <body>
+    <div class="alert-success">
+      <div class="alert-inner">
+        <div class="alert-text">
+          <div>
+            <p class="b2-font">
+              Thank you for registering with Wink Rewards Lifestyle
+            </p>
+            <p class="b2-r">Now you can sign in to your account</p>
+          </div>
+        </div>
+        <div class="progress-type"></div>
+      </div>
+    </div>
     <!-- modal contact -->
 
     <!-- end contact -->
@@ -415,7 +428,11 @@
                       <ul>
                         <li>
                           <p class="b2-bold color-black">
-                            Not a member, sign up now?
+                            Not a member,
+                            <a href="./member-login.html" class="color-black"
+                              >sign up</a
+                            >
+                            now?
                           </p>
                         </li>
                         <li>
@@ -426,7 +443,7 @@
                       </ul>
                     </div>
                     <div class="deals__view d-flex justify-content-end">
-                      <button class="custom__btn">
+                      <button class="custom__btn" onclick="openAlert(event)">
                         <span class="b3-font color-black d-block">SIGN IN</span>
                       </button>
                     </div>
@@ -983,7 +1000,10 @@
                     <!-- footer container bottom left -->
                     <div class="footer__container--bl">
                       <div class="bct">
-                        <a href="http://online.gov.vn/Home/WebDetails/78036" title="Bộ công thương">
+                        <a
+                          href="http://online.gov.vn/Home/WebDetails/78036"
+                          title="Bộ công thương"
+                        >
                           <img src="./assets/images/logo-bct.svg" alt="" />
                         </a>
                       </div>

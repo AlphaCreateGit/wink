@@ -907,7 +907,7 @@ section {
   top: 120px;
   height: calc(100vh - 120px);
   width: 100%;
-  background-color: var(--color-white);
+  background-color: var(--color-gray-10);
   clip-path: polygon(100% 100%, 100% 0, 100% 0, 100% 100%, 0 100%, 0 100%);
   /* clip-path: circle(0 at 100% 0); */
   transition: all 0.8s ease 0.4s;
@@ -941,7 +941,9 @@ section {
   height: max-content;
   width: 100%;
 }
-
+.menu-item.active a::before {
+  transform: scaleX(1);
+}
 .menu-container li a {
   display: inline-block;
   text-decoration: none;
@@ -1131,7 +1133,7 @@ section {
   padding-bottom: 12%;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
-  background-color: var(--color-white);
+  background-color: var(--color-gray-10);
 }
 .sub-menu__grid::-webkit-scrollbar {
   display: none;

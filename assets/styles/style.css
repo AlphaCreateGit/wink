@@ -3048,7 +3048,7 @@ section.spacer {
 .wink-room__slider .box-desc .wink-facilities ul {
   display: flex;
   align-items: center;
-  gap: 4px 32px;
+  gap: 6px 32px;
   flex-wrap: wrap;
 }
 .wink-room__slider .box-desc .wink-facilities ul li .item {
@@ -3933,6 +3933,7 @@ section.map {
 .experience-sec .experience__content {
   max-width: 450px;
   width: 100%;
+  padding-right: 30px;
 }
 .experience-sec .experience__content .tag {
   margin-bottom: 64px;
@@ -5766,7 +5767,7 @@ select:-webkit-autofill:focus {
     padding: 64px 16px;
   }
   .wink-rewards-faqs .title {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   .blogs__list {

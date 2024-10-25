@@ -5644,6 +5644,10 @@ select:-webkit-autofill:focus {
   .member-contact-overlay {
     height: 0;
   }
+
+  .contact-sec .contact__form{
+    padding: 40px;
+  }
 }
 @media (max-width: 767px) {
   .member-contact .member-box {

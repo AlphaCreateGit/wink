@@ -67,6 +67,10 @@
     justify-content: flex-start !important;
   }
 
+  .page-tpl-contact .deals__view{
+    justify-content: flex-end !important;
+  }
+
   /* header tablet */
   .header__top-bar {
     padding: 0 20px;
@@ -1309,6 +1313,13 @@
   .hero-deals .hero-deals__inner{
     margin: 0;
     height: 540px;
+  }
+
+  .blogs__item .name-city,
+  .blogs__grid .blogs__grid--col--box .content h3{
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
   }
 }
 

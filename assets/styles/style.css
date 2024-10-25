@@ -4587,13 +4587,32 @@ section.map {
 .our-reports__content .reports-item ul {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 5px 18px;
+  flex-wrap: wrap;
 }
 .our-reports__content .reports-item ul li a {
   position: relative;
+  min-width: max-content;
+  display: block;
 }
 .our-reports__content .reports-item ul li a:hover {
   color: var(--color-primary);
+}
+.our-reports__content .reports-item ul li a::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.our-reports__content .reports-item ul li a:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .our-reports__content .reports-item ul li a::before {
   content: "";

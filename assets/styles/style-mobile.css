@@ -1291,6 +1291,11 @@
   .swiper-suites .img{
     height: 190px;
   }
+
+  .experience-sec .experience__content{
+    max-width: 100%;
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 480px){

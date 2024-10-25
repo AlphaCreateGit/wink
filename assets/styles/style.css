@@ -3931,6 +3931,7 @@ section.map {
 .experience-sec .experience__content {
   max-width: 450px;
   width: 100%;
+  padding-right: 30px;
 }
 .experience-sec .experience__content .tag {
   margin-bottom: 64px;

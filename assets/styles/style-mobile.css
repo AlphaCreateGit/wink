@@ -316,6 +316,11 @@
   .experience__container{
     padding-left: 0;
   }
+
+  .hero-deals .hero-deals__inner{
+    margin: 100px auto 40px;
+    height: calc(100vh - 100px);
+  }
 }
 
 @media (max-width: 767px) {
@@ -1299,6 +1304,11 @@
 
   .faqs .accordion-body{
     padding-right: 0;
+  }
+
+  .hero-deals .hero-deals__inner{
+    margin: 0;
+    height: 540px;
   }
 }
 

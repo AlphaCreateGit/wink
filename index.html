@@ -783,7 +783,15 @@
               <!-- end marker list-->
               <!-- marker details -->
               <div class="map-content-wrapper">
-                <img src="./assets/images/img_map.svg" alt="" />
+                <img src="./assets/images/map-default.png" alt="" usemap="#vietnam_map" />
+                <map name="vietnam_map">
+                  <area target="" alt="Hai Phong" data-city="hai-phong" title="Hai Phong" href="" coords="555,107,38" shape="circle">
+                  <area target="" alt="Can Tho" data-city="can-tho" title="Can Tho" href="" coords="494,531,38" shape="circle">
+                  <area target="" alt="TP Ho Chi Minh" data-city="ho-chi-minh" title="TP Ho Chi Minh" href="" coords="551,496,36" shape="circle">
+                  <area target="" alt="Tuy Hoa" data-city="tuy-hoa" title="Tuy Hoa" href="" coords="638,414,42" shape="circle">
+                  <area target="" alt="Da Nang Riverside" data-city="da-nang-riverside" data-v2-city="da-nang" title="Da Nang Riverside" href="" coords="605,283,613,267,639,295,630,317,596,329,577,319,587,304" shape="poly">
+                  <area target="" alt="Da Nang Center" data-city="da-nang-center" data-v2-city="da-nang" title="Da Nang Center" href="" coords="611,266,592,254,550,270,537,285,544,303,560,317,578,308,595,297,596,293" shape="poly">
+                </map>
                 <div
                   class="marker-detail hai-phong"
                   data-city="hai-phong"
@@ -2572,5 +2580,9 @@
     <!-- import custom js -->
     <script src="./assets/js/script.js"></script>
     <!-- end import custom js -->
+
+    <!-- import image map -->
+     <script src="./assets/libs/jquery.rwdImageMaps.js"></script>
+     <script src="./assets/libs/jquery.rwdImageMaps.min.js"></script>
   </body>
 </html>

@@ -31,6 +31,7 @@ $(document).ready(function () {
   stickyFilter();
   toggleOpenDescWinkFacilities();
   handlePageVisibilityAndFavicon();
+  responsiveImageMap();
 });
 function handlePageVisibilityAndFavicon() {
   const originalTitle = document.title;
@@ -906,6 +907,8 @@ function selectMap() {
 
     $(".map-content").removeClass("show");
     $(".marker").removeClass("hidden");
+
+    $(".map-content-wrapper img[usemap='#vietnam_map']").attr("src", `./assets/images/map-default.png`);
   });
 
   $(".icon-back-lv2").on("click", function (e) {
@@ -922,9 +925,13 @@ function selectMap() {
     $(`.map-content-detail[data-hotel="${city}"]`).addClass("show");
   });
 
-  $(".marker-detail").on("click", function (e) {
+  $(".marker-detail, map area").on("click", function (e) {
+    e.preventDefault();
+
+    
     const city = $(this).data("city");
     const citys = $(this).data("v2-city");
+    $(".map-content-wrapper img[usemap='#vietnam_map']").attr("src", `./assets/images/map-${city}.png`);
 
     // Xóa các lớp 'show' và 'active' trước
     // $(".map-content").removeClass("show");
@@ -1609,4 +1616,8 @@ function handleFilePDFSelect(event, infoElementId) {
   if (file && file.size > maxSize) {
     infoElement.textContent = `File is too large. Maximum size is 20MB.`;
   }
+}
+
+function responsiveImageMap(){
+  $('img[usemap]').rwdImageMaps();
 }

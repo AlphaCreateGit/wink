@@ -854,7 +854,7 @@ function commingSoon() {
       gsap.fromTo(
         content[index],
         {
-          yPercent: 10,
+          yPercent: 3,
           autoAlpha: 0,
         },
         {

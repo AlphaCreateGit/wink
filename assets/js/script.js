@@ -1,7 +1,6 @@
 "use strict";
 $ = jQuery;
 $(document).ready(function () {
-  stickyFilter();
   scrollHeader();
   subMenuHeader();
   swiperBanner();
@@ -29,7 +28,7 @@ $(document).ready(function () {
   commingCareer();
   toggleSubmenuMobile();
   scrollToolbarMobile();
-
+  stickyFilter();
   toggleOpenDescWinkFacilities();
   handlePageVisibilityAndFavicon();
 });
@@ -420,7 +419,7 @@ function scrollFreezeCtaMess() {
   ScrollTrigger.create({
     trigger: ".footer__container--bottom-overlay",
     start: "top bottom",
-    end: "bottom 95vh", // Adjust end point for more controlled placement
+    end: "bottom 80vh", // Adjust end point for more controlled placement
     toggleClass: "freeze",
     scrub: 1,
   });
@@ -1380,8 +1379,8 @@ function commingCareer() {
 }
 
 function stickyFilter() {
-  if ($(".hotels__filter").length) {
-    $(window).scroll(function () {
+  $(window).scroll(function () {
+    if ($(".hotels__filter").length) {
       let heightHeader = $(".header").height();
       let currentScroll = $(window).scrollTop();
       let hotelsOffset = $(".hotels__container").offset().top - heightHeader;
@@ -1410,47 +1409,44 @@ function stickyFilter() {
 
       // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo
       $(this).data("previousScroll", currentScroll);
-    });
-  }
-  if ($(".positions-hiring").length) {
-    $(window).scroll(function () {
-      if ($(".positions-hiring").length) {
-        let heightHeader = $(".header").height();
-        let currentScroll = $(window).scrollTop();
-        let hotelsOffset =
-          $(".positions-hiring__container .position-list").offset().top -
-          heightHeader +
-          56;
+    }
+  });
 
-        // Thêm biến để lưu giá trị cuộn trước đó
-        let previousScroll = $(this).data("previousScroll") || 0;
+  $(window).scroll(function () {
+    if ($(".positions-hiring").length) {
+      let heightHeader = $(".header").height();
+      let currentScroll = $(window).scrollTop();
+      let hotelsOffset =
+        $(".positions-hiring__container .position-list").offset().top -
+        heightHeader +
+        56;
 
-        if (currentScroll >= hotelsOffset) {
-          $(".position-filters").addClass("fixed");
+      // Thêm biến để lưu giá trị cuộn trước đó
+      let previousScroll = $(this).data("previousScroll") || 0;
 
-          // Kiểm tra hướng cuộn
-          if (currentScroll > previousScroll) {
-            // Cuộn xuống
-            $(".position-filters")
-              .addClass("scrolling-down")
-              .removeClass("scrolling-up");
-          } else {
-            // Cuộn lên
-            $(".position-filters")
-              .addClass("scrolling-up")
-              .removeClass("scrolling-down");
-          }
+      if (currentScroll >= hotelsOffset) {
+        $(".position-filters").addClass("fixed");
+
+        // Kiểm tra hướng cuộn
+        if (currentScroll > previousScroll) {
+          // Cuộn xuống
+          $(".position-filters")
+            .addClass("scrolling-down")
+            .removeClass("scrolling-up");
         } else {
-          $(".position-filters").removeClass(
-            "fixed scrolling-down scrolling-up"
-          );
+          // Cuộn lên
+          $(".position-filters")
+            .addClass("scrolling-up")
+            .removeClass("scrolling-down");
         }
-
-        // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo
-        $(this).data("previousScroll", currentScroll);
+      } else {
+        $(".position-filters").removeClass("fixed scrolling-down scrolling-up");
       }
-    });
-  }
+
+      // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo
+      $(this).data("previousScroll", currentScroll);
+    }
+  });
 }
 function mapCompany() {
   if ($(".map-new").length) {

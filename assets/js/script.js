@@ -908,7 +908,9 @@ function selectMap() {
     $(".map-content").removeClass("show");
     $(".marker").removeClass("hidden");
 
-    $(".map-content-wrapper img[usemap='#vietnam_map']").attr("src", `./assets/images/map-default.png`);
+    if($(".map-content-wrapper img[usemap='#vietnam_map']").length){
+      $(".map-content-wrapper img[usemap='#vietnam_map']").attr("src", `./assets/images/map-default.png`);
+    }
   });
 
   $(".icon-back-lv2").on("click", function (e) {
@@ -1619,5 +1621,7 @@ function handleFilePDFSelect(event, infoElementId) {
 }
 
 function responsiveImageMap(){
+  if($('img[usemap]').length < 1) return;
+  
   $('img[usemap]').rwdImageMaps();
 }

@@ -3437,9 +3437,11 @@ section.map {
 .map__wrapper {
   width: 100%;
   /* height: calc(100vh - 120px); */
-  /* height: 800px; */
-  height: auto;
+  height: 800px;
   position: relative;
+}
+.map.homepage .map__wrapper {
+  height: auto;
 }
 .map__wrapper .map-overview {
   width: 100%;
@@ -3447,9 +3449,11 @@ section.map {
 }
 .map__wrapper .map-overview img {
   width: 100%;
-  /* height: 100%; */
-  aspect-ratio: 1440 / 800;
+  height: 100%;
   object-fit: cover;
+}
+.map.homepage .map__wrapper .map-overview img {
+  aspect-ratio: 1440 / 800;
 }
 .map__marker {
   position: absolute;

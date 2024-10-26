@@ -3223,8 +3223,8 @@ section.spacer {
   margin-bottom: 56px;
 }
 .amenities__top {
-  border-top: 1px solid var(--color-grey);
-  border-bottom: 1px solid var(--color-grey);
+  /* border-top: 1px solid var(--color-grey); */
+  /* border-bottom: 1px solid var(--color-grey); */
 }
 .amenities__top .swiper-amenities {
   height: 640px;
@@ -3542,7 +3542,7 @@ section.map {
   visibility: hidden;
   transition: all 0.5s ease;
 }
-map area{
+map area {
   cursor: pointer;
   position: relative;
 }
@@ -4337,6 +4337,12 @@ map area{
   grid-template-columns: 1fr 1fr;
   gap: 32px 40px;
   align-items: flex-end;
+}
+#modalContactUsEvent .modal-body .box .right,
+#modalContactUsEvent .modal-body .box .left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 #modalContactUsEvent .form-input {
   width: 100%;

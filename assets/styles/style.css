@@ -1224,6 +1224,9 @@ section {
   height: 100%;
   object-fit: cover;
 }
+.banner-hero.no-booking .banner-hero__heading {
+  bottom: 64px;
+}
 
 .banner-hero__heading {
   position: absolute;
@@ -1232,6 +1235,7 @@ section {
   transform: translateX(-50%);
   max-width: 570px;
   width: 100%;
+  z-index: 2;
 }
 
 .banner-hero__heading h1 {
@@ -2526,18 +2530,17 @@ section {
   gap: 0 40px;
   margin-bottom: 40px;
 }
-.hotels__filter {
-  position: sticky;
+.hotels__filter.fixed {
   z-index: 100;
   background-color: var(--color-gray-10);
   transition: top 0.9s;
   padding: 16px 0px;
   left: 0;
   right: 0;
-}
-.hotels__filter.fixed {
   margin-bottom: 0;
+  position: sticky;
 }
+
 .hotels__filter.fixed .hotels__filter--location .dropdown-custom__menu {
   top: 34px;
 }
@@ -4617,7 +4620,7 @@ section.map {
 .our-reports__content .reports-item ul {
   display: flex;
   align-items: center;
-  gap: 5px 18px;
+  gap: 5px 24px;
   flex-wrap: wrap;
 }
 .our-reports__content .reports-item ul li a {
@@ -4647,10 +4650,10 @@ section.map {
 .our-reports__content .reports-item ul li a::before {
   content: "";
   position: absolute;
-  height: 80%;
+  height: 70%;
   width: 1.5px;
   background-color: var(--color-grey);
-  right: -9px;
+  right: -12px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -4679,9 +4682,8 @@ section.map {
 .hero-deals__img::before {
   content: "";
   position: absolute;
-  /* inset: 160px 40px 40px; */
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.06%, #000000 100%);
 }
 .hero-deals__content {
   position: absolute;
@@ -5982,6 +5984,6 @@ select:-webkit-autofill:focus {
     gap: 0 18px;
   }
 }
- .cta-mess.hide {
+.cta-mess.hide {
   right: -50px !important;
 }

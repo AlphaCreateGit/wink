@@ -1,6 +1,7 @@
 "use strict";
 $ = jQuery;
 $(document).ready(function () {
+  stickyFilter();
   scrollHeader();
   subMenuHeader();
   swiperBanner();
@@ -28,7 +29,7 @@ $(document).ready(function () {
   commingCareer();
   toggleSubmenuMobile();
   scrollToolbarMobile();
-  stickyFilter();
+
   toggleOpenDescWinkFacilities();
   handlePageVisibilityAndFavicon();
 });
@@ -1379,8 +1380,8 @@ function commingCareer() {
 }
 
 function stickyFilter() {
-  $(window).scroll(function () {
-    if ($(".hotels__filter").length) {
+  if ($(".hotels__filter").length) {
+    $(window).scroll(function () {
       let heightHeader = $(".header").height();
       let currentScroll = $(window).scrollTop();
       let hotelsOffset = $(".hotels__container").offset().top - heightHeader;
@@ -1409,44 +1410,47 @@ function stickyFilter() {
 
       // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo
       $(this).data("previousScroll", currentScroll);
-    }
-  });
+    });
+  }
+  if ($(".positions-hiring").length) {
+    $(window).scroll(function () {
+      if ($(".positions-hiring").length) {
+        let heightHeader = $(".header").height();
+        let currentScroll = $(window).scrollTop();
+        let hotelsOffset =
+          $(".positions-hiring__container .position-list").offset().top -
+          heightHeader +
+          56;
 
-  $(window).scroll(function () {
-    if ($(".positions-hiring").length) {
-      let heightHeader = $(".header").height();
-      let currentScroll = $(window).scrollTop();
-      let hotelsOffset =
-        $(".positions-hiring__container .position-list").offset().top -
-        heightHeader +
-        56;
+        // Thêm biến để lưu giá trị cuộn trước đó
+        let previousScroll = $(this).data("previousScroll") || 0;
 
-      // Thêm biến để lưu giá trị cuộn trước đó
-      let previousScroll = $(this).data("previousScroll") || 0;
+        if (currentScroll >= hotelsOffset) {
+          $(".position-filters").addClass("fixed");
 
-      if (currentScroll >= hotelsOffset) {
-        $(".position-filters").addClass("fixed");
-
-        // Kiểm tra hướng cuộn
-        if (currentScroll > previousScroll) {
-          // Cuộn xuống
-          $(".position-filters")
-            .addClass("scrolling-down")
-            .removeClass("scrolling-up");
+          // Kiểm tra hướng cuộn
+          if (currentScroll > previousScroll) {
+            // Cuộn xuống
+            $(".position-filters")
+              .addClass("scrolling-down")
+              .removeClass("scrolling-up");
+          } else {
+            // Cuộn lên
+            $(".position-filters")
+              .addClass("scrolling-up")
+              .removeClass("scrolling-down");
+          }
         } else {
-          // Cuộn lên
-          $(".position-filters")
-            .addClass("scrolling-up")
-            .removeClass("scrolling-down");
+          $(".position-filters").removeClass(
+            "fixed scrolling-down scrolling-up"
+          );
         }
-      } else {
-        $(".position-filters").removeClass("fixed scrolling-down scrolling-up");
-      }
 
-      // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo
-      $(this).data("previousScroll", currentScroll);
-    }
-  });
+        // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo
+        $(this).data("previousScroll", currentScroll);
+      }
+    });
+  }
 }
 function mapCompany() {
   if ($(".map-new").length) {

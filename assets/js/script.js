@@ -39,7 +39,7 @@ function handlePageVisibilityAndFavicon() {
   // Xử lý thay đổi tiêu đề khi tab/cửa sổ thay đổi trạng thái hiển thị
   $(document).on("visibilitychange", function () {
     if (document.hidden) {
-      document.title = "Quay lại đi! 😢";
+      document.title = "Quay lại đi!";
     } else {
       document.title = originalTitle;
     }
@@ -63,7 +63,7 @@ function handlePageVisibilityAndFavicon() {
   $(window).blur(function () {
     const favicons = [
       "./assets/images/icon-signature-red.svg",
-      "./assets/images/logo.svg",
+      "./assets/images/icon-signature-black.svg",
     ];
     let faviconIndex = 0;
     faviconInterval = setInterval(function () {
@@ -75,47 +75,49 @@ function handlePageVisibilityAndFavicon() {
 
 function gsapIntro() {
   gsap.registerPlugin(ScrollTrigger);
-  gsap.set(".image-signature .box", {
-    scale: 0,
-  });
+  if ($(".intro").length) {
+    gsap.set(".image-signature .box", {
+      scale: 0,
+    });
 
-  const tl = gsap.timeline({
-    onComplete: () => {
-      // Hide the intro section after the animation completes
-      gsap.to(".intro", {
-        // autoAlpha: 0,
-        scaleY: 0,
-        transformOrigin: "center top",
-        ease: "expo.inOut",
-        duration: 1,
-        onComplete: () => {
-          // Optionally remove the element from the DOM
-          // document.querySelector('.intro').style.display = 'none';
-        },
-      });
-    },
-  });
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Hide the intro section after the animation completes
+        gsap.to(".intro", {
+          // autoAlpha: 0,
+          scaleY: 0,
+          transformOrigin: "center top",
+          ease: "expo.inOut",
+          duration: 1,
+          onComplete: () => {
+            // Optionally remove the element from the DOM
+            // document.querySelector('.intro').style.display = 'none';
+          },
+        });
+      },
+    });
 
-  // First animation: image-container img
-  tl.to(".image-container img", {
-    scale: 4,
-    transformOrigin: "center center",
-    ease: "power1.inOut",
-    duration: 2, // Optional duration for the first animation
-  });
-
-  // Second animation: image-signature .box, starts simultaneously with the first animation
-  tl.to(
-    ".image-signature .box",
-    {
-      scale: 35,
-      transform: "skew(0deg)",
+    // First animation: image-container img
+    tl.to(".image-container img", {
+      scale: 4,
       transformOrigin: "center center",
-      ease: "power2.inOut",
-      duration: 2, // Optional duration for the second animation
-    },
-    0.65
-  ); // Start at the same time as the previous animation
+      ease: "power1.inOut",
+      duration: 2, // Optional duration for the first animation
+    });
+
+    // Second animation: image-signature .box, starts simultaneously with the first animation
+    tl.to(
+      ".image-signature .box",
+      {
+        scale: 35,
+        transform: "skew(0deg)",
+        transformOrigin: "center center",
+        ease: "power2.inOut",
+        duration: 2, // Optional duration for the second animation
+      },
+      0.65
+    ); // Start at the same time as the previous animation
+  }
 }
 
 function openAlert(event) {
@@ -267,7 +269,7 @@ function scrollHeader() {
       .from("header", {
         y: height,
         paused: true,
-        duration: 0.5,
+        duration: 0.3,
         ease: "none",
         trigger: "header",
       })

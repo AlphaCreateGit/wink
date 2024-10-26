@@ -936,7 +936,10 @@ function selectMap() {
     
     const city = $(this).data("city");
     const citys = $(this).data("v2-city");
-    $(".map-content-wrapper img[usemap='#vietnam_map']").attr("src", `./assets/images/map-${city}.png`);
+    
+    if($(".map-content-wrapper img[usemap='#vietnam_map']").length){
+      $(".map-content-wrapper img[usemap='#vietnam_map']").attr("src", `./assets/images/map-${city}.png`);
+    }
 
     // Xóa các lớp 'show' và 'active' trước
     // $(".map-content").removeClass("show");

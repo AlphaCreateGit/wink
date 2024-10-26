@@ -339,9 +339,7 @@ section {
   z-index: 99;
   transition: all 0.4s;
 }
-.cta-mess.hide {
-  right: -50px;
-}
+
 .cta-mess .phone-icon {
   margin-bottom: 16px;
   position: relative;
@@ -1226,6 +1224,9 @@ section {
   height: 100%;
   object-fit: cover;
 }
+.banner-hero.no-booking .banner-hero__heading {
+  bottom: 64px;
+}
 
 .banner-hero__heading {
   position: absolute;
@@ -1234,6 +1235,7 @@ section {
   transform: translateX(-50%);
   max-width: 570px;
   width: 100%;
+  z-index: 2;
 }
 
 .banner-hero__heading h1 {
@@ -1911,10 +1913,14 @@ section {
   transform: translate(0) !important;
   transition: all 0.4s;
 }
-.footer.freeze .cta-mess {
+.footer__container--bottom-overlay {
+  position: relative;
+  z-index: 9;
+}
+.footer__container--bottom-overlay.freeze .cta-mess {
   position: absolute !important;
   bottom: unset !important;
-  top: -80px !important;
+  top: -100px !important;
   right: 40px !important;
   transform: translate(0) !important;
   transition: all 0.4s;
@@ -1928,7 +1934,7 @@ section {
   padding: 80px 40px 60px;
   border-bottom: 1px solid var(--color-white);
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 .footer__container--left {
@@ -2524,18 +2530,17 @@ section {
   gap: 0 40px;
   margin-bottom: 40px;
 }
-.hotels__filter {
-  position: sticky;
+.hotels__filter.fixed {
   z-index: 100;
   background-color: var(--color-gray-10);
   transition: top 0.9s;
   padding: 16px 0px;
   left: 0;
   right: 0;
-}
-.hotels__filter.fixed {
   margin-bottom: 0;
+  position: sticky;
 }
+
 .hotels__filter.fixed .hotels__filter--location .dropdown-custom__menu {
   top: 34px;
 }
@@ -4627,7 +4632,7 @@ map area{
 .our-reports__content .reports-item ul {
   display: flex;
   align-items: center;
-  gap: 5px 18px;
+  gap: 5px 24px;
   flex-wrap: wrap;
 }
 .our-reports__content .reports-item ul li a {
@@ -4657,10 +4662,10 @@ map area{
 .our-reports__content .reports-item ul li a::before {
   content: "";
   position: absolute;
-  height: 80%;
+  height: 70%;
   width: 1.5px;
   background-color: var(--color-grey);
-  right: -9px;
+  right: -12px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -4689,9 +4694,8 @@ map area{
 .hero-deals__img::before {
   content: "";
   position: absolute;
-  /* inset: 160px 40px 40px; */
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.06%, #000000 100%);
 }
 .hero-deals__content {
   position: absolute;
@@ -5590,7 +5594,7 @@ select:-webkit-autofill:focus {
   .contact-sec {
     padding: 100px 40px 64px;
   }
-  .contact-sec.career-content-sec{
+  .contact-sec.career-content-sec {
     padding-top: 0;
   }
   .contact__content {
@@ -5695,7 +5699,7 @@ select:-webkit-autofill:focus {
     padding-top: 0;
     padding-bottom: 0;
   }
-  .page-details-career .career-content-sec .deals__view{
+  .page-details-career .career-content-sec .deals__view {
     justify-content: flex-end !important;
   }
   .review-sec .hotels__grid {
@@ -5827,12 +5831,12 @@ select:-webkit-autofill:focus {
   .blogs-map .map-text .desc {
     text-align: left;
   }
-  .blogs-map .map-text .title{
+  .blogs-map .map-text .title {
     font-size: 28px;
     line-height: 36px;
     letter-spacing: 0.84px;
   }
-  .blogs-map .map-text{
+  .blogs-map .map-text {
     margin-bottom: 32px;
   }
   .blogs-service {
@@ -5991,4 +5995,7 @@ select:-webkit-autofill:focus {
     flex-wrap: wrap;
     gap: 0 18px;
   }
+}
+.cta-mess.hide {
+  right: -50px !important;
 }

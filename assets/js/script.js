@@ -1,6 +1,7 @@
 "use strict";
 $ = jQuery;
 $(document).ready(function () {
+  stickyFilter();
   scrollHeader();
   subMenuHeader();
   swiperBanner();
@@ -28,7 +29,7 @@ $(document).ready(function () {
   commingCareer();
   toggleSubmenuMobile();
   scrollToolbarMobile();
-  stickyFilter();
+
   toggleOpenDescWinkFacilities();
   handlePageVisibilityAndFavicon();
   responsiveImageMap();
@@ -40,7 +41,7 @@ function handlePageVisibilityAndFavicon() {
   // Xử lý thay đổi tiêu đề khi tab/cửa sổ thay đổi trạng thái hiển thị
   $(document).on("visibilitychange", function () {
     if (document.hidden) {
-      document.title = "Quay lại đi! 😢";
+      document.title = "Quay lại đi!";
     } else {
       document.title = originalTitle;
     }
@@ -64,7 +65,7 @@ function handlePageVisibilityAndFavicon() {
   $(window).blur(function () {
     const favicons = [
       "./assets/images/icon-signature-red.svg",
-      "./assets/images/logo.svg",
+      "./assets/images/icon-signature-black.svg",
     ];
     let faviconIndex = 0;
     faviconInterval = setInterval(function () {
@@ -76,60 +77,51 @@ function handlePageVisibilityAndFavicon() {
 
 function gsapIntro() {
   gsap.registerPlugin(ScrollTrigger);
-  gsap.set(".image-signature .box", {
-    scale: 0,
-  });
+  if ($(".intro").length) {
+    gsap.set(".image-signature .box", {
+      scale: 0,
+    });
 
-  const tl = gsap.timeline({
-    onComplete: () => {
-      // Hide the intro section after the animation completes
-      gsap.to(".intro", {
-        // autoAlpha: 0,
-        scaleY: 0,
-        transformOrigin: "center top",
-        ease: "expo.inOut",
-        duration: 1,
-        onComplete: () => {
-          // Optionally remove the element from the DOM
-          // document.querySelector('.intro').style.display = 'none';
-        },
-      });
-    },
-  });
+    const tl = gsap.timeline({
+      onComplete: () => {
+        // Hide the intro section after the animation completes
+        gsap.to(".intro", {
+          // autoAlpha: 0,
+          scaleY: 0,
+          transformOrigin: "center top",
+          ease: "expo.inOut",
+          duration: 1,
+          onComplete: () => {
+            // Optionally remove the element from the DOM
+            // document.querySelector('.intro').style.display = 'none';
+          },
+        });
+      },
+    });
 
-  // First animation: image-container img
-  tl.to(".image-container img", {
-    scale: 4,
-    transformOrigin: "center center",
-    ease: "power1.inOut",
-    duration: 2, // Optional duration for the first animation
-  });
-
-  // Second animation: image-signature .box, starts simultaneously with the first animation
-  tl.to(
-    ".image-signature .box",
-    {
-      scale: 35,
-      transform: "skew(0deg)",
+    // First animation: image-container img
+    tl.to(".image-container img", {
+      scale: 4,
       transformOrigin: "center center",
-      ease: "power2.inOut",
-      duration: 2, // Optional duration for the second animation
-    },
-    0.65
-  ); // Start at the same time as the previous animation
+      ease: "power1.inOut",
+      duration: 2, // Optional duration for the first animation
+    });
+
+    // Second animation: image-signature .box, starts simultaneously with the first animation
+    tl.to(
+      ".image-signature .box",
+      {
+        scale: 35,
+        transform: "skew(0deg)",
+        transformOrigin: "center center",
+        ease: "power2.inOut",
+        duration: 2, // Optional duration for the second animation
+      },
+      0.65
+    ); // Start at the same time as the previous animation
+  }
 }
 
-function scrollFreezeCtaMess() {
-  gsap.registerPlugin(ScrollTrigger);
-
-  ScrollTrigger.create({
-    trigger: ".footer",
-    start: "top bottom",
-    end: "bottom 80vh",
-    toggleClass: "freeze",
-    scrub: 1,
-  });
-}
 function openAlert(event) {
   event.preventDefault();
 
@@ -279,7 +271,7 @@ function scrollHeader() {
       .from("header", {
         y: height,
         paused: true,
-        duration: 0.5,
+        duration: 0.3,
         ease: "none",
         trigger: "header",
       })
@@ -422,6 +414,17 @@ function scrollCTA() {
 
   // Re-initialize ScrollTrigger when page is refreshed
   $(window).on("load", initializeScrollTrigger);
+}
+function scrollFreezeCtaMess() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.create({
+    trigger: ".footer__container--bottom-overlay",
+    start: "top bottom",
+    end: "bottom 95vh", // Adjust end point for more controlled placement
+    toggleClass: "freeze",
+    scrub: 1,
+  });
 }
 
 function menubar() {
@@ -1386,8 +1389,8 @@ function commingCareer() {
 }
 
 function stickyFilter() {
-  $(window).scroll(function () {
-    if ($(".hotels__filter").length) {
+  if ($(".hotels__filter").length) {
+    $(window).scroll(function () {
       let heightHeader = $(".header").height();
       let currentScroll = $(window).scrollTop();
       let hotelsOffset = $(".hotels__container").offset().top - heightHeader;
@@ -1416,44 +1419,47 @@ function stickyFilter() {
 
       // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo
       $(this).data("previousScroll", currentScroll);
-    }
-  });
+    });
+  }
+  if ($(".positions-hiring").length) {
+    $(window).scroll(function () {
+      if ($(".positions-hiring").length) {
+        let heightHeader = $(".header").height();
+        let currentScroll = $(window).scrollTop();
+        let hotelsOffset =
+          $(".positions-hiring__container .position-list").offset().top -
+          heightHeader +
+          56;
 
-  $(window).scroll(function () {
-    if ($(".positions-hiring").length) {
-      let heightHeader = $(".header").height();
-      let currentScroll = $(window).scrollTop();
-      let hotelsOffset =
-        $(".positions-hiring__container .position-list").offset().top -
-        heightHeader +
-        56;
+        // Thêm biến để lưu giá trị cuộn trước đó
+        let previousScroll = $(this).data("previousScroll") || 0;
 
-      // Thêm biến để lưu giá trị cuộn trước đó
-      let previousScroll = $(this).data("previousScroll") || 0;
+        if (currentScroll >= hotelsOffset) {
+          $(".position-filters").addClass("fixed");
 
-      if (currentScroll >= hotelsOffset) {
-        $(".position-filters").addClass("fixed");
-
-        // Kiểm tra hướng cuộn
-        if (currentScroll > previousScroll) {
-          // Cuộn xuống
-          $(".position-filters")
-            .addClass("scrolling-down")
-            .removeClass("scrolling-up");
+          // Kiểm tra hướng cuộn
+          if (currentScroll > previousScroll) {
+            // Cuộn xuống
+            $(".position-filters")
+              .addClass("scrolling-down")
+              .removeClass("scrolling-up");
+          } else {
+            // Cuộn lên
+            $(".position-filters")
+              .addClass("scrolling-up")
+              .removeClass("scrolling-down");
+          }
         } else {
-          // Cuộn lên
-          $(".position-filters")
-            .addClass("scrolling-up")
-            .removeClass("scrolling-down");
+          $(".position-filters").removeClass(
+            "fixed scrolling-down scrolling-up"
+          );
         }
-      } else {
-        $(".position-filters").removeClass("fixed scrolling-down scrolling-up");
-      }
 
-      // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo
-      $(this).data("previousScroll", currentScroll);
-    }
-  });
+        // Lưu giá trị cuộn hiện tại cho lần kiểm tra tiếp theo
+        $(this).data("previousScroll", currentScroll);
+      }
+    });
+  }
 }
 function mapCompany() {
   if ($(".map-new").length) {

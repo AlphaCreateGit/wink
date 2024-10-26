@@ -326,6 +326,10 @@
     margin: 100px auto 40px;
     height: calc(100vh - 100px);
   }
+
+  .map.homepage .map__marker{
+    overflow-y: scroll;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1339,6 +1343,18 @@
 
   .sub-menu__grid{
     padding-bottom: 200px;
+  }
+
+  .map.homepage .map-content-wrapper img{
+    aspect-ratio: 375 / 600;
+  }
+
+  .map.homepage .map__wrapper .map-overview img{
+    aspect-ratio: 375 / 600;
+  }
+
+  .map.homepage .map__wrapper .map-overview{
+    height: auto;
   }
 }
 

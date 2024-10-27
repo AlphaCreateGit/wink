@@ -6015,3 +6015,9 @@ select:-webkit-autofill:focus {
 .cta-mess.hide {
   right: -50px !important;
 }
+
+@media (min-width: 1023px){
+  body.overflow-hidden .footer .footer__container--bottom{
+    margin-right: 17px;
+  }
+}

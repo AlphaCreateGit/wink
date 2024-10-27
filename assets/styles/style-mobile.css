@@ -323,7 +323,7 @@
   }
 
   .hero-deals .hero-deals__inner{
-    margin: 100px auto 40px;
+    margin: 100px auto 0;
     height: calc(100vh - 100px);
   }
 
@@ -365,6 +365,9 @@
   }
   .spacing-120.spacing-mb-48{
     height: 48px;
+  }
+  .spacing-mb-64{
+    height: 64px;
   }
   .h1-bold,
   .h1-light {
@@ -584,7 +587,7 @@
 
   .comming-soon__content{
     padding: 0;
-    max-height: max-content;
+    /* max-height: max-content; */
   }
 
   .comming-soon__content .box{

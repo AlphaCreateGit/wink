@@ -911,12 +911,20 @@ function selectMap() {
     $(".marker").removeClass("hidden");
 
     if($(".map-content-wrapper img[usemap='#vietnam_map']").length){
-      $(".map-content-wrapper img[usemap='#vietnam_map']").attr("src", `./assets/images/map-default.png`);
+      const dataMobile = $(window).width() < 768 ? "-mobile" : "";
+      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
     }
   });
 
   $(".icon-back-lv2").on("click", function (e) {
     $(".map-content-detail").removeClass("show");
+
+    if($(".map-content-wrapper img[usemap='#vietnam_map']").length){
+      const dataMobile = $(window).width() < 768 ? "-mobile" : "";
+      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
+    }
   });
   if ($(window).width() < 767) {
     // Remove 'active' class from all marker-detail elements
@@ -937,7 +945,9 @@ function selectMap() {
     const citys = $(this).data("v2-city");
     
     if($(".map-content-wrapper img[usemap='#vietnam_map']").length){
-      $(".map-content-wrapper img[usemap='#vietnam_map']").attr("src", `./assets/images/map-${city}.png`);
+      const dataMobile = $(window).width() < 768 ? "-mobile" : "";
+      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr("src", `./assets/images/map-${city}${dataMobile}.png`);
     }
 
     // Xóa các lớp 'show' và 'active' trước

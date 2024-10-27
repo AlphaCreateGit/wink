@@ -910,20 +910,20 @@ function selectMap() {
     $(".map-content").removeClass("show");
     $(".marker").removeClass("hidden");
 
-    if($(".map-content-wrapper img[usemap='#vietnam_map']").length){
+    if($("img[usemap='#vietnam_map']").length){
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
       const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
+      $(`img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
     }
   });
 
   $(".icon-back-lv2").on("click", function (e) {
     $(".map-content-detail").removeClass("show");
 
-    if($(".map-content-wrapper img[usemap='#vietnam_map']").length){
+    if($("img[usemap='#vietnam_map']").length){
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
       const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
+      $(`img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
     }
   });
   if ($(window).width() < 767) {
@@ -944,10 +944,10 @@ function selectMap() {
     const city = $(this).data("city");
     const citys = $(this).data("v2-city");
     
-    if($(".map-content-wrapper img[usemap='#vietnam_map']").length){
+    if($("img[usemap='#vietnam_map']").length){
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
       const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr("src", `./assets/images/map-${city}${dataMobile}.png`);
+      $(`[usemap='${imageMap}']`).attr("src", `./assets/images/map-${city}${dataMobile}.png`);
     }
 
     // Xóa các lớp 'show' và 'active' trước
@@ -1550,6 +1550,107 @@ function mapCompany() {
     );
 
     // Add a delay of 3 seconds after the marker-detail animation
+    tl.call(() => {}, {}, "+=3");
+
+    tl.fromTo(
+      ".map-new .map-content",
+      { opacity: 0 },
+      { opacity: 1, duration: 1, ease: "none" }
+    );
+  }
+}
+
+function mapCompanyTest() {
+  if ($(".map-new").length) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Mảng chứa các tên công ty tương ứng với hình ảnh
+    const arrCompany = ['can-tho', 'ho-chi-minh', 'tuy-hoa', 'da-nang-riverside', 'da-nang-center', 'hai-phong', 'default'];
+
+    // Tạo timeline cho GSAP
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".map-new",
+        start: "top 60px",
+        end: "+=120%",
+        pin: true,
+        scrub: true,
+        onUpdate: (self) => {
+          const scrollDirection = self.direction;
+          const scrollPosition = self.progress;
+
+          // Tính toán chỉ số công ty dựa trên vị trí cuộn
+          const companyIndex = Math.floor(scrollPosition * arrCompany.length);
+          const currentCompany = arrCompany[companyIndex] || 'default'; // Lấy tên công ty hiện tại
+
+          // Thay đổi hình ảnh bản đồ dựa trên công ty hiện tại
+          const dataMobile = $(window).width() < 768 ? "-mobile" : "";
+          const imageSrc = `./assets/images/map-${currentCompany}${dataMobile}.png`;
+          $("img[usemap='#vietnam_map'], img[usemap='#vietnam_map_mobile']").attr("src", imageSrc);
+
+          // Nếu cuộn lên, ẩn các chi tiết marker
+          if (scrollDirection === -1) {
+            document.querySelectorAll(".marker-detail").forEach((marker) => {
+              marker.classList.remove("active");
+            });
+            document.querySelectorAll(".map-content-detail").forEach((detail) => {
+              detail.classList.remove("show");
+            });
+          }
+        },
+        onComplete: () => {
+          console.log("Animation completed!");
+        },
+        onLeave: () => {
+          $(".map-new").addClass("remove-spacing");
+        },
+      },
+    });
+
+    tl.fromTo(
+      ".ic-wink-head",
+      { opacity: 0, yPercent: 20, zIndex: 2 },
+      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut", zIndex: 0 }
+    );
+
+    tl.fromTo(
+      ".wink-head-office",
+      { opacity: 0, yPercent: 20 },
+      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" }
+    )
+      .to(
+        ".wink-head-office",
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power1.inOut",
+          delay: 1,
+          yPercent: -20,
+        },
+        "-=0.25"
+      )
+      .to(".ic-wink-head", {
+        opacity: 0,
+        duration: 1,
+        ease: "power1.inOut",
+      });
+
+    tl.fromTo(
+      ".marker-detail",
+      { opacity: 0, yPercent: 10 },
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 0.5,
+        stagger: {
+          amount: 0.25,
+          from: "end",
+          ease: "none",
+        },
+      }
+    );
+
+    // Thêm độ trễ 3 giây sau khi animation marker-detail
     tl.call(() => {}, {}, "+=3");
 
     tl.fromTo(

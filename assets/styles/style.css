@@ -3455,7 +3455,8 @@ section.map {
   height: 800px;
   position: relative;
 }
-.map.homepage .map__wrapper {
+.map.homepage .map__wrapper,
+.map.map-new .map__wrapper {
   height: auto;
 }
 .map__wrapper .map-overview {
@@ -3467,7 +3468,8 @@ section.map {
   height: 100%;
   object-fit: cover;
 }
-.map.homepage .map__wrapper .map-overview img {
+.map.homepage .map__wrapper .map-overview img,
+.map.map-new .map__wrapper .map-overview img {
   aspect-ratio: 1440 / 800;
 }
 .map__marker {
@@ -5470,10 +5472,12 @@ select:-webkit-autofill:focus {
 .map-new .map-content-wrapper {
   opacity: 1;
   visibility: visible;
+  display: none;
 }
 .map-new .marker-detail {
   opacity: 1;
   visibility: visible;
+  display: none;
 }
 .map-new .map-content {
   opacity: 0;

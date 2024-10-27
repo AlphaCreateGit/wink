@@ -1349,11 +1349,13 @@
     aspect-ratio: 375 / 600;
   }
 
-  .map.homepage .map__wrapper .map-overview img{
+  .map.homepage .map__wrapper .map-overview img,
+  .map.map-new .map__wrapper .map-overview img{
     aspect-ratio: 375 / 600;
   }
 
-  .map.homepage .map__wrapper .map-overview{
+  .map.homepage .map__wrapper .map-overview,
+  .map.map-new .map__wrapper .map-overview{
     height: auto;
   }
 }

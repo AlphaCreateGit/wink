@@ -1344,13 +1344,40 @@ section {
 .dropdown-custom__menu .dropdown-custom__item:hover {
   color: var(--color-primary);
 }
+.header__btn-language .dropdown-custom__menu {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.header__btn-language .dropdown-custom__menu .dropdown-custom__item {
+  background-color: #e5e5e5;
+}
+.header__btn-language .dropdown-custom__menu .dropdown-custom__item:hover {
+  background-color: #e5e5e5;
+}
+.header__btn-language .dropdown-custom__menu .dropdown-custom__item:hover img {
+  opacity: 0.7;
+}
+.header__btn-language .dropdown-custom__menu {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+.header__btn-language .dropdown-custom__menu.dropdown--active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.hotels__filter .dropdown-custom__menu .dropdown-custom__item {
+  padding: 5px 0;
+}
+.hotels__filter .dropdown-custom__menu {
+  padding: 0 10px;
+}
 .dropdown-custom__menu .dropdown-custom__item::before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: calc(100%);
   height: 2px;
   background-color: var(--color-primary);
-  left: 0;
+  left: 0px;
   bottom: 0px;
   transform: scaleX(0);
   transform-origin: bottom right;
@@ -2843,7 +2870,7 @@ section {
   color: var(--color-primary);
 }
 .header__btn-language .dropdown-custom__menu .dropdown-custom__item:hover {
-  background-color: var(--color-white);
+  background-color: #e5e5e5;
 }
 
 .dropdown--active {
@@ -4715,7 +4742,7 @@ map area {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.06%, #000000 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 1.06%, #000000 75%);
 }
 .hero-deals__content {
   position: absolute;

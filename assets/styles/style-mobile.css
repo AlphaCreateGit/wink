@@ -383,11 +383,14 @@
   .map.homepage .map__marker {
     overflow-y: scroll;
   }
+  .comming-soon-company .container-page h5 {
+    padding: 0;
+  }
 }
 
 @media (max-width: 767px) {
   .comming-soon {
-    height: 100vh;
+    height: auto;
   }
   /* General */
   .h5-font {

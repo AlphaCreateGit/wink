@@ -1295,7 +1295,7 @@ function swiperSuites() {
 
 function swiperBookRoom() {
   if ($(".img-room").length) {
-    let interleaveOffsetRoom = 0.76;
+    let interleaveOffsetRoom = 0.75;
     var swiperChildRoom = $(".swiper-book-room");
     swiperChildRoom.each(function () {
       var $this = $(this); // Cache the current Swiper element

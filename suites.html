@@ -32,6 +32,76 @@
     <!-- end import link custom css -->
   </head>
   <body>
+    <div
+      class="modal fade modalSuites"
+      id="modalSuites"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modalSuitesLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalSuitesLabel"></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <img src="./assets/images/ic_close_white.svg" alt="icon" />
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="box">
+                <div class="left">
+                  <div class="group">
+                    <input type="text" class="form-input" placeholder="" />
+                    <label for="name" class="form-label b1-font color-gray"
+                      >Full Name</label
+                    >
+                  </div>
+                  <div class="group">
+                    <input type="text" class="form-input" placeholder="" />
+                    <label for="name" class="form-label b1-font color-gray"
+                      >Email</label
+                    >
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="group">
+                    <input type="text" class="form-input" placeholder="" />
+                    <label for="name" class="form-label b1-font color-gray"
+                      >Cellphone</label
+                    >
+                  </div>
+
+                  <div class="group">
+                    <input
+                      type="text"
+                      class="form-input"
+                      placeholder=""
+                      id="expireDateSuites"
+                    />
+                    <label for="name" class="form-label b1-font color-gray"
+                      >Expire Date</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="deals__view d-flex justify-content-end">
+                <button class="custom__btn">
+                  <span class="b3-font color-black d-block">SEND</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- start feeback -->
     <div class="feedback">
       <div class="feedback__text b2-font color-white">FEEDBACK</div>
@@ -754,11 +824,16 @@
                       data-less="SEE LESS"
                     />
                     <div class="wink-book d-flex justify-content-end">
-                      <a href="" class="custom__btn book-detail long-text">
+                      <button
+                        type="button"
+                        class="custom__btn book-detail long-text"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalSuites"
+                      >
                         <span class="b3-font color-black d-block"
                           >REQUEST A QUOTE</span
                         >
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -909,11 +984,16 @@
                       data-less="SEE LESS"
                     />
                     <div class="wink-book d-flex justify-content-end">
-                      <a href="" class="custom__btn book-detail long-text">
+                      <button
+                        type="button"
+                        class="custom__btn book-detail long-text"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalSuites"
+                      >
                         <span class="b3-font color-black d-block"
                           >REQUEST A QUOTE</span
                         >
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -1064,11 +1144,16 @@
                       data-less="SEE LESS"
                     />
                     <div class="wink-book d-flex justify-content-end">
-                      <a href="" class="custom__btn book-detail long-text">
+                      <button
+                        type="button"
+                        class="custom__btn book-detail long-text"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalSuites"
+                      >
                         <span class="b3-font color-black d-block"
                           >REQUEST A QUOTE</span
                         >
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>

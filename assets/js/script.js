@@ -563,6 +563,13 @@ function bookingForm() {
       singleDate: false,
     });
   }
+  if ($(".modalSuites").length) {
+    var pickerExprie = new Lightpick({
+      field: document.getElementById("expireDateSuites"),
+      minDate: moment().startOf("day"),
+      singleDate: false,
+    });
+  }
 
   //----------------------------------------------------
   // select hotels

@@ -3544,7 +3544,7 @@ section.map {
   visibility: hidden;
   transition: all 0.5s ease;
 }
-map area{
+map area {
   cursor: pointer;
   position: relative;
 }
@@ -3738,6 +3738,7 @@ map area{
 }
 .map-content-detail .box-body .content h5 {
   margin-bottom: 24px;
+  text-transform: uppercase;
 }
 .map-content-detail .box-body .content .desc {
   margin-bottom: 32px;
@@ -6011,13 +6012,13 @@ select:-webkit-autofill:focus {
     gap: 0 18px;
   }
 
-  .map-new .wink-head-office{
+  .map-new .wink-head-office {
     bottom: 40%;
     max-width: 80%;
     left: 5%;
   }
 
-  .map-new .wink-head-office h3{
+  .map-new .wink-head-office h3 {
     margin-bottom: 24px;
   }
 }
@@ -6025,8 +6026,8 @@ select:-webkit-autofill:focus {
   right: -50px !important;
 }
 
-@media (min-width: 1023px){
-  body.overflow-hidden .footer .footer__container--bottom{
+@media (min-width: 1023px) {
+  body.overflow-hidden .footer .footer__container--bottom {
     margin-right: 17px;
   }
 }

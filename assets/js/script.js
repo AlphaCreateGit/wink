@@ -910,20 +910,28 @@ function selectMap() {
     $(".map-content").removeClass("show");
     $(".marker").removeClass("hidden");
 
-    if($("img[usemap='#vietnam_map']").length){
+    if ($("img[usemap='#vietnam_map']").length) {
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
-      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
+      const imageMap =
+        $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`img[usemap='${imageMap}']`).attr(
+        "src",
+        `./assets/images/map-default${dataMobile}.png`
+      );
     }
   });
 
   $(".icon-back-lv2").on("click", function (e) {
     $(".map-content-detail").removeClass("show");
 
-    if($("img[usemap='#vietnam_map']").length){
+    if ($("img[usemap='#vietnam_map']").length) {
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
-      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
+      const imageMap =
+        $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`img[usemap='${imageMap}']`).attr(
+        "src",
+        `./assets/images/map-default${dataMobile}.png`
+      );
     }
   });
   if ($(window).width() < 767) {
@@ -940,14 +948,17 @@ function selectMap() {
   $(".marker-detail, map area").on("click", function (e) {
     e.preventDefault();
 
-    
     const city = $(this).data("city");
     const citys = $(this).data("v2-city");
-    
-    if($("img[usemap='#vietnam_map']").length){
+
+    if ($("img[usemap='#vietnam_map']").length) {
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
-      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`[usemap='${imageMap}']`).attr("src", `./assets/images/map-${city}${dataMobile}.png`);
+      const imageMap =
+        $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`[usemap='${imageMap}']`).attr(
+        "src",
+        `./assets/images/map-${city}${dataMobile}.png`
+      );
     }
 
     // Xóa các lớp 'show' và 'active' trước
@@ -1572,11 +1583,13 @@ function mapCompanyNew() {
         end: "+=120%",
         pin: true,
         scrub: true,
+
         onUpdate: (self) => {
           const scrollDirection = self.direction; // 1 for down, -1 for up
 
           if (scrollDirection === -1) {
-            document.querySelectorAll(".map-content-detail")
+            document
+              .querySelectorAll(".map-content-detail")
               .forEach((marker) => {
                 marker.classList.remove("show");
               });
@@ -1595,34 +1608,32 @@ function mapCompanyNew() {
     // Hiển thị hình đầu tiên
     tl.fromTo(
       ".wink-head-office",
-      { opacity: 0, yPercent: 0 },
-      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" }
+      { opacity: 0, yPercent: 20 },
+      { opacity: 1, yPercent: 0, duration: 1.5, ease: "power1.inOut" }
     )
-    .to(
-      ".wink-head-office",
-      {
+      .to(".wink-head-office", {
         opacity: 0,
-        visibility: "hidden",
         duration: 2,
         ease: "power1.inOut",
-        delay: 1,
         yPercent: 0,
-      },
-      "-=0.25"
-    )
-    .to(".ic-wink-head", {
-      opacity: 0,
-      duration: 1,
-      ease: "power1.inOut",
-    });
+      })
+      .to(".ic-wink-head", {
+        opacity: 0,
+        duration: 1,
+        ease: "power1.inOut",
+      });
 
     // Hiển thị tất cả các hình còn lại từ map-new-step-2 đến map-new-step-8
-    const totalImages = 8; // Số lượng hình ảnh
+    const totalImages = 9; // Số lượng hình ảnh
 
     for (let i = 2; i <= totalImages; i++) {
-      tl.call(() => {
-        updateImageSource((i - 1) / totalImages); // Cập nhật src theo thứ tự
-      }, null, `+=0.5`); // Đặt độ trễ giữa các hình ảnh
+      tl.call(
+        () => {
+          updateImageSource((i - 1) / totalImages); // Cập nhật src theo thứ tự
+        },
+        null,
+        `+=0.75`
+      ); // Đặt độ trễ giữa các hình ảnh
     }
 
     tl.fromTo(
@@ -1656,7 +1667,14 @@ function mapCompanyNew() {
 
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
       const imageSrc = `./assets/images/map-new-step-${finalImageIndex}${dataMobile}.png`;
-      $("img[usemap='#vietnam_map'], img[usemap='#vietnam_map_mobile']").attr("src", imageSrc);
+      $("img[usemap='#vietnam_map'], img[usemap='#vietnam_map_mobile']").attr(
+        "src",
+        imageSrc
+      );
+      if (finalImageIndex == totalImages) {
+        let contentHCM = $(".map-content-detail");
+        contentHCM.filter('[data-hotel="ho-chi-minh"]').addClass("show");
+      }
     }
   }
 }
@@ -1736,8 +1754,8 @@ function handleFilePDFSelect(event, infoElementId) {
   }
 }
 
-function responsiveImageMap(){
-  if($('img[usemap]').length < 1) return;
-  
-  $('img[usemap]').rwdImageMaps();
+function responsiveImageMap() {
+  if ($("img[usemap]").length < 1) return;
+
+  $("img[usemap]").rwdImageMaps();
 }

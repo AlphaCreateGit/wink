@@ -1703,12 +1703,21 @@ section {
 .deals__list {
   position: relative;
 }
+.deals__list .hotels__item:hover .hotels__content--top .title {
+  color: var(--color-black);
+}
 .deals__list .swiper-slide {
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   --h: 240;
+}
+.deals__list .hotels__content--top .head {
+  margin-bottom: 12px;
+}
+.deals__list .hotels__content--top .title {
+  margin-bottom: 32px;
 }
 .deals__item {
   height: 100%;

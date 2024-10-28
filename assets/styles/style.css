@@ -3784,6 +3784,18 @@ map area {
   line-height: 26px;
   letter-spacing: 0.4px;
 }
+.menu-item-all-hotel a::after,
+.menu-item-all-hotel a::before{
+  display: none !important;
+}
+.menu-item-all-hotel a{
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.48px;
+  line-height: 26px;
+  position: relative;
+  color: black !important;
+}
 /* end css map */
 /* css page suites */
 .page-tpl-suites .wink-detail-sec .wink-detail__desc .desc {
@@ -5960,6 +5972,9 @@ select:-webkit-autofill:focus {
   .sign-in-sec .member-contact {
     padding: 108px 16px 64px;
     height: auto;
+  }
+  #modalSignIn .sign-in-sec .member-contact{
+
   }
   .career-box {
     margin-bottom: 64px;

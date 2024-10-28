@@ -2170,7 +2170,7 @@ section {
 }
 
 .footer__container--bottom {
-  padding: 100px 40px 24px;
+  padding: 300px 40px 24px;
   background-color: var(--color-black);
   position: fixed;
   bottom: 0;

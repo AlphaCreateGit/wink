@@ -836,7 +836,8 @@ function swiperDeals() {
 }
 
 function commingSoon() {
-  if ($(".cooming-sec").length) {
+  // Kiểm tra nếu màn hình lớn hơn hoặc bằng 991px
+  if ($(window).width() >= 991 && $(".cooming-sec").length) {
     gsap.registerPlugin(ScrollTrigger);
 
     const panels = gsap.utils.toArray(".panel").slice(1);
@@ -858,7 +859,7 @@ function commingSoon() {
         start: `top ${postionPinSection}`,
         end: () => "+=" + 100 * panels.length + "%",
         pin: true,
-        scrub: true, // Scrub for panels
+        scrub: true,
         markers: false,
         onUpdate: (self) => {
           const newSlide = Math.min(
@@ -867,7 +868,7 @@ function commingSoon() {
           );
           if (newSlide !== currentSlide) {
             currentSlide = newSlide;
-            numberStart.text(currentSlide); // Update slide count
+            numberStart.text(currentSlide);
           }
         },
       },
@@ -904,7 +905,7 @@ function commingSoon() {
             trigger: panel,
             start: "top 40%",
             end: "bottom 40%",
-            toggleActions: "play reverse play reverse", // Play on scroll down, reverse on scroll up
+            toggleActions: "play reverse play reverse",
             //markers: true,
           },
         }
@@ -914,6 +915,7 @@ function commingSoon() {
     ScrollTrigger.refresh();
   }
 }
+
 function selectMap() {
   let activeMarker = null;
 

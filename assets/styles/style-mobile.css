@@ -21,7 +21,39 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
+  .cooming-sec {
+    padding-bottom: 64px;
+    background-color: var(--color-white);
+  }
+  .container-page h5 {
+    padding: 0 32px;
+    margin-bottom: 8px;
+    margin-top: 64px;
+  }
+  .comming-soon__content {
+    height: auto;
+  }
+  .spacing-120 {
+    height: 64px;
+  }
+  .comming-soon {
+    height: auto;
+  }
+  .flex-center {
+    position: static;
+  }
+
+  .comming-soon .panels .panel,
+  .panels {
+    width: 0;
+  }
+  .container-page {
+    width: 100%;
+  }
+  .comming-soom__count {
+    display: none;
+  }
   .amenities-sec {
     overflow-x: hidden;
   }
@@ -96,7 +128,12 @@
     align-items: center;
     flex: 1;
   }
-
+  .cooming-sec .container-page {
+    background-color: #fff;
+  }
+  .comming-soon__content .box {
+    padding: 0 32px;
+  }
   .bar span {
     background-color: white;
   }
@@ -110,15 +147,23 @@
   .header {
     transform: translate(0) !important;
   }
-
+  .comming-sec {
+    background-color: var(--color-white);
+  }
   .comming-soon__content .box {
     max-width: 100%;
   }
-
+  .comming-soon__content {
+    margin-bottom: 64px;
+  }
+  .comming-soon__content:last-child {
+    margin-bottom: 0;
+  }
   .comming-soon__content .box .img-mobile {
     width: 100%;
     aspect-ratio: 280 / 290;
     max-height: 290px;
+    margin-bottom: 24px;
   }
 
   .comming-soon__content .box .img-mobile img {
@@ -128,8 +173,7 @@
   }
 
   .comming-soon__content .box {
-    padding: 0 16px;
-    padding-right: 70px;
+    padding: 0 32px;
   }
 
   .map-content-detail .box-head .icon-back-lv2 {
@@ -248,7 +292,7 @@
     top: calc(100dvh - 46px);
   }
 
-  .sub-menu__cta button{
+  .sub-menu__cta button {
     display: block !important;
   }
 
@@ -323,7 +367,7 @@
   }
   /* end tool bar */
 
-  .section.experience{
+  .section.experience {
     overflow-x: hidden;
   }
 
@@ -339,9 +383,15 @@
   .map.homepage .map__marker {
     overflow-y: scroll;
   }
+  .comming-soon-company .container-page h5 {
+    padding: 0;
+  }
 }
 
 @media (max-width: 767px) {
+  .comming-soon {
+    height: auto;
+  }
   /* General */
   .h5-font {
     font-size: 16px;
@@ -601,7 +651,7 @@
   }
 
   .comming-soon__content .box {
-    padding: 30px;
+    padding: 0 32px;
     background-color: var(--color-white);
   }
 
@@ -616,10 +666,6 @@
 
   .comming-soon .img__container img {
     height: initial;
-  }
-
-  .comming-soon {
-    height: 600px !important;
   }
 
   .spacing-120 {
@@ -1372,10 +1418,6 @@
 }
 
 @media (max-width: 480px) {
-  .comming-soon {
-    height: 650px !important;
-  }
-
   .facilities__item {
     width: calc(100% / 2 - 4px);
     min-width: unset;

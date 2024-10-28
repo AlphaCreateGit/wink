@@ -3821,11 +3821,11 @@ map area {
   position: relative;
   margin-bottom: 32px;
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc ul {
+.page-tpl-suites .wink-room__suites .box .box-desc ul {
   list-style-type: disc;
   padding-left: 20px;
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc ul {
+.page-tpl-suites .wink-room__suites .box .box-desc ul {
   height: 70px;
   overflow: hidden;
   position: relative;
@@ -3851,36 +3851,26 @@ map area {
 .contact-sec .dropdown-custom__menu {
   top: 50px;
 }
-/* .page-tpl-suites .wink-room__suites .box .box-desc ul:has(+ .check:checked) {
-  height: 700px;
-} */
-.page-tpl-suites
-  .wink-room__suites
-  .box
-  .box-desc
-  .desc
-  ul:has(+ .check:checked) {
-  /* max-height: 700px; */
-}
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check {
+
+.page-tpl-suites .wink-room__suites .box .box-desc .check {
   position: absolute;
-  bottom: -60px;
-  left: 15px;
+  bottom: 40px;
+  left: 50px;
   appearance: none;
   -webkit-appearance: none;
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover {
+.page-tpl-suites .wink-room__suites .box .box-desc .check:hover {
   cursor: pointer;
 }
 
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check::before {
+.page-tpl-suites .wink-room__suites .box .box-desc .check::before {
   content: attr(data-more);
   white-space: nowrap;
   font-size: 12px;
   font-weight: 900;
   transition: content 0.5s;
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check::after {
+.page-tpl-suites .wink-room__suites .box .box-desc .check::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -3892,20 +3882,15 @@ map area {
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover {
+.page-tpl-suites .wink-room__suites .box .box-desc .check:hover {
   color: var(--color-primary);
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover::after {
+.page-tpl-suites .wink-room__suites .box .box-desc .check:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-.page-tpl-suites
-  .wink-room__suites
-  .box
-  .box-desc
-  .desc
-  .check:checked::before {
+.page-tpl-suites .wink-room__suites .box .box-desc .check:checked::before {
   content: attr(data-less);
 }
 
@@ -5643,7 +5628,15 @@ select:-webkit-autofill:focus {
   padding-left: 20px;
   margin-top: 24px;
 }
+.page-tpl-suites .wink-room__suites .box .box-desc .wink-facilities ul {
+  height: auto;
+  list-style-type: none;
+  padding-left: 0;
+}
 @media (max-width: 991px) {
+  .page-tpl-suites .wink-room__suites .box .box-desc .desc {
+    overflow-y: scroll;
+  }
   .experience-sec {
     overflow-x: hidden;
   }
@@ -5741,8 +5734,28 @@ select:-webkit-autofill:focus {
   .contact-sec .contact__form {
     padding: 40px;
   }
+  .page-tpl-suites .wink-room__suites .box .box-desc .wink-facilities ul {
+    height: auto;
+  }
+  .page-tpl-suites .wink-room__suites .box {
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
+  .page-tpl-suites .wink-room__suites .box .box-desc .check {
+    bottom: 31px;
+    left: 45px;
+  }
+  .page-tpl-suites .wink-room__suites .box.open .box-desc ul {
+    overflow-y: scroll;
+  }
+  .page-tpl-suites
+    .wink-room__suites
+    .box.open
+    .box-desc
+    ul::-webkit-scrollbar {
+    display: none;
+  }
   .member-contact .member-box {
     padding: 80px 16px 64px;
     margin-top: 0;

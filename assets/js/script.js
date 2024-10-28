@@ -1,6 +1,8 @@
 "use strict";
 $ = jQuery;
 $(document).ready(function () {
+  loadToTop();
+
   scrollHeader();
   subMenuHeader();
   swiperBanner();
@@ -33,6 +35,15 @@ $(document).ready(function () {
   handlePageVisibilityAndFavicon();
   responsiveImageMap();
 });
+function loadToTop() {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  window.addEventListener("load", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 function handlePageVisibilityAndFavicon() {
   const originalTitle = document.title;
   let faviconInterval;
@@ -910,20 +921,28 @@ function selectMap() {
     $(".map-content").removeClass("show");
     $(".marker").removeClass("hidden");
 
-    if($(".map-content-wrapper img[usemap='#vietnam_map']").length){
+    if ($(".map-content-wrapper img[usemap='#vietnam_map']").length) {
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
-      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
+      const imageMap =
+        $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr(
+        "src",
+        `./assets/images/map-default${dataMobile}.png`
+      );
     }
   });
 
   $(".icon-back-lv2").on("click", function (e) {
     $(".map-content-detail").removeClass("show");
 
-    if($(".map-content-wrapper img[usemap='#vietnam_map']").length){
+    if ($(".map-content-wrapper img[usemap='#vietnam_map']").length) {
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
-      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
+      const imageMap =
+        $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr(
+        "src",
+        `./assets/images/map-default${dataMobile}.png`
+      );
     }
   });
   if ($(window).width() < 767) {
@@ -940,14 +959,17 @@ function selectMap() {
   $(".marker-detail, map area").on("click", function (e) {
     e.preventDefault();
 
-    
     const city = $(this).data("city");
     const citys = $(this).data("v2-city");
-    
-    if($(".map-content-wrapper img[usemap='#vietnam_map']").length){
+
+    if ($(".map-content-wrapper img[usemap='#vietnam_map']").length) {
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
-      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr("src", `./assets/images/map-${city}${dataMobile}.png`);
+      const imageMap =
+        $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr(
+        "src",
+        `./assets/images/map-${city}${dataMobile}.png`
+      );
     }
 
     // Xóa các lớp 'show' và 'active' trước
@@ -1618,9 +1640,17 @@ function toggleOpenDescWinkFacilities() {
     $box.toggleClass("open");
 
     if ($box.hasClass("open")) {
-      $desc.css("height", $desc.prop("scrollHeight") + "px");
+      let heightBox;
+
+      if (window.innerWidth < 767) {
+        heightBox = $desc.prop("scrollHeight") - 100;
+      } else {
+        heightBox = $desc.prop("scrollHeight");
+      }
+
+      $desc.css("height", heightBox + "px");
     } else {
-      $desc.css("height", "70");
+      $desc.css("height", "70px");
     }
   });
 }
@@ -1635,8 +1665,8 @@ function handleFilePDFSelect(event, infoElementId) {
   }
 }
 
-function responsiveImageMap(){
-  if($('img[usemap]').length < 1) return;
-  
-  $('img[usemap]').rwdImageMaps();
+function responsiveImageMap() {
+  if ($("img[usemap]").length < 1) return;
+
+  $("img[usemap]").rwdImageMaps();
 }

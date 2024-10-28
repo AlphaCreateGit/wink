@@ -146,6 +146,20 @@ function openAlert(event) {
     progress.removeClass("show");
   }, 5300);
 }
+function openAlertSignIn(event) {
+  event.preventDefault();
+
+  const alter = $(".alert-success-sign-in");
+  const progress = $(".progress-type");
+  alter.addClass("show");
+  progress.addClass("show");
+  setTimeout(() => {
+    alter.removeClass("show");
+  }, 5000);
+  setTimeout(() => {
+    progress.removeClass("show");
+  }, 5300);
+}
 function displayRatings() {
   $(".rating-number").each(function () {
     const rating = parseFloat($(this).text().trim());

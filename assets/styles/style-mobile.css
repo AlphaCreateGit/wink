@@ -248,7 +248,12 @@
     top: calc(100dvh - 46px);
   }
 
-  .sub-menu__cta a {
+  .sub-menu__cta button{
+    display: block !important;
+  }
+
+  .sub-menu__cta a,
+  .sub-menu__cta button {
     width: 50%;
     display: flex;
     align-items: center;
@@ -317,6 +322,10 @@
     bottom: 60px;
   }
   /* end tool bar */
+
+  .section.experience{
+    overflow-x: hidden;
+  }
 
   .experience__container {
     padding-left: 0;

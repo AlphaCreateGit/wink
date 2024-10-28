@@ -1,8 +1,6 @@
 "use strict";
 $ = jQuery;
 $(document).ready(function () {
-  loadToTop();
-
   scrollHeader();
   subMenuHeader();
   swiperBanner();
@@ -12,7 +10,7 @@ $(document).ready(function () {
   menubar();
   selectMap();
   bookingForm();
-  mapCompany();
+  mapCompanyNew();
   commingSoon();
   swiperRoom();
   scrollWinkRewards();
@@ -27,7 +25,7 @@ $(document).ready(function () {
   swiperSuites();
   swiperBookRoom();
   showOrHidePasswords();
-  commingCareer();
+  commingCareerNew();
   toggleSubmenuMobile();
   scrollToolbarMobile();
   stickyFilter();
@@ -35,15 +33,6 @@ $(document).ready(function () {
   handlePageVisibilityAndFavicon();
   responsiveImageMap();
 });
-function loadToTop() {
-  if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-  }
-
-  window.addEventListener("load", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
 function handlePageVisibilityAndFavicon() {
   const originalTitle = document.title;
   let faviconInterval;
@@ -563,13 +552,6 @@ function bookingForm() {
       singleDate: false,
     });
   }
-  if ($(".modalSuites").length) {
-    var pickerExprie = new Lightpick({
-      field: document.getElementById("expireDateSuites"),
-      minDate: moment().startOf("day"),
-      singleDate: false,
-    });
-  }
 
   //----------------------------------------------------
   // select hotels
@@ -826,7 +808,9 @@ function commingSoon() {
     gsap.registerPlugin(ScrollTrigger);
 
     const panels = gsap.utils.toArray(".panel").slice(1);
-    const content = gsap.utils.toArray(".animate-left");
+    console.log(panels);
+    
+    const content = gsap.utils.toArray(".animate-right");
     const numberStart = $(".number-start");
     const numberEnd = $(".number-end");
     const totalSlides = $(".panel").length;
@@ -928,28 +912,20 @@ function selectMap() {
     $(".map-content").removeClass("show");
     $(".marker").removeClass("hidden");
 
-    if ($(".map-content-wrapper img[usemap='#vietnam_map']").length) {
+    if($("img[usemap='#vietnam_map']").length){
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
-      const imageMap =
-        $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr(
-        "src",
-        `./assets/images/map-default${dataMobile}.png`
-      );
+      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
     }
   });
 
   $(".icon-back-lv2").on("click", function (e) {
     $(".map-content-detail").removeClass("show");
 
-    if ($(".map-content-wrapper img[usemap='#vietnam_map']").length) {
+    if($("img[usemap='#vietnam_map']").length){
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
-      const imageMap =
-        $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr(
-        "src",
-        `./assets/images/map-default${dataMobile}.png`
-      );
+      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`img[usemap='${imageMap}']`).attr("src", `./assets/images/map-default${dataMobile}.png`);
     }
   });
   if ($(window).width() < 767) {
@@ -966,17 +942,14 @@ function selectMap() {
   $(".marker-detail, map area").on("click", function (e) {
     e.preventDefault();
 
+    
     const city = $(this).data("city");
     const citys = $(this).data("v2-city");
-
-    if ($(".map-content-wrapper img[usemap='#vietnam_map']").length) {
+    
+    if($("img[usemap='#vietnam_map']").length){
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
-      const imageMap =
-        $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr(
-        "src",
-        `./assets/images/map-${city}${dataMobile}.png`
-      );
+      const imageMap = $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`[usemap='${imageMap}']`).attr("src", `./assets/images/map-${city}${dataMobile}.png`);
     }
 
     // Xóa các lớp 'show' và 'active' trước
@@ -1302,7 +1275,7 @@ function swiperSuites() {
 
 function swiperBookRoom() {
   if ($(".img-room").length) {
-    let interleaveOffsetRoom = 0.75;
+    let interleaveOffsetRoom = 0.76;
     var swiperChildRoom = $(".swiper-book-room");
     swiperChildRoom.each(function () {
       var $this = $(this); // Cache the current Swiper element
@@ -1426,6 +1399,91 @@ function commingCareer() {
     });
 
     ScrollTrigger.refresh(); // Refresh ScrollTrigger after setting up animations
+  }
+}
+
+function commingCareerNew() {
+  if ($(".career-intro-sec").length) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const panels = gsap.utils.toArray(".item-overlay").slice(1);
+    console.log(panels);
+    
+    const content = gsap.utils.toArray(".animate-right");
+    const numberStart = $(".number-start");
+    const numberEnd = $(".number-end");
+    const totalSlides = $(".item-overlay").length;
+    let currentSlide = 1;
+
+    numberStart.text(currentSlide);
+    numberEnd.text(totalSlides);
+
+    const positionPinSection = $(window).width() > 767 ? "5%" : "40px";
+
+    // Timeline for panels with scrub true
+    const panelTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".comming-soon",
+        start: `top ${positionPinSection}`,
+        end: () => "+=" + 100 * panels.length + "%",
+        pin: true,
+        scrub: true,
+        markers: false,
+        onUpdate: (self) => {
+          const newSlide = Math.min(
+            Math.max(1, Math.ceil(self.progress * totalSlides)),
+            totalSlides
+          );
+          if (newSlide !== currentSlide) {
+            currentSlide = newSlide;
+            numberStart.text(currentSlide); // Update slide count
+          }
+        },
+      },
+    });
+
+    // Animate panels with scrub effect
+    panels.forEach((panel, index) => {
+      panelTl.from(
+        panel,
+        {
+          yPercent: 100,
+          ease: "none",
+          duration: 1,
+          stagger: 0.5,
+          scaleX: 1.1,
+        },
+        "+=0.5"
+      );
+    });
+
+    // Separate animations for content with toggle actions for scrolling up/down
+    panels.forEach((panel, index) => {
+      console.log(index);
+      
+      gsap.fromTo(
+        content[index],
+        {
+          yPercent: 3,
+          autoAlpha: 0,
+        },
+        {
+          yPercent: 0,
+          autoAlpha: 1,
+          zIndex: index + 1,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: panel,
+            start: "top 40%", // Trigger when top of panel hits 40% of the viewport
+            end: "bottom 40%", // End when bottom of panel hits 40% of the viewport
+            toggleActions: "play reverse play reverse", // Play on scroll down, reverse on scroll up
+            markers: false,
+          },
+        }
+      );
+    });
+
+    ScrollTrigger.refresh();
   }
 }
 
@@ -1589,6 +1647,107 @@ function mapCompany() {
   }
 }
 
+function mapCompanyNew() {
+  if ($(".map-new").length) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Tạo timeline cho GSAP
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".map-new",
+        start: "top 60px",
+        end: "+=120%",
+        pin: true,
+        scrub: true,
+        onUpdate: (self) => {
+          const scrollDirection = self.direction; // 1 for down, -1 for up
+
+          if (scrollDirection === -1) {
+            document.querySelectorAll(".map-content-detail")
+              .forEach((marker) => {
+                marker.classList.remove("show");
+              });
+          }
+          updateImageSource(self.progress);
+        },
+        onComplete: () => {
+          console.log("Animation completed!");
+        },
+        onLeave: () => {
+          $(".map-new").addClass("remove-spacing");
+        },
+      },
+    });
+
+    // Hiển thị hình đầu tiên
+    tl.fromTo(
+      ".wink-head-office",
+      { opacity: 0, yPercent: 0 },
+      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" }
+    )
+    .to(
+      ".wink-head-office",
+      {
+        opacity: 0,
+        visibility: "hidden",
+        duration: 2,
+        ease: "power1.inOut",
+        delay: 1,
+        yPercent: 0,
+      },
+      "-=0.25"
+    )
+    .to(".ic-wink-head", {
+      opacity: 0,
+      duration: 1,
+      ease: "power1.inOut",
+    });
+
+    // Hiển thị tất cả các hình còn lại từ map-new-step-2 đến map-new-step-8
+    const totalImages = 8; // Số lượng hình ảnh
+
+    for (let i = 2; i <= totalImages; i++) {
+      tl.call(() => {
+        updateImageSource((i - 1) / totalImages); // Cập nhật src theo thứ tự
+      }, null, `+=0.5`); // Đặt độ trễ giữa các hình ảnh
+    }
+
+    tl.fromTo(
+      ".marker-detail",
+      { opacity: 0, yPercent: 10 },
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 0.5,
+        stagger: {
+          amount: 0.25,
+          from: "end",
+          ease: "none",
+        },
+      }
+    );
+
+    tl.call(() => {}, {}, "+=3");
+
+    tl.fromTo(
+      ".map-new .map-content",
+      { opacity: 0 },
+      { opacity: 1, duration: 1, ease: "none" }
+    );
+
+    function updateImageSource(scrollPosition) {
+      const currentImage = Math.ceil(scrollPosition * totalImages);
+
+      // Đảm bảo bắt đầu từ số 1
+      const finalImageIndex = Math.min(Math.max(currentImage, 1), totalImages);
+
+      const dataMobile = $(window).width() < 768 ? "-mobile" : "";
+      const imageSrc = `./assets/images/map-new-step-${finalImageIndex}${dataMobile}.png`;
+      $("img[usemap='#vietnam_map'], img[usemap='#vietnam_map_mobile']").attr("src", imageSrc);
+    }
+  }
+}
+
 function toggleSubmenuMobile() {
   if ($(window).width() > 991) return;
 
@@ -1647,17 +1806,9 @@ function toggleOpenDescWinkFacilities() {
     $box.toggleClass("open");
 
     if ($box.hasClass("open")) {
-      let heightBox;
-
-      if (window.innerWidth < 767) {
-        heightBox = $desc.prop("scrollHeight") - 100;
-      } else {
-        heightBox = $desc.prop("scrollHeight");
-      }
-
-      $desc.css("height", heightBox + "px");
+      $desc.css("height", $desc.prop("scrollHeight") + "px");
     } else {
-      $desc.css("height", "70px");
+      $desc.css("height", "70");
     }
   });
 }
@@ -1672,8 +1823,8 @@ function handleFilePDFSelect(event, infoElementId) {
   }
 }
 
-function responsiveImageMap() {
-  if ($("img[usemap]").length < 1) return;
-
-  $("img[usemap]").rwdImageMaps();
+function responsiveImageMap(){
+  if($('img[usemap]').length < 1) return;
+  
+  $('img[usemap]').rwdImageMaps();
 }

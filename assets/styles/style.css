@@ -4490,6 +4490,13 @@ map area {
   margin-left: 8.33333333%;
   width: calc(50% - 8.33333333%);
 }
+.career-intro-sec .container-page .box-overlay{
+  height: 100%;
+}
+.career-intro-sec .container-page .box-overlay .item-overlay{
+  height: 100vh;
+  width: 1px;
+}
 .career-intro-sec .container-page .box {
   max-width: 440px;
   width: 100%;

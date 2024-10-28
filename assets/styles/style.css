@@ -1946,7 +1946,7 @@ section {
 }
 .footer__container--bottom-overlay {
   position: relative;
-  z-index: 9;
+  /* z-index: 9; */
 }
 .footer__container--bottom-overlay.freeze .cta-mess {
   position: absolute !important;
@@ -2251,6 +2251,7 @@ section {
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
 }
 
 .footer__container--bottom .terms ul li a:hover {
@@ -2696,6 +2697,7 @@ section {
   letter-spacing: 0.03rem;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  margin-bottom: 12px;
 }
 
 .hotels__box:hover .hotels__name {
@@ -3250,8 +3252,8 @@ section.spacer {
   margin-bottom: 56px;
 }
 .amenities__top {
-  border-top: 1px solid var(--color-grey);
-  border-bottom: 1px solid var(--color-grey);
+  /* border-top: 1px solid var(--color-grey);
+  border-bottom: 1px solid var(--color-grey); */
 }
 .amenities__top .swiper-amenities {
   height: 640px;
@@ -3280,10 +3282,7 @@ section.spacer {
   gap: 40px;
   position: relative;
 }
-.amenities__title .item:last-child::after,
-.amenities__title .item:last-child::before {
-  content: unset;
-}
+
 .amenities__title .item svg {
   min-width: 5px;
 }
@@ -3830,7 +3829,7 @@ map area {
   height: 70px;
   overflow: hidden;
   position: relative;
-  transition: height 0.5s linear 0s;
+  transition: height 0.3s linear 0s;
   display: block;
 }
 .page-tpl-suites .wink-room__suites .box .swiper::after {
@@ -4573,6 +4572,12 @@ map area {
   align-items: center;
   gap: 12px;
   justify-content: end;
+}
+.position-list .position-item .position-item-sub .dropdown-custom__item {
+  padding: 5px 0;
+}
+.position-list .position-item .position-item-sub .dropdown-custom__menu {
+  padding: 0 10px 5px;
 }
 .position-list .position-item .position-item-sub .dropdown-custom__menu {
   top: 25px;

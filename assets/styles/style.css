@@ -366,13 +366,13 @@ section {
 .cta-mess .phone-icon a {
   width: 44px;
   height: 44px;
-  background-color: var(--color-white);
+  background-color: #e5e5e5;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   transition: all 0.3s ease;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 .cta-mess .phone-icon a {
   background-color: var(--color-black);
@@ -3223,8 +3223,8 @@ section.spacer {
   margin-bottom: 56px;
 }
 .amenities__top {
-  /* border-top: 1px solid var(--color-grey); */
-  /* border-bottom: 1px solid var(--color-grey); */
+  border-top: 1px solid var(--color-grey);
+  border-bottom: 1px solid var(--color-grey);
 }
 .amenities__top .swiper-amenities {
   height: 640px;
@@ -3241,9 +3241,9 @@ section.spacer {
   object-fit: cover;
 }
 .amenities__top .box h2 {
-  padding-top: 32px;
+  padding-top: 60px;
   padding-left: 60px;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 .amenities__title .item {
   padding: 24px 60px;
@@ -3252,6 +3252,10 @@ section.spacer {
   justify-content: space-between;
   gap: 40px;
   position: relative;
+}
+.amenities__title .item:last-child::after,
+.amenities__title .item:last-child::before {
+  content: unset;
 }
 .amenities__title .item svg {
   min-width: 5px;
@@ -3479,7 +3483,7 @@ section.map {
   width: 440px;
 }
 .map__marker h2 {
-  padding-top: 40px;
+  padding-top: 100px;
   padding-inline: 60px;
   margin-bottom: 32px;
 }
@@ -6016,8 +6020,8 @@ select:-webkit-autofill:focus {
   right: -50px !important;
 }
 
-@media (min-width: 1023px){
-  body.overflow-hidden .footer .footer__container--bottom{
+@media (min-width: 1023px) {
+  body.overflow-hidden .footer .footer__container--bottom {
     margin-right: 17px;
   }
 }

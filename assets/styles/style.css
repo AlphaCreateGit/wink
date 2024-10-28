@@ -5588,7 +5588,8 @@ select:-webkit-autofill:focus {
 .select-box .plus {
   cursor: pointer;
 }
-.alert-success {
+.alert-success,
+.alert-success-sign-in {
   position: fixed;
   right: 0;
   top: 120px;
@@ -5597,16 +5598,22 @@ select:-webkit-autofill:focus {
   padding: 0 20px;
   transform: translateX(100%);
   transition: all 0.5s;
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
 }
-.alert-success.show {
+.alert-success.show,
+.alert-success-sign-in.show {
   transform: translateX(0);
 }
 
-.alert-success .alert-inner {
+.alert-success .alert-inner,
+.alert-success-sign-in .alert-inner {
   padding: 10px 20px;
   position: relative;
 }
-.alert-success .alert-inner .progress-type {
+.alert-success .alert-inner .progress-type,
+.alert-success-sign-in .alert-inner .progress-type {
   content: "";
   position: absolute;
   width: 100%;
@@ -5615,7 +5622,8 @@ select:-webkit-autofill:focus {
   bottom: 0;
   right: 0;
 }
-.alert-success .alert-inner .progress-type.show {
+.alert-success .alert-inner .progress-type.show,
+.alert-success-sign-in .alert-inner .progress-type.show {
   animation: changeWidth 5s linear forwards;
 }
 

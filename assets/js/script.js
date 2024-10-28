@@ -10,7 +10,7 @@ $(document).ready(function () {
   menubar();
   selectMap();
   bookingForm();
-  mapCompany();
+  mapCompanyNew();
   commingSoon();
   swiperRoom();
   scrollWinkRewards();
@@ -1560,12 +1560,9 @@ function mapCompany() {
   }
 }
 
-function mapCompanyTest() {
+function mapCompanyNew() {
   if ($(".map-new").length) {
     gsap.registerPlugin(ScrollTrigger);
-
-    // Mảng chứa các tên công ty tương ứng với hình ảnh
-    const arrCompany = ['can-tho', 'ho-chi-minh', 'tuy-hoa', 'da-nang-riverside', 'da-nang-center', 'hai-phong', 'default'];
 
     // Tạo timeline cho GSAP
     const tl = gsap.timeline({
@@ -1576,27 +1573,15 @@ function mapCompanyTest() {
         pin: true,
         scrub: true,
         onUpdate: (self) => {
-          const scrollDirection = self.direction;
-          const scrollPosition = self.progress;
+          const scrollDirection = self.direction; // 1 for down, -1 for up
 
-          // Tính toán chỉ số công ty dựa trên vị trí cuộn
-          const companyIndex = Math.floor(scrollPosition * arrCompany.length);
-          const currentCompany = arrCompany[companyIndex] || 'default'; // Lấy tên công ty hiện tại
-
-          // Thay đổi hình ảnh bản đồ dựa trên công ty hiện tại
-          const dataMobile = $(window).width() < 768 ? "-mobile" : "";
-          const imageSrc = `./assets/images/map-${currentCompany}${dataMobile}.png`;
-          $("img[usemap='#vietnam_map'], img[usemap='#vietnam_map_mobile']").attr("src", imageSrc);
-
-          // Nếu cuộn lên, ẩn các chi tiết marker
           if (scrollDirection === -1) {
-            document.querySelectorAll(".marker-detail").forEach((marker) => {
-              marker.classList.remove("active");
-            });
-            document.querySelectorAll(".map-content-detail").forEach((detail) => {
-              detail.classList.remove("show");
-            });
+            document.querySelectorAll(".map-content-detail")
+              .forEach((marker) => {
+                marker.classList.remove("show");
+              });
           }
+          updateImageSource(self.progress);
         },
         onComplete: () => {
           console.log("Animation completed!");
@@ -1607,33 +1592,38 @@ function mapCompanyTest() {
       },
     });
 
-    tl.fromTo(
-      ".ic-wink-head",
-      { opacity: 0, yPercent: 20, zIndex: 2 },
-      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut", zIndex: 0 }
-    );
-
+    // Hiển thị hình đầu tiên
     tl.fromTo(
       ".wink-head-office",
-      { opacity: 0, yPercent: 20 },
+      { opacity: 0, yPercent: 0 },
       { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" }
     )
-      .to(
-        ".wink-head-office",
-        {
-          opacity: 0,
-          duration: 0.5,
-          ease: "power1.inOut",
-          delay: 1,
-          yPercent: -20,
-        },
-        "-=0.25"
-      )
-      .to(".ic-wink-head", {
+    .to(
+      ".wink-head-office",
+      {
         opacity: 0,
-        duration: 1,
+        visibility: "hidden",
+        duration: 2,
         ease: "power1.inOut",
-      });
+        delay: 1,
+        yPercent: 0,
+      },
+      "-=0.25"
+    )
+    .to(".ic-wink-head", {
+      opacity: 0,
+      duration: 1,
+      ease: "power1.inOut",
+    });
+
+    // Hiển thị tất cả các hình còn lại từ map-new-step-2 đến map-new-step-8
+    const totalImages = 8; // Số lượng hình ảnh
+
+    for (let i = 2; i <= totalImages; i++) {
+      tl.call(() => {
+        updateImageSource((i - 1) / totalImages); // Cập nhật src theo thứ tự
+      }, null, `+=0.5`); // Đặt độ trễ giữa các hình ảnh
+    }
 
     tl.fromTo(
       ".marker-detail",
@@ -1650,7 +1640,6 @@ function mapCompanyTest() {
       }
     );
 
-    // Thêm độ trễ 3 giây sau khi animation marker-detail
     tl.call(() => {}, {}, "+=3");
 
     tl.fromTo(
@@ -1658,6 +1647,17 @@ function mapCompanyTest() {
       { opacity: 0 },
       { opacity: 1, duration: 1, ease: "none" }
     );
+
+    function updateImageSource(scrollPosition) {
+      const currentImage = Math.ceil(scrollPosition * totalImages);
+
+      // Đảm bảo bắt đầu từ số 1
+      const finalImageIndex = Math.min(Math.max(currentImage, 1), totalImages);
+
+      const dataMobile = $(window).width() < 768 ? "-mobile" : "";
+      const imageSrc = `./assets/images/map-new-step-${finalImageIndex}${dataMobile}.png`;
+      $("img[usemap='#vietnam_map'], img[usemap='#vietnam_map_mobile']").attr("src", imageSrc);
+    }
   }
 }
 

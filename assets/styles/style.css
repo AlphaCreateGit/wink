@@ -5468,6 +5468,7 @@ select:-webkit-autofill:focus {
   left: 50%;
   transform: translateX(-190px);
   z-index: 2;
+  display: none;
 }
 .map-new .map-content-wrapper {
   opacity: 1;
@@ -6008,6 +6009,16 @@ select:-webkit-autofill:focus {
   .our-reports__content .reports-item ul {
     flex-wrap: wrap;
     gap: 0 18px;
+  }
+
+  .map-new .wink-head-office{
+    bottom: 40%;
+    max-width: 80%;
+    left: 5%;
+  }
+
+  .map-new .wink-head-office h3{
+    margin-bottom: 24px;
   }
 }
 .cta-mess.hide {

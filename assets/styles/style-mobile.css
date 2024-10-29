@@ -471,10 +471,11 @@
   }
 
   .btn-back__wrapper{
-    /* position: sticky; */
+    position: sticky;
+    width: calc(100vw - 32px);
     top: 0;
-    margin: 20px -16px 0;
-    padding: 0 16px 0;
+    margin: 20px auto 0;
+    padding: 0;
     background: #f2f2f2;
   }
 }
@@ -1468,6 +1469,7 @@
 
   .sub-menu__grid {
     padding-bottom: 200px;
+    width: 100vw;
   }
 
   .map.homepage .map-content-wrapper img {

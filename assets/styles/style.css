@@ -5234,6 +5234,35 @@ map area {
 /* css page contact */
 
 /* page career detail */
+.animate-right {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.animate-right .box {
+  transform: translateY(50px);
+  transition: all 0.4s;
+  opacity: 0;
+  z-index: -1;
+}
+
+.animate-right:not(:first-child).show {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.animate-right.show .box {
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 1;
+}
+
+.career-intro-sec .panel {
+  background-color: var(--color-primary);
+  transition: all 0.4s;
+}
 .career-content-sec .contact__form {
   padding: 40px;
   top: 120px;

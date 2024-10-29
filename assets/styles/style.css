@@ -1997,6 +1997,12 @@ section {
   margin-bottom: 16px;
 }
 
+.rewards-list img{
+  width: 75px;
+  min-width: 75px;
+  height: 75px;
+}
+
 .chit-chat__contact {
   display: flex;
   justify-content: flex-start;
@@ -2281,6 +2287,11 @@ section {
   height: 100%;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.footer__container--bl .bct{
+  width: 124px;
+  height: 48px;
 }
 
 .author-alpha a {

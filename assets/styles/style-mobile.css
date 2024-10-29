@@ -399,6 +399,15 @@
     opacity: 1 !important;
     transform: none !important;
   }
+
+  .rewards-list{
+    width: 100%;
+  }
+
+  .rewards-list ul{
+    overflow-y: scroll;
+  }
+
 }
 
 @media (max-width: 767px) {

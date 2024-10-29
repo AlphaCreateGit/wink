@@ -27,13 +27,13 @@ $(document).ready(function () {
   swiperSuites();
   swiperBookRoom();
   showOrHidePasswords();
-  commingCareer();
   toggleSubmenuMobile();
   scrollToolbarMobile();
   stickyFilter();
   toggleOpenDescWinkFacilities();
   handlePageVisibilityAndFavicon();
   responsiveImageMap();
+  commingCareer();
 });
 function loadToTop() {
   if ("scrollRestoration" in history) {
@@ -1369,7 +1369,7 @@ function showOrHidePasswords() {
 
 function commingCareer() {
   if ($(".career-intro-sec").length) {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     const panels = gsap.utils.toArray(".panel").slice(1); // Get all panels except the first one
     const numberStart = $(".number-start");
@@ -1380,45 +1380,90 @@ function commingCareer() {
     numberStart.text(currentSlide);
     numberEnd.text(totalSlides);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".career-intro-sec",
-        start: "top 3%",
-        end: () => "+=" + 100 * panels.length + "%", // Extend the timeline based on the number of panels
-        pin: true,
-        scrub: true,
-        // markers: true,
-        onUpdate: (self) => {
-          const newSlide = Math.min(
-            Math.max(1, Math.ceil(self.progress * totalSlides)),
-            totalSlides
-          );
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".career-intro-sec",
+    //     start: "top 3%",
+    //     end: () => "+=" + 100 * panels.length + "%", // Extend the timeline based on the number of panels
+    //     pin: true,
+    //     scrub: true,
+    //     // markers: true,
+    //     onUpdate: (self) => {
+    //       const newSlide = Math.min(
+    //         Math.max(1, Math.ceil(self.progress * totalSlides)),
+    //         totalSlides
+    //       );
 
-          if (newSlide !== currentSlide) {
-            currentSlide = newSlide;
-            numberStart.text(currentSlide); // Update the current slide number
-          }
-        },
+    //       if (newSlide !== currentSlide) {
+    //         currentSlide = newSlide;
+    //         numberStart.text(currentSlide); // Update the current slide number
+    //       }
+    //     },
+    //   },
+    // });
+
+    // // Animate the panels on scroll without mouse interaction
+    // panels.forEach((panel, index) => {
+    //   tl.fromTo(
+    //     panel,
+    //     {
+    //       autoAlpha: 0,
+    //       yPercent: 10,
+    //     },
+    //     {
+    //       autoAlpha: 1,
+    //       yPercent: 0,
+    //       ease: "none",
+    //     }
+    //   );
+    // });
+    var contentElements = document.querySelectorAll(
+      ".comming-soon .panels .panel"
+    );
+    var totalHeight = 0;
+    contentElements.forEach((element, index) => {
+      var heightElement = element.offsetHeight;
+      totalHeight += heightElement;
+    });
+    gsap.to(".comming-soon", {
+      scrollTrigger: {
+        toggleActions: "play reverse play reverse",
+        start: "top top",
+        end: `+=${totalHeight}`,
+        pin: ".comming-soon",
+        pinSpacing: true,
       },
     });
 
-    // Animate the panels on scroll without mouse interaction
-    panels.forEach((panel, index) => {
-      tl.fromTo(
-        panel,
-        {
-          autoAlpha: 0,
-          yPercent: 10,
+    // scroll to image
+    contentElements.forEach((section, index) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "50% 50%",
+        end: "50% 50%",
+        scrub: true,
+        markers: true,
+        onUpdate: (self) => {
+          if (self.progress === 1) {
+            const nextSection = contentElements[index];
+            if (nextSection) {
+              $(".comming-soon .panels .panel").removeClass("show");
+              $(nextSection).addClass("show");
+            }
+          } else {
+            const prevSection = contentElements[index - 1];
+            if (prevSection && index > 0) {
+              $(".comming-soon .panels .panel").removeClass("show");
+              $(prevSection).addClass("show");
+            } else {
+              $(".comming-soon .panels .panel").removeClass("show");
+              $(contentElements[index]).addClass("show");
+            }
+          }
         },
-        {
-          autoAlpha: 1,
-          yPercent: 0,
-          ease: "none",
-        }
-      );
+      });
     });
-
-    ScrollTrigger.refresh(); // Refresh ScrollTrigger after setting up animations
+    // ScrollTrigger.refresh(); // Refresh ScrollTrigger after setting up animations
   }
 }
 

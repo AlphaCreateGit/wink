@@ -2577,6 +2577,7 @@ section {
   margin-bottom: 40px;
 }
 .hotels__filter.fixed {
+  position: sticky;
   z-index: 100;
   background-color: var(--color-gray-10);
   transition: top 0.9s;
@@ -2584,7 +2585,7 @@ section {
   left: 0;
   right: 0;
   margin-bottom: 0;
-  position: sticky;
+  top: 120px;
 }
 
 .hotels__filter.fixed .hotels__filter--location .dropdown-custom__menu {
@@ -5940,6 +5941,9 @@ select:-webkit-autofill:focus {
   }
   .page-tpl-suites .wink-room__suites .box {
     width: 100%;
+  }
+  .form-input {
+    border-radius: 0 !important;
   }
 }
 @media (max-width: 767px) {

@@ -1450,8 +1450,9 @@ function stickyFilter() {
   $(window).scroll(function () {
     if ($(".hotels__filter").length) {
       let heightHeader = $(".header").height();
+      console.log(heightHeader);
       let currentScroll = $(window).scrollTop();
-      let hotelsOffset = $(".hotels__container").offset().top - heightHeader;
+      let hotelsOffset = $(".hotels__container").offset().top - 60;
 
       // Thêm biến để lưu giá trị cuộn trước đó
       let previousScroll = $(this).data("previousScroll") || 0;

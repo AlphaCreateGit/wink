@@ -1093,7 +1093,7 @@ section {
   color: var(--color-primary);
 }
 .sub-menu__bottom ul li a::before,
-.sub-menu__bottom ul li.active a::before{
+.sub-menu__bottom ul li.active a::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -4627,7 +4627,7 @@ map area {
 }
 .position-list .position-item .position-item-sub .dropdown-custom__menu {
   top: 25px;
-  background-color: var(--color-grey);
+  background-color: var(--color-gray-10);
   left: unset;
   right: 13px;
 }
@@ -4643,7 +4643,7 @@ map area {
   font-weight: 900;
 }
 .position-list .position-item .position-item-sub .dropdown-custom__item {
-  color: var(--color-white);
+  color: var(--color-black);
   text-align: right;
 }
 .position-list .position-item .position-item-sub .dropdown-custom__item:hover {
@@ -5902,6 +5902,9 @@ select:-webkit-autofill:focus {
   line-height: 26px;
 }
 @media (max-width: 991px) {
+  .footer .author-alpha {
+    margin-top: 8px;
+  }
   .rewards-sec__top h3 {
     font-size: 28px;
     line-height: 36px;

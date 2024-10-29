@@ -1266,7 +1266,7 @@ function swiperSuites() {
       // Initialize Swiper for each element
       new Swiper($this[0], {
         slidesPerView: 1,
-        allowTouchMove: false,
+        // allowTouchMove: false,
         speed: 1000,
         pagination: {
           el: $this.find(".swiper-pagination")[0],

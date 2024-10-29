@@ -2574,9 +2574,9 @@ section {
   display: flex;
   align-items: center;
   gap: 0 40px;
-  margin-bottom: 40px;
+  transition: top 0.9s;
 }
-.hotels__filter.fixed {
+.hotels__filter {
   position: sticky;
   z-index: 100;
   background-color: var(--color-gray-10);
@@ -2584,10 +2584,11 @@ section {
   padding: 16px 0px;
   left: 0;
   right: 0;
-  margin-bottom: 0;
-  top: 120px;
+  top: 60px;
 }
-
+.hotels__result {
+  margin-top: 40px;
+}
 .hotels__filter.fixed .hotels__filter--location .dropdown-custom__menu {
   top: 34px;
 }
@@ -5831,6 +5832,9 @@ select:-webkit-autofill:focus {
   padding-top: 70px;
 }
 @media (max-width: 991px) {
+  .hotels__filter {
+    top: 60px;
+  }
   #modalSignIn .modal-body {
     padding: 24px;
   }
@@ -6305,4 +6309,3 @@ select:-webkit-autofill:focus {
     margin-right: 17px;
   }
 }
-

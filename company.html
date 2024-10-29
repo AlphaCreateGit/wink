@@ -751,20 +751,39 @@
           <div class="map__container">
             <div class="map__wrapper">
               <div class="map-overview">
-                <img src="./assets/images/img_map.svg" alt="image" />
-              </div>
-              <div class="wink-head-office">
-                <h3 class="h2-font color-black">Portfolio & Rollout</h3>
-                <div class="desc">
-                  <p>
-                    The first Wink Hotel stands in the center of Ho Chi Minh’s
-                    District 1. With minimalist rooms, Vietnamese charm, and
-                    freshly innovative sips and suppers, guests will be eagerly
-                    waiting for the 20+ locations in the pipeline. Want a sneak
-                    peek? Hanoi, Danang, Hai Phong, Tuy Hoa, Can Tho, Ha Long
-                    and Vung Tau are just a few places where we’re thinking
-                    Wink.
-                  </p>
+                <img src="./assets/images/img_map.svg" alt="image"  class="d-none"/>
+                <img src="./assets/images/map-new-step-2.png" alt="" usemap="#vietnam_map" class="d-none d-md-block" />
+                <img src="./assets/images/map-new-step-1-mobile.png" alt="" usemap="#vietnam_map_mobile" class="d-block d-md-none" />
+                <map name="vietnam_map">
+                  <area target="" alt="Hai Phong" data-city="hai-phong" title="Hai Phong" href="" coords="1103,220,65" shape="circle">
+                  <area target="" alt="Can Tho" data-city="can-tho" title="Can Tho" href="" coords="1005,1049,59" shape="circle">
+                  <area target="" alt="TP Ho Chi Minh" data-city="ho-chi-minh" title="TP Ho Chi Minh" href="" coords="1093,1000,61" shape="circle">
+                  <area target="" alt="Tuy Hoa" data-city="tuy-hoa" title="Tuy Hoa" href="" coords="1283,830,65" shape="circle">
+                  <area target="" alt="Da Nang Riverside" data-city="da-nang-riverside" data-v2-city="da-nang" title="Da Nang Riverside" href="" coords="1207,547,1230,555,1250,560,1268,595,1260,628,1232,646,1204,656,1181,649,1166,638,1166,616,1184,608,1197,598,1202,572" shape="poly">
+                  <area target="" alt="Da Nang Centre" data-city="da-nang-center" data-v2-city="da-nang" title="Da Nang Center" href="" coords="1156,527,1174,516,1199,529,1204,544,1199,583,1194,598,1179,603,1159,610,1138,608,1126,590,1126,572,1133,539" shape="poly">
+                </map>
+                <map name="vietnam_map_mobile">
+                  <area target="" alt="Hai Phong" data-city="hai-phong" title="Hai Phong" href="" coords="330,235,37" shape="circle">
+                  <area target="" alt="Can Tho" title="Can Tho" data-city="can-tho" href="" coords="248,949,35" shape="circle">
+                  <area target="" alt="Ho Chi Minh" title="Ho Chi Minh" data-city="ho-chi-minh" href="" coords="323,910,34" shape="circle">
+                  <area target="" alt="Tuy Hoa" title="Tuy Hoa" data-city="tuy-hoa" href="" coords="468,750,35" shape="circle">
+                  <area target="" alt="Da Nang Centre" title="Da Nang Centre" data-city="da-nang-center" data-v2-city="da-nang" href="" coords="344,503,355,490,371,492,382,494,393,497,396,508,394,521,393,532,393,541,387,548,378,547,369,548,364,556,351,555,338,537,336,517" shape="poly">
+                  <area target="" alt="Da Nang Riverside" title="Da Nang Riverside" data-city="da-nang-riverside" data-v2-city="da-nang" href="" coords="397,514,410,514,420,516,428,522,432,542,431,554,423,563,412,573,400,577,388,577,373,573,369,557,377,552,390,546,395,533" shape="poly">
+                </map>
+
+                <div class="wink-head-office">
+                  <h3 class="h2-font color-black">Portfolio & Rollout</h3>
+                  <div class="desc">
+                    <p>
+                      The first Wink Hotel stands in the center of Ho Chi Minh’s
+                      District 1. With minimalist rooms, Vietnamese charm, and
+                      freshly innovative sips and suppers, guests will be eagerly
+                      waiting for the 20+ locations in the pipeline. Want a sneak
+                      peek? Hanoi, Danang, Hai Phong, Tuy Hoa, Can Tho, Ha Long
+                      and Vung Tau are just a few places where we’re thinking
+                      Wink.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div class="ic-wink-head">
@@ -2318,5 +2337,9 @@
     <!-- import custom js -->
     <script src="./assets/js/script.js"></script>
     <!-- end import custom js -->
+
+    <!-- import image map -->
+    <script src="./assets/libs/jquery.rwdImageMaps.js"></script>
+    <script src="./assets/libs/jquery.rwdImageMaps.min.js"></script>
   </body>
 </html>

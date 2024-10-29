@@ -217,8 +217,8 @@
   /* header */
 
   .sub-menu__left {
+    height: calc(100dvh - 113px);
     background-color: var(--color-gray-10);
-    height: calc(100vh - 113px);
   }
 
   .menu-item-has-children > .sub-menu__container {
@@ -1371,7 +1371,9 @@
   }
 
   .swiper-suites .img {
-    height: 190px;
+    /* height: 190px; */
+    height: auto;
+    aspect-ratio: 343 / 190;
   }
 
   .experience-sec .experience__content {
@@ -1417,11 +1419,13 @@
     aspect-ratio: 375 / 600;
   }
 
-  .map.homepage .map__wrapper .map-overview img {
+  .map.homepage .map__wrapper .map-overview img,
+  .map.map-new .map__wrapper .map-overview img{
     aspect-ratio: 375 / 600;
   }
 
-  .map.homepage .map__wrapper .map-overview {
+  .map.homepage .map__wrapper .map-overview,
+  .map.map-new .map__wrapper .map-overview{
     height: auto;
   }
 }

@@ -217,8 +217,8 @@
   /* header */
 
   .sub-menu__left {
-    background-color: var(--color-gray-10);
     height: calc(100dvh - 113px);
+    background-color: var(--color-gray-10);
   }
 
   .menu-item-has-children > .sub-menu__container {

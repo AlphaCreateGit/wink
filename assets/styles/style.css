@@ -4531,7 +4531,7 @@ map area {
 .about-company__desc br {
   content: "" !important;
   margin-bottom: 24px !important;
-  display: block !important;
+  display: none !important;
 }
 .comming-soon-company .comming-soon-company {
   margin-top: 32px;
@@ -5291,6 +5291,7 @@ map area {
   transform: translateY(0);
   opacity: 1;
   z-index: 1;
+  width: 100%;
 }
 
 .career-intro-sec .panel {
@@ -6168,6 +6169,10 @@ select:-webkit-autofill:focus {
   }
   .rewards__box .rewards-button {
     margin-bottom: 0;
+    margin-top: 48px;
+  }
+  .rewards__box .desc p{
+    margin-bottom: 12px;
   }
   .rewards__content .rewards__box .title {
     font-size: 28px;

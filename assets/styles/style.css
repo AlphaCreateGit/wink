@@ -378,7 +378,7 @@ section {
   background-color: var(--color-black);
 }
 .cta-mess .phone-icon a:hover {
-  background-color: var(--color-white);
+  background-color: #e5e5e5;
 }
 .cta-mess .mess-icon a:hover {
   background-color: var(--color-black);

@@ -3787,11 +3787,16 @@ map area {
   line-height: 26px;
   letter-spacing: 0.4px;
 }
+.map-content-detail .box-body .content .desc a {
+  display: block;
+  color: var(--color-black);
+  text-decoration: none;
+}
 .menu-item-all-hotel a::after,
-.menu-item-all-hotel a::before{
+.menu-item-all-hotel a::before {
   display: none !important;
 }
-.menu-item-all-hotel a{
+.menu-item-all-hotel a {
   font-size: 16px;
   font-weight: 900;
   letter-spacing: 0.48px;
@@ -3991,7 +3996,7 @@ map area {
 }
 /* end css page suites */
 /* css page experience */
-.experience-sec{
+.experience-sec {
   overflow-x: hidden;
 }
 .experience-sec .experience__img {
@@ -5979,8 +5984,7 @@ select:-webkit-autofill:focus {
     padding: 108px 16px 64px;
     height: auto;
   }
-  #modalSignIn .sign-in-sec .member-contact{
-
+  #modalSignIn .sign-in-sec .member-contact {
   }
   .career-box {
     margin-bottom: 64px;

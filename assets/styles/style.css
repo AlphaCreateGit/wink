@@ -4431,14 +4431,14 @@ map area {
   margin-bottom: 0;
 }
 #modalContactUsEvent .form-input:not(:placeholder-shown) + .form-label {
-  top: -12px;
+  top: -13px;
   display: inline-block;
   font-size: 12px;
   line-height: 18px;
   font-weight: 900;
 }
 #modalContactUsEvent .form-input:focus + .form-label {
-  top: -12px;
+  top: -13px;
   display: inline-block;
   font-size: 12px;
   line-height: 18px;
@@ -5186,7 +5186,8 @@ map area {
 .custom-file-input:active {
   outline: 0;
 }
-
+.contact-sec .contact__form .group .form-label {
+}
 .contact-sec .contact__form .form-input:not(:placeholder-shown) + .form-label {
   top: -17px;
   display: inline-block;
@@ -5194,6 +5195,14 @@ map area {
   line-height: 18px;
   font-weight: 900;
   color: var(--color-black-50);
+}
+.contact-sec .contact__form textarea:not(:placeholder-shown) + .form-label {
+  top: 4px;
+  opacity: 0;
+}
+.contact-sec .contact__form textarea:focus + .form-label {
+  top: 4px;
+  opacity: 0;
 }
 .contact-sec .contact__form .form-input:focus + .form-label {
   top: -17px;
@@ -5386,14 +5395,14 @@ map area {
   margin-bottom: 0;
 }
 .member-contact .form-input:not(:placeholder-shown) + .form-label {
-  top: -12px;
+  top: -13px;
   display: inline-block;
   font-size: 12px;
   line-height: 18px;
   font-weight: 900;
 }
 .member-contact .form-input:focus + .form-label {
-  top: -12px;
+  top: -13px;
   display: inline-block;
   font-size: 12px;
   line-height: 18px;
@@ -5852,14 +5861,14 @@ select:-webkit-autofill:focus {
   margin-bottom: 0;
 }
 #modalSuites .form-input:not(:placeholder-shown) + .form-label {
-  top: -12px;
+  top: -13px;
   display: inline-block;
   font-size: 12px;
   line-height: 18px;
   font-weight: 900;
 }
 #modalSuites .form-input:focus + .form-label {
-  top: -12px;
+  top: -13px;
   display: inline-block;
   font-size: 12px;
   line-height: 18px;
@@ -5875,7 +5884,14 @@ select:-webkit-autofill:focus {
   max-width: 895px;
   padding-top: 70px;
 }
+.career-content-sec .career-desc ul li p {
+  font-size: 16px;
+  line-height: 26px;
+}
 @media (max-width: 991px) {
+  .career-content-sec .career-desc ul {
+    padding-left: 20px;
+  }
   .career-intro-sec .comming-soon .panels .panel,
   .career-intro-sec .comming-soon .panels {
     width: 100%;
@@ -6004,6 +6020,9 @@ select:-webkit-autofill:focus {
   }
   .form-input {
     border-radius: 0 !important;
+  }
+  .contact-sec .deals__view {
+    padding: 0;
   }
 }
 @media (max-width: 767px) {
@@ -6266,10 +6285,10 @@ select:-webkit-autofill:focus {
   .hotels__filter {
     margin-bottom: 16px;
   }
-  .deals-hotels .hotels__filter{
+  .deals-hotels .hotels__filter {
     margin-bottom: 0;
   }
-  .deals-hotels .hotels__result{
+  .deals-hotels .hotels__result {
     margin-top: 16px;
   }
   .latest-stories-sec .hotels__result{

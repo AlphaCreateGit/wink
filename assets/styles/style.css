@@ -378,7 +378,7 @@ section {
   background-color: var(--color-black);
 }
 .cta-mess .phone-icon a:hover {
-  background-color: var(--color-white);
+  background-color: #e5e5e5;
 }
 .cta-mess .mess-icon a:hover {
   background-color: var(--color-black);
@@ -5223,6 +5223,10 @@ map area {
   left: 0;
   width: 100%;
   background-color: var(--color-gray-10);
+  padding: 5px 10px;
+}
+.contact-sec .dropdown-custom__menu .dropdown-custom__item{
+  padding: 5px 0;
 }
 .contact-sec .contact__form .checkbox {
   display: flex;

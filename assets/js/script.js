@@ -809,6 +809,7 @@ function swiperDeals() {
     const swiperDeals = new Swiper(".swiper-deals", {
       slidesPerView: 1.2,
       spaceBetween: 16,
+      slidesOffsetAfter: 16,
       // loop: true,
       pagination: {
         el: ".deals-sec .swiper-pagination",
@@ -822,6 +823,7 @@ function swiperDeals() {
         767: {
           slidesPerView: 2,
           spaceBetween: 40,
+          slidesOffsetAfter: 0,
         },
         1023: {
           slidesPerView: 3,

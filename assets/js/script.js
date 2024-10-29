@@ -982,7 +982,6 @@ function selectMap() {
   $(".marker-detail, map area").on("click", function (e) {
     e.preventDefault();
 
-
     const city = $(this).data("city");
     const citys = $(this).data("v2-city");
 
@@ -1450,7 +1449,6 @@ function stickyFilter() {
   $(window).scroll(function () {
     if ($(".hotels__filter").length) {
       let heightHeader = $(".header").height();
-      console.log(heightHeader);
       let currentScroll = $(window).scrollTop();
       let hotelsOffset = $(".hotels__container").offset().top - 60;
 

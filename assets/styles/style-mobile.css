@@ -471,7 +471,7 @@
   }
 
   .btn-back__wrapper{
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     margin: 20px -16px 0;
     padding: 0 16px 0;

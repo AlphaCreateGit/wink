@@ -4137,6 +4137,7 @@ map area {
 .rewards__social .social__item .rewards__name {
   margin-bottom: 12px;
   transition: all 0.3s;
+  text-align: center;
 }
 .rewards__social .social__item .rewards__text {
   text-transform: uppercase;

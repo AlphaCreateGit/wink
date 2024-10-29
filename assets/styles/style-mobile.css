@@ -1278,6 +1278,11 @@
 
   .amenities__top .amen-right .box-detail .head {
     margin-bottom: 24px;
+    display: none;
+  }
+
+  .amenities__top .amen-right .box-detail .swiper-amen-box h4{
+    margin-top: 12px;
   }
 
   .amenities-sec .close-box__mobile {

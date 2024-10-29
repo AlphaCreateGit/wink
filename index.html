@@ -691,7 +691,8 @@
       <section class="banner-hero">
         <div class="container-fluid p-0">
           <div class="banner-hero__container">
-            <div class="swiper swiper-banner">
+            <!-- option slider image -->
+            <div class="swiper swiper-banner " >
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="slide-banner">
@@ -709,11 +710,21 @@
                 </div>
               </div>
             </div>
+            <!-- end option slide image -->
+            <!-- option video  -->
+            <video muted autoplay id="video-banner" class="video-banner d-none">
+              <source
+                src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <!-- end option video  -->
             <div class="banner-hero__heading">
               <h1 class="h1-bold color-white">
                 STAY 24-HOURS WITH 24/7 </br> SELF-SERVICES
               </h1>
             </div>
+            
             <div class="banner-hero__booking d-none d-lg-block">
               <div class="banner-hero__form">
                 <form action="">

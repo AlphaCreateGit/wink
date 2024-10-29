@@ -594,7 +594,7 @@ section {
   color: var(--color-primary);
 }
 .hotels__details--left .group-left {
-  gap: 24px;
+  gap: 16px;
 }
 
 .header__logo {

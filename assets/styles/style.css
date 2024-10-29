@@ -5823,6 +5823,12 @@ select:-webkit-autofill:focus {
   padding-top: 70px;
 }
 @media (max-width: 991px) {
+  #modalSignIn .modal-body {
+    padding: 24px;
+  }
+  .sign-in-sec .member-contact {
+    padding: 0;
+  }
   .page-tpl-suites .wink-room__suites .box .box-desc .desc {
     overflow-y: scroll;
   }
@@ -5981,7 +5987,7 @@ select:-webkit-autofill:focus {
     padding-top: 64px;
   }
   .sign-in-sec .member-contact {
-    padding: 108px 16px 64px;
+    padding: 40px 0px 40px;
     height: auto;
   }
   #modalSignIn .sign-in-sec .member-contact {

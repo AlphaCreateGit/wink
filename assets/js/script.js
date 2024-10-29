@@ -1678,7 +1678,7 @@ function mapCompanyNew() {
       });
 
     // Hiển thị tất cả các hình còn lại từ map-new-step-2 đến map-new-step-8
-    const totalImages = 9; // Số lượng hình ảnh
+    const totalImages = $(window).width() > 767 ? 9 : 8;
 
     for (let i = 2; i <= totalImages; i++) {
       tl.call(
@@ -1725,7 +1725,7 @@ function mapCompanyNew() {
         "src",
         imageSrc
       );
-      if (finalImageIndex == totalImages) {
+      if (finalImageIndex == totalImages && $(window).width() > 767) {
         let contentHCM = $(".map-content-detail");
         contentHCM.filter('[data-hotel="ho-chi-minh"]').addClass("show");
       }

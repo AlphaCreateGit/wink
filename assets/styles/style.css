@@ -1088,10 +1088,12 @@ section {
   position: relative;
   width: max-content;
 }
-.sub-menu__bottom ul li a:hover {
+.sub-menu__bottom ul li a:hover,
+.sub-menu__bottom ul li.active a {
   color: var(--color-primary);
 }
-.sub-menu__bottom ul li a::before {
+.sub-menu__bottom ul li a::before,
+.sub-menu__bottom ul li.active a::before{
   content: "";
   position: absolute;
   width: 100%;
@@ -1104,7 +1106,8 @@ section {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sub-menu__bottom ul li a:hover::before {
+.sub-menu__bottom ul li a:hover::before,
+.sub-menu__bottom ul li.active a::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }

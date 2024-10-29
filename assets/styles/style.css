@@ -5905,6 +5905,7 @@ select:-webkit-autofill:focus {
 @media (max-width: 991px) {
   .footer .author-alpha {
     margin-top: 8px;
+    padding-bottom: 20px;
   }
   .rewards-sec__top h3 {
     font-size: 28px;
@@ -6171,7 +6172,7 @@ select:-webkit-autofill:focus {
     margin-bottom: 0;
     margin-top: 48px;
   }
-  .rewards__box .desc p{
+  .rewards__box .desc p {
     margin-bottom: 12px;
   }
   .rewards__content .rewards__box .title {

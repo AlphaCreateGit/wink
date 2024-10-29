@@ -1997,7 +1997,7 @@ section {
   margin-bottom: 16px;
 }
 
-.rewards-list img{
+.rewards-list img {
   width: 75px;
   min-width: 75px;
   height: 75px;
@@ -2289,7 +2289,7 @@ section {
   align-items: flex-end;
 }
 
-.footer__container--bl .bct{
+.footer__container--bl .bct {
   width: 124px;
   height: 48px;
 }
@@ -4562,7 +4562,8 @@ map area {
 }
 .career-intro-sec .panels .box {
   padding-top: 175px;
-  max-width: 70%;
+  padding-left: 135px;
+  padding-right: 40px;
 }
 .career-intro-sec .panels .box p {
   margin-bottom: 24px;
@@ -5245,6 +5246,35 @@ map area {
 /* css page contact */
 
 /* page career detail */
+.career-intro-sec .animate-right {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.career-intro-sec .animate-right .box {
+  transform: translateY(50px);
+  transition: all 0.4s;
+  opacity: 0;
+  z-index: -1;
+}
+
+.career-intro-sec .animate-right:not(:first-child).show {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.career-intro-sec .animate-right.show .box {
+  transform: translateY(0);
+  opacity: 1;
+  z-index: 1;
+}
+
+.career-intro-sec .panel {
+  background-color: var(--color-primary);
+  transition: all 0.4s;
+}
 .career-content-sec .contact__form {
   padding: 40px;
   top: 120px;
@@ -5846,6 +5876,17 @@ select:-webkit-autofill:focus {
   padding-top: 70px;
 }
 @media (max-width: 991px) {
+  .career-intro-sec .comming-soon .panels .panel,
+  .career-intro-sec .comming-soon .panels {
+    width: 100%;
+  }
+  .career-intro-sec .comming-soon .panels .panel {
+    height: auto;
+  }
+  .career-intro-sec .animate-right .box {
+    opacity: 1;
+    z-index: 1;
+  }
   .hotels__filter {
     top: 60px;
   }

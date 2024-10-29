@@ -5161,6 +5161,9 @@ map area {
   transition: top 0.3s;
   margin-bottom: 0;
 }
+.custom-file-input {
+  height: 35px;
+}
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
 }

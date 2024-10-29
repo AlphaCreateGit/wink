@@ -408,6 +408,9 @@
     overflow-y: scroll;
   }
 
+  .career-intro-sec .container-page .box h5{
+    padding: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1307,7 +1310,7 @@
     line-height: 36px;
     letter-spacing: 0.84px;
     font-weight: 900;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
   }
 
   .position-list .position-item.sub .position-item-sub:first-child {
@@ -1351,6 +1354,11 @@
 
   .career-intro-sec .container-page .box h5 {
     margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  .career-intro-sec .panels .box p{
+    margin-bottom: 8px;
   }
 
   .career-intro-sec .container-page .box h2 {
@@ -1372,12 +1380,18 @@
   .career-intro-sec .panels .box {
     width: 100%;
     max-width: 100%;
-    padding: 67px 16px 0;
+    padding: 64px 16px 0;
+    transform: none;
+  }
+
+  .career-intro-sec .panels .panel:last-child .box{
+    padding-bottom: 64px;
   }
 
   .career-intro-sec .panels .box h1 {
     font-size: 28px;
     line-height: 36px;
+    letter-spacing: 0.84px;
   }
 
   .about-company .about-company__desc {

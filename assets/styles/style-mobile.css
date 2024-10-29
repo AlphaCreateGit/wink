@@ -220,7 +220,7 @@
     height: calc(100dvh - 113px);
     background-color: var(--color-gray-10);
   }
-
+ 
   .menu-item-has-children > .sub-menu__container {
     width: 100vw;
     left: 0;
@@ -1426,6 +1426,14 @@
 
   .map.homepage .map__wrapper .map-overview,
   .map.map-new .map__wrapper .map-overview{
+    height: auto;
+  }
+
+  .deals-sec .deals__img{
+    height: unset;
+  }
+
+  .deals-sec .deals__content{
     height: auto;
   }
 }

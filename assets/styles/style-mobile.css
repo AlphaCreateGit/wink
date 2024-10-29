@@ -487,11 +487,6 @@
     display: none;
   }
 
-  .header__logo {
-    position: static;
-    transform: none;
-  }
-
   .header__sub-menu::-webkit-scrollbar {
     display: none;
   }
@@ -1164,7 +1159,7 @@
     display: none;
   }
 
-  .amenities__top .title-mobile{
+  .amenities__top .title-mobile {
     padding: 64px 16px 24px;
     font-size: 28px;
     line-height: 36px;

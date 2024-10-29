@@ -315,6 +315,10 @@
     text-transform: uppercase;
   }
 
+  .sub-menu__cta.page-detail button{
+    width: 100%;
+  }
+
   .sub-menu__cta a.primary {
     border-color: var(--color-primary);
     color: var(--color-white);

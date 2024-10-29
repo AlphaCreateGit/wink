@@ -1528,6 +1528,12 @@
   .amenities__bottom .row:first-child {
     margin-bottom: 64px;
   }
+
+  .member-contact .member-box .head h2{
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 992px){

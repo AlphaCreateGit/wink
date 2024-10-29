@@ -5889,6 +5889,12 @@ select:-webkit-autofill:focus {
   line-height: 26px;
 }
 @media (max-width: 991px) {
+  .rewards-sec__top h3 {
+    font-size: 28px;
+    line-height: 36px;
+    color: var(--color-primary);
+    max-width: 90% !important;
+  }
   .career-content-sec .career-desc ul {
     padding-left: 20px;
   }

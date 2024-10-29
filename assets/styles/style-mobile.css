@@ -386,6 +386,14 @@
   .comming-soon-company .container-page h5 {
     padding: 0;
   }
+
+  .comming-soon__content{
+    background-color: var(--color-white);
+  }
+
+  .comming-soon__content .box{
+    background-color: var(--color-white);
+  }
 }
 
 @media (max-width: 767px) {
@@ -656,7 +664,7 @@
   }
 
   .comming-soon__content .box .desc {
-    margin-top: 40px;
+    margin-top: 24px;
   }
 
   .comming-soon .img__container img:nth-child(2) {
@@ -1004,6 +1012,7 @@
   /* comming soon section */
   .cooming-sec .panels {
     width: 0;
+    display: none;
   }
 
   .cooming-sec .container-page {

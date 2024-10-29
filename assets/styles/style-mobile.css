@@ -218,7 +218,7 @@
 
   .sub-menu__left {
     background-color: var(--color-gray-10);
-    height: calc(100vh - 113px);
+    height: calc(100dvh - 113px);
   }
 
   .menu-item-has-children > .sub-menu__container {

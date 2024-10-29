@@ -337,7 +337,7 @@ section {
   right: 40px;
   bottom: 40px;
   z-index: 99;
-  transition: all 0.4s;
+  transition: all 0.5s;
 }
 
 .cta-mess .phone-icon {
@@ -6176,6 +6176,9 @@ select:-webkit-autofill:focus {
   .rewards__box .rewards-button {
     margin-bottom: 0;
     margin-top: 48px;
+  }
+  .wink-rewards-sec .rewards__box .rewards-button{
+    margin-top: 0;
   }
   .rewards__box .desc p {
     margin-bottom: 12px;

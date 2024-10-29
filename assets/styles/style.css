@@ -5884,7 +5884,14 @@ select:-webkit-autofill:focus {
   max-width: 895px;
   padding-top: 70px;
 }
+.career-content-sec .career-desc ul li p {
+  font-size: 16px;
+  line-height: 26px;
+}
 @media (max-width: 991px) {
+  .career-content-sec .career-desc ul {
+    padding-left: 20px;
+  }
   .career-intro-sec .comming-soon .panels .panel,
   .career-intro-sec .comming-soon .panels {
     width: 100%;

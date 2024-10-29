@@ -394,6 +394,11 @@
   .comming-soon__content .box{
     background-color: var(--color-white);
   }
+
+  .deals-sec .custom__btn{
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 @media (max-width: 767px) {

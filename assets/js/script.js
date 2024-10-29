@@ -1,12 +1,12 @@
 "use strict";
 $ = jQuery;
 $(document).ready(function () {
+  gsapIntro();
   loadToTop();
 
   scrollHeader();
   subMenuHeader();
   swiperBanner();
-  gsapIntro();
   scrollFeedBack();
   scrollCTA();
   menubar();

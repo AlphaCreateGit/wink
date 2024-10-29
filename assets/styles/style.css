@@ -3802,6 +3802,9 @@ map area {
   font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .map-content-detail .box-body .content .desc a {
   display: block;
@@ -4080,7 +4083,7 @@ map area {
 .rewards__box .desc {
   margin-bottom: 48px;
 }
-.meeting-sec.about-company .desc{
+.meeting-sec.about-company .desc {
   margin-bottom: 0;
 }
 .rewards__box .rewards-button {
@@ -6300,7 +6303,7 @@ select:-webkit-autofill:focus {
   .deals-hotels .hotels__result {
     margin-top: 16px;
   }
-  .latest-stories-sec .hotels__result{
+  .latest-stories-sec .hotels__result {
     margin-top: 0;
   }
   .hotels__text {
@@ -6395,7 +6398,7 @@ select:-webkit-autofill:focus {
     margin-bottom: 24px;
   }
 
-  .latest-stories-sec .hotels__container h2.title{
+  .latest-stories-sec .hotels__container h2.title {
     font-size: 28px;
     line-height: 36px;
     letter-spacing: 0.84px;

@@ -1997,7 +1997,7 @@ section {
   margin-bottom: 16px;
 }
 
-.rewards-list img{
+.rewards-list img {
   width: 75px;
   min-width: 75px;
   height: 75px;
@@ -2289,7 +2289,7 @@ section {
   align-items: flex-end;
 }
 
-.footer__container--bl .bct{
+.footer__container--bl .bct {
   width: 124px;
   height: 48px;
 }
@@ -5876,6 +5876,17 @@ select:-webkit-autofill:focus {
   padding-top: 70px;
 }
 @media (max-width: 991px) {
+  .career-intro-sec .comming-soon .panels .panel,
+  .career-intro-sec .comming-soon .panels {
+    width: 100%;
+  }
+  .career-intro-sec .comming-soon .panels .panel {
+    height: auto;
+  }
+  .career-intro-sec .animate-right .box {
+    opacity: 1;
+    z-index: 1;
+  }
   .hotels__filter {
     top: 60px;
   }

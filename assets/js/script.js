@@ -1391,7 +1391,7 @@ function showOrHidePasswords() {
 }
 
 function commingCareer() {
-  if ($(".career-intro-sec").length) {
+  if ($(".career-intro-sec").length && $(window).width() >= 991) {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     const panels = gsap.utils.toArray(".panel").slice(1); // Get all panels except the first one

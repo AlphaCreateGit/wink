@@ -4080,6 +4080,9 @@ map area {
 .rewards__box .desc {
   margin-bottom: 48px;
 }
+.meeting-sec.about-company .desc{
+  margin-bottom: 0;
+}
 .rewards__box .rewards-button {
   /* margin-bottom: 24px; */
 }

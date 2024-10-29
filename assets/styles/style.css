@@ -366,13 +366,13 @@ section {
 .cta-mess .phone-icon a {
   width: 44px;
   height: 44px;
-  background-color: var(--color-white);
+  background-color: #e5e5e5;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   transition: all 0.3s ease;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 .cta-mess .phone-icon a {
   background-color: var(--color-black);
@@ -1344,13 +1344,42 @@ section {
 .dropdown-custom__menu .dropdown-custom__item:hover {
   color: var(--color-primary);
 }
+.header__btn-language .dropdown-custom__menu {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.header__btn-language .dropdown-custom__menu .dropdown-custom__item {
+  background-color: #e5e5e5;
+}
+.header__btn-language .dropdown-custom__menu .dropdown-custom__item:hover {
+  background-color: #e5e5e5;
+}
+.header__btn-language .dropdown-custom__menu .dropdown-custom__item:hover img {
+  opacity: 0.7;
+}
+.header__btn-language .dropdown-custom__menu {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+.header__btn-language .dropdown-custom__menu.dropdown--active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.hotels__filter .dropdown-custom__menu .dropdown-custom__item {
+  padding: 5px 0;
+}
+.hotels__filter .dropdown-custom__menu {
+  padding: 0 10px;
+  left: -10px;
+}
+
 .dropdown-custom__menu .dropdown-custom__item::before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: calc(100%);
   height: 2px;
   background-color: var(--color-primary);
-  left: 0;
+  left: 0px;
   bottom: 0px;
   transform: scaleX(0);
   transform-origin: bottom right;
@@ -1674,12 +1703,21 @@ section {
 .deals__list {
   position: relative;
 }
+.deals__list .hotels__item:hover .hotels__content--top .title {
+  color: var(--color-black);
+}
 .deals__list .swiper-slide {
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   --h: 240;
+}
+.deals__list .hotels__content--top .head {
+  margin-bottom: 12px;
+}
+.deals__list .hotels__content--top .title {
+  margin-bottom: 32px;
 }
 .deals__item {
   height: 100%;
@@ -1919,7 +1957,7 @@ section {
 }
 .footer__container--bottom-overlay {
   position: relative;
-  z-index: 9;
+  /* z-index: 9; */
 }
 .footer__container--bottom-overlay.freeze .cta-mess {
   position: absolute !important;
@@ -2170,7 +2208,7 @@ section {
 }
 
 .footer__container--bottom {
-  padding: 100px 40px 24px;
+  padding: 300px 40px 24px;
   background-color: var(--color-black);
   position: fixed;
   bottom: 0;
@@ -2224,6 +2262,7 @@ section {
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
 }
 
 .footer__container--bottom .terms ul li a:hover {
@@ -2669,6 +2708,7 @@ section {
   letter-spacing: 0.03rem;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  margin-bottom: 12px;
 }
 
 .hotels__box:hover .hotels__name {
@@ -2843,7 +2883,7 @@ section {
   color: var(--color-primary);
 }
 .header__btn-language .dropdown-custom__menu .dropdown-custom__item:hover {
-  background-color: var(--color-white);
+  background-color: #e5e5e5;
 }
 
 .dropdown--active {
@@ -2888,17 +2928,7 @@ section {
 .flex-center {
   position: relative;
 }
-.flex-center > * {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+
 .container-page {
   width: 50%;
 }
@@ -2914,6 +2944,19 @@ section {
 }
 .comming-soon__content .box h2 {
   margin-bottom: 32px;
+}
+@media (min-width: 992px) {
+  .flex-center > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 .panels {
   width: 50%;
@@ -3223,8 +3266,8 @@ section.spacer {
   margin-bottom: 56px;
 }
 .amenities__top {
-  border-top: 1px solid var(--color-grey);
-  border-bottom: 1px solid var(--color-grey);
+  /* border-top: 1px solid var(--color-grey);
+  border-bottom: 1px solid var(--color-grey); */
 }
 .amenities__top .swiper-amenities {
   height: 640px;
@@ -3241,9 +3284,9 @@ section.spacer {
   object-fit: cover;
 }
 .amenities__top .box h2 {
-  padding-top: 32px;
+  padding-top: 60px;
   padding-left: 60px;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 .amenities__title .item {
   padding: 24px 60px;
@@ -3253,6 +3296,7 @@ section.spacer {
   gap: 40px;
   position: relative;
 }
+
 .amenities__title .item svg {
   min-width: 5px;
 }
@@ -3481,7 +3525,7 @@ section.map {
   width: 440px;
 }
 .map__marker h2 {
-  padding-top: 40px;
+  padding-top: 100px;
   padding-inline: 60px;
   margin-bottom: 32px;
 }
@@ -3544,6 +3588,7 @@ section.map {
   visibility: hidden;
   transition: all 0.5s ease;
 }
+map area {
 map area {
   cursor: pointer;
   position: relative;
@@ -3746,6 +3791,23 @@ map area {
   line-height: 26px;
   letter-spacing: 0.4px;
 }
+.map-content-detail .box-body .content .desc a {
+  display: block;
+  color: var(--color-black);
+  text-decoration: none;
+}
+.menu-item-all-hotel a::after,
+.menu-item-all-hotel a::before {
+  display: none !important;
+}
+.menu-item-all-hotel a {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.48px;
+  line-height: 26px;
+  position: relative;
+  color: black !important;
+}
 /* end css map */
 /* css page suites */
 .page-tpl-suites .wink-detail-sec .wink-detail__desc .desc {
@@ -3794,15 +3856,15 @@ map area {
   position: relative;
   margin-bottom: 32px;
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc ul {
+.page-tpl-suites .wink-room__suites .box .box-desc ul {
   list-style-type: disc;
   padding-left: 20px;
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc ul {
+.page-tpl-suites .wink-room__suites .box .box-desc ul {
   height: 70px;
   overflow: hidden;
   position: relative;
-  transition: height 0.5s linear 0s;
+  transition: height 0.3s linear 0s;
   display: block;
 }
 .page-tpl-suites .wink-room__suites .box .swiper::after {
@@ -3824,36 +3886,26 @@ map area {
 .contact-sec .dropdown-custom__menu {
   top: 50px;
 }
-/* .page-tpl-suites .wink-room__suites .box .box-desc ul:has(+ .check:checked) {
-  height: 700px;
-} */
-.page-tpl-suites
-  .wink-room__suites
-  .box
-  .box-desc
-  .desc
-  ul:has(+ .check:checked) {
-  /* max-height: 700px; */
-}
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check {
+
+.page-tpl-suites .wink-room__suites .box .box-desc .check {
   position: absolute;
-  bottom: -60px;
-  left: 15px;
+  bottom: 40px;
+  left: 50px;
   appearance: none;
   -webkit-appearance: none;
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover {
+.page-tpl-suites .wink-room__suites .box .box-desc .check:hover {
   cursor: pointer;
 }
 
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check::before {
+.page-tpl-suites .wink-room__suites .box .box-desc .check::before {
   content: attr(data-more);
   white-space: nowrap;
   font-size: 12px;
   font-weight: 900;
   transition: content 0.5s;
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check::after {
+.page-tpl-suites .wink-room__suites .box .box-desc .check::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -3865,20 +3917,15 @@ map area {
   transform-origin: bottom right;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover {
+.page-tpl-suites .wink-room__suites .box .box-desc .check:hover {
   color: var(--color-primary);
 }
-.page-tpl-suites .wink-room__suites .box .box-desc .desc .check:hover::after {
+.page-tpl-suites .wink-room__suites .box .box-desc .check:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-.page-tpl-suites
-  .wink-room__suites
-  .box
-  .box-desc
-  .desc
-  .check:checked::before {
+.page-tpl-suites .wink-room__suites .box .box-desc .check:checked::before {
   content: attr(data-less);
 }
 
@@ -3953,6 +4000,9 @@ map area {
 }
 /* end css page suites */
 /* css page experience */
+.experience-sec {
+  overflow-x: hidden;
+}
 .experience-sec .experience__img {
   width: 100%;
   height: 100%;
@@ -4341,6 +4391,12 @@ map area {
   gap: 32px 40px;
   align-items: flex-end;
 }
+#modalContactUsEvent .modal-body .box .right,
+#modalContactUsEvent .modal-body .box .left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
 #modalContactUsEvent .form-input {
   width: 100%;
   border: none;
@@ -4540,9 +4596,17 @@ map area {
   gap: 12px;
   justify-content: end;
 }
+.position-list .position-item .position-item-sub .dropdown-custom__item {
+  padding: 5px 0;
+}
+.position-list .position-item .position-item-sub .dropdown-custom__menu {
+  padding: 0 10px 5px;
+}
 .position-list .position-item .position-item-sub .dropdown-custom__menu {
   top: 25px;
   background-color: var(--color-grey);
+  left: unset;
+  right: 13px;
 }
 .position-list .position-item .position-item-sub .dropdown-custom__btn {
   display: flex;
@@ -4708,7 +4772,7 @@ map area {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 41.06%, #000000 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 1.06%, #000000 75%);
 }
 .hero-deals__content {
   position: absolute;
@@ -4791,9 +4855,46 @@ map area {
   color: #a9a9a9;
   margin-top: 12px;
 }
+.sign-in-sec .note .line-sign {
+  position: relative;
+  display: inline-block;
+}
+.sign-in-sec .note .line-sign::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sign-in-sec .note .line-sign:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 .deals-details-sec .hot-deals .item .desc ul li a {
   transition: all 0.3s;
   color: var(--color-black);
+  position: relative;
+}
+.deals-details-sec .hot-deals .item .desc ul li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.deals-details-sec .hot-deals .item .desc ul li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 .deals-details-sec .hot-deals .item .desc ul li a:hover {
   color: var(--color-primary);
@@ -5352,14 +5453,37 @@ map area {
   padding-top: 160px;
   padding-bottom: 40px;
 }
-.sign-in-sec .member-contact {
-  padding-top: 160px;
-  padding-left: 40px;
-  padding-right: 40px;
-  background-color: var(--color-white);
-  height: 100vh;
-  position: sticky;
+#modalSignIn .modal-body {
+  padding: 40px;
+}
+#modalSignIn .modal-content {
+  border-radius: 0;
+}
+#modalSignIn .modal-header {
+  padding: 0;
+  position: relative;
+}
+#modalSignIn .modal-header .btn-close {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-radius: 0;
+  right: 0;
   top: 0;
+  transform: translateY(-100%);
+  padding: 0;
+  margin: 0;
+}
+#modalSignIn .modal-header .btn-close:focus {
+  box-shadow: none;
+}
+.sign-in-sec .member-contact {
+  background-color: var(--color-white);
 }
 .sign-in-sec .member-contact .nav {
   display: grid;
@@ -5503,25 +5627,32 @@ select:-webkit-autofill:focus {
 .select-box .plus {
   cursor: pointer;
 }
-.alert-success {
+.alert-success,
+.alert-success-sign-in {
   position: fixed;
   right: 0;
   top: 120px;
-  z-index: 99;
+  z-index: 1200;
   clip-path: polygon(7% 0, 100% 0, 100% 100%, 0% 100%);
   padding: 0 20px;
   transform: translateX(100%);
   transition: all 0.5s;
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
 }
-.alert-success.show {
+.alert-success.show,
+.alert-success-sign-in.show {
   transform: translateX(0);
 }
 
-.alert-success .alert-inner {
+.alert-success .alert-inner,
+.alert-success-sign-in .alert-inner {
   padding: 10px 20px;
   position: relative;
 }
-.alert-success .alert-inner .progress-type {
+.alert-success .alert-inner .progress-type,
+.alert-success-sign-in .alert-inner .progress-type {
   content: "";
   position: absolute;
   width: 100%;
@@ -5530,7 +5661,8 @@ select:-webkit-autofill:focus {
   bottom: 0;
   right: 0;
 }
-.alert-success .alert-inner .progress-type.show {
+.alert-success .alert-inner .progress-type.show,
+.alert-success-sign-in .alert-inner .progress-type.show {
   animation: changeWidth 5s linear forwards;
 }
 
@@ -5590,7 +5722,123 @@ select:-webkit-autofill:focus {
   padding-left: 20px;
   margin-top: 24px;
 }
+.page-tpl-suites .wink-room__suites .box .box-desc .wink-facilities ul {
+  height: auto;
+  list-style-type: none;
+  padding-left: 0;
+}
+#modalSuites .modal-header {
+  position: relative;
+  border: none;
+  padding: 0;
+}
+#modalSuites .dropdown-custom__menu {
+  top: 50px;
+  width: 100%;
+  background-color: var(--color-gray-10);
+}
+#modalSuites .select-head {
+  border-bottom: 1px solid var(--color-gray-50);
+}
+#modalSuites .modal-footer {
+  border: none;
+}
+#modalSuites .modal-header .btn-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(-100%);
+  width: 60px;
+  height: 60px;
+  background-image: none;
+  background-color: var(--color-black);
+  opacity: 1;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#modalSuites .modal-header .btn-close:focus {
+  box-shadow: none;
+}
+#modalSuites .modal-body {
+  padding: 40px;
+  border-bottom: 6px solid var(--color-primary);
+}
+#modalSuites .modal-body .deals__view {
+  margin-top: 40px;
+}
+#modalSuites .modal-content {
+  border-radius: 0;
+}
+#modalSuites .modal-body .box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 40px;
+  align-items: flex-end;
+}
+#modalSuites .modal-body .box .right,
+#modalSuites .modal-body .box .left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+#modalSuites .form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-gray-50);
+  padding-bottom: 12px;
+}
+#modalSuites .modal-body .group {
+  position: relative;
+}
+
+#modalSuites .modal-body .group .form-label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  pointer-events: none;
+  transition: top 0.3s;
+  margin-bottom: 0;
+}
+#modalSuites .form-input:not(:placeholder-shown) + .form-label {
+  top: -12px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
+}
+#modalSuites .form-input:focus + .form-label {
+  top: -12px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
+}
+#modalSuites .form-input::placeholder {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--color-black);
+  letter-spacing: 0.04px;
+}
+#modalSuites .modal-dialog {
+  max-width: 895px;
+  padding-top: 70px;
+}
 @media (max-width: 991px) {
+  #modalSignIn .modal-body {
+    padding: 24px;
+  }
+  .sign-in-sec .member-contact {
+    padding: 0;
+  }
+  .page-tpl-suites .wink-room__suites .box .box-desc .desc {
+    overflow-y: scroll;
+  }
   .experience-sec {
     overflow-x: hidden;
   }
@@ -5688,8 +5936,28 @@ select:-webkit-autofill:focus {
   .contact-sec .contact__form {
     padding: 40px;
   }
+  .page-tpl-suites .wink-room__suites .box .box-desc .wink-facilities ul {
+    height: auto;
+  }
+  .page-tpl-suites .wink-room__suites .box {
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
+  .page-tpl-suites .wink-room__suites .box .box-desc .check {
+    bottom: 31px;
+    left: 24px;
+  }
+  .page-tpl-suites .wink-room__suites .box.open .box-desc ul {
+    overflow-y: scroll;
+  }
+  .page-tpl-suites
+    .wink-room__suites
+    .box.open
+    .box-desc
+    ul::-webkit-scrollbar {
+    display: none;
+  }
   .member-contact .member-box {
     padding: 80px 16px 64px;
     margin-top: 0;
@@ -5726,8 +5994,10 @@ select:-webkit-autofill:focus {
     padding-top: 64px;
   }
   .sign-in-sec .member-contact {
-    padding: 108px 16px 64px;
+    padding: 40px 0px 40px;
     height: auto;
+  }
+  #modalSignIn .sign-in-sec .member-contact {
   }
   .career-box {
     margin-bottom: 64px;
@@ -6028,6 +6298,9 @@ select:-webkit-autofill:focus {
 
 @media (min-width: 1023px) {
   body.overflow-hidden .footer .footer__container--bottom {
+@media (min-width: 1023px) {
+  body.overflow-hidden .footer .footer__container--bottom {
     margin-right: 17px;
   }
 }
+

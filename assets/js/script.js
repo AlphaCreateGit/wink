@@ -1,6 +1,8 @@
 "use strict";
 $ = jQuery;
 $(document).ready(function () {
+  loadToTop();
+
   scrollHeader();
   subMenuHeader();
   swiperBanner();
@@ -33,6 +35,15 @@ $(document).ready(function () {
   handlePageVisibilityAndFavicon();
   responsiveImageMap();
 });
+function loadToTop() {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  window.addEventListener("load", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 function handlePageVisibilityAndFavicon() {
   const originalTitle = document.title;
   let faviconInterval;
@@ -125,6 +136,20 @@ function openAlert(event) {
   event.preventDefault();
 
   const alter = $(".alert-success");
+  const progress = $(".progress-type");
+  alter.addClass("show");
+  progress.addClass("show");
+  setTimeout(() => {
+    alter.removeClass("show");
+  }, 5000);
+  setTimeout(() => {
+    progress.removeClass("show");
+  }, 5300);
+}
+function openAlertSignIn(event) {
+  event.preventDefault();
+
+  const alter = $(".alert-success-sign-in");
   const progress = $(".progress-type");
   alter.addClass("show");
   progress.addClass("show");
@@ -552,6 +577,13 @@ function bookingForm() {
       singleDate: false,
     });
   }
+  if ($(".modalSuites").length) {
+    var pickerExprie = new Lightpick({
+      field: document.getElementById("expireDateSuites"),
+      minDate: moment().startOf("day"),
+      singleDate: false,
+    });
+  }
 
   //----------------------------------------------------
   // select hotels
@@ -804,7 +836,8 @@ function swiperDeals() {
 }
 
 function commingSoon() {
-  if ($(".cooming-sec").length) {
+  // Kiểm tra nếu màn hình lớn hơn hoặc bằng 991px
+  if ($(window).width() >= 991 && $(".cooming-sec").length) {
     gsap.registerPlugin(ScrollTrigger);
 
     const panels = gsap.utils.toArray(".panel").slice(1);
@@ -826,7 +859,7 @@ function commingSoon() {
         start: `top ${postionPinSection}`,
         end: () => "+=" + 100 * panels.length + "%",
         pin: true,
-        scrub: true, // Scrub for panels
+        scrub: true,
         markers: false,
         onUpdate: (self) => {
           const newSlide = Math.min(
@@ -835,7 +868,7 @@ function commingSoon() {
           );
           if (newSlide !== currentSlide) {
             currentSlide = newSlide;
-            numberStart.text(currentSlide); // Update slide count
+            numberStart.text(currentSlide);
           }
         },
       },
@@ -872,7 +905,7 @@ function commingSoon() {
             trigger: panel,
             start: "top 40%",
             end: "bottom 40%",
-            toggleActions: "play reverse play reverse", // Play on scroll down, reverse on scroll up
+            toggleActions: "play reverse play reverse",
             //markers: true,
           },
         }
@@ -882,6 +915,7 @@ function commingSoon() {
     ScrollTrigger.refresh();
   }
 }
+
 function selectMap() {
   let activeMarker = null;
 
@@ -947,6 +981,7 @@ function selectMap() {
 
   $(".marker-detail, map area").on("click", function (e) {
     e.preventDefault();
+
 
     const city = $(this).data("city");
     const citys = $(this).data("v2-city");
@@ -1284,7 +1319,7 @@ function swiperSuites() {
 
 function swiperBookRoom() {
   if ($(".img-room").length) {
-    let interleaveOffsetRoom = 0.76;
+    let interleaveOffsetRoom = 0.75;
     var swiperChildRoom = $(".swiper-book-room");
     swiperChildRoom.each(function () {
       var $this = $(this); // Cache the current Swiper element
@@ -1737,9 +1772,17 @@ function toggleOpenDescWinkFacilities() {
     $box.toggleClass("open");
 
     if ($box.hasClass("open")) {
-      $desc.css("height", $desc.prop("scrollHeight") + "px");
+      let heightBox;
+
+      if (window.innerWidth < 767) {
+        heightBox = $desc.prop("scrollHeight") - 100;
+      } else {
+        heightBox = $desc.prop("scrollHeight");
+      }
+
+      $desc.css("height", heightBox + "px");
     } else {
-      $desc.css("height", "70");
+      $desc.css("height", "70px");
     }
   });
 }

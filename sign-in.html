@@ -158,16 +158,24 @@
                           >HOME</a
                         >
                       </li>
+                      
                       <li class="menu-item menu-item-has-children">
                         <a href="./hotels.html" class="h4-font color-black"
                           >HOTELS</a
                         >
                         <div class="sub-menu__container">
                           <div class="sub-menu__grid">
-                            <div
-                              class="btn-back text-uppercase d-md-none d-block"
-                            >
-                              Go back
+                            <div class="btn-back__wrapper d-lg-none d-flex justify-content-between align-items-center">
+                              <div
+                                class="btn-back text-uppercase d-lg-none d-block"
+                              >
+                                Go back
+                              </div>
+                              <div class="menu-item-all-hotel d-lg-none d-block">
+                                <a href="./hotels.html" class="h4-font color-black"
+                                  >ALL HOTELS</a
+                                >
+                              </div>
                             </div>
                             <div class="sub-menu__item">
                               <div class="sub-menu__image">
@@ -227,24 +235,25 @@
                         </div>
                       </li>
                       <li class="menu-item">
-                        <a href="./index.html" class="h4-font color-black"
+                        <a href="./suites.html" class="h4-font color-black"
                           >SUITES</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./experience.html" class="h4-font color-black"
                           >THE WINK EXPERIENCE</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./wink-rewards.html" class="h4-font color-black"
                           >WINK REWARDS LIFESTYLE</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./event.html" class="h4-font color-black"
                           >MEETINGS & EVENTS</a
                         >
+                      </li>
                       </li>
                     </ul>
                   </div>
@@ -286,7 +295,7 @@
                     </ul>
                   </div>
                   <div
-                    class="sub-menu__cta mobile d-flex d-md-none align-items-center justify-content-between"
+                    class="sub-menu__cta mobile d-flex d-lg-none align-items-center justify-content-between"
                   >
                     <a href="#" class="color-black b2-bold">Member Login</a>
                     <a
@@ -297,7 +306,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-8 d-none d-md-block">
+              <div class="col-md-8 d-none d-lg-block">
                 <div class="box-img">
                   <img src="./assets/images/hero-banner.webp" alt="" />
                 </div>
@@ -409,6 +418,20 @@
                             >Phone</label
                           >
                         </div>
+                        <div class="group input-password">
+                          <input
+                            type="password"
+                            class="form-input"
+                            placeholder=""
+                            autocomplete="off"
+                          />
+                          <label
+                            for="name"
+                            class="form-label b1-font color-gray"
+                            >Password</label
+                          >
+                          <div class="icon-eye"></div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -429,14 +452,16 @@
                         <li>
                           <p class="b2-bold color-black">
                             Not a member,
-                            <a href="./member-login.html" class="color-primary"
-                              >sign up</a
+                            <a
+                              href="./member-login.html"
+                              class="color-primary line-sign"
+                              >Sign up</a
                             >
                             now?
                           </p>
                         </li>
                         <li>
-                          <a href="" class="color-black b2-bold"
+                          <a href="" class="color-primary b2-bold line-sign"
                             >Forgot password?</a
                           >
                         </li>

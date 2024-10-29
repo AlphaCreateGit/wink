@@ -3589,7 +3589,6 @@ section.map {
   transition: all 0.5s ease;
 }
 map area {
-map area {
   cursor: pointer;
   position: relative;
 }
@@ -6296,8 +6295,6 @@ select:-webkit-autofill:focus {
   right: -50px !important;
 }
 
-@media (min-width: 1023px) {
-  body.overflow-hidden .footer .footer__container--bottom {
 @media (min-width: 1023px) {
   body.overflow-hidden .footer .footer__container--bottom {
     margin-right: 17px;

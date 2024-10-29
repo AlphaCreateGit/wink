@@ -465,6 +465,10 @@
   .career-intro-sec .container-page .box .desc {
     margin-bottom: 0;
   }
+
+  .page-details-hotels .footer__container--bottom-overlay.freeze .cta-mess{
+    top: -140px !important;
+  }
 }
 
 @media (max-width: 767px) {

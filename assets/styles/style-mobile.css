@@ -1371,7 +1371,9 @@
   }
 
   .swiper-suites .img {
-    height: 190px;
+    /* height: 190px; */
+    height: auto;
+    aspect-ratio: 343 / 190;
   }
 
   .experience-sec .experience__content {

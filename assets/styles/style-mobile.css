@@ -1439,6 +1439,11 @@
   .page-tpl-suites .wink-room__suites .box .box-desc .overlay{
     height: 340px;
   }
+
+  .swiper-child-img .img{
+    aspect-ratio: 343 / 190;
+    height: auto;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1461,9 +1466,5 @@
 
   .amenities__bottom .row:first-child {
     margin-bottom: 64px;
-  }
-
-  .swiper-child-img .img {
-    height: 190px;
   }
 }

@@ -4551,7 +4551,8 @@ map area {
 }
 .career-intro-sec .panels .box {
   padding-top: 175px;
-  max-width: 70%;
+  padding-left: 135px;
+  padding-right: 40px;
 }
 .career-intro-sec .panels .box p {
   margin-bottom: 24px;
@@ -5234,26 +5235,26 @@ map area {
 /* css page contact */
 
 /* page career detail */
-.animate-right {
+.career-intro-sec .animate-right {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.animate-right .box {
+.career-intro-sec .animate-right .box {
   transform: translateY(50px);
   transition: all 0.4s;
   opacity: 0;
   z-index: -1;
 }
 
-.animate-right:not(:first-child).show {
+.career-intro-sec .animate-right:not(:first-child).show {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.animate-right.show .box {
+.career-intro-sec .animate-right.show .box {
   transform: translateY(0);
   opacity: 1;
   z-index: 1;

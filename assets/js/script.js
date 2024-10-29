@@ -1439,7 +1439,6 @@ function commingCareer() {
         start: "top bottom",
         end: "bottom bottom",
         scrub: true,
-        markers: true,
         onUpdate: (self) => {
           if (self.progress === 1) {
             const nextSection = contentElements[index];

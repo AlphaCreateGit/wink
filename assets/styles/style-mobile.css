@@ -1458,6 +1458,12 @@
     aspect-ratio: 343 / 190;
     height: auto;
   }
+
+  .deals-details-sec .box .name{
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+  }
 }
 
 @media (max-width: 480px) {

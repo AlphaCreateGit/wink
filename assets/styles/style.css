@@ -6222,6 +6222,12 @@ select:-webkit-autofill:focus {
   .hotels__filter {
     margin-bottom: 16px;
   }
+  .deals-hotels .hotels__filter{
+    margin-bottom: 0;
+  }
+  .deals-hotels .hotels__result{
+    margin-top: 16px;
+  }
   .hotels__text {
     margin-bottom: 24px;
   }

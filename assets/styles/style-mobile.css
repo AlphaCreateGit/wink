@@ -69,7 +69,7 @@
   .deals__list .swiper-control .swiper-button-prev {
     left: unset;
     right: 16px;
-    bottom: -55px;
+    bottom: -60px;
     width: 70px;
     height: 18px;
     top: unset;
@@ -79,7 +79,7 @@
   .deals__list .swiper-control .swiper-button-next {
     right: 8px;
     left: unset;
-    bottom: -55px;
+    bottom: -60px;
     width: 70px;
     height: 18px;
     top: unset;
@@ -88,7 +88,7 @@
 
   .deals__list .swiper-pagination {
     top: unset;
-    bottom: -55px;
+    bottom: -60px;
     left: unset;
     transform: translate(-50%, 0);
   }

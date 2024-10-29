@@ -22,6 +22,9 @@
 }
 
 @media (max-width: 991px) {
+  .room-facilities__container h3 {
+    text-align: left;
+  }
   .cooming-sec {
     padding-bottom: 64px;
     background-color: var(--color-white);
@@ -220,7 +223,7 @@
     height: calc(100dvh - 113px);
     background-color: var(--color-gray-10);
   }
- 
+
   .menu-item-has-children > .sub-menu__container {
     width: 100vw;
     left: 0;
@@ -387,28 +390,28 @@
     padding: 0;
   }
 
-  .comming-soon__content{
+  .comming-soon__content {
     background-color: var(--color-white);
   }
 
-  .comming-soon__content .box{
+  .comming-soon__content .box {
     background-color: var(--color-white);
   }
 
-  .deals-sec .custom__btn{
+  .deals-sec .custom__btn {
     opacity: 1 !important;
     transform: none !important;
   }
 
-  .rewards-list{
+  .rewards-list {
     width: 100%;
   }
 
-  .rewards-list ul{
+  .rewards-list ul {
     overflow-y: scroll;
   }
 
-  .career-intro-sec .container-page .box h5{
+  .career-intro-sec .container-page .box h5 {
     padding: 0;
   }
 }
@@ -1144,7 +1147,7 @@
   }
 
   .room-facilities__container h3 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 32px;
   }
 
@@ -1365,7 +1368,7 @@
     margin-top: 0;
   }
 
-  .career-intro-sec .panels .box p{
+  .career-intro-sec .panels .box p {
     margin-bottom: 8px;
   }
 
@@ -1392,7 +1395,7 @@
     transform: none;
   }
 
-  .career-intro-sec .panels .panel:last-child .box{
+  .career-intro-sec .panels .panel:last-child .box {
     padding-bottom: 64px;
   }
 
@@ -1456,32 +1459,32 @@
   }
 
   .map.homepage .map__wrapper .map-overview img,
-  .map.map-new .map__wrapper .map-overview img{
+  .map.map-new .map__wrapper .map-overview img {
     aspect-ratio: 375 / 600;
   }
 
   .map.homepage .map__wrapper .map-overview,
-  .map.map-new .map__wrapper .map-overview{
+  .map.map-new .map__wrapper .map-overview {
     height: auto;
   }
 
-  .deals-sec .deals__img{
+  .deals-sec .deals__img {
     height: unset;
   }
 
-  .deals-sec .deals__content{
+  .deals-sec .deals__content {
     height: auto;
   }
-  .page-tpl-suites .wink-room__suites .box .box-desc .overlay{
+  .page-tpl-suites .wink-room__suites .box .box-desc .overlay {
     height: 340px;
   }
 
-  .swiper-child-img .img{
+  .swiper-child-img .img {
     aspect-ratio: 343 / 190;
     height: auto;
   }
 
-  .deals-details-sec .box .name{
+  .deals-details-sec .box .name {
     font-size: 28px;
     line-height: 36px;
     letter-spacing: 0.84px;

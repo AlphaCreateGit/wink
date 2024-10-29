@@ -744,7 +744,7 @@
 
   /* css mobile hotels */
   .hotels__box .hotels__tag {
-    top: 20px;
+    top: 24px;
     left: 24px;
   }
 
@@ -1162,6 +1162,14 @@
 
   .amenities__top .box h2 {
     display: none;
+  }
+
+  .amenities__top .title-mobile{
+    padding: 64px 16px 24px;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+    font-weight: 900;
   }
 
   .amenities__top .swiper-amenities {

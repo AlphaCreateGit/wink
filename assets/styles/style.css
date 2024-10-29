@@ -6303,7 +6303,8 @@ select:-webkit-autofill:focus {
   .deals-hotels .hotels__result {
     margin-top: 16px;
   }
-  .latest-stories-sec .hotels__result {
+  .latest-stories-sec .hotels__result,
+  .hotels .hotels__result{
     margin-top: 0;
   }
   .hotels__text {

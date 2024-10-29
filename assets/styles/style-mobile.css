@@ -1436,6 +1436,9 @@
   .deals-sec .deals__content{
     height: auto;
   }
+  .page-tpl-suites .wink-room__suites .box .box-desc .overlay{
+    height: 340px;
+  }
 }
 
 @media (max-width: 480px) {

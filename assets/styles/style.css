@@ -1057,6 +1057,28 @@ section {
   gap: 12px;
 }
 
+.sub-menu__item a{
+  padding: 0 !important;
+}
+
+.menu-item .sub-menu__grid .sub-menu__item a{
+  color: var(--color-black);
+}
+
+.menu-item .sub-menu__grid .sub-menu__item:hover a{
+  color: var(--color-primary);
+}
+
+.sub-menu__item .sub-menu__image a{
+  width: 100%;
+  height: 100%;
+}
+
+.sub-menu__item a::after,
+.sub-menu__item a::before{
+  display: none !important;
+}
+
 .sub-menu__item .sub-menu__image {
   width: 100%;
   height: 240px;
@@ -3997,6 +4019,11 @@ map area {
   top: unset;
   bottom: 0;
   transition: all 0.4s ease;
+}
+.swiper-suites .swiper-button-next .icon,
+.swiper-suites .swiper-button-prev .icon{
+  width: 6px;
+  height: 10px;
 }
 .swiper-suites .swiper-button-next:hover,
 .swiper-suites .swiper-button-prev:hover {

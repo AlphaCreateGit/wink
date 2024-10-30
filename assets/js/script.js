@@ -34,6 +34,7 @@ $(document).ready(function () {
   toggleOpenDescWinkFacilities();
   handlePageVisibilityAndFavicon();
   responsiveImageMap();
+  animateRellax();
 });
 function loadToTop() {
   if ("scrollRestoration" in history) {
@@ -910,7 +911,7 @@ function commingSoon() {
           ease: "none",
           duration: 1,
           stagger: 0.5,
-          scaleX: 1.1,
+          scaleX: 1.3,
         },
         "+=0.5"
       );
@@ -1909,4 +1910,12 @@ function responsiveImageMap() {
   if ($("img[usemap]").length < 1) return;
 
   $("img[usemap]").rwdImageMaps();
+}
+
+function animateRellax(){
+  if($(".rellax").length < 1) return;
+  var rellax = new Rellax('.rellax',{
+    center: true,
+    breakpoints: [576, 768, 1201]
+  });
 }

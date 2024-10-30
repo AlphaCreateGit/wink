@@ -3848,8 +3848,7 @@ map area {
   color: var(--color-black);
   text-decoration: none;
 }
-.menu-item-all-hotel a::after,
-.menu-item-all-hotel a::before {
+.menu-item-all-hotel a::after{
   display: none !important;
 }
 .menu-item-all-hotel a {
@@ -3859,6 +3858,21 @@ map area {
   line-height: 26px;
   position: relative;
   color: black !important;
+}
+.menu-item-all-hotel a:hover{
+  color: var(--color-primary);
+}
+.menu-container li:hover .menu-item-all-hotel a::before{
+  background-color: var(--color-gray-10);
+}
+.menu-container li .menu-item-all-hotel a{
+  transition: unset;
+}
+.menu-container li .menu-item-all-hotel:hover a{
+  color: var(--color-primary) !important;
+}
+.menu-container li .menu-item-all-hotel a:hover::before{
+  background-color: var(--color-primary);
 }
 /* end css map */
 /* css page suites */

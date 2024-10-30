@@ -304,11 +304,10 @@ function scrollHeader() {
     ScrollTrigger.create({
       start: "top top",
       end: 99999,
-      // end: "bottom bottom",
       onUpdate: (self) => {
         // Shrink navTop
         self.direction === -1 ? navTop.play() : navTop.reverse();
-        self.refresh();
+        // self.refresh();
         if (self.direction === -1) {
           $(".header__sub-menu")
             .addClass("scrolled-down")

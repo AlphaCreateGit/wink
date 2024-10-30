@@ -918,25 +918,89 @@ function commingSoon() {
 
     // Separate animations for content with no scrub but still reverse effect
     panels.forEach((panel, index) => {
-      gsap.fromTo(
-        content[index],
-        {
-          yPercent: 3,
-          autoAlpha: 0,
-        },
-        {
-          yPercent: 0,
-          autoAlpha: 1,
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: panel,
-            start: "top 40%",
-            end: "bottom 40%",
-            toggleActions: "play reverse play reverse",
-            //markers: true,
+      const heading = panel.querySelector(".animate-left h2");
+      const description = panel.querySelector(".animate-left .desc"); 
+
+      // gsap.fromTo(
+      //   heading,
+      //   {
+      //     yPercent: 3,
+      //     autoAlpha: 0,
+      //   },
+      //   {
+      //     yPercent: 0,
+      //     autoAlpha: 1,
+      //     ease: "power1.out",
+      //     scrollTrigger: {
+      //       trigger: panel,
+      //       start: "top 40%",
+      //       end: "bottom 40%",
+      //       toggleActions: "play reverse play reverse",
+      //     },
+      //   }
+      // );
+
+      // Animate the description with a delay
+      // gsap.fromTo(
+      //   description,
+      //   {
+      //     yPercent: 3,
+      //     autoAlpha: 0,
+      //   },
+      //   {
+      //     yPercent: 0,
+      //     autoAlpha: 1,
+      //     ease: "power1.out",
+      //     scrollTrigger: {
+      //       trigger: panel,
+      //       start: "top 40%+=0.5", // Delay description appearance
+      //       end: "bottom 40%",
+      //       toggleActions: "play reverse play reverse",
+      //     },
+      //   }
+      // );
+
+      // gsap.fromTo(
+      //   content[index],
+      //   {
+      //     yPercent: 3,
+      //     autoAlpha: 0,
+      //   },
+      //   {
+      //     yPercent: 0,
+      //     autoAlpha: 1,
+      //     ease: "power1.out",
+      //     scrollTrigger: {
+      //       trigger: panel,
+      //       start: "top 40%",
+      //       end: "bottom 40%",
+      //       toggleActions: "play reverse play reverse",
+      //       //markers: true,
+      //     },
+      //   }
+      // );
+
+      panels.forEach((panel) => {
+        const content = document.querySelectorAll(".animate-left")[index+1];
+  
+        // ScrollTrigger for adding the 'show' class
+        ScrollTrigger.create({
+          trigger: panel,
+          start: "top 40%",
+          end: "bottom 40%",
+          onEnter: () => {
+            document.querySelectorAll(".animate-left").forEach((sibling) => {
+              sibling.classList.remove("show");
+            });
+            // Add 'show' class to the current content
+            content.classList.add("show");
           },
-        }
-      );
+          onLeaveBack: () => {
+            document.querySelectorAll(".animate-left")[0].classList.add("show");
+            content.classList.remove("show"); // Optional: remove class when scrolling back
+          },
+        });
+      });
     });
 
     ScrollTrigger.refresh();

@@ -215,6 +215,31 @@ function customAnimation() {
       }
     );
   });
+
+  if($(window).width() < 992){
+    gsap.utils.toArray(".data-fade-in-mobile").forEach((element, i) => {
+      gsap.fromTo(
+        element,
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            end: "bottom 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "circ.out",
+          stagger: 0.1,
+        }
+      );
+    });
+  }
+
   gsap.utils.toArray(".data-fade-up").forEach((element, i) => {
     gsap.fromTo(
       element,

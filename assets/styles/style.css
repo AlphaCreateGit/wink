@@ -337,7 +337,9 @@ section {
   right: 40px;
   bottom: 40px;
   z-index: 99;
-  transition: all 0.5s;
+  transition: all 0.7s ease;
+  visibility: visible;
+  opacity: 1;
 }
 
 .cta-mess .phone-icon {
@@ -6433,6 +6435,8 @@ select:-webkit-autofill:focus {
 }
 .cta-mess.hide {
   right: -50px !important;
+  visibility: visible;
+  opacity: 0;
 }
 
 @media (min-width: 1023px) {

@@ -4589,6 +4589,11 @@ map area {
 .comming-soon-company .comming-soon-company {
   margin-top: 32px;
 }
+.comming-soon-company .comming-soon__list--logo{
+  margin-top: 32px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
 /* end  page company */
 /* css page career */
 .career-intro-sec {

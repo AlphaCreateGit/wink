@@ -922,65 +922,6 @@ function commingSoon() {
       const heading = panel.querySelector(".animate-left h2");
       const description = panel.querySelector(".animate-left .desc"); 
 
-      // gsap.fromTo(
-      //   heading,
-      //   {
-      //     yPercent: 3,
-      //     autoAlpha: 0,
-      //   },
-      //   {
-      //     yPercent: 0,
-      //     autoAlpha: 1,
-      //     ease: "power1.out",
-      //     scrollTrigger: {
-      //       trigger: panel,
-      //       start: "top 40%",
-      //       end: "bottom 40%",
-      //       toggleActions: "play reverse play reverse",
-      //     },
-      //   }
-      // );
-
-      // Animate the description with a delay
-      // gsap.fromTo(
-      //   description,
-      //   {
-      //     yPercent: 3,
-      //     autoAlpha: 0,
-      //   },
-      //   {
-      //     yPercent: 0,
-      //     autoAlpha: 1,
-      //     ease: "power1.out",
-      //     scrollTrigger: {
-      //       trigger: panel,
-      //       start: "top 40%+=0.5", // Delay description appearance
-      //       end: "bottom 40%",
-      //       toggleActions: "play reverse play reverse",
-      //     },
-      //   }
-      // );
-
-      // gsap.fromTo(
-      //   content[index],
-      //   {
-      //     yPercent: 3,
-      //     autoAlpha: 0,
-      //   },
-      //   {
-      //     yPercent: 0,
-      //     autoAlpha: 1,
-      //     ease: "power1.out",
-      //     scrollTrigger: {
-      //       trigger: panel,
-      //       start: "top 40%",
-      //       end: "bottom 40%",
-      //       toggleActions: "play reverse play reverse",
-      //       //markers: true,
-      //     },
-      //   }
-      // );
-
       panels.forEach((panel) => {
         const content = document.querySelectorAll(".animate-left")[index+1];
   

@@ -4095,6 +4095,7 @@ map area {
   white-space: nowrap;
   font-size: 12px;
   font-weight: 900;
+  letter-spacing: 0.05rem;
   transition: content 0.5s;
 }
 .page-tpl-suites .wink-room__suites .box .box-desc .check::after {

@@ -3797,7 +3797,7 @@ map area {
   }
 }
 
-@media (min-width: 376px) and (max-width: 767px){
+@media (max-width: 767px){
   .map-content-wrapper .marker-detail.hai-phong{
     transform: translateX(0) !important;
     top: 100px;

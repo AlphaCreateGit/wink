@@ -1308,6 +1308,9 @@ section {
 .banner-hero__form form .dropdown-custom__text {
   margin-bottom: 0;
 }
+.dropdown-custom__text span{
+  display: none;
+}
 .banner-hero__form form input::placeholder {
   font-size: 12px;
   line-height: 18px;

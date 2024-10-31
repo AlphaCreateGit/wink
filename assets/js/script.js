@@ -795,16 +795,22 @@ function toggleDropdown() {
     $dropdownItems.on("click", function (e) {
       e.stopPropagation();
       const $item = $(this);
-      const tmpText = $textDropdown.text();
+      let tmpText = $textDropdown.text();
+      
       const tmpImgSrc = $textDropdown.find("img").attr("src"); // Get the current image src if present
       const $img = $item.find("img"); // Check if the clicked item contains an img
 
       // Swap text content
       $textDropdown.text($item.text());
-
+      
       // If the item has an image, swap the img src
       if ($img.length) {
         $textDropdown.html($item.html()); // Swap the entire HTML, including the img
+        
+        if($item.hasClass("language__item")){
+          tmpText = `<span>${tmpText}</span>`;
+        }
+
         $item.html(
           `${tmpImgSrc ? `<img src="${tmpImgSrc}" />` : ""} ${tmpText}`
         ); // Swap img and text back to the item

@@ -195,6 +195,8 @@ function customAnimation() {
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.utils.toArray(".data-fade-in").forEach((element, i) => {
+    const delay = element.getAttribute("data-delay") || 0; // Lấy giá trị data-delay hoặc mặc định là 0
+
     gsap.fromTo(
       element,
       {
@@ -202,16 +204,16 @@ function customAnimation() {
         y: 20,
       },
       {
-        scrollTrigger: {
-          trigger: element,
-          start: "top 80%",
-          end: "bottom 80%",
-        },
         opacity: 1,
         y: 0,
         duration: 1,
         ease: "circ.out",
-        stagger: 0.1,
+        delay: parseFloat(delay), // Thêm delay cho từng phần tử
+        scrollTrigger: {
+          trigger: element,
+          start: "top 85%",
+          end: "bottom 85%",
+        },
       }
     );
   });
@@ -838,7 +840,6 @@ function swiperDeals() {
 }
 
 function commingSoon() {
-  // Kiểm tra nếu màn hình lớn hơn hoặc bằng 991px
   if ($(window).width() >= 991 && $(".cooming-sec").length) {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -852,17 +853,16 @@ function commingSoon() {
     numberStart.text(currentSlide);
     numberEnd.text(totalSlides);
 
-    const postionPinSection = $(window).width() > 767 ? "5%" : "40px";
+    const positionPinSection = $(window).width() > 767 ? "5%" : "40px";
 
-    // Timeline for panels with scrub true
     const panelTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".comming-soon",
-        start: `top ${postionPinSection}`,
+        start: `top ${positionPinSection}`,
         end: () => "+=" + 100 * panels.length + "%",
         pin: true,
         scrub: true,
-        markers: false,
+        markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),
@@ -876,22 +876,22 @@ function commingSoon() {
       },
     });
 
-    // Animate panels with scrub effect
     panels.forEach((panel, index) => {
-      panelTl.from(
+      panelTl.fromTo(
         panel,
         {
-          yPercent: 100,
+          height: 0, // Start from 0 height
+        },
+        {
+          height: "100%", // End at full height
           ease: "none",
           duration: 1,
-          stagger: 0.5,
-          scaleX: 1.1,
+          stagger: 0.3, // Adjust stagger for visual clarity
         },
         "+=0.5"
       );
     });
 
-    // Separate animations for content with no scrub but still reverse effect
     panels.forEach((panel, index) => {
       gsap.fromTo(
         content[index],
@@ -908,7 +908,6 @@ function commingSoon() {
             start: "top 40%",
             end: "bottom 40%",
             toggleActions: "play reverse play reverse",
-            //markers: true,
           },
         }
       );

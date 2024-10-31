@@ -1433,7 +1433,9 @@ section {
   width: 100%;
 }
 .select-hotel .dropdown-custom__menu .dropdown-custom__item {
-  padding-left: 24px;
+  padding: 7px 0;
+  white-space: normal;
+  max-width: max-content;
 }
 
 .banner-hero__form form .select-hotel .select-head {
@@ -1447,11 +1449,12 @@ section {
   right: 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  padding: 7px 24px;
 }
 .banner-hero__form form .select-hotel .dropdown-custom__menu.dropdown-up {
   top: unset;
   bottom: calc(100% + 20px);
-  padding: 11px 0;
+  padding: 7px 24px;
 }
 
 .banner-hero__form form .select-hotel .select-head h5 {
@@ -1575,6 +1578,9 @@ section {
   padding: 16px;
   z-index: 3;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.banner-hero__form .units .select-box{
+  width: calc(100% + 16px);
 }
 .banner-hero__form .select-box.dropdown-up {
   bottom: unset;
@@ -5417,7 +5423,9 @@ map area {
   padding: 5px 10px;
 }
 .contact-sec .dropdown-custom__menu .dropdown-custom__item {
-  padding: 5px 0;
+  padding: 7px 0;
+  white-space: normal;
+  max-width: max-content;
 }
 .contact-sec .contact__form .checkbox {
   display: flex;

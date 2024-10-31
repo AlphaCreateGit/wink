@@ -12,7 +12,7 @@ $(document).ready(function () {
   menubar();
   selectMap();
   bookingForm();
-  mapCompanyNew();
+  mapCompany();
   commingSoon();
   swiperRoom();
   scrollWinkRewards();
@@ -1701,6 +1701,12 @@ function mapCompany() {
           from: "end",
           ease: "none",
         },
+        onComplete: () => {
+          if($(window).width() > 767) {
+            $(".marker-detail.ho-chi-minh").addClass("active");
+            $(".map-content-detail[data-hotel='ho-chi-minh']").addClass("show");
+          }
+        }
       }
     );
 
@@ -1719,7 +1725,6 @@ function mapCompanyNew() {
   if ($(".map-new").length) {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Tạo timeline cho GSAP
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".map-new",
@@ -1727,9 +1732,8 @@ function mapCompanyNew() {
         end: "+=120%",
         pin: true,
         scrub: true,
-
         onUpdate: (self) => {
-          const scrollDirection = self.direction; // 1 for down, -1 for up
+          const scrollDirection = self.direction;
 
           if (scrollDirection === -1) {
             document
@@ -1738,10 +1742,6 @@ function mapCompanyNew() {
                 marker.classList.remove("show");
               });
           }
-          updateImageSource(self.progress);
-        },
-        onComplete: () => {
-          console.log("Animation completed!");
         },
         onLeave: () => {
           $(".map-new").addClass("remove-spacing");
@@ -1749,37 +1749,48 @@ function mapCompanyNew() {
       },
     });
 
-    // Hiển thị hình đầu tiên
+    // Phase 1: Show the first image
     tl.fromTo(
       ".wink-head-office",
       { opacity: 0, yPercent: 20 },
       { opacity: 1, yPercent: 0, duration: 1.5, ease: "power1.inOut" }
-    )
-      .to(".wink-head-office", {
-        opacity: 0,
-        duration: 2,
-        ease: "power1.inOut",
-        yPercent: 0,
-      })
-      .to(".ic-wink-head", {
-        opacity: 0,
-        duration: 1,
-        ease: "power1.inOut",
-      });
+    ).to(".wink-head-office", {
+      opacity: 0,
+      duration: 2,
+      ease: "power1.inOut",
+      yPercent: 0,
+    });
 
-    // Hiển thị tất cả các hình còn lại từ map-new-step-2 đến map-new-step-8
-    const totalImages = $(window).width() > 767 ? 9 : 8;
-
-    for (let i = 2; i <= totalImages; i++) {
+    // Phase 2: Show images 1 to 3
+    const imagesCountPhase1 = 2;
+    for (let i = 1; i <= imagesCountPhase1; i++) {
       tl.call(
         () => {
-          updateImageSource((i - 1) / totalImages); // Cập nhật src theo thứ tự
+          updateImageSource((i - 1) / imagesCountPhase1);
         },
         null,
         `+=0.75`
-      ); // Đặt độ trễ giữa các hình ảnh
+      );
     }
 
+    // Phase 3: Show images 4 to 8 after showing image 3
+    const imagesCountPhase2 = 4; // From 4 to 8
+    tl.call(() => {
+      // Optionally: Handle any actions before showing phase 2 images
+      console.log("Transitioning to images 4 to 8");
+    }, null, `+=0.75`);
+
+    for (let i = 4; i <= 4 + imagesCountPhase2 - 1; i++) {
+      tl.call(
+        () => {
+          updateImageSource((i - 1) / (imagesCountPhase1 + imagesCountPhase2));
+        },
+        null,
+        `+=0.75`
+      );
+    }
+
+    // Reveal marker details
     tl.fromTo(
       ".marker-detail",
       { opacity: 0, yPercent: 10 },
@@ -1795,8 +1806,6 @@ function mapCompanyNew() {
       }
     );
 
-    tl.call(() => {}, {}, "+=3");
-
     tl.fromTo(
       ".map-new .map-content",
       { opacity: 0 },
@@ -1804,20 +1813,14 @@ function mapCompanyNew() {
     );
 
     function updateImageSource(scrollPosition) {
-      const currentImage = Math.ceil(scrollPosition * totalImages);
-
-      // Đảm bảo bắt đầu từ số 1
-      const finalImageIndex = Math.min(Math.max(currentImage, 1), totalImages);
-
+      const currentImage = Math.ceil(scrollPosition * (imagesCountPhase1 + imagesCountPhase2));
+      const finalImageIndex = Math.min(Math.max(currentImage, 1), imagesCountPhase1 + imagesCountPhase2);
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
       const imageSrc = `./assets/images/map-new-step-${finalImageIndex}${dataMobile}.png`;
-      $("img[usemap='#vietnam_map'], img[usemap='#vietnam_map_mobile']").attr(
-        "src",
-        imageSrc
-      );
-      if (finalImageIndex == totalImages && $(window).width() > 767) {
-        let contentHCM = $(".map-content-detail");
-        contentHCM.filter('[data-hotel="ho-chi-minh"]').addClass("show");
+      $("img[usemap='#vietnam_map'], img[usemap='#vietnam_map_mobile']").attr("src", imageSrc);
+      
+      if (finalImageIndex == imagesCountPhase1 + imagesCountPhase2 && $(window).width() > 767) {
+        $(".map-content-detail[data-hotel='ho-chi-minh']").addClass("show");
       }
     }
   }

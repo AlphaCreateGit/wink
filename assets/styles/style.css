@@ -3695,7 +3695,7 @@ map area {
 .map-content-wrapper .marker-detail {
   position: absolute;
   opacity: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
   transition: all 1s ease;
   transition-delay: calc(0.15s * (var(--index) + 1));
 }
@@ -3707,6 +3707,8 @@ map area {
 .map-content-wrapper .marker-detail.active svg .subtrack {
   fill: var(--color-primary);
 }
+
+/* marker map-new */
 .map-content-wrapper .marker-detail.hai-phong {
   top: 95px;
   left: 50%;
@@ -3731,14 +3733,76 @@ map area {
   transform: translate(-90px, -40px);
 }
 .map-content-wrapper .marker-detail.ho-chi-minh {
-  bottom: 270px;
-  left: 50%;
+  bottom: 35%;
+  left: 51%;
   transform: translateX(-190px);
 }
 .map-content-wrapper .marker-detail.can-tho {
-  bottom: 245px;
-  left: 50%;
+  bottom: 31%;
+  left: 51%;
   transform: translateX(-230px);
+}
+@media (min-width: 1900px){
+  /* 1920 x 1820 */
+  .map-content-wrapper .marker-detail.hai-phong{
+    top: 13%;
+    left: 47%;
+  }
+
+  .map-content-wrapper .marker-detail.can-tho{
+    bottom: 32%;
+    left: 48%;
+  }
+
+  .map-content-wrapper .marker-detail.ho-chi-minh{
+    left: 48%;
+  }
+
+  .map-content-wrapper .marker-detail.tuy-hoa{
+    left: 48%;
+  }
+
+  .map-content-wrapper .marker-detail.da-nang-riverside,
+  .map-content-wrapper .marker-detail.da-nang-center{
+    left: 49%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px){
+  .map-content-wrapper .marker-detail.can-tho{
+    left: 56%;
+  }
+
+  .map-content-wrapper .marker-detail.ho-chi-minh{
+    left: 56%;
+  }
+
+  .map-content-wrapper .marker-detail.tuy-hoa{
+    left: 51%;
+  }
+
+  .map-content-wrapper .marker-detail.da-nang-center{
+    top: 53%;
+    left: 52%;
+  }
+
+  .map-content-wrapper .marker-detail.da-nang-riverside{
+    top: 52%;
+    left: 52%;
+  }
+
+  .map-content-wrapper .marker-detail.hai-phong{
+    top: 10%;
+    left: 54%;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 767px){
+  .map-content-wrapper .marker-detail.hai-phong{
+    transform: translateX(0) !important;
+    top: 100px;
+    left: 43%;
+  }
 }
 .map-content {
   position: absolute;
@@ -5755,29 +5819,17 @@ select:-webkit-autofill:focus {
 }
 .map-new .ic-wink-head {
   position: absolute;
-  bottom: 273px;
-  left: 50%;
+  bottom: 35%;
+  left: 51%;
   transform: translateX(-190px);
   z-index: 2;
-  display: none;
 }
 .map-new .map-content-wrapper {
   opacity: 1;
   visibility: visible;
-  display: none;
 }
 .map-new .marker-detail {
   opacity: 1;
-  visibility: visible;
-  display: none;
-}
-.map-new .map-content {
-  opacity: 0;
-  visibility: hidden;
-}
-.map-new .map-content.show {
-  opacity: 0;
-  visibility: hidden;
 }
 .footer__container--bottom-overlay .footer__container--bottom {
   position: static;

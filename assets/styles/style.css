@@ -3803,6 +3803,29 @@ map area {
     top: 100px;
     left: 43%;
   }
+
+  .map-content-wrapper .marker-detail.da-nang-center,
+  .map-content-wrapper .marker-detail.da-nang-riverside{
+    top: 60%;
+    left: calc(50% + 115px);
+  }
+
+  .map-content-wrapper .marker-detail.tuy-hoa{
+    bottom: 30%;
+    left: calc(50% + 120px);
+  }
+
+  .map-content-wrapper .marker-detail.ho-chi-minh{
+    bottom: 25%;
+    left: calc(50% + 190px);
+    width: 27px;
+  }
+
+  .map-content-wrapper .marker-detail.can-tho{
+    bottom: 21%;
+    left: calc(51% + 190px);
+    width: 27px;
+  }
 }
 .map-content {
   position: absolute;

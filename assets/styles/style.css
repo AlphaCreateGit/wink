@@ -3595,6 +3595,7 @@ section.map {
   width: 100%;
   /* height: calc(100vh - 120px); */
   height: 800px;
+  overflow-x: hidden;
   position: relative;
 }
 .map.homepage .map__wrapper,
@@ -3843,13 +3844,15 @@ map area {
   height: 100%;
   width: 440px;
   background-color: var(--color-white);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s;
+  /* opacity: 0;
+  visibility: hidden; */
+  transform: translateX(100%);
+  transition: all 0.5s ease;
 }
 .map-content.show {
-  opacity: 1;
-  visibility: visible;
+  /* opacity: 1;
+  visibility: visible; */
+  transform: translateX(0);
 }
 .map-content .box .box-head {
   display: flex;
@@ -3919,13 +3922,15 @@ map area {
   width: 440px;
   background-color: var(--color-white);
   z-index: 3;
-  opacity: 0;
-  visibility: hidden;
+  /* opacity: 0;
+  visibility: hidden; */
+  transform: translateX(100%);
   transition: all 0.5s ease;
 }
 .map-content-detail.show {
-  opacity: 1;
-  visibility: visible;
+  /* opacity: 1;
+  visibility: visible; */
+  transform: translate(0);
 }
 .map-content-detail .box-head {
   position: relative;
@@ -5833,7 +5838,7 @@ select:-webkit-autofill:focus {
 }
 /* css page member login */
 .map-new {
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 .map-new .map__marker {
   opacity: 0;

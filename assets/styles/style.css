@@ -4562,8 +4562,9 @@ map area {
 }
 #modalContactUsEvent .dropdown-custom__menu {
   top: 50px;
-  width: 100%;
+  width: calc(100% + 14px);
   background-color: var(--color-gray-10);
+  padding: 7px;
 }
 #modalContactUsEvent .select-head {
   border-bottom: 1px solid var(--color-gray-50);
@@ -4829,6 +4830,10 @@ map area {
   background-color: var(--color-gray-10);
   left: unset;
   right: 13px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .position-list .position-item .position-item-sub .dropdown-custom__btn {
   display: flex;
@@ -4844,6 +4849,7 @@ map area {
 .position-list .position-item .position-item-sub .dropdown-custom__item {
   color: var(--color-black);
   text-align: right;
+  width: max-content;
 }
 .position-list .position-item .position-item-sub .dropdown-custom__item:hover {
   color: var(--color-primary);
@@ -5422,12 +5428,13 @@ map area {
 }
 
 .contact-sec .dropdown-custom__menu {
-  left: 0;
-  width: 100%;
+  left: -10px;
+  width: calc(100% + 20px);
   background-color: var(--color-gray-10);
   padding: 5px 10px;
 }
-.contact-sec .dropdown-custom__menu .dropdown-custom__item {
+.contact-sec .dropdown-custom__menu .dropdown-custom__item,
+.modalContactUsEvent .dropdown-custom__menu .dropdown-custom__item {
   padding: 7px 0;
   white-space: normal;
   max-width: max-content;

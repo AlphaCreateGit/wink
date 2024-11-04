@@ -1413,6 +1413,7 @@
   .position-list .position-item .position-item-sub .dropdown-custom__menu {
     right: 0;
     left: unset;
+    padding-right: 22px;
   }
 
   .career-intro-sec .container-page .box h2 {

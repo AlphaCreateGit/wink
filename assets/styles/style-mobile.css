@@ -490,6 +490,10 @@
   .header-hotels__details {
     padding: 16px;
   }
+
+  .header-hotels__details .hotels__details--left .views{
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {

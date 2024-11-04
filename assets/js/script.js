@@ -847,7 +847,7 @@ function commingSoon() {
     gsap.registerPlugin(ScrollTrigger);
 
     const panels = gsap.utils.toArray(".panel").slice(1);
-    const content = gsap.utils.toArray(".animate-left");
+    const content = gsap.utils.toArray(".animate-left").slice(1);
     const numberStart = $(".number-start");
     const numberEnd = $(".number-end");
     const totalSlides = $(".panel").length;

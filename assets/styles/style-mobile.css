@@ -478,6 +478,18 @@
     background: #f2f2f2;
     z-index: 2;
   }
+
+  .header-hotels__details .hotels__details--left h4 {
+    display: none;
+  }
+
+  .header-hotels__details .hotels__details--right .phone {
+    display: none !important;
+  }
+
+  .header-hotels__details {
+    padding: 16px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1318,18 +1330,6 @@
 
   .room-facilities.--details {
     padding: 0 16px;
-  }
-
-  .header-hotels__details {
-    padding: 16px;
-  }
-
-  .header-hotels__details .hotels__details--left h4 {
-    display: none;
-  }
-
-  .header-hotels__details .hotels__details--right .phone {
-    display: none !important;
   }
 
   .wink-detail__container h3 {

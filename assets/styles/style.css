@@ -3093,7 +3093,7 @@ section.spacer {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: var(--color-primary);
+  background-color: #05AA6C;
   display: inline-block;
   margin-right: 4px;
   position: relative;

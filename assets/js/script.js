@@ -852,7 +852,6 @@ function updSwiperNumericPagination(swiper) {
   }
 
   const paginationElement = swiper.pagination.el;
-  console.log(paginationElement);
   
   if (paginationElement) {
     paginationElement.innerHTML = 

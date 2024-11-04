@@ -1,13 +1,13 @@
 "use strict";
 $ = jQuery;
 $(document).ready(function () {
+  gsapIntro();
   loadToTop();
 
   scrollHeader();
   subMenuHeader();
   swiperBanner();
-  gsapIntro();
-  scrollFeedBack();
+  // scrollFeedBack();
   scrollCTA();
   menubar();
   selectMap();
@@ -33,7 +33,7 @@ $(document).ready(function () {
   toggleOpenDescWinkFacilities();
   handlePageVisibilityAndFavicon();
   responsiveImageMap();
-  commingCareer();
+  animateRellax();
 });
 function loadToTop() {
   if ("scrollRestoration" in history) {
@@ -146,6 +146,20 @@ function openAlert(event) {
     progress.removeClass("show");
   }, 5300);
 }
+function openAlertSignIn(event) {
+  event.preventDefault();
+
+  const alter = $(".alert-success-sign-in");
+  const progress = $(".progress-type");
+  alter.addClass("show");
+  progress.addClass("show");
+  setTimeout(() => {
+    alter.removeClass("show");
+  }, 5000);
+  setTimeout(() => {
+    progress.removeClass("show");
+  }, 5300);
+}
 function displayRatings() {
   $(".rating-number").each(function () {
     const rating = parseFloat($(this).text().trim());
@@ -201,6 +215,31 @@ function customAnimation() {
       }
     );
   });
+
+  if($(window).width() < 992){
+    gsap.utils.toArray(".data-fade-in-mobile").forEach((element, i) => {
+      gsap.fromTo(
+        element,
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          scrollTrigger: {
+            trigger: element,
+            start: "top 80%",
+            end: "bottom 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "circ.out",
+          stagger: 0.1,
+        }
+      );
+    });
+  }
+
   gsap.utils.toArray(".data-fade-up").forEach((element, i) => {
     gsap.fromTo(
       element,
@@ -534,10 +573,10 @@ function bookingForm() {
         if (rect.top >= window.innerHeight / 2) {
           calendar.style.top =
             rect.top + window.scrollY - calendar.offsetHeight - 38 + "px";
-          calendar.style.left = rect.left + window.scrollX + "px";
+          calendar.style.left = rect.left + window.scrollX - 30 + "px";
         } else {
           calendar.style.top = rect.bottom + window.scrollY + 20 + "px";
-          calendar.style.left = rect.left + window.scrollX + "px";
+          calendar.style.left = rect.left + window.scrollX - 30 + "px";
         }
       },
     });
@@ -559,6 +598,13 @@ function bookingForm() {
   if ($(".modalContactUsEvent").length) {
     var pickerExprie = new Lightpick({
       field: document.getElementById("expireDate"),
+      minDate: moment().startOf("day"),
+      singleDate: false,
+    });
+  }
+  if ($(".modalSuites").length) {
+    var pickerExprie = new Lightpick({
+      field: document.getElementById("expireDateSuites"),
       minDate: moment().startOf("day"),
       singleDate: false,
     });
@@ -748,16 +794,22 @@ function toggleDropdown() {
     $dropdownItems.on("click", function (e) {
       e.stopPropagation();
       const $item = $(this);
-      const tmpText = $textDropdown.text();
+      let tmpText = $textDropdown.text();
+      
       const tmpImgSrc = $textDropdown.find("img").attr("src"); // Get the current image src if present
       const $img = $item.find("img"); // Check if the clicked item contains an img
 
       // Swap text content
       $textDropdown.text($item.text());
-
+      
       // If the item has an image, swap the img src
       if ($img.length) {
         $textDropdown.html($item.html()); // Swap the entire HTML, including the img
+        
+        if($item.hasClass("language__item")){
+          tmpText = `<span>${tmpText}</span>`;
+        }
+
         $item.html(
           `${tmpImgSrc ? `<img src="${tmpImgSrc}" />` : ""} ${tmpText}`
         ); // Swap img and text back to the item
@@ -783,11 +835,38 @@ function toggleDropdown() {
   });
 }
 
+function updSwiperNumericPagination(swiper) {
+  const totalSlides = swiper.slides.length;
+  const slidesPerView = Math.floor(swiper.params.slidesPerView);
+  let currentIndex = swiper.realIndex + slidesPerView; // Start counting from 3
+
+  // Adjust currentIndex based on the total number of slides
+  if (currentIndex > totalSlides) {
+    currentIndex = slidesPerView; // Wrap around back to slidesPerView
+  }
+
+  // Ensure currentIndex is at least slidesPerView
+  if (currentIndex < slidesPerView) {
+    currentIndex = slidesPerView; // Ensure it doesn't go below slidesPerView
+  }
+
+  const paginationElement = swiper.pagination.el;
+  console.log(paginationElement);
+  
+  if (paginationElement) {
+    paginationElement.innerHTML = 
+      '<span class="count">' + currentIndex + '</span>/<span class="total">' + totalSlides + "</span>";
+  } else {
+    console.warn("Pagination element not found");
+  }
+}
+
 function swiperDeals() {
   if ($(".swiper-deals").length) {
     const swiperDeals = new Swiper(".swiper-deals", {
       slidesPerView: 1.2,
       spaceBetween: 16,
+      slidesOffsetAfter: 16,
       // loop: true,
       pagination: {
         el: ".deals-sec .swiper-pagination",
@@ -801,13 +880,24 @@ function swiperDeals() {
         767: {
           slidesPerView: 2,
           spaceBetween: 40,
+          slidesOffsetAfter: 0,
         },
         1023: {
           slidesPerView: 3,
           spaceBetween: 40,
+          slidesOffsetAfter: 0,
         },
         992: {
           spaceBetween: 24,
+          slidesOffsetAfter: 0,
+        },
+      },
+      on: {
+        init: function () {
+          updSwiperNumericPagination(this);
+        },
+        slideChange: function () {
+          updSwiperNumericPagination(this);
         },
       },
     });
@@ -815,7 +905,8 @@ function swiperDeals() {
 }
 
 function commingSoon() {
-  if ($(".cooming-sec").length) {
+  // Kiểm tra nếu màn hình lớn hơn hoặc bằng 991px
+  if ($(window).width() >= 991 && $(".cooming-sec").length) {
     gsap.registerPlugin(ScrollTrigger);
 
     const panels = gsap.utils.toArray(".panel").slice(1);
@@ -837,7 +928,7 @@ function commingSoon() {
         start: `top ${postionPinSection}`,
         end: () => "+=" + 100 * panels.length + "%",
         pin: true,
-        scrub: true, // Scrub for panels
+        scrub: true,
         markers: false,
         onUpdate: (self) => {
           const newSlide = Math.min(
@@ -846,7 +937,7 @@ function commingSoon() {
           );
           if (newSlide !== currentSlide) {
             currentSlide = newSlide;
-            numberStart.text(currentSlide); // Update slide count
+            numberStart.text(currentSlide);
           }
         },
       },
@@ -861,7 +952,7 @@ function commingSoon() {
           ease: "none",
           duration: 1,
           stagger: 0.5,
-          scaleX: 1.1,
+          scaleX: 1.3,
         },
         "+=0.5"
       );
@@ -869,30 +960,36 @@ function commingSoon() {
 
     // Separate animations for content with no scrub but still reverse effect
     panels.forEach((panel, index) => {
-      gsap.fromTo(
-        content[index],
-        {
-          yPercent: 3,
-          autoAlpha: 0,
-        },
-        {
-          yPercent: 0,
-          autoAlpha: 1,
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: panel,
-            start: "top 40%",
-            end: "bottom 40%",
-            toggleActions: "play reverse play reverse", // Play on scroll down, reverse on scroll up
-            //markers: true,
+      const heading = panel.querySelector(".animate-left h2");
+      const description = panel.querySelector(".animate-left .desc"); 
+
+      panels.forEach((panel) => {
+        const content = document.querySelectorAll(".animate-left")[index+1];
+  
+        // ScrollTrigger for adding the 'show' class
+        ScrollTrigger.create({
+          trigger: panel,
+          start: "top 40%",
+          end: "bottom 40%",
+          onEnter: () => {
+            document.querySelectorAll(".animate-left").forEach((sibling) => {
+              sibling.classList.remove("show");
+            });
+            // Add 'show' class to the current content
+            content.classList.add("show");
           },
-        }
-      );
+          onLeaveBack: () => {
+            document.querySelectorAll(".animate-left")[0].classList.add("show");
+            content.classList.remove("show"); // Optional: remove class when scrolling back
+          },
+        });
+      });
     });
 
     ScrollTrigger.refresh();
   }
 }
+
 function selectMap() {
   let activeMarker = null;
 
@@ -921,11 +1018,11 @@ function selectMap() {
     $(".map-content").removeClass("show");
     $(".marker").removeClass("hidden");
 
-    if ($(".map-content-wrapper img[usemap='#vietnam_map']").length) {
+    if ($("img[usemap='#vietnam_map']").length) {
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
       const imageMap =
         $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr(
+      $(`img[usemap='${imageMap}']`).attr(
         "src",
         `./assets/images/map-default${dataMobile}.png`
       );
@@ -935,11 +1032,11 @@ function selectMap() {
   $(".icon-back-lv2").on("click", function (e) {
     $(".map-content-detail").removeClass("show");
 
-    if ($(".map-content-wrapper img[usemap='#vietnam_map']").length) {
+    if ($("img[usemap='#vietnam_map']").length) {
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
       const imageMap =
         $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr(
+      $(`img[usemap='${imageMap}']`).attr(
         "src",
         `./assets/images/map-default${dataMobile}.png`
       );
@@ -962,11 +1059,11 @@ function selectMap() {
     const city = $(this).data("city");
     const citys = $(this).data("v2-city");
 
-    if ($(".map-content-wrapper img[usemap='#vietnam_map']").length) {
+    if ($("img[usemap='#vietnam_map']").length) {
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
       const imageMap =
         $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
-      $(`.map-content-wrapper img[usemap='${imageMap}']`).attr(
+      $(`[usemap='${imageMap}']`).attr(
         "src",
         `./assets/images/map-${city}${dataMobile}.png`
       );
@@ -1077,7 +1174,7 @@ function swiperRoomSuites() {
     function initSliderWinkRoom() {
       const swiperParentRoom = new Swiper(".swiper-parent-room", {
         slidesPerView: 1,
-        slidesPerGroup: 2,
+        slidesPerGroup: 1,
         spaceBetween: 24,
 
         // loop: true,
@@ -1093,6 +1190,14 @@ function swiperRoomSuites() {
           768: {
             slidesPerView: 2,
             spaceBetween: 40,
+          },
+        },
+        on: {
+          init: function () {
+            updSwiperNumericPagination(this);
+          },
+          slideChange: function () {
+            updSwiperNumericPagination(this);
           },
         },
       });
@@ -1241,7 +1346,7 @@ function swiperSuites() {
       // Initialize Swiper for each element
       new Swiper($this[0], {
         slidesPerView: 1,
-        allowTouchMove: false,
+        // allowTouchMove: false,
         speed: 1000,
         pagination: {
           el: $this.find(".swiper-pagination")[0],
@@ -1368,7 +1473,7 @@ function showOrHidePasswords() {
 }
 
 function commingCareer() {
-  if ($(".career-intro-sec").length) {
+  if ($(".career-intro-sec").length && $(window).width() >= 991) {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     const panels = gsap.utils.toArray(".panel").slice(1); // Get all panels except the first one
@@ -1380,14 +1485,21 @@ function commingCareer() {
     numberStart.text(currentSlide);
     numberEnd.text(totalSlides);
 
-    // const tl = gsap.timeline({
+    var contentElements = document.querySelectorAll(
+      ".comming-soon .panels .panel"
+    );
+    var totalHeight = 0;
+    contentElements.forEach((element, index) => {
+      var heightElement = element.offsetHeight;
+      totalHeight += heightElement;
+    });
+    // gsap.to(".comming-soon", {
     //   scrollTrigger: {
-    //     trigger: ".career-intro-sec",
-    //     start: "top 3%",
-    //     end: () => "+=" + 100 * panels.length + "%", // Extend the timeline based on the number of panels
-    //     pin: true,
-    //     scrub: true,
-    //     // markers: true,
+    //     toggleActions: "play reverse play reverse",
+    //     start: "top top",
+    //     end: `+=${totalHeight}`,
+    //     pin: ".comming-soon",
+    //     pinSpacing: true,
     //     onUpdate: (self) => {
     //       const newSlide = Math.min(
     //         Math.max(1, Math.ceil(self.progress * totalSlides)),
@@ -1466,6 +1578,7 @@ function commingCareer() {
     });
     // ScrollTrigger.refresh(); // Refresh ScrollTrigger after setting up animations
   }
+  
 }
 
 function stickyFilter() {
@@ -1473,7 +1586,7 @@ function stickyFilter() {
     if ($(".hotels__filter").length) {
       let heightHeader = $(".header").height();
       let currentScroll = $(window).scrollTop();
-      let hotelsOffset = $(".hotels__container").offset().top - heightHeader;
+      let hotelsOffset = $(".hotels__container").offset().top - 60;
 
       // Thêm biến để lưu giá trị cuộn trước đó
       let previousScroll = $(this).data("previousScroll") || 0;
@@ -1614,6 +1727,12 @@ function mapCompany() {
           from: "end",
           ease: "none",
         },
+        onComplete: () => {
+          if($(window).width() > 767) {
+            $(".marker-detail.ho-chi-minh").addClass("active");
+            $(".map-content-detail[data-hotel='ho-chi-minh']").addClass("show");
+          }
+        }
       }
     );
 
@@ -1625,6 +1744,111 @@ function mapCompany() {
       { opacity: 0 },
       { opacity: 1, duration: 1, ease: "none" }
     );
+  }
+}
+
+function mapCompanyNew() {
+  if ($(".map-new").length) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".map-new",
+        start: "top 60px",
+        end: "+=120%",
+        pin: true,
+        scrub: true,
+        onUpdate: (self) => {
+          const scrollDirection = self.direction;
+
+          if (scrollDirection === -1) {
+            document
+              .querySelectorAll(".map-content-detail")
+              .forEach((marker) => {
+                marker.classList.remove("show");
+              });
+          }
+        },
+        onLeave: () => {
+          $(".map-new").addClass("remove-spacing");
+        },
+      },
+    });
+
+    // Phase 1: Show the first image
+    tl.fromTo(
+      ".wink-head-office",
+      { opacity: 0, yPercent: 20 },
+      { opacity: 1, yPercent: 0, duration: 1.5, ease: "power1.inOut" }
+    ).to(".wink-head-office", {
+      opacity: 0,
+      duration: 2,
+      ease: "power1.inOut",
+      yPercent: 0,
+    });
+
+    // Phase 2: Show images 1 to 3
+    const imagesCountPhase1 = 2;
+    for (let i = 1; i <= imagesCountPhase1; i++) {
+      tl.call(
+        () => {
+          updateImageSource((i - 1) / imagesCountPhase1);
+        },
+        null,
+        `+=0.75`
+      );
+    }
+
+    // Phase 3: Show images 4 to 8 after showing image 3
+    const imagesCountPhase2 = 4; // From 4 to 8
+    tl.call(() => {
+      // Optionally: Handle any actions before showing phase 2 images
+      console.log("Transitioning to images 4 to 8");
+    }, null, `+=0.75`);
+
+    for (let i = 4; i <= 4 + imagesCountPhase2 - 1; i++) {
+      tl.call(
+        () => {
+          updateImageSource((i - 1) / (imagesCountPhase1 + imagesCountPhase2));
+        },
+        null,
+        `+=0.75`
+      );
+    }
+
+    // Reveal marker details
+    tl.fromTo(
+      ".marker-detail",
+      { opacity: 0, yPercent: 10 },
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 0.5,
+        stagger: {
+          amount: 0.25,
+          from: "end",
+          ease: "none",
+        },
+      }
+    );
+
+    tl.fromTo(
+      ".map-new .map-content",
+      { opacity: 0 },
+      { opacity: 1, duration: 1, ease: "none" }
+    );
+
+    function updateImageSource(scrollPosition) {
+      const currentImage = Math.ceil(scrollPosition * (imagesCountPhase1 + imagesCountPhase2));
+      const finalImageIndex = Math.min(Math.max(currentImage, 1), imagesCountPhase1 + imagesCountPhase2);
+      const dataMobile = $(window).width() < 768 ? "-mobile" : "";
+      const imageSrc = `./assets/images/map-new-step-${finalImageIndex}${dataMobile}.png`;
+      $("img[usemap='#vietnam_map'], img[usemap='#vietnam_map_mobile']").attr("src", imageSrc);
+      
+      if (finalImageIndex == imagesCountPhase1 + imagesCountPhase2 && $(window).width() > 767) {
+        $(".map-content-detail[data-hotel='ho-chi-minh']").addClass("show");
+      }
+    }
   }
 }
 
@@ -1715,4 +1939,12 @@ function responsiveImageMap() {
   if ($("img[usemap]").length < 1) return;
 
   $("img[usemap]").rwdImageMaps();
+}
+
+function animateRellax(){
+  if($(".rellax").length < 1) return;
+  var rellax = new Rellax('.rellax',{
+    center: true,
+    breakpoints: [576, 768, 1201]
+  });
 }

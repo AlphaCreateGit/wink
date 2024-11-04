@@ -33,6 +33,220 @@
   </head>
 
   <body class="page-details-hotels">
+    <div class="alert-success-sign-in">
+      <div class="alert-inner">
+        <div class="alert-text">
+          <div>
+            <p class="b2-font">
+              Thank you for registering with Wink Rewards Lifestyle
+            </p>
+            <p class="b2-r">Now you can sign in to your account</p>
+          </div>
+        </div>
+        <div class="progress-type"></div>
+      </div>
+    </div>
+    <!-- modal sign in -->
+    <div
+      class="modal fade modalSignIn"
+      id="modalSignIn"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modalSignInLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalSignInLabel"></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <img src="./assets/images/ic_close_white.svg" alt="icon" />
+            </button>
+          </div>
+          <div class="modal-body">
+            <section class="sign-in-sec">
+              <div class="container-fluid p-0">
+                <div class="row g-0">
+                  <div class="col-md-12">
+                    <div class="contact__form member-contact">
+                      <h3 class="h3-bold color-primary">
+                        Welcome to Wink Rewards Lifestyle Program
+                      </h3>
+                      <div class="desc b1-font color-black">
+                        <p>
+                          Sign-in and start enjoying exclusive discounts and
+                          perks for your stay
+                        </p>
+                      </div>
+                      <form action="">
+                        <ul
+                          class="nav nav-pills mb-3"
+                          id="pills-tab"
+                          role="tablist"
+                        >
+                          <li class="nav-item" role="presentation">
+                            <button
+                              class="nav-link active"
+                              id="pills-home-tab"
+                              data-bs-toggle="pill"
+                              data-bs-target="#pills-home"
+                              type="button"
+                              role="tab"
+                              aria-controls="pills-home"
+                              aria-selected="true"
+                            >
+                              Email
+                            </button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button
+                              class="nav-link"
+                              id="pills-profile-tab"
+                              data-bs-toggle="pill"
+                              data-bs-target="#pills-profile"
+                              type="button"
+                              role="tab"
+                              aria-controls="pills-profile"
+                              aria-selected="false"
+                            >
+                              Phone
+                            </button>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                          <div
+                            class="tab-pane fade show active"
+                            id="pills-home"
+                            role="tabpanel"
+                            aria-labelledby="pills-home-tab"
+                          >
+                            <div class="box">
+                              <div class="group">
+                                <input
+                                  type="text"
+                                  class="form-input b1-font"
+                                  placeholder=" "
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-black-50"
+                                  >Email</label
+                                >
+                              </div>
+                              <div class="group input-password">
+                                <input
+                                  type="password"
+                                  class="form-input"
+                                  placeholder=" "
+                                  autocomplete="off"
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-gray"
+                                  >Password</label
+                                >
+                                <div class="icon-eye"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="pills-profile"
+                            role="tabpanel"
+                            aria-labelledby="pills-profile-tab"
+                          >
+                            <div class="box">
+                              <div class="group">
+                                <input
+                                  type="text"
+                                  class="form-input b1-font"
+                                  placeholder=" "
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-black-50"
+                                  >Phone number</label
+                                >
+                              </div>
+                              <div class="group input-password">
+                                <input
+                                  type="password"
+                                  class="form-input"
+                                  placeholder=" "
+                                  autocomplete="off"
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-gray"
+                                  >Password</label
+                                >
+                                <div class="icon-eye"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <div class="ic-check">
+                            <input type="checkbox" name="checklist" />
+                            <span class="check-mark"></span>
+                          </div>
+                          <label for="checklist" class="b2-bold color-black-50">
+                            Remember me</label
+                          >
+                        </div>
+                        <div
+                          class="note d-flex align-items-center justify-content-between"
+                        >
+                          <div class="note-list">
+                            <ul>
+                              <li>
+                                <p class="b2-bold color-black">
+                                  Not a member,
+                                  <a
+                                    href="./member-login.html"
+                                    class="color-primary line-sign"
+                                    >Sign up</a
+                                  >
+                                  now?
+                                </p>
+                              </li>
+                              <li>
+                                <a
+                                  href=""
+                                  class="color-primary b2-bold line-sign"
+                                  >Forgot password?</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="deals__view d-flex justify-content-end">
+                            <button
+                              class="custom__btn"
+                              onclick="openAlertSignIn(event)"
+                            >
+                              <span class="b3-font color-black d-block"
+                                >SIGN IN</span
+                              >
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal sign in -->
     <!-- start feeback -->
     <div class="feedback">
       <div class="feedback__text b2-font color-white">FEEDBACK</div>
@@ -102,12 +316,16 @@
                 </div>
               </div>
             </div>
-            <a
-              href="./sign-in.html"
-              class="d-block header__btn-sign-in color-white b2-bold"
-            >
-              Member Login
-            </a>
+            <button
+            type="button"
+            class="d-block header__btn-sign-in color-white b2-bold"
+            data-bs-toggle="modal"
+            data-bs-target="#modalSignIn"
+          >
+            <span class="b3-font color-white d-block"> Member Login</span>
+          </button>
+
+
           </div>
         </div>
       </div>
@@ -166,6 +384,7 @@
                           >HOME</a
                         >
                       </li>
+                      
                       <li class="menu-item menu-item-has-children">
                         <a href="./hotels.html" class="h4-font color-black"
                           >HOTELS</a
@@ -230,24 +449,25 @@
                         </div>
                       </li>
                       <li class="menu-item">
-                        <a href="./index.html" class="h4-font color-black"
+                        <a href="./suites.html" class="h4-font color-black"
                           >SUITES</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./experience.html" class="h4-font color-black"
                           >THE WINK EXPERIENCE</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./wink-rewards.html" class="h4-font color-black"
                           >WINK REWARDS LIFESTYLE</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./event.html" class="h4-font color-black"
                           >MEETINGS & EVENTS</a
                         >
+                      </li>
                       </li>
                     </ul>
                   </div>
@@ -288,6 +508,20 @@
                       </li>
                     </ul>
                   </div>
+                  <div
+                    class="sub-menu__cta mobile page-detail d-flex d-lg-none align-items-center justify-content-between"
+                  >
+                    <button
+                      type="button"
+                      class="d-block header__btn-sign-in color-white b2-bold"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalSignIn"
+                    >
+                      <span class="b3-font color-white d-block">
+                        Member Login</span
+                      >
+                    </button>
+                  </div>
                 </div>
               </div>
               <div class="col-md-8">
@@ -305,6 +539,11 @@
       >
         <div class="hotels__details--left">
           <div class="d-flex align-items-center group-left">
+            <div class="logo-tripadvisor">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.005 5.5791C9.78 5.5791 7.55667 6.23244 5.63417 7.53994H2L3.63583 9.3191C2.8905 9.99817 2.36801 10.8868 2.137 11.8683C1.90599 12.8497 1.97725 13.8781 2.34144 14.8183C2.70563 15.7586 3.3457 16.5666 4.17758 17.1364C5.00945 17.7062 5.99421 18.011 7.0025 18.0108C8.26229 18.0115 9.47561 17.5351 10.3983 16.6774L12 18.4208L13.6017 16.6791C14.5236 17.5363 15.7361 18.0122 16.995 18.0108C18.3208 18.0108 19.5923 17.4842 20.5299 16.5469C21.4676 15.6096 21.9946 14.3382 21.995 13.0124C21.9959 12.3171 21.8512 11.6293 21.5704 10.9932C21.2895 10.3571 20.8786 9.78688 20.3642 9.3191L22 7.53994H18.375C16.4969 6.26123 14.2771 5.57793 12.005 5.5791ZM12 7.21244C13.2758 7.21244 14.5525 7.46494 15.7533 7.96494C13.6192 8.7816 12 10.6916 12 12.9166C12 10.6908 10.3817 8.7816 8.24667 7.96494C9.43582 7.46884 10.7115 7.21252 12 7.21244ZM7.00167 9.63077C7.44586 9.63077 7.88571 9.71826 8.29609 9.88825C8.70648 10.0582 9.07936 10.3074 9.39346 10.6215C9.70755 10.9356 9.9567 11.3085 10.1267 11.7188C10.2967 12.1292 10.3842 12.5691 10.3842 13.0133C10.3842 13.4575 10.2967 13.8973 10.1267 14.3077C9.9567 14.7181 9.70755 15.091 9.39346 15.4051C9.07936 15.7192 8.70648 15.9683 8.29609 16.1383C7.88571 16.3083 7.44586 16.3958 7.00167 16.3958C6.10457 16.3958 5.24422 16.0394 4.60988 15.4051C3.97554 14.7707 3.61917 13.9104 3.61917 13.0133C3.61917 12.1162 3.97554 11.2558 4.60988 10.6215C5.24422 9.98714 6.10457 9.63077 7.00167 9.63077ZM16.995 9.63244C17.439 9.63227 17.8787 9.71957 18.289 9.88934C18.6993 10.0591 19.0722 10.308 19.3863 10.6219C19.7004 10.9358 19.9496 11.3084 20.1196 11.7186C20.2897 12.1288 20.3773 12.5684 20.3775 13.0124C20.3777 13.4565 20.2904 13.8962 20.1206 14.3065C19.9508 14.7168 19.7019 15.0896 19.388 15.4037C19.0742 15.7178 18.7015 15.967 18.2914 16.1371C17.8812 16.3072 17.4415 16.3948 16.9975 16.3949C16.1007 16.3953 15.2406 16.0393 14.6062 15.4055C13.9719 14.7716 13.6153 13.9117 13.615 13.0149C13.6147 12.1182 13.9706 11.258 14.6045 10.6237C15.2383 9.98932 16.0982 9.63277 16.995 9.63244ZM7.00167 11.2408C6.53135 11.2408 6.0803 11.4276 5.74773 11.7602C5.41517 12.0927 5.22833 12.5438 5.22833 13.0141C5.22833 13.4844 5.41517 13.9355 5.74773 14.268C6.0803 14.6006 6.53135 14.7874 7.00167 14.7874C7.47198 14.7874 7.92304 14.6006 8.2556 14.268C8.58817 13.9355 8.775 13.4844 8.775 13.0141C8.775 12.5438 8.58817 12.0927 8.2556 11.7602C7.92304 11.4276 7.47198 11.2408 7.00167 11.2408ZM16.995 11.2408C16.5247 11.2408 16.0736 11.4276 15.7411 11.7602C15.4085 12.0927 15.2217 12.5438 15.2217 13.0141C15.2217 13.4844 15.4085 13.9355 15.7411 14.268C16.0736 14.6006 16.5247 14.7874 16.995 14.7874C17.4653 14.7874 17.9164 14.6006 18.2489 14.268C18.5815 13.9355 18.7683 13.4844 18.7683 13.0141C18.7683 12.5438 18.5815 12.0927 18.2489 11.7602C17.9164 11.4276 17.4653 11.2408 16.995 11.2408Z" fill="black"/>
+              </svg>
+            </div>
             <h4 class="b3-font color-black">WINK HOTEL DANANG RIVERSIDE</h4>
             <div class="rating d-flex align-items-center">
               <div class="rating-container"></div>
@@ -1416,6 +1655,7 @@
             <div class="amenities__top">
               <div class="row g-0">
                 <div class="col-md-8">
+                  <h3 class="f3-font title-mobile d-block d-md-none">Featured Amenities</h3>
                   <div class="swiper swiper-amenities">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
@@ -1831,217 +2071,266 @@
               <div class="swiper swiper-deals">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <div class="deals__item">
-                      <div class="deals__img">
-                        <a href="">
-                          <img src="./assets/images/deal_1.webp" alt="image" />
-                        </a>
-                      </div>
-
-                      <div class="deals__content">
-                        <div class="deals__content--top">
-                          <div class="d-flex align-items-center location">
-                            <div class="icon">
-                              <img
-                                src="./assets/images/ic_location.svg"
-                                alt=""
-                              />
-                            </div>
-                            <p class="b3-font color-black">DANANG</p>
-                          </div>
-                          <a href="">
-                            <h4 class="title h5-bold color-black">
-                              Wink Hotel Saigon Centre is now open in 2024
-                            </h4>
+                    <div class="hotels__item">
+                      <div class="hotels__box">
+                        <div class="hotels__image">
+                          <a href="./blogs-detail.html">
+                            <img
+                              src="./assets/images/wink_haiphong.png"
+                              alt="image"
+                            />
                           </a>
                         </div>
-                        <div class="deals__content--bottom">
-                          <div class="desc b1-font color-black">
-                            <p>
-                              No more queues at check-in. No more waiting around
-                              to check-out. Head straight to your room with
-                              mobile check-in.
-                            </p>
+                        <div class="hotels__content">
+                          <div class="hotels__content--top">
+                            <div
+                              class="d-flex align-items-center justify-content-between head"
+                            >
+                              <div class="b2-bold color-primary">WHAT’S NEW</div>
+                              <div class="time b2-bold color-grey">
+                                27 September, 2024
+                              </div>
+                            </div>
+                            <!-- hotel description -->
+                            <h4 class="h5-bold color-black title">
+                              Quang’s Trio Of Fabulous Photos! | Behind the
+                              Lensman’s Favorite Snaps
+                            </h4>
+                            <!-- end hotel description -->
                           </div>
-                          <a href="" class="btn-more b3-font color-black">
-                            SEE MORE
-                            <span>
-                              <svg
-                                width="5"
-                                height="10"
-                                viewBox="0 0 5 10"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M4.28571 5L0 10L-4.37114e-07 0L4.28571 5Z"
-                                  fill="currentColor"
-                                />
-                              </svg>
-                            </span>
-                          </a>
+                          <div class="hotels__content--bottom">
+                            <div class="hotels__btn--view">
+                              <a href="./blogs-detail.html" class="btn-more b3-font color-black">
+                                SEE MORE
+                                <span>
+                                  <svg
+                                    width="5"
+                                    height="10"
+                                    viewBox="0 0 5 10"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M4.28571 5L0 10L-4.37114e-07 0L4.28571 5Z"
+                                      fill="currentColor"
+                                    ></path>
+                                  </svg>
+                                </span>
+                              </a>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="deals__item">
-                      <div class="deals__img">
-                        <a href="">
-                          <img src="./assets/images/deal_1.webp" alt="image" />
-                        </a>
-                      </div>
-
-                      <div class="deals__content">
-                        <div class="deals__content--top">
-                          <div class="d-flex align-items-center location">
-                            <div class="icon">
-                              <img
-                                src="./assets/images/ic_location.svg"
-                                alt=""
-                              />
-                            </div>
-                            <p class="b3-font color-black">DANANG</p>
-                          </div>
-                          <a href="">
-                            <h4 class="title h5-bold color-black">
-                              Wink Hotel Saigon Centre is now open in 2024
-                            </h4>
+                    <div class="hotels__item">
+                      <div class="hotels__box">
+                        <div class="hotels__image">
+                          <a href="./blogs-detail.html">
+                            <img
+                              src="./assets/images/wink_haiphong.png"
+                              alt="image"
+                            />
                           </a>
                         </div>
-                        <div class="deals__content--bottom">
-                          <div class="desc b1-font color-black">
-                            <p>
-                              No more queues at check-in. No more waiting around
-                              to check-out. Head straight to your room with
-                              mobile check-in.
-                            </p>
+                        <div class="hotels__content">
+                          <div class="hotels__content--top">
+                            <div
+                              class="d-flex align-items-center justify-content-between head"
+                            >
+                              <div class="b2-bold color-primary">WHAT’S NEW</div>
+                              <div class="time b2-bold color-grey">
+                                27 September, 2024
+                              </div>
+                            </div>
+                            <!-- hotel description -->
+                            <h4 class="h5-bold color-black title">
+                              Quang’s Trio Of Fabulous Photos! | Behind the
+                              Lensman’s Favorite Snaps
+                            </h4>
+                            <!-- end hotel description -->
                           </div>
-                          <a href="" class="btn-more b3-font color-black">
-                            SEE MORE
-                            <span>
-                              <svg
-                                width="5"
-                                height="10"
-                                viewBox="0 0 5 10"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M4.28571 5L0 10L-4.37114e-07 0L4.28571 5Z"
-                                  fill="currentColor"
-                                />
-                              </svg>
-                            </span>
-                          </a>
+                          <div class="hotels__content--bottom">
+                            <div class="hotels__btn--view">
+                              <a href="./blogs-detail.html" class="btn-more b3-font color-black">
+                                SEE MORE
+                                <span>
+                                  <svg
+                                    width="5"
+                                    height="10"
+                                    viewBox="0 0 5 10"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M4.28571 5L0 10L-4.37114e-07 0L4.28571 5Z"
+                                      fill="currentColor"
+                                    ></path>
+                                  </svg>
+                                </span>
+                              </a>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="deals__item">
-                      <div class="deals__img">
-                        <a href="">
-                          <img src="./assets/images/deal_1.webp" alt="image" />
-                        </a>
-                      </div>
-
-                      <div class="deals__content">
-                        <div class="deals__content--top">
-                          <div class="d-flex align-items-center location">
-                            <div class="icon">
-                              <img
-                                src="./assets/images/ic_location.svg"
-                                alt=""
-                              />
-                            </div>
-                            <p class="b3-font color-black">DANANG</p>
-                          </div>
-                          <a href="">
-                            <h4 class="title h5-bold color-black">
-                              Wink Hotel Saigon Centre is now open in 2024
-                            </h4>
+                    <div class="hotels__item">
+                      <div class="hotels__box">
+                        <div class="hotels__image">
+                          <a href="./blogs-detail.html">
+                            <img
+                              src="./assets/images/wink_haiphong.png"
+                              alt="image"
+                            />
                           </a>
                         </div>
-                        <div class="deals__content--bottom">
-                          <div class="desc b1-font color-black">
-                            <p>
-                              No more queues at check-in. No more waiting around
-                              to check-out. Head straight to your room with
-                              mobile check-in.
-                            </p>
+                        <div class="hotels__content">
+                          <div class="hotels__content--top">
+                            <div
+                              class="d-flex align-items-center justify-content-between head"
+                            >
+                              <div class="b2-bold color-primary">WHAT’S NEW</div>
+                              <div class="time b2-bold color-grey">
+                                27 September, 2024
+                              </div>
+                            </div>
+                            <!-- hotel description -->
+                            <h4 class="h5-bold color-black title">
+                              Quang’s Trio Of Fabulous Photos! | Behind the
+                              Lensman’s Favorite Snaps
+                            </h4>
+                            <!-- end hotel description -->
                           </div>
-                          <a href="" class="btn-more b3-font color-black">
-                            SEE MORE
-                            <span>
-                              <svg
-                                width="5"
-                                height="10"
-                                viewBox="0 0 5 10"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M4.28571 5L0 10L-4.37114e-07 0L4.28571 5Z"
-                                  fill="currentColor"
-                                />
-                              </svg>
-                            </span>
-                          </a>
+                          <div class="hotels__content--bottom">
+                            <div class="hotels__btn--view">
+                              <a href="./blogs-detail.html" class="btn-more b3-font color-black">
+                                SEE MORE
+                                <span>
+                                  <svg
+                                    width="5"
+                                    height="10"
+                                    viewBox="0 0 5 10"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M4.28571 5L0 10L-4.37114e-07 0L4.28571 5Z"
+                                      fill="currentColor"
+                                    ></path>
+                                  </svg>
+                                </span>
+                              </a>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="deals__item">
-                      <div class="deals__img">
-                        <a href="">
-                          <img src="./assets/images/deal_1.webp" alt="image" />
-                        </a>
-                      </div>
-
-                      <div class="deals__content">
-                        <div class="deals__content--top">
-                          <div class="d-flex align-items-center location">
-                            <div class="icon">
-                              <img
-                                src="./assets/images/ic_location.svg"
-                                alt=""
-                              />
-                            </div>
-                            <p class="b3-font color-black">DANANG</p>
-                          </div>
-                          <a href="">
-                            <h4 class="title h5-bold color-black">
-                              Wink Hotel Saigon Centre is now open in 2024
-                            </h4>
+                    <div class="hotels__item">
+                      <div class="hotels__box">
+                        <div class="hotels__image">
+                          <a href="./blogs-detail.html">
+                            <img
+                              src="./assets/images/wink_haiphong.png"
+                              alt="image"
+                            />
                           </a>
                         </div>
-                        <div class="deals__content--bottom">
-                          <div class="desc b1-font color-black">
-                            <p>
-                              No more queues at check-in. No more waiting around
-                              to check-out. Head straight to your room with
-                              mobile check-in.
-                            </p>
+                        <div class="hotels__content">
+                          <div class="hotels__content--top">
+                            <div
+                              class="d-flex align-items-center justify-content-between head"
+                            >
+                              <div class="b2-bold color-primary">WHAT’S NEW</div>
+                              <div class="time b2-bold color-grey">
+                                27 September, 2024
+                              </div>
+                            </div>
+                            <!-- hotel description -->
+                            <h4 class="h5-bold color-black title">
+                              Quang’s Trio Of Fabulous Photos! | Behind the
+                              Lensman’s Favorite Snaps
+                            </h4>
+                            <!-- end hotel description -->
                           </div>
-                          <a href="" class="btn-more b3-font color-black">
-                            SEE MORE
-                            <span>
-                              <svg
-                                width="5"
-                                height="10"
-                                viewBox="0 0 5 10"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M4.28571 5L0 10L-4.37114e-07 0L4.28571 5Z"
-                                  fill="currentColor"
-                                />
-                              </svg>
-                            </span>
+                          <div class="hotels__content--bottom">
+                            <div class="hotels__btn--view">
+                              <a href="./blogs-detail.html" class="btn-more b3-font color-black">
+                                SEE MORE
+                                <span>
+                                  <svg
+                                    width="5"
+                                    height="10"
+                                    viewBox="0 0 5 10"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M4.28571 5L0 10L-4.37114e-07 0L4.28571 5Z"
+                                      fill="currentColor"
+                                    ></path>
+                                  </svg>
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="hotels__item">
+                      <div class="hotels__box">
+                        <div class="hotels__image">
+                          <a href="./blogs-detail.html">
+                            <img
+                              src="./assets/images/wink_haiphong.png"
+                              alt="image"
+                            />
                           </a>
+                        </div>
+                        <div class="hotels__content">
+                          <div class="hotels__content--top">
+                            <div
+                              class="d-flex align-items-center justify-content-between head"
+                            >
+                              <div class="b2-bold color-primary">WHAT’S NEW</div>
+                              <div class="time b2-bold color-grey">
+                                27 September, 2024
+                              </div>
+                            </div>
+                            <!-- hotel description -->
+                            <h4 class="h5-bold color-black title">
+                              Quang’s Trio Of Fabulous Photos! | Behind the
+                              Lensman’s Favorite Snaps
+                            </h4>
+                            <!-- end hotel description -->
+                          </div>
+                          <div class="hotels__content--bottom">
+                            <div class="hotels__btn--view">
+                              <a href="./blogs-detail.html" class="btn-more b3-font color-black">
+                                SEE MORE
+                                <span>
+                                  <svg
+                                    width="5"
+                                    height="10"
+                                    viewBox="0 0 5 10"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M4.28571 5L0 10L-4.37114e-07 0L4.28571 5Z"
+                                      fill="currentColor"
+                                    ></path>
+                                  </svg>
+                                </span>
+                              </a>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -2298,20 +2587,18 @@
                     <h6 class="b2-bold color-primary">REWARDS</h6>
                     <ul>
                       <li>
-                        <img src="./assets/images/rewards_1.svg" alt="icon" />
+                        <img src="./assets/images/rewards_1.png" alt="icon" />
                       </li>
                       <li>
-                        <img src="./assets/images/rewards_2.svg" alt="icon" />
+                        <img src="./assets/images/rewards_2.png" alt="icon" />
                       </li>
                       <li>
-                        <img src="./assets/images/rewards_3.svg" alt="icon" />
+                        <img src="./assets/images/rewards_3.png" alt="icon" />
                       </li>
                       <li>
-                        <img src="./assets/images/rewards_4.svg" alt="icon" />
+                        <img src="./assets/images/rewards_4.png" alt="icon" />
                       </li>
-                      <li>
-                        <img src="./assets/images/rewards_5.svg" alt="icon" />
-                      </li>
+                      
                     </ul>
                   </div>
                   <!-- end rewards -->
@@ -2394,7 +2681,7 @@
                           href="http://online.gov.vn/Home/WebDetails/78036"
                           title="Bộ công thương"
                         >
-                          <img src="./assets/images/logo-bct.svg" alt="" />
+                          <img src="./assets/images/bo-cong-thuong.png" alt="" />
                         </a>
                       </div>
 
@@ -2429,7 +2716,7 @@
                     </ul>
                   </div>
                   <div class="col-md-4">
-                    <div class="d-md-block d-none text-end author-alpha">
+                    <div class="d-block author-alpha">
                       <a
                         href="https://alphacreative.vn/"
                         class="b2-bold color-gray-50"
@@ -2445,6 +2732,21 @@
           </div>
           <div class="footer__container--bottom-overlay">
             <div class="cta-mess">
+              <div class="phone-icon d-block d-lg-none">
+                <a href="tel:+842838269999">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.2014 1.27979C11.2843 1.57103 12.2717 2.14171 13.0647 2.93466C13.8576 3.72762 14.4283 4.71501 14.7196 5.79793" stroke="white" stroke-width="0.733333" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.54004 3.74878C10.1898 3.92353 10.7822 4.26593 11.258 4.74171C11.7338 5.21748 12.0762 5.80991 12.2509 6.45967" stroke="white" stroke-width="0.733333" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4.857 8.05228C5.51963 9.40697 6.61773 10.5001 7.97543 11.1565C8.07476 11.2036 8.18464 11.224 8.29426 11.2157C8.40387 11.2074 8.50943 11.1707 8.60055 11.1092L10.5997 9.77619C10.6881 9.71723 10.7898 9.68126 10.8956 9.67154C11.0014 9.66182 11.108 9.67865 11.2057 9.72051L14.9457 11.3234C15.0727 11.3773 15.1788 11.4711 15.2479 11.5906C15.317 11.7101 15.3454 11.8488 15.3288 11.9858C15.2106 12.9108 14.7593 13.761 14.0594 14.3772C13.3594 14.9934 12.4589 15.3334 11.5264 15.3334C8.64625 15.3334 5.88405 14.1893 3.84747 12.1527C1.81089 10.1161 0.666748 7.35392 0.666748 4.47376C0.666797 3.54124 1.00675 2.64072 1.62294 1.9408C2.23914 1.24089 3.08933 0.78957 4.01432 0.67136C4.15135 0.654777 4.29006 0.683177 4.40955 0.752282C4.52905 0.821388 4.62284 0.927454 4.67681 1.0545L6.28105 4.79772C6.32254 4.89454 6.33945 5.00012 6.33026 5.10506C6.32108 5.21 6.28608 5.31103 6.2284 5.39917L4.89998 7.42895C4.83952 7.52026 4.80377 7.62569 4.79624 7.73494C4.78871 7.84419 4.80964 7.95353 4.857 8.05228Z" fill="white"/>
+                  </svg>
+                  
+                  <svg class="img-hover" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.2014 1.27979C11.2843 1.57103 12.2717 2.14171 13.0647 2.93466C13.8576 3.72762 14.4283 4.71501 14.7196 5.79793" stroke="#C22033" stroke-width="0.733333" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9.54004 3.74878C10.1898 3.92353 10.7822 4.26593 11.258 4.74171C11.7338 5.21748 12.0762 5.80991 12.2509 6.45967" stroke="#C22033" stroke-width="0.733333" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4.857 8.05228C5.51963 9.40697 6.61773 10.5001 7.97543 11.1565C8.07476 11.2036 8.18464 11.224 8.29426 11.2157C8.40387 11.2074 8.50943 11.1707 8.60055 11.1092L10.5997 9.77619C10.6881 9.71723 10.7898 9.68126 10.8956 9.67154C11.0014 9.66182 11.108 9.67865 11.2057 9.72051L14.9457 11.3234C15.0727 11.3773 15.1788 11.4711 15.2479 11.5906C15.317 11.7101 15.3454 11.8488 15.3288 11.9858C15.2106 12.9108 14.7593 13.761 14.0594 14.3772C13.3594 14.9934 12.4589 15.3334 11.5264 15.3334C8.64625 15.3334 5.88405 14.1893 3.84747 12.1527C1.81089 10.1161 0.666748 7.35392 0.666748 4.47376C0.666797 3.54124 1.00675 2.64072 1.62294 1.9408C2.23914 1.24089 3.08933 0.78957 4.01432 0.67136C4.15135 0.654777 4.29006 0.683177 4.40955 0.752282C4.52905 0.821388 4.62284 0.927454 4.67681 1.0545L6.28105 4.79772C6.32254 4.89454 6.33945 5.00012 6.33026 5.10506C6.32108 5.21 6.28608 5.31103 6.2284 5.39917L4.89998 7.42895C4.83952 7.52026 4.80377 7.62569 4.79624 7.73494C4.78871 7.84419 4.80964 7.95353 4.857 8.05228Z" fill="#C22033"/>
+                  </svg>
+                </a>
+              </div>
               <div class="mess-icon">
                 <a href="">
                   <svg
@@ -2492,7 +2794,7 @@
                       <!-- footer container bottom left -->
                       <div class="footer__container--bl">
                         <div class="bct">
-                          <img src="./assets/images/logo-bct.svg" alt="" />
+                          <img src="./assets/images/bo-cong-thuong.png" alt="" />
                         </div>
 
                         <!-- end footer bottom left -->
@@ -2520,7 +2822,7 @@
                       </ul>
                     </div>
                     <div class="col-md-4">
-                      <div class="d-md-block d-none text-end author-alpha">
+                      <div class="d-block author-alpha">
                         <a
                           href="https://alphacreative.vn/"
                           class="b2-bold color-gray-50"

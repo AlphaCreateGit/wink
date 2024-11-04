@@ -33,6 +33,220 @@
     <!-- end import link custom css -->
   </head>
   <body>
+    <div class="alert-success-sign-in">
+      <div class="alert-inner">
+        <div class="alert-text">
+          <div>
+            <p class="b2-font">
+              Thank you for registering with Wink Rewards Lifestyle
+            </p>
+            <p class="b2-r">Now you can sign in to your account</p>
+          </div>
+        </div>
+        <div class="progress-type"></div>
+      </div>
+    </div>
+    <!-- modal sign in -->
+    <div
+      class="modal fade modalSignIn"
+      id="modalSignIn"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modalSignInLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalSignInLabel"></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <img src="./assets/images/ic_close_white.svg" alt="icon" />
+            </button>
+          </div>
+          <div class="modal-body">
+            <section class="sign-in-sec">
+              <div class="container-fluid p-0">
+                <div class="row g-0">
+                  <div class="col-md-12">
+                    <div class="contact__form member-contact">
+                      <h3 class="h3-bold color-primary">
+                        Welcome to Wink Rewards Lifestyle Program
+                      </h3>
+                      <div class="desc b1-font color-black">
+                        <p>
+                          Sign-in and start enjoying exclusive discounts and
+                          perks for your stay
+                        </p>
+                      </div>
+                      <form action="">
+                        <ul
+                          class="nav nav-pills mb-3"
+                          id="pills-tab"
+                          role="tablist"
+                        >
+                          <li class="nav-item" role="presentation">
+                            <button
+                              class="nav-link active"
+                              id="pills-home-tab"
+                              data-bs-toggle="pill"
+                              data-bs-target="#pills-home"
+                              type="button"
+                              role="tab"
+                              aria-controls="pills-home"
+                              aria-selected="true"
+                            >
+                              Email
+                            </button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button
+                              class="nav-link"
+                              id="pills-profile-tab"
+                              data-bs-toggle="pill"
+                              data-bs-target="#pills-profile"
+                              type="button"
+                              role="tab"
+                              aria-controls="pills-profile"
+                              aria-selected="false"
+                            >
+                              Phone
+                            </button>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                          <div
+                            class="tab-pane fade show active"
+                            id="pills-home"
+                            role="tabpanel"
+                            aria-labelledby="pills-home-tab"
+                          >
+                            <div class="box">
+                              <div class="group">
+                                <input
+                                  type="text"
+                                  class="form-input b1-font"
+                                  placeholder=" "
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-black-50"
+                                  >Email</label
+                                >
+                              </div>
+                              <div class="group input-password">
+                                <input
+                                  type="password"
+                                  class="form-input"
+                                  placeholder=" "
+                                  autocomplete="off"
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-gray"
+                                  >Password</label
+                                >
+                                <div class="icon-eye"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="pills-profile"
+                            role="tabpanel"
+                            aria-labelledby="pills-profile-tab"
+                          >
+                            <div class="box">
+                              <div class="group">
+                                <input
+                                  type="text"
+                                  class="form-input b1-font"
+                                  placeholder=" "
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-black-50"
+                                  >Phone number</label
+                                >
+                              </div>
+                              <div class="group input-password">
+                                <input
+                                  type="password"
+                                  class="form-input"
+                                  placeholder=" "
+                                  autocomplete="off"
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-gray"
+                                  >Password</label
+                                >
+                                <div class="icon-eye"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <div class="ic-check">
+                            <input type="checkbox" name="checklist" />
+                            <span class="check-mark"></span>
+                          </div>
+                          <label for="checklist" class="b2-bold color-black-50">
+                            Remember me</label
+                          >
+                        </div>
+                        <div
+                          class="note d-flex align-items-center justify-content-between"
+                        >
+                          <div class="note-list">
+                            <ul>
+                              <li>
+                                <p class="b2-bold color-black">
+                                  Not a member,
+                                  <a
+                                    href="./member-login.html"
+                                    class="color-primary line-sign"
+                                    >Sign up</a
+                                  >
+                                  now?
+                                </p>
+                              </li>
+                              <li>
+                                <a
+                                  href=""
+                                  class="color-primary b2-bold line-sign"
+                                  >Forgot password?</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="deals__view d-flex justify-content-end">
+                            <button
+                              class="custom__btn"
+                              onclick="openAlertSignIn(event)"
+                            >
+                              <span class="b3-font color-black d-block"
+                                >SIGN IN</span
+                              >
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal sign in -->
     <!-- intro -->
     <div class="intro">
       <div class="intro-inner">
@@ -78,6 +292,7 @@
                   class="value-select color-white b2-font dropdown-custom__text"
                 >
                   <img src="./assets/images/ic_flag_en.svg" alt="" />
+                  <span>English</span>
                 </div>
                 <div class="ic">
                   <img src="./assets/images/icon-arrow-down.svg" alt="" />
@@ -88,15 +303,18 @@
                   class="dropdown-custom__item language__item color-black b2-font"
                 >
                   <img src="./assets/images/ic_flag_vi.svg" alt="" />
+                  <span>Việt nam</span>
                 </div>
               </div>
             </div>
-            <a
-              href="./sign-in.html"
-              class="d-block header__btn-sign-in color-white b2-bold"
-            >
-              Member Login
-            </a>
+            <button
+            type="button"
+            class="d-block header__btn-sign-in color-white b2-bold"
+            data-bs-toggle="modal"
+            data-bs-target="#modalSignIn"
+          >
+            <span class="b3-font color-white d-block"> Member Login</span>
+          </button>
           </div>
         </div>
       </div>
@@ -146,102 +364,123 @@
         <div class="header__sub-menu--content h-100">
           <div class="container-fluid p-0 h-100">
             <div class="row g-0 h-100">
-              <div class="col-lg-4">
+              <div class="col-md-4">
                 <div class="sub-menu__left">
                   <div class="sub-menu__top">
                     <ul class="menu-container">
-                      <li class="menu-item">
+                      <li class="menu-item active">
                         <a href="./index.html" class="h4-font color-black"
                           >HOME</a
                         >
                       </li>
+                      
                       <li class="menu-item menu-item-has-children">
                         <a href="./hotels.html" class="h4-font color-black"
                           >HOTELS</a
                         >
                         <div class="sub-menu__container">
                           <div class="sub-menu__grid">
-                            <div
-                              class="btn-back text-uppercase d-lg-none d-md-block"
-                            >
-                              Go back
-                            </div>
-                            <div class="sub-menu__item">
-                              <div class="sub-menu__image">
-                                <img src="./assets/images/wink_sg.png" alt="" />
+                            <div class="btn-back__wrapper d-lg-none d-flex justify-content-between align-items-center">
+                              <div
+                                class="btn-back text-uppercase d-lg-none d-block"
+                              >
+                                Go back
                               </div>
-                              <div class="sub-menu__location">
-                                Wink Hotel Saigon Centre
-                              </div>
-                            </div>
-                            <div class="sub-menu__item">
-                              <div class="sub-menu__image">
-                                <img src="./assets/images/wink_ct.png" alt="" />
-                              </div>
-                              <div class="sub-menu__location">
-                                Wink Hotel Saigon Centre
+                              <div class="menu-item-all-hotel d-lg-none d-block">
+                                <a href="./hotels.html" class="h4-font color-black"
+                                  >ALL HOTELS</a
+                                >
                               </div>
                             </div>
                             <div class="sub-menu__item">
                               <div class="sub-menu__image">
-                                <img src="./assets/images/wink_hp.png" alt="" />
+                                <a href="./hotels-details.html" title="">
+                                  <img src="./assets/images/wink_sg.png" alt="" />
+                                </a>
                               </div>
-                              <div class="sub-menu__location">
+                              <a href="./hotels-details.html" title="" class="sub-menu__location">
                                 Wink Hotel Saigon Centre
-                              </div>
+                              </a>
                             </div>
                             <div class="sub-menu__item">
                               <div class="sub-menu__image">
-                                <img
-                                  src="./assets/images/wink_hp_2.png"
-                                  alt=""
-                                />
+                                <a href="./hotels-details.html" title="">
+                                  <img src="./assets/images/wink_ct.png" alt="" />
+                                </a>
                               </div>
-                              <div class="sub-menu__location">
+                              <a href="./hotels-details.html" title="" class="sub-menu__location">
                                 Wink Hotel Saigon Centre
-                              </div>
+                              </a>
                             </div>
                             <div class="sub-menu__item">
                               <div class="sub-menu__image">
-                                <img src="./assets/images/wink_ct.png" alt="" />
+                                <a href="./hotels-details.html" title="">
+                                  <img src="./assets/images/wink_hp.png" alt="" />
+                                </a>
                               </div>
-                              <div class="sub-menu__location">
+                              <a href="./hotels-details.html" title="" class="sub-menu__location">
                                 Wink Hotel Saigon Centre
-                              </div>
+                              </a>
                             </div>
                             <div class="sub-menu__item">
                               <div class="sub-menu__image">
-                                <img
-                                  src="./assets/images/wink_tuyhoa.png"
-                                  alt=""
-                                />
+                                <a href="./hotels-details.html" title="">
+                                  <img
+                                    src="./assets/images/wink_hp_2.png"
+                                    alt=""
+                                  />
+                                </a>
                               </div>
-                              <div class="sub-menu__location">
+                              <a href="./hotels-details.html" title="" class="sub-menu__location">
                                 Wink Hotel Saigon Centre
+                              </a>
+                            </div>
+                            <div class="sub-menu__item">
+                              <div class="sub-menu__image">
+                                <a href="./hotels-details.html" title="">
+                                  <img src="./assets/images/wink_ct.png" alt="" />
+                                </a>
                               </div>
+                              <a href="./hotels-details.html" title="" class="sub-menu__location">
+                                Wink Hotel Saigon Centre
+                              </a>
+                            </div>
+                            <div class="sub-menu__item">
+                              <div class="sub-menu__image">
+                                <a href="./hotels-details.html" title="">
+                                  <img
+                                    src="./assets/images/wink_tuyhoa.png"
+                                    alt=""
+                                  />
+                                </a>
+                              </div>
+                              <a href="./hotels-details.html" title="" class="sub-menu__location">
+                                Wink Hotel Saigon Centre
+                              </a>
                             </div>
                           </div>
                         </div>
                       </li>
                       <li class="menu-item">
-                        <a href="./index.html" class="h4-font color-black"
+                        <a href="./suites.html" class="h4-font color-black"
                           >SUITES</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./experience.html" class="h4-font color-black"
                           >THE WINK EXPERIENCE</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./wink-rewards.html" class="h4-font color-black"
                           >WINK REWARDS LIFESTYLE</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./event.html" class="h4-font color-black"
                           >MEETINGS & EVENTS</a
                         >
+                      </li>
                       </li>
                     </ul>
                   </div>
@@ -285,7 +524,16 @@
                   <div
                     class="sub-menu__cta mobile d-flex d-lg-none align-items-center justify-content-between"
                   >
-                    <a href="#" class="color-black b2-bold">Member Login</a>
+                    <button
+                      type="button"
+                      class="d-block header__btn-sign-in color-white b2-bold"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalSignIn"
+                    >
+                      <span class="b3-font color-white d-block">
+                        Member Login</span
+                      >
+                    </button>
                     <a
                       href="#"
                       class="b2-font color-white text-uppercase primary"
@@ -294,7 +542,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-8 d-lg-block d-none">
+              <div class="col-md-8 d-none d-lg-block">
                 <div class="box-img">
                   <img src="./assets/images/hero-banner.webp" alt="" />
                 </div>
@@ -457,7 +705,8 @@
       <section class="banner-hero">
         <div class="container-fluid p-0">
           <div class="banner-hero__container">
-            <div class="swiper swiper-banner">
+            <!-- option slider image -->
+            <div class="swiper swiper-banner " >
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="slide-banner">
@@ -475,11 +724,21 @@
                 </div>
               </div>
             </div>
+            <!-- end option slide image -->
+            <!-- option video  -->
+            <video muted autoplay id="video-banner" class="video-banner d-none">
+              <source
+                src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <!-- end option video  -->
             <div class="banner-hero__heading">
               <h1 class="h1-bold color-white">
                 STAY 24-HOURS WITH 24/7 </br> SELF-SERVICES
               </h1>
             </div>
+            
             <div class="banner-hero__booking d-none d-lg-block">
               <div class="banner-hero__form">
                 <form action="">
@@ -1361,8 +1620,8 @@
                           75 Nguyen Binh Khiem, Dakao Ward, District 1, Ho Chi
                           Minh City, Vietnam
                         </p>
-                        <p>+84 28 3826 9999</p>
-                        <p>book.saigoncentre@wink-hotels.com</p>
+                        <a href="tel:+84 28 3826 9999">+84 28 3826 9999</a>
+                        <a href="mailto:book.saigoncentre@wink-hotels.com">book.saigoncentre@wink-hotels.com</a>
                       </div>
                       <div class="hotels__btn--view">
                         <a href="" class="btn-more b3-font color-black">
@@ -1419,8 +1678,8 @@
                           75 Nguyen Binh Khiem, Dakao Ward, District 1, Ho Chi
                           Minh City, Vietnam
                         </p>
-                        <p>+84 28 3826 9999</p>
-                        <p>book.saigoncentre@wink-hotels.com</p>
+                        <a href="tel:+84 28 3826 9999">+84 28 3826 9999</a>
+                        <a href="mailto:book.saigoncentre@wink-hotels.com">book.saigoncentre@wink-hotels.com</a>
                       </div>
                       <div class="hotels__btn--view">
                         <a href="" class="btn-more b3-font color-black">
@@ -1477,8 +1736,8 @@
                           75 Nguyen Binh Khiem, Dakao Ward, District 1, Ho Chi
                           Minh City, Vietnam
                         </p>
-                        <p>+84 28 3826 9999</p>
-                        <p>book.saigoncentre@wink-hotels.com</p>
+                        <a href="tel:+84 28 3826 9999">+84 28 3826 9999</a>
+                        <a href="mailto:book.saigoncentre@wink-hotels.com">book.saigoncentre@wink-hotels.com</a>
                       </div>
                       <div class="hotels__btn--view">
                         <a href="" class="btn-more b3-font color-black">
@@ -1535,8 +1794,8 @@
                           75 Nguyen Binh Khiem, Dakao Ward, District 1, Ho Chi
                           Minh City, Vietnam
                         </p>
-                        <p>+84 28 3826 9999</p>
-                        <p>book.saigoncentre@wink-hotels.com</p>
+                        <a href="tel:+84 28 3826 9999">+84 28 3826 9999</a>
+                        <a href="mailto:book.saigoncentre@wink-hotels.com">book.saigoncentre@wink-hotels.com</a>
                       </div>
                       <div class="hotels__btn--view">
                         <a href="" class="btn-more b3-font color-black">
@@ -1593,8 +1852,8 @@
                           75 Nguyen Binh Khiem, Dakao Ward, District 1, Ho Chi
                           Minh City, Vietnam
                         </p>
-                        <p>+84 28 3826 9999</p>
-                        <p>book.saigoncentre@wink-hotels.com</p>
+                        <a href="tel:+84 28 3826 9999">+84 28 3826 9999</a>
+                        <a href="mailto:book.saigoncentre@wink-hotels.com">book.saigoncentre@wink-hotels.com</a>
                       </div>
                       <div class="hotels__btn--view">
                         <a href="" class="btn-more b3-font color-black">
@@ -1651,8 +1910,8 @@
                           75 Nguyen Binh Khiem, Dakao Ward, District 1, Ho Chi
                           Minh City, Vietnam
                         </p>
-                        <p>+84 28 3826 9999</p>
-                        <p>book.saigoncentre@wink-hotels.com</p>
+                        <a href="tel:+84 28 3826 9999">+84 28 3826 9999</a>
+                        <a href="mailto:book.saigoncentre@wink-hotels.com">book.saigoncentre@wink-hotels.com</a>
                       </div>
                       <div class="hotels__btn--view">
                         <a href="" class="btn-more b3-font color-black">
@@ -1976,14 +2235,15 @@
                 <span class="number-end">2</span>
               </div>
               <div class="container-page flex-center">
-                <div class="comming-soon__content one">
+                <h5 class="b2-font color-black d-block d-lg-none data-fade-in-mobile">COMING SOON</h5>
+                <div class="comming-soon__content one animate-left show">
                   <div class="box">
-                    <h5 class="b2-font color-black">COMING SOON</h5>
-                    <h2 class="h1-bold color-primary">Wink Hotel Hai Phong</h2>
-                    <div class="img-mobile d-md-none d-block">
+                    <h5 class="b2-font color-black d-none d-lg-none">COMING SOON</h5>
+                    <h2 class="h1-bold color-primary data-fade-in-mobile">Wink Hotel Hai Phong</h2>
+                    <div class="img-mobile d-lg-none d-block data-fade-in-mobile">
                       <img src="./assets/images/wink_hp.png" alt="wink hp" />
                     </div>
-                    <div class="desc b1-font color-black">
+                    <div class="desc b1-font color-black data-fade-in-mobile">
                       <p>
                         Opening 4 July 2024, explore Hai Phong, a vibrant port
                         city with rich culture, stunning beaches, and tasty
@@ -1994,15 +2254,15 @@
                 </div>
                 <div class="comming-soon__content two animate-left">
                   <div class="box">
-                    <h5 class="b2-font color-black">COMING SOON</h5>
-                    <h2 class="h1-bold color-primary">Wink Hotel Da Nang</h2>
-                    <div class="img-mobile d-md-none d-block">
+                    <h5 class="b2-font color-black d-none d-lg-none data-fade-in-mobile">COMING SOON</h5>
+                    <h2 class="h1-bold color-primary data-fade-in-mobile">Wink Hotel Da Nang</h2>
+                    <div class="img-mobile d-lg-none d-block data-fade-in-mobile">
                       <img
                         src="./assets/images/wink_hp_2.png"
                         alt="wink da nang"
                       />
                     </div>
-                    <div class="desc b1-font color-black">
+                    <div class="desc b1-font color-black data-fade-in-mobile">
                       <p>
                         Opening 4 July 2024, explore Hai Phong, a vibrant port
                         city with rich culture, stunning beaches, and tasty
@@ -2016,13 +2276,14 @@
               <div class="panels flex-center">
                 <div
                   div
-                  class="panel animate-right"
+                  class="panel animate-right rellax" data-rellax-speed="-0.5" data-rellax-mobile-speed="0"
                   style="--img: url('../images/wink_hp.png')"
                 ></div>
                 <div
                   class="panel animate-right"
                   style="--img: url('../images/wink_hp_2.png')"
-                ></div>
+                >
+                </div>
               </div>
             </div>
           </div>
@@ -2097,7 +2358,7 @@
                   </div>
                 </div>
                 <div class="rewards-sec__button d-flex justify-content-center">
-                  <a href="" class="custom__btn long-medium">
+                  <a href="./member-login.html" class="custom__btn long-medium">
                     <span class="b3-font color-black d-block"
                       >FREE TO JOIN</span
                     >
@@ -2327,20 +2588,18 @@
                     <h6 class="b2-bold color-primary">REWARDS</h6>
                     <ul>
                       <li>
-                        <img src="./assets/images/rewards_1.svg" alt="icon" />
+                        <img src="./assets/images/rewards_1.png" alt="icon" />
                       </li>
                       <li>
-                        <img src="./assets/images/rewards_2.svg" alt="icon" />
+                        <img src="./assets/images/rewards_2.png" alt="icon" />
                       </li>
                       <li>
-                        <img src="./assets/images/rewards_3.svg" alt="icon" />
+                        <img src="./assets/images/rewards_3.png" alt="icon" />
                       </li>
                       <li>
-                        <img src="./assets/images/rewards_4.svg" alt="icon" />
+                        <img src="./assets/images/rewards_4.png" alt="icon" />
                       </li>
-                      <li>
-                        <img src="./assets/images/rewards_5.svg" alt="icon" />
-                      </li>
+                      
                     </ul>
                   </div>
                   <!-- end rewards -->
@@ -2423,7 +2682,7 @@
                           href="http://online.gov.vn/Home/WebDetails/78036"
                           title="Bộ công thương"
                         >
-                          <img src="./assets/images/logo-bct.svg" alt="" />
+                          <img src="./assets/images/bo-cong-thuong.png" alt="" />
                         </a>
                       </div>
 
@@ -2458,7 +2717,7 @@
                     </ul>
                   </div>
                   <div class="col-md-4">
-                    <div class="d-md-block d-none text-end author-alpha">
+                    <div class="d-block author-alpha">
                       <a
                         href="https://alphacreative.vn/"
                         class="b2-bold color-gray-50"
@@ -2521,7 +2780,7 @@
                       <!-- footer container bottom left -->
                       <div class="footer__container--bl">
                         <div class="bct">
-                          <img src="./assets/images/logo-bct.svg" alt="" />
+                          <img src="./assets/images/bo-cong-thuong.png" alt="" />
                         </div>
 
                         <!-- end footer bottom left -->
@@ -2549,7 +2808,7 @@
                       </ul>
                     </div>
                     <div class="col-md-4">
-                      <div class="d-md-block d-none text-end author-alpha">
+                      <div class="d-block author-alpha">
                         <a
                           href="https://alphacreative.vn/"
                           class="b2-bold color-gray-50"
@@ -2601,5 +2860,8 @@
     <!-- import image map -->
      <script src="./assets/libs/jquery.rwdImageMaps.js"></script>
      <script src="./assets/libs/jquery.rwdImageMaps.min.js"></script>
+
+     <!-- lib rellax -->
+     <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
   </body>
 </html>

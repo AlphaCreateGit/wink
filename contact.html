@@ -32,6 +32,221 @@
     <!-- end import link custom css -->
   </head>
   <body>
+    <div class="alert-success-sign-in">
+      <div class="alert-inner">
+        <div class="alert-text">
+          <div>
+            <p class="b2-font">
+              Thank you for registering with Wink Rewards Lifestyle
+            </p>
+            <p class="b2-r">Now you can sign in to your account</p>
+          </div>
+        </div>
+        <div class="progress-type"></div>
+      </div>
+    </div>
+    <!-- modal sign in -->
+    <div
+      class="modal fade modalSignIn"
+      id="modalSignIn"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modalSignInLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalSignInLabel"></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <img src="./assets/images/ic_close_white.svg" alt="icon" />
+            </button>
+          </div>
+          <div class="modal-body">
+            <section class="sign-in-sec">
+              <div class="container-fluid p-0">
+                <div class="row g-0">
+                  <div class="col-md-12">
+                    <div class="contact__form member-contact">
+                      <h3 class="h3-bold color-primary">
+                        Welcome to Wink Rewards Lifestyle Program
+                      </h3>
+                      <div class="desc b1-font color-black">
+                        <p>
+                          Sign-in and start enjoying exclusive discounts and
+                          perks for your stay
+                        </p>
+                      </div>
+                      <form action="">
+                        <ul
+                          class="nav nav-pills mb-3"
+                          id="pills-tab"
+                          role="tablist"
+                        >
+                          <li class="nav-item" role="presentation">
+                            <button
+                              class="nav-link active"
+                              id="pills-home-tab"
+                              data-bs-toggle="pill"
+                              data-bs-target="#pills-home"
+                              type="button"
+                              role="tab"
+                              aria-controls="pills-home"
+                              aria-selected="true"
+                            >
+                              Email
+                            </button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button
+                              class="nav-link"
+                              id="pills-profile-tab"
+                              data-bs-toggle="pill"
+                              data-bs-target="#pills-profile"
+                              type="button"
+                              role="tab"
+                              aria-controls="pills-profile"
+                              aria-selected="false"
+                            >
+                              Phone
+                            </button>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                          <div
+                            class="tab-pane fade show active"
+                            id="pills-home"
+                            role="tabpanel"
+                            aria-labelledby="pills-home-tab"
+                          >
+                            <div class="box">
+                              <div class="group">
+                                <input
+                                  type="text"
+                                  class="form-input b1-font"
+                                  placeholder=" "
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-black-50"
+                                  >Email</label
+                                >
+                              </div>
+                              <div class="group input-password">
+                                <input
+                                  type="password"
+                                  class="form-input"
+                                  placeholder=" "
+                                  autocomplete="off"
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-gray"
+                                  >Password</label
+                                >
+                                <div class="icon-eye"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="pills-profile"
+                            role="tabpanel"
+                            aria-labelledby="pills-profile-tab"
+                          >
+                            <div class="box">
+                              <div class="group">
+                                <input
+                                  type="text"
+                                  class="form-input b1-font"
+                                  placeholder=" "
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-black-50"
+                                  >Phone number</label
+                                >
+                              </div>
+                              <div class="group input-password">
+                                <input
+                                  type="password"
+                                  class="form-input"
+                                  placeholder=" "
+                                  autocomplete="off"
+                                />
+                                <label
+                                  for="name"
+                                  class="form-label b1-font color-gray"
+                                  >Password</label
+                                >
+                                <div class="icon-eye"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <div class="ic-check">
+                            <input type="checkbox" name="checklist" />
+                            <span class="check-mark"></span>
+                          </div>
+                          <label for="checklist" class="b2-bold color-black-50">
+                            Remember me</label
+                          >
+                        </div>
+                        <div
+                          class="note d-flex align-items-center justify-content-between"
+                        >
+                          <div class="note-list">
+                            <ul>
+                              <li>
+                                <p class="b2-bold color-black">
+                                  Not a member,
+                                  <a
+                                    href="./member-login.html"
+                                    class="color-primary line-sign"
+                                    >Sign up</a
+                                  >
+                                  now?
+                                </p>
+                              </li>
+                              <li>
+                                <a
+                                  href=""
+                                  class="color-primary b2-bold line-sign"
+                                  >Forgot password?</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="deals__view d-flex justify-content-end">
+                            <button
+                              class="custom__btn"
+                              onclick="openAlertSignIn(event)"
+                            >
+                              <span class="b3-font color-black d-block"
+                                >SIGN IN</span
+                              >
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal sign in -->
+
     <!-- alter success -->
     <div class="alert-success">
       <div class="alert-inner">
@@ -91,12 +306,14 @@
                 </div>
               </div>
             </div>
-            <a
-              href="./sign-in.html"
+            <button
+              type="button"
               class="d-block header__btn-sign-in color-white b2-bold"
+              data-bs-toggle="modal"
+              data-bs-target="#modalSignIn"
             >
-              Member Login
-            </a>
+              <span class="b3-font color-white d-block"> Member Login</span>
+            </button>
           </div>
         </div>
       </div>
@@ -155,16 +372,24 @@
                           >HOME</a
                         >
                       </li>
+                      
                       <li class="menu-item menu-item-has-children">
                         <a href="./hotels.html" class="h4-font color-black"
                           >HOTELS</a
                         >
                         <div class="sub-menu__container">
                           <div class="sub-menu__grid">
-                            <div
-                              class="btn-back text-uppercase d-md-none d-block"
-                            >
-                              Go back
+                            <div class="btn-back__wrapper d-lg-none d-flex justify-content-between align-items-center">
+                              <div
+                                class="btn-back text-uppercase d-lg-none d-block"
+                              >
+                                Go back
+                              </div>
+                              <div class="menu-item-all-hotel d-lg-none d-block">
+                                <a href="./hotels.html" class="h4-font color-black"
+                                  >ALL HOTELS</a
+                                >
+                              </div>
                             </div>
                             <div class="sub-menu__item">
                               <div class="sub-menu__image">
@@ -224,24 +449,25 @@
                         </div>
                       </li>
                       <li class="menu-item">
-                        <a href="./index.html" class="h4-font color-black"
+                        <a href="./suites.html" class="h4-font color-black"
                           >SUITES</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./experience.html" class="h4-font color-black"
                           >THE WINK EXPERIENCE</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./wink-rewards.html" class="h4-font color-black"
                           >WINK REWARDS LIFESTYLE</a
                         >
                       </li>
                       <li class="menu-item">
-                        <a href="" class="h4-font color-black"
+                        <a href="./event.html" class="h4-font color-black"
                           >MEETINGS & EVENTS</a
                         >
+                      </li>
                       </li>
                     </ul>
                   </div>
@@ -275,7 +501,7 @@
                           >BLOGS</a
                         >
                       </li>
-                      <li>
+                      <li class="active">
                         <a href="./contact.html" class="b2-bold color-black"
                           >CONTACT</a
                         >
@@ -283,9 +509,18 @@
                     </ul>
                   </div>
                   <div
-                    class="sub-menu__cta mobile d-flex d-md-none align-items-center justify-content-between"
+                    class="sub-menu__cta mobile d-flex d-lg-none align-items-center justify-content-between"
                   >
-                    <a href="#" class="color-black b2-bold">Member Login</a>
+                    <button
+                      type="button"
+                      class="d-block header__btn-sign-in color-white b2-bold"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalSignIn"
+                    >
+                      <span class="b3-font color-white d-block">
+                        Member Login</span
+                      >
+                    </button>
                     <a
                       href="#"
                       class="b2-font color-white text-uppercase primary"
@@ -294,7 +529,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-8 d-none d-md-block">
+              <div class="col-md-8 d-none d-lg-block">
                 <div class="box-img">
                   <img src="./assets/images/hero-banner.webp" alt="" />
                 </div>
@@ -363,7 +598,7 @@
                       <input
                         type="text"
                         class="form-input b1-font"
-                        placeholder=""
+                        placeholder=" "
                       />
                       <label
                         for="name"
@@ -376,7 +611,7 @@
                       <input
                         type="text"
                         class="form-input b1-font"
-                        placeholder=""
+                        placeholder=" "
                       />
                       <label
                         for="name"
@@ -387,13 +622,13 @@
                     <div class="group">
                       <textarea
                         type="text"
-                        class="form-input b1-font"
-                        placeholder=""
+                        class=" b1-font"
+                        placeholder=" "
                         rows="4"
                       ></textarea>
                       <label
                         for="name"
-                        class="form-label b1-font color-black-50"
+                        class="form-label b1-font color-black-50 label-textarea"
                         >What can we help you with?</label
                       >
                     </div>
@@ -745,20 +980,18 @@
                     <h6 class="b2-bold color-primary">REWARDS</h6>
                     <ul>
                       <li>
-                        <img src="./assets/images/rewards_1.svg" alt="icon" />
+                        <img src="./assets/images/rewards_1.png" alt="icon" />
                       </li>
                       <li>
-                        <img src="./assets/images/rewards_2.svg" alt="icon" />
+                        <img src="./assets/images/rewards_2.png" alt="icon" />
                       </li>
                       <li>
-                        <img src="./assets/images/rewards_3.svg" alt="icon" />
+                        <img src="./assets/images/rewards_3.png" alt="icon" />
                       </li>
                       <li>
-                        <img src="./assets/images/rewards_4.svg" alt="icon" />
+                        <img src="./assets/images/rewards_4.png" alt="icon" />
                       </li>
-                      <li>
-                        <img src="./assets/images/rewards_5.svg" alt="icon" />
-                      </li>
+                      
                     </ul>
                   </div>
                   <!-- end rewards -->
@@ -841,7 +1074,7 @@
                           href="http://online.gov.vn/Home/WebDetails/78036"
                           title="Bộ công thương"
                         >
-                          <img src="./assets/images/logo-bct.svg" alt="" />
+                          <img src="./assets/images/bo-cong-thuong.png" alt="" />
                         </a>
                       </div>
 
@@ -876,7 +1109,7 @@
                     </ul>
                   </div>
                   <div class="col-md-4">
-                    <div class="d-md-block d-none text-end author-alpha">
+                    <div class="d-block author-alpha">
                       <a
                         href="https://alphacreative.vn/"
                         class="b2-bold color-gray-50"
@@ -939,7 +1172,7 @@
                       <!-- footer container bottom left -->
                       <div class="footer__container--bl">
                         <div class="bct">
-                          <img src="./assets/images/logo-bct.svg" alt="" />
+                          <img src="./assets/images/bo-cong-thuong.png" alt="" />
                         </div>
 
                         <!-- end footer bottom left -->
@@ -967,7 +1200,7 @@
                       </ul>
                     </div>
                     <div class="col-md-4">
-                      <div class="d-md-block d-none text-end author-alpha">
+                      <div class="d-block author-alpha">
                         <a
                           href="https://alphacreative.vn/"
                           class="b2-bold color-gray-50"

@@ -21,7 +21,42 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
+  .room-facilities__container h3 {
+    text-align: left;
+  }
+  .cooming-sec {
+    padding-bottom: 64px;
+    background-color: var(--color-white);
+  }
+  .container-page h5 {
+    padding: 0 32px;
+    margin-bottom: 8px;
+    margin-top: 64px;
+  }
+  .comming-soon__content {
+    height: auto;
+  }
+  .spacing-120 {
+    height: 64px;
+  }
+  .comming-soon {
+    height: auto;
+  }
+  .flex-center {
+    position: static;
+  }
+
+  .comming-soon .panels .panel,
+  .panels {
+    width: 0;
+  }
+  .container-page {
+    width: 100%;
+  }
+  .comming-soom__count {
+    display: none;
+  }
   .amenities-sec {
     overflow-x: hidden;
   }
@@ -37,7 +72,7 @@
   .deals__list .swiper-control .swiper-button-prev {
     left: unset;
     right: 16px;
-    bottom: -55px;
+    bottom: -60px;
     width: 70px;
     height: 18px;
     top: unset;
@@ -47,7 +82,7 @@
   .deals__list .swiper-control .swiper-button-next {
     right: 8px;
     left: unset;
-    bottom: -55px;
+    bottom: -60px;
     width: 70px;
     height: 18px;
     top: unset;
@@ -56,7 +91,7 @@
 
   .deals__list .swiper-pagination {
     top: unset;
-    bottom: -55px;
+    bottom: -60px;
     left: unset;
     transform: translate(-50%, 0);
   }
@@ -91,12 +126,16 @@
 
   .header-top__container {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     flex: 1;
   }
-
+  .cooming-sec .container-page {
+    background-color: #fff;
+  }
+  .comming-soon__content .box {
+    padding: 0 32px;
+  }
   .bar span {
     background-color: white;
   }
@@ -110,15 +149,23 @@
   .header {
     transform: translate(0) !important;
   }
-
+  .comming-sec {
+    background-color: var(--color-white);
+  }
   .comming-soon__content .box {
     max-width: 100%;
   }
-
+  .comming-soon__content {
+    margin-bottom: 64px;
+  }
+  .comming-soon__content:last-child {
+    margin-bottom: 0;
+  }
   .comming-soon__content .box .img-mobile {
     width: 100%;
     aspect-ratio: 280 / 290;
     max-height: 290px;
+    margin-bottom: 24px;
   }
 
   .comming-soon__content .box .img-mobile img {
@@ -128,8 +175,7 @@
   }
 
   .comming-soon__content .box {
-    padding: 0 16px;
-    padding-right: 70px;
+    padding: 0 32px;
   }
 
   .map-content-detail .box-head .icon-back-lv2 {
@@ -173,8 +219,8 @@
   /* header */
 
   .sub-menu__left {
+    height: calc(100dvh - 113px);
     background-color: var(--color-gray-10);
-    height: calc(100vh - 113px);
   }
 
   .menu-item-has-children > .sub-menu__container {
@@ -195,7 +241,7 @@
   }
 
   .sub-menu__grid {
-    padding: 21px 16px 70px;
+    padding: 0 16px 70px;
 
     display: flex;
     flex-direction: column;
@@ -248,7 +294,12 @@
     top: calc(100dvh - 46px);
   }
 
-  .sub-menu__cta a {
+  .sub-menu__cta button {
+    display: block !important;
+  }
+
+  .sub-menu__cta a,
+  .sub-menu__cta button {
     width: 50%;
     display: flex;
     align-items: center;
@@ -261,6 +312,10 @@
     color: var(--color-white);
     background-color: var(--color-black);
     text-transform: uppercase;
+  }
+
+  .sub-menu__cta.page-detail button{
+    width: 100%;
   }
 
   .sub-menu__cta a.primary {
@@ -318,6 +373,10 @@
   }
   /* end tool bar */
 
+  .section.experience {
+    overflow-x: hidden;
+  }
+
   .experience__container {
     padding-left: 0;
   }
@@ -330,9 +389,101 @@
   .map.homepage .map__marker {
     overflow-y: scroll;
   }
+  .comming-soon-company .container-page h5 {
+    padding: 0;
+  }
+
+  .comming-soon__content {
+    background-color: var(--color-white);
+  }
+
+  .comming-soon__content .box {
+    background-color: var(--color-white);
+  }
+
+  .deals-sec .custom__btn {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .rewards-list {
+    width: 100%;
+  }
+
+  .rewards-list ul {
+    overflow-y: scroll;
+  }
+
+  .career-intro-sec .container-page .box h5 {
+    padding: 0;
+  }
+
+  .career-intro-sec .comming-soon {
+    flex-direction: column;
+  }
+
+  .career-intro-sec .container-page .box {
+    padding-top: 60px;
+    padding-bottom: 64px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .career-intro-sec .container-page {
+    margin: 0;
+    padding: 0 40px;
+    width: 100%;
+  }
+
+  .career-intro-sec .container-page .box h5 {
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  .career-intro-sec .panels .box p {
+    margin-bottom: 8px;
+  }
+
+  .career-intro-sec .panels .box {
+    width: 100%;
+    max-width: 100%;
+    padding: 64px 40px 0;
+    transform: none;
+  }
+
+  .career-intro-sec .panels .box h1 {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+  }
+
+  .career-intro-sec .panels .panel:last-child .box {
+    padding-bottom: 64px;
+  }
+
+  .career-intro-sec .container-page .box .desc {
+    margin-bottom: 0;
+  }
+
+  .page-details-hotels .footer__container--bottom-overlay.freeze .cta-mess{
+    top: -140px !important;
+  }
+
+  .btn-back__wrapper{
+    position: sticky;
+    width: calc(100vw - 32px);
+    top: 0;
+    margin: 20px auto 0;
+    padding: 0;
+    background: #f2f2f2;
+    z-index: 2;
+  }
 }
 
 @media (max-width: 767px) {
+  .comming-soon {
+    height: auto;
+  }
   /* General */
   .h5-font {
     font-size: 16px;
@@ -398,11 +549,6 @@
   /* mobile header */
   .button__book {
     display: none;
-  }
-
-  .header__logo {
-    position: static;
-    transform: none;
   }
 
   .header__sub-menu::-webkit-scrollbar {
@@ -592,12 +738,12 @@
   }
 
   .comming-soon__content .box {
-    padding: 30px;
+    padding: 0 32px;
     background-color: var(--color-white);
   }
 
   .comming-soon__content .box .desc {
-    margin-top: 40px;
+    margin-top: 24px;
   }
 
   .comming-soon .img__container img:nth-child(2) {
@@ -607,10 +753,6 @@
 
   .comming-soon .img__container img {
     height: initial;
-  }
-
-  .comming-soon {
-    height: 600px !important;
   }
 
   .spacing-120 {
@@ -661,7 +803,7 @@
 
   /* css mobile hotels */
   .hotels__box .hotels__tag {
-    top: 20px;
+    top: 24px;
     left: 24px;
   }
 
@@ -784,7 +926,7 @@
   }
 
   .footer__container--bottom {
-    padding: 40px 24px 48px;
+    padding: 300px 24px 48px;
   }
 
   .footer__container--bottom .row {
@@ -944,11 +1086,13 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     top: 55px;
+    padding: 0 10px;
   }
   /* end modal finding booking */
   /* comming soon section */
   .cooming-sec .panels {
     width: 0;
+    display: none;
   }
 
   .cooming-sec .container-page {
@@ -1063,7 +1207,7 @@
   }
 
   .room-facilities__container h3 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 32px;
   }
 
@@ -1078,6 +1222,14 @@
 
   .amenities__top .box h2 {
     display: none;
+  }
+
+  .amenities__top .title-mobile {
+    padding: 64px 16px 24px;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+    font-weight: 900;
   }
 
   .amenities__top .swiper-amenities {
@@ -1128,6 +1280,11 @@
 
   .amenities__top .amen-right .box-detail .head {
     margin-bottom: 24px;
+    display: none;
+  }
+
+  .amenities__top .amen-right .box-detail .swiper-amen-box h4{
+    margin-top: 12px;
   }
 
   .amenities-sec .close-box__mobile {
@@ -1180,7 +1337,7 @@
   }
 
   .wink-detail-sec .wink-detail__desc .desc {
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
   }
 
   .swiper-control-parent {
@@ -1229,7 +1386,7 @@
     line-height: 36px;
     letter-spacing: 0.84px;
     font-weight: 900;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
   }
 
   .position-list .position-item.sub .position-item-sub:first-child {
@@ -1254,27 +1411,6 @@
     left: unset;
   }
 
-  .career-intro-sec .comming-soon {
-    flex-direction: column;
-  }
-
-  .career-intro-sec .container-page .box {
-    padding-top: 60px;
-    padding-bottom: 64px;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .career-intro-sec .container-page {
-    margin: 0;
-    padding: 0 16px;
-    width: 100%;
-  }
-
-  .career-intro-sec .container-page .box h5 {
-    margin-bottom: 8px;
-  }
-
   .career-intro-sec .container-page .box h2 {
     font-size: 28px;
     line-height: 36px;
@@ -1282,24 +1418,9 @@
     margin-bottom: 24px;
   }
 
-  .career-intro-sec .container-page .box .desc {
-    margin-bottom: 0;
-  }
-
   .career-intro-sec .panels {
     width: 100%;
     height: 100%;
-  }
-
-  .career-intro-sec .panels .box {
-    width: 100%;
-    max-width: 100%;
-    padding: 67px 16px 0;
-  }
-
-  .career-intro-sec .panels .box h1 {
-    font-size: 28px;
-    line-height: 36px;
   }
 
   .about-company .about-company__desc {
@@ -1307,7 +1428,9 @@
   }
 
   .swiper-suites .img {
-    height: 190px;
+    /* height: 190px; */
+    height: auto;
+    aspect-ratio: 343 / 190;
   }
 
   .experience-sec .experience__content {
@@ -1347,26 +1470,55 @@
 
   .sub-menu__grid {
     padding-bottom: 200px;
+    width: 100vw;
   }
 
   .map.homepage .map-content-wrapper img {
     aspect-ratio: 375 / 600;
   }
 
-  .map.homepage .map__wrapper .map-overview img {
+  .map.homepage .map__wrapper .map-overview img,
+  .map.map-new .map__wrapper .map-overview img {
     aspect-ratio: 375 / 600;
   }
 
-  .map.homepage .map__wrapper .map-overview {
+  .map.homepage .map__wrapper .map-overview,
+  .map.map-new .map__wrapper .map-overview {
     height: auto;
+  }
+
+  .deals-sec .deals__img {
+    height: unset;
+  }
+
+  .deals-sec .deals__content {
+    height: auto;
+  }
+  .page-tpl-suites .wink-room__suites .box .box-desc .overlay {
+    height: 340px;
+  }
+
+  .swiper-child-img .img {
+    aspect-ratio: 343 / 190;
+    height: auto;
+  }
+
+  .deals-details-sec .box .name {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+  }
+
+  .career-intro-sec .container-page{
+    padding: 0 16px;
+  }
+
+  .career-intro-sec .panels .box{
+    padding: 64px 16px 0;
   }
 }
 
 @media (max-width: 480px) {
-  .comming-soon {
-    height: 650px !important;
-  }
-
   .facilities__item {
     width: calc(100% / 2 - 4px);
     min-width: unset;
@@ -1388,7 +1540,23 @@
     margin-bottom: 64px;
   }
 
-  .swiper-child-img .img {
-    height: 190px;
+  .member-contact .member-box .head h2{
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.84px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+  .career-intro-sec .panels .box{
+    max-width: 83%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .career-intro-sec .container-page{
+    max-width: 83%;
+    margin: 0 auto;
+    padding: 0;
   }
 }

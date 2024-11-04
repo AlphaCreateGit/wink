@@ -847,7 +847,7 @@ function commingSoon() {
     gsap.registerPlugin(ScrollTrigger);
 
     const panels = gsap.utils.toArray(".panel").slice(1);
-    const content = gsap.utils.toArray(".animate-left").slice(1);
+    const content = gsap.utils.toArray(".animate-left");
     const numberStart = $(".number-start");
     const numberEnd = $(".number-end");
     const totalSlides = $(".panel").length;
@@ -865,7 +865,7 @@ function commingSoon() {
         end: () => "+=" + 150 * panels.length + "%",
         pin: true,
         scrub: true,
-        markers: true,
+        // markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),
@@ -915,8 +915,9 @@ function commingSoon() {
           ease: "power1.out",
           scrollTrigger: {
             trigger: panel,
-            start: "top 40%",
-            end: "bottom 40%",
+            start: "top 30%",
+            end: "bottom 30%",
+            markers: true,
             toggleActions: "play reverse play reverse",
           },
         }

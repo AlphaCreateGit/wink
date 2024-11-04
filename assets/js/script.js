@@ -836,6 +836,32 @@ function toggleDropdown() {
   });
 }
 
+function updSwiperNumericPagination(swiper) {
+  const totalSlides = swiper.slides.length;
+  const slidesPerView = Math.floor(swiper.params.slidesPerView);
+  let currentIndex = swiper.realIndex + slidesPerView; // Start counting from 3
+
+  // Adjust currentIndex based on the total number of slides
+  if (currentIndex > totalSlides) {
+    currentIndex = slidesPerView; // Wrap around back to slidesPerView
+  }
+
+  // Ensure currentIndex is at least slidesPerView
+  if (currentIndex < slidesPerView) {
+    currentIndex = slidesPerView; // Ensure it doesn't go below slidesPerView
+  }
+
+  const paginationElement = swiper.pagination.el;
+  console.log(paginationElement);
+  
+  if (paginationElement) {
+    paginationElement.innerHTML = 
+      '<span class="count">' + currentIndex + '</span>/<span class="total">' + totalSlides + "</span>";
+  } else {
+    console.warn("Pagination element not found");
+  }
+}
+
 function swiperDeals() {
   if ($(".swiper-deals").length) {
     const swiperDeals = new Swiper(".swiper-deals", {
@@ -860,9 +886,19 @@ function swiperDeals() {
         1023: {
           slidesPerView: 3,
           spaceBetween: 40,
+          slidesOffsetAfter: 0,
         },
         992: {
           spaceBetween: 24,
+          slidesOffsetAfter: 0,
+        },
+      },
+      on: {
+        init: function () {
+          updSwiperNumericPagination(this);
+        },
+        slideChange: function () {
+          updSwiperNumericPagination(this);
         },
       },
     });
@@ -1139,7 +1175,7 @@ function swiperRoomSuites() {
     function initSliderWinkRoom() {
       const swiperParentRoom = new Swiper(".swiper-parent-room", {
         slidesPerView: 1,
-        slidesPerGroup: 2,
+        slidesPerGroup: 1,
         spaceBetween: 24,
 
         // loop: true,
@@ -1155,6 +1191,14 @@ function swiperRoomSuites() {
           768: {
             slidesPerView: 2,
             spaceBetween: 40,
+          },
+        },
+        on: {
+          init: function () {
+            updSwiperNumericPagination(this);
+          },
+          slideChange: function () {
+            updSwiperNumericPagination(this);
           },
         },
       });

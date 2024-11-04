@@ -3602,6 +3602,9 @@ section.map {
 .map.map-new .map__wrapper {
   height: auto;
 }
+.map .map__wrapper::-webkit-scrollbar{
+  display: none;
+}
 .map__wrapper .map-overview {
   width: 100%;
   height: 100%;

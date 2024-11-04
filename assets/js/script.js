@@ -1444,6 +1444,7 @@ function commingCareer() {
         scrub: true,
         markers: true,
         onUpdate: (self) => {
+          $(".number-start").html(index + 1);
           if (self.progress === 1) {
             const nextSection = contentElements[index];
             if (nextSection) {

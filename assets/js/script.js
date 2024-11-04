@@ -844,84 +844,71 @@ function swiperDeals() {
 
 function commingSoon() {
   if ($(window).width() >= 991 && $(".cooming-sec").length) {
-    gsap.registerPlugin(ScrollTrigger);
+    // Registering the GSAP plugins
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    const panels = gsap.utils.toArray(".panel").slice(1);
-    const content = gsap.utils.toArray(".animate-left");
-    const numberStart = $(".number-start");
-    const numberEnd = $(".number-end");
-    const totalSlides = $(".panel").length;
-    let currentSlide = 1;
-
-    numberStart.text(currentSlide);
-    numberEnd.text(totalSlides);
-
-    const positionPinSection = $(window).width() > 767 ? "5%" : "40px";
-
-    const panelTl = gsap.timeline({
+    const panels = document.querySelectorAll(".cooming-sec .animate-right");
+    const contentElements = document.querySelectorAll(
+      ".cooming-sec .comming-soon__content"
+    );
+    $(".number-end").html(contentElements.length);
+    // Calculate total height of content elements to set ScrollTrigger end value
+    let totalHeight = 0;
+    contentElements.forEach((element) => {
+      totalHeight += element.offsetHeight;
+    });
+    totalHeight = totalHeight - 50;
+    gsap.to(".cooming-sec", {
       scrollTrigger: {
-        trigger: ".comming-soon",
-        start: `top ${positionPinSection}`,
-        end: () => "+=" + 150 * panels.length + "%",
-        pin: true,
-        scrub: true,
-        // markers: true,
-        onUpdate: (self) => {
-          const newSlide = Math.min(
-            Math.max(1, Math.ceil(self.progress * totalSlides)),
-            totalSlides
-          );
-          if (newSlide !== currentSlide) {
-            currentSlide = newSlide;
-            numberStart.text(currentSlide);
-          }
-        },
+        toggleActions: "play reverse play reverse",
+        start: "top top",
+        end: `+=${totalHeight}`,
+        pin: ".cooming-sec",
+        pinSpacing: true,
       },
     });
 
+    // Animations for each panel
     panels.forEach((panel, index) => {
-      panelTl.fromTo(
-        panel,
-        {
-          height: "100%",
-          zIndex: index === 0 ? 1 : 0,
+      if (index === panels.length - 1) return;
+      gsap.to(panel, {
+        scrollTrigger: {
+          trigger: panel,
+          start: "top top",
+          end: "bottom top",
+          scrub: 0.5,
+          // markers: true,
         },
-        {
-          height: "0%",
-          ease: "none",
-          duration: 1.5,
-          zIndex: 1,
-          onStart: () => {
-            gsap.set(panel, { zIndex: 1 });
-          },
-          onComplete: () => {
-            gsap.set(panel, { zIndex: 0 });
-          },
-        },
-        "+=0.5"
-      );
+        height: "0",
+        zIndex: 1,
+        duration: 1.5,
+        ease: "none",
+      });
     });
 
-    panels.forEach((panel, index) => {
-      gsap.fromTo(
-        content[index],
-        {
-          yPercent: 0,
-          autoAlpha: 0,
+    // Logic to toggle 'show' class for content sections
+    contentElements.forEach((section, index) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 50%",
+        end: "bottom 50%",
+        scrub: true,
+        onUpdate: (self) => {
+          // Remove 'show' class from all sections
+          $(".cooming-sec .comming-soon__content").removeClass("show");
+          $(".number-start").html([index + 1]);
+          if (self.progress === 1) {
+            // Show current section when fully in view
+            $(section).addClass("show");
+          } else if (self.direction < 0 && index > 0) {
+            // Show previous section on scrolling up
+            $(contentElements[index - 1]).addClass("show");
+          } else {
+            // Default case to show current section
+            $(section).addClass("show");
+          }
         },
-        {
-          yPercent: 3,
-          autoAlpha: 1,
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: panel,
-            start: "top 30%",
-            end: "bottom 30%",
-            markers: true,
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
+      });
     });
 
     ScrollTrigger.refresh();

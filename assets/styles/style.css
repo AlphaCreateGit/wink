@@ -2952,13 +2952,35 @@ section {
 
 .container-page {
   width: 50%;
+  position: relative;
 }
 .comming-soon__content {
   background-color: var(--color-gray-10);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comming-soon__content.show{
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .comming-soon__content .box {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+  transform: translateY(100px);
   max-width: 440px;
+  transition: all 0.4s;
   background-color: var(--color-gray-10);
+}
+.comming-soon__content.show .box{
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
 }
 .comming-soon__content .box h5 {
   margin-bottom: 24px;

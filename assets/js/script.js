@@ -829,6 +829,7 @@ function swiperDeals() {
         },
         1023: {
           slidesPerView: 3,
+          slidesPerGroup: 1,
           spaceBetween: 40,
           slidesOffsetAfter: 0,
         },
@@ -861,7 +862,7 @@ function commingSoon() {
       scrollTrigger: {
         trigger: ".comming-soon",
         start: `top ${positionPinSection}`,
-        end: () => "+=" + 100 * panels.length + "%",
+        end: () => "+=" + 150 * panels.length + "%",
         pin: true,
         scrub: true,
         markers: true,
@@ -882,13 +883,20 @@ function commingSoon() {
       panelTl.fromTo(
         panel,
         {
-          height: "100%", // Start from 0 height
+          height: "100%",
+          zIndex: index === 0 ? 1 : 0,
         },
         {
-          height: "0%", // End at full height
+          height: "0%",
           ease: "none",
-          duration: 1,
-          stagger: 0.3, // Adjust stagger for visual clarity
+          duration: 1.5,
+          zIndex: 1,
+          onStart: () => {
+            gsap.set(panel, { zIndex: 1 });
+          },
+          onComplete: () => {
+            gsap.set(panel, { zIndex: 0 });
+          },
         },
         "+=0.5"
       );

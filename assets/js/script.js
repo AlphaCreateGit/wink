@@ -830,9 +830,11 @@ function swiperDeals() {
         1023: {
           slidesPerView: 3,
           spaceBetween: 40,
+          slidesOffsetAfter: 0,
         },
         992: {
           spaceBetween: 24,
+          slidesOffsetAfter: 0,
         },
       },
     });
@@ -880,10 +882,10 @@ function commingSoon() {
       panelTl.fromTo(
         panel,
         {
-          height: 0, // Start from 0 height
+          height: "100%", // Start from 0 height
         },
         {
-          height: "100%", // End at full height
+          height: "0%", // End at full height
           ease: "none",
           duration: 1,
           stagger: 0.3, // Adjust stagger for visual clarity
@@ -896,11 +898,11 @@ function commingSoon() {
       gsap.fromTo(
         content[index],
         {
-          yPercent: 3,
+          yPercent: 0,
           autoAlpha: 0,
         },
         {
-          yPercent: 0,
+          yPercent: 3,
           autoAlpha: 1,
           ease: "power1.out",
           scrollTrigger: {

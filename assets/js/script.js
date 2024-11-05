@@ -944,7 +944,10 @@ function commingSoon() {
       },
     });
 
+    const allPanels = $(".panel");
     panels.forEach((panel, index) => {
+      console.log(index);
+      
       panelTl.fromTo(
         panel,
         {
@@ -962,6 +965,17 @@ function commingSoon() {
           onComplete: () => {
             gsap.set(panel, { zIndex: 0 });
           },
+        },
+        "+=0.5"
+      );
+
+      panelTl.fromTo(  
+        allPanels.get(index),
+        {
+          scale: 1,
+        },
+        {
+          scale: 1.2,
         },
         "+=0.5"
       );

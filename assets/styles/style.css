@@ -3598,8 +3598,7 @@ section.map {
   overflow-x: hidden;
   position: relative;
 }
-.map.homepage .map__wrapper,
-.map.map-new .map__wrapper {
+.map.homepage .map__wrapper{
   height: auto;
 }
 .map .map__wrapper::-webkit-scrollbar{
@@ -3614,8 +3613,7 @@ section.map {
   height: 100%;
   object-fit: cover;
 }
-.map.homepage .map__wrapper .map-overview img,
-.map.map-new .map__wrapper .map-overview img {
+.map.homepage .map__wrapper .map-overview img{
   aspect-ratio: 1440 / 800;
 }
 .map__marker {
@@ -3810,7 +3808,7 @@ map area {
   }
 }
 
-@media (max-width: 767px){
+@media (max-width: 576px){
   .map-content-wrapper .marker-detail.hai-phong{
     transform: translateX(0) !important;
     top: 100px;
@@ -6143,6 +6141,7 @@ select:-webkit-autofill:focus {
   }
   .experience-sec {
     overflow-x: hidden;
+    overflow-y: hidden;
   }
   .latest-stories-sec .hotels__container .title {
     margin-bottom: 16px;

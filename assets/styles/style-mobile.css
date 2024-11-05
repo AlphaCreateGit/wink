@@ -57,8 +57,9 @@
   .comming-soom__count {
     display: none;
   }
-  .amenities-sec {
+  .amenities-sec{
     overflow-x: hidden;
+    overflow-y: hidden;
   }
 
   .rewards-sec__box {
@@ -498,6 +499,10 @@
   .cooming-sec .panels {
     width: 0;
     display: none;
+  }
+
+  .header__burgers{
+    padding-left: 0;
   }
 }
 
@@ -1487,8 +1492,7 @@
     aspect-ratio: 375 / 600;
   }
 
-  .map.homepage .map__wrapper .map-overview,
-  .map.map-new .map__wrapper .map-overview {
+  .map.homepage .map__wrapper .map-overview {
     height: auto;
   }
 
@@ -1521,6 +1525,10 @@
   .career-intro-sec .panels .box{
     padding: 64px 16px 0;
   }
+
+  .map.map-new .map__wrapper{
+    overflow-y: hidden;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1549,6 +1557,12 @@
     font-size: 28px;
     line-height: 36px;
     letter-spacing: 0.84px;
+  }
+
+  .map-new .ic-wink-head{
+    transform: none !important;
+    left: 155px;
+    bottom: 23%;
   }
 }
 

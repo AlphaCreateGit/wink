@@ -1011,6 +1011,7 @@ function selectMap() {
     $(this).addClass("hidden");
     $(".map-img").addClass("zoom");
     $(".map-content-wrapper").addClass("show");
+    $(".map__marker").addClass("hide");
 
     $(".map-content").removeClass("show");
     $(`.map-content[data-city-map="${city}"]`).addClass("show");
@@ -1018,6 +1019,7 @@ function selectMap() {
 
   $(".icon-back").on("click", function (e) {
     $(".map-content-wrapper").removeClass("show");
+    $(".map__marker").removeClass("hide");
     $(".marker-detail").removeClass("active");
     $(".map-content-detail").removeClass("show");
 
@@ -1038,6 +1040,18 @@ function selectMap() {
   $(".icon-back-lv2").on("click", function (e) {
     $(".map-content-detail").removeClass("show");
 
+    if($(".map.homepage").length){
+      let target = $(e.target);
+      let mapDetailDataHotel = target.closest(".map-content-detail").data("hotel");  
+
+      if(mapDetailDataHotel === 'da-nang-center' || mapDetailDataHotel === 'da-nang-riverside'){
+        $(`.map-content[data-city-map='da-nang']`).addClass("show");
+      }
+      else if(mapDetailDataHotel){
+        $(`.map-content[data-city-map='${mapDetailDataHotel}']`).addClass("show");
+      }
+    }
+
     if ($("img[usemap='#vietnam_map']").length) {
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
       const imageMap =
@@ -1057,6 +1071,21 @@ function selectMap() {
     $(".marker-detail").removeClass("active");
     $(`.marker-detail[data-city="${city}"]`).addClass("active");
     $(`.map-content-detail[data-hotel="${city}"]`).addClass("show");
+    $(`.map-content[data-city-map="${city}"]`).removeClass("show");
+
+    if(city === 'da-nang-center' || city === 'da-nang-riverside'){
+      $(`.map-content[data-city-map='da-nang']`).removeClass("show");
+    }
+
+    if ($("img[usemap='#vietnam_map']").length) {
+      const dataMobile = $(window).width() < 768 ? "-mobile" : "";
+      const imageMap =
+        $(window).width() < 768 ? "#vietnam_map_mobile" : "#vietnam_map";
+      $(`[usemap='${imageMap}']`).attr(
+        "src",
+        `./assets/images/map-${city}${dataMobile}.png`
+      );
+    }
   });
 
   $(".marker-detail, map area").on("click", function (e) {
@@ -1073,6 +1102,14 @@ function selectMap() {
         "src",
         `./assets/images/map-${city}${dataMobile}.png`
       );
+
+      $(".map-content").removeClass("show");
+
+      $(`.map-content[data-city-map="${city}"]`).addClass("show");
+
+      if(city === 'da-nang-center' || city === 'da-nang-riverside'){
+        $(`.map-content[data-city-map='da-nang']`).removeClass("show");
+      }
     }
 
     // Xóa các lớp 'show' và 'active' trước
@@ -1096,6 +1133,10 @@ function selectMap() {
       // Thêm lớp 'active' và hiển thị map-content theo citys
       $(this).addClass("active");
       $(`.map-content[data-city-map="${citys}"]`).addClass("show");
+
+      if(city === 'da-nang-center' || city === 'da-nang-riverside'){
+        $(`.map-content[data-city-map='da-nang']`).removeClass("show");
+      }
     }
   });
 }

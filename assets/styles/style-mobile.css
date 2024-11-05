@@ -1564,6 +1564,11 @@
     left: 155px;
     bottom: 23%;
   }
+
+  .comming-soon__content .box .img-mobile{
+    aspect-ratio: 310 / 322;
+    max-height: unset;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 992px){

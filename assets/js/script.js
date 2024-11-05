@@ -13,9 +13,7 @@ $(document).ready(function () {
   selectMap();
   bookingForm();
   mapCompany();
-  commingSoon();
   swiperRoom();
-  scrollWinkRewards();
   toggleDropdown();
   animationTextReveal();
   swiperDeals();
@@ -917,12 +915,14 @@ function commingSoon() {
     numberStart.text(currentSlide);
     numberEnd.text(totalSlides);
 
-    const positionPinSection = $(window).width() > 767 ? "5%" : "40px";
+    const positionPinSection = $(window).width() > 767 ? 0 : 40;
+
+    const startPosition = `top+=${positionPinSection}`;
 
     const panelTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".comming-soon",
-        start: `top ${positionPinSection}`,
+        start: startPosition,
         end: () => "+=" + 150 * panels.length + "%",
         pin: true,
         scrub: true,
@@ -948,11 +948,11 @@ function commingSoon() {
       panelTl.fromTo(
         panel,
         {
-          height: "100vh",
+          height: "100%",
           zIndex: index === 0 ? 1 : 0,
         },
         {
-          height: "0vh",
+          height: "0%",
           ease: "none",
           duration: 1.5,
           zIndex: 1,
@@ -970,6 +970,17 @@ function commingSoon() {
     ScrollTrigger.refresh();
   }
 }
+
+
+window.addEventListener('load', () => {
+  commingSoon();
+  scrollWinkRewards();
+  ScrollTrigger.refresh();
+});
+
+window.addEventListener('resize', () => {
+  ScrollTrigger.refresh();
+});
 
 function selectMap() {
   let activeMarker = null;

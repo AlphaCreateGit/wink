@@ -34,7 +34,6 @@ $(document).ready(function () {
   toggleOpenDescWinkFacilities();
   handlePageVisibilityAndFavicon();
   responsiveImageMap();
-  animateRellax();
 });
 function loadToTop() {
   if ("scrollRestoration" in history) {
@@ -905,7 +904,6 @@ function swiperDeals() {
 }
 
 function commingSoon() {
-  // Kiểm tra nếu màn hình lớn hơn hoặc bằng 991px
   if ($(window).width() >= 991 && $(".cooming-sec").length) {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -919,17 +917,16 @@ function commingSoon() {
     numberStart.text(currentSlide);
     numberEnd.text(totalSlides);
 
-    const postionPinSection = $(window).width() > 767 ? "5%" : "40px";
+    const positionPinSection = $(window).width() > 767 ? "5%" : "40px";
 
-    // Timeline for panels with scrub true
     const panelTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".comming-soon",
-        start: `top ${postionPinSection}`,
-        end: () => "+=" + 100 * panels.length + "%",
+        start: `top ${positionPinSection}`,
+        end: () => "+=" + 150 * panels.length + "%",
         pin: true,
         scrub: true,
-        markers: false,
+        // markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),
@@ -938,52 +935,36 @@ function commingSoon() {
           if (newSlide !== currentSlide) {
             currentSlide = newSlide;
             numberStart.text(currentSlide);
+
+            content.forEach((el) => el.classList.remove('show'));
+            // Add 'show' class to the current content element
+            content[currentSlide - 1].classList.add('show');
           }
         },
       },
     });
 
-    // Animate panels with scrub effect
     panels.forEach((panel, index) => {
-      panelTl.from(
+      panelTl.fromTo(
         panel,
         {
-          yPercent: 100,
+          height: "100vh",
+          zIndex: index === 0 ? 1 : 0,
+        },
+        {
+          height: "0vh",
           ease: "none",
-          duration: 1,
-          stagger: 0.5,
-          scaleX: 1.3,
+          duration: 1.5,
+          zIndex: 1,
+          onStart: () => {
+            gsap.set(panel, { zIndex: 1 });
+          },
+          onComplete: () => {
+            gsap.set(panel, { zIndex: 0 });
+          },
         },
         "+=0.5"
       );
-    });
-
-    // Separate animations for content with no scrub but still reverse effect
-    panels.forEach((panel, index) => {
-      const heading = panel.querySelector(".animate-left h2");
-      const description = panel.querySelector(".animate-left .desc"); 
-
-      panels.forEach((panel) => {
-        const content = document.querySelectorAll(".animate-left")[index+1];
-  
-        // ScrollTrigger for adding the 'show' class
-        ScrollTrigger.create({
-          trigger: panel,
-          start: "top 40%",
-          end: "bottom 40%",
-          onEnter: () => {
-            document.querySelectorAll(".animate-left").forEach((sibling) => {
-              sibling.classList.remove("show");
-            });
-            // Add 'show' class to the current content
-            content.classList.add("show");
-          },
-          onLeaveBack: () => {
-            document.querySelectorAll(".animate-left")[0].classList.add("show");
-            content.classList.remove("show"); // Optional: remove class when scrolling back
-          },
-        });
-      });
     });
 
     ScrollTrigger.refresh();
@@ -1903,12 +1884,4 @@ function responsiveImageMap() {
   if ($("img[usemap]").length < 1) return;
 
   $("img[usemap]").rwdImageMaps();
-}
-
-function animateRellax(){
-  if($(".rellax").length < 1) return;
-  var rellax = new Rellax('.rellax',{
-    center: true,
-    breakpoints: [576, 768, 1201]
-  });
 }

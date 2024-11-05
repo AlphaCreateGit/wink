@@ -494,6 +494,11 @@
   .header-hotels__details .hotels__details--left .views{
     display: none;
   }
+
+  .cooming-sec .panels {
+    width: 0;
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1106,11 +1111,6 @@
   }
   /* end modal finding booking */
   /* comming soon section */
-  .cooming-sec .panels {
-    width: 0;
-    display: none;
-  }
-
   .cooming-sec .container-page {
     width: 100%;
   }

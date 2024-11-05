@@ -3057,7 +3057,7 @@ section {
   position: relative;
 }
 .comming-soon .panels .panel {
-  background-size: cover;
+  background-size: 100% 100vh;
   background-position: 50% 0%;
   height: 100vh;
   background-image: var(--img);

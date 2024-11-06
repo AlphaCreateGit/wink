@@ -1105,7 +1105,7 @@ function selectMap() {
 
       $(".map-content").removeClass("show");
 
-      $(`.map-content[data-city-map="${city}"]`).addClass("show");
+      // $(`.map-content[data-city-map="${city}"]`).addClass("show");
 
       if(city === 'da-nang-center' || city === 'da-nang-riverside'){
         $(`.map-content[data-city-map='da-nang']`).removeClass("show");

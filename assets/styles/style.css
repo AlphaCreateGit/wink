@@ -538,6 +538,16 @@ section {
 .header__booking {
   background-color: var(--color-white);
 }
+.header__booking::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e6e6e6;
+}
 .header__booking .banner-hero__form {
   padding: 12px 40px;
 }
@@ -5516,6 +5526,7 @@ map area {
 .career-content-sec .contact__form {
   padding: 40px;
   top: 120px;
+  margin-right: 40px;
 }
 .career-content-sec .career-box .title {
   margin-bottom: 32px;
@@ -5547,6 +5558,151 @@ map area {
 }
 .career-content-sec .career-table ul li:first-child .item {
   border-top: 2px solid #a9a9a9;
+}
+
+.career-content-sec{
+  position: relative;
+}
+
+.career-content-sec .career-box{
+  margin-left: 20px;
+}
+
+.wrapper-cta__share{
+  position: absolute;
+  top: 0;
+  left: 40px;
+}
+
+.wrapper-cta__share:hover .main-icon{
+  transform: scale(1.05);
+}
+
+.wrapper-cta__share:hover li{
+  opacity: 1;
+  visibility: visible;
+}
+
+.wrapper-cta__share:hover::after{
+  content: "";
+  background-color: transparent;
+  width: 100%;
+  height: 78px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.wrapper-cta__share:hover li:first-child{
+  transform: translateY(18px);
+}
+
+.wrapper-cta__share:hover li:nth-child(2){
+  transform: translateY(62px);
+}
+
+.wrapper-cta__share .main-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-black);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.wrapper-cta__share .main-icon svg{
+  margin-left: -2px;
+}
+
+.wrapper-cta__share ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.wrapper-cta__share ul li{
+  width: 32px;
+  height: 32px;
+
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(.15,0.2,.1,1);
+}
+
+.wrapper-cta__share ul li:nth-child(2){
+  transition: all 0.45s cubic-bezier(.15,0.2,.1,1);
+}
+
+.wrapper-cta__share ul li a{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid var(--color-black);
+  background-color: var(--color-gray-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.wrapper-cta__share ul li svg path{
+  transition: all 0.4s ease;
+}
+
+.wrapper-cta__share ul li a:hover{
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.wrapper-cta__share ul li a:hover svg path{
+  fill: var(--color-white);
+}
+
+@media (max-width: 992px){
+  .wrapper-cta__share{
+    position: relative;
+    left: unset;
+    top: unset;
+    margin-bottom: 12px;
+  }
+
+  .wrapper-cta__share .main-icon{
+    background-color: var(--color-black);
+  }
+
+  .wrapper-cta__share .main-icon svg path{
+    fill: var(--color-white);
+  }
+
+  .wrapper-cta__share ul{
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .wrapper-cta__share ul li{
+    transform: translateY(-40px);
+  }
+
+  .wrapper-cta__share:hover li:first-child{
+    transform: translateY(-70px);
+  }
+
+  .wrapper-cta__share:hover li:nth-child(2){
+    transform: translateY(-115px);
+  }
+
+  .wrapper-cta__share:hover .main-icon{
+    transform: none;
+  }
 }
 
 /* page career detail */
@@ -6616,8 +6772,10 @@ select:-webkit-autofill:focus {
 
   .map-new .wink-head-office {
     bottom: 40%;
-    max-width: 80%;
+    max-width: 90%;
     left: 5%;
+    padding: 10px;
+    background-color: var(--color-gray-10);
   }
 
   .map-new .wink-head-office h3 {

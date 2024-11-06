@@ -5363,6 +5363,9 @@ map area {
 }
 .contact-sec .contact__form .group.up-file.active label{
   top: -17px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
 }
 .contact-sec .contact__form .group.up-file .icon {
   position: absolute;
@@ -5426,6 +5429,10 @@ map area {
   outline: 0;
 }
 .contact-sec .contact__form .group .form-label {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.04rem;
+  font-weight: normal;
 }
 .contact-sec .contact__form .form-input:not(:placeholder-shown) + .form-label {
   top: -17px;

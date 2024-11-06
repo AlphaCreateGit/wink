@@ -5361,6 +5361,9 @@ map area {
   position: relative;
   margin-bottom: 32px;
 }
+.contact-sec .contact__form .group.up-file.active label{
+  top: -17px;
+}
 .contact-sec .contact__form .group.up-file .icon {
   position: absolute;
   right: 0;
@@ -5403,7 +5406,7 @@ map area {
 }
 .up-file p {
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   left: 0;
 }
 .up-file label {

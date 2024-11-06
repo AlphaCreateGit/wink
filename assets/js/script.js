@@ -1,20 +1,6 @@
 "use strict";
 $ = jQuery;
 $(document).ready(function () {
-  const fileInput = document.getElementById("pdfInput");
-  const textoverlay = document.querySelector("text-overlay");
-
-  fileInput.addEventListener("change", function () {
-    if (fileInput.files.length > 0) {
-      // Add the class to show the filename when a file is selected
-      fileInput.classList.add("has-file");
-      textoverlay.classList.add("hide");
-    } else {
-      // Remove the class if no file is selected
-      fileInput.classList.remove("has-file");
-      textoverlay.classList.remove("hide");
-    }
-  });
   gsapIntro();
   loadToTop();
 
@@ -1941,11 +1927,29 @@ function toggleOpenDescWinkFacilities() {
 
 function handleFilePDFSelect(event, infoElementId) {
   const file = event.target.files[0];
-  const infoElement = document.getElementById(infoElementId);
+  const infoElementErr = document.getElementById(infoElementId);
+  const infoElement = document.querySelector(".up-file .text-overlay");
+  const fileInputContainer = event.target.closest('.up-file');
   const maxSize = 20 * 1024 * 1024; // 20MB in bytes
 
-  if (file && file.size > maxSize) {
-    infoElement.textContent = `File is too large. Maximum size is 20MB.`;
+  if (file) {
+    if(file.size > maxSize){
+      infoElementErr.textContent = `File is too large. Maximum size is 20MB.`;
+    }
+    else{
+      if (fileInputContainer) {
+        fileInputContainer.classList.add('active');
+
+        let fileName = file.name;
+        if (fileName.length > 30) {
+          fileName = fileName.substring(0, 27) + '...';
+        }
+        infoElement.textContent = fileName;
+      }
+    }
+  }
+  else if(!file && infoElement.textContent.trim()){
+    fileInputContainer.classList.remove('active');
   }
 }
 

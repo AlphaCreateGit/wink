@@ -5390,8 +5390,27 @@ map area {
   transition: top 0.3s;
   margin-bottom: 0;
 }
+.contact-sec .contact__form .up-file .form-label {
+  pointer-events: auto;
+}
+
 .custom-file-input {
   height: 35px;
+  text-indent: -9999px;
+}
+.custom-file-input.has-file {
+  text-indent: unset;
+}
+.up-file p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.up-file label {
+  top: -17px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
 }
 .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;

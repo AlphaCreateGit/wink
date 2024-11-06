@@ -217,7 +217,7 @@ function customAnimation() {
     );
   });
 
-  if($(window).width() < 992){
+  if ($(window).width() < 992) {
     gsap.utils.toArray(".data-fade-in-mobile").forEach((element, i) => {
       gsap.fromTo(
         element,
@@ -610,6 +610,23 @@ function bookingForm() {
       singleDate: false,
     });
   }
+  if ($(".modalBtnBook").length) {
+    var pickerDatesBook = new Lightpick({
+      field: document.getElementById("startdayBook"),
+      secondField: document.getElementById("enddayBook"),
+      minDate: moment().startOf("day"),
+      singleDate: false,
+      numberOfMonths: 2,
+      startDate: moment().startOf("day").toDate(),
+      endDate: moment().startOf("day").add(1, "days").toDate(),
+      onSelect: function (start, end) {
+        if (start && end) {
+          const totalDays = end.diff(start, "days") + 1;
+          document.getElementById("totalDays").innerText = `${totalDays} night`;
+        }
+      },
+    });
+  }
 
   //----------------------------------------------------
   // select hotels
@@ -796,18 +813,18 @@ function toggleDropdown() {
       e.stopPropagation();
       const $item = $(this);
       let tmpText = $textDropdown.text();
-      
+
       const tmpImgSrc = $textDropdown.find("img").attr("src"); // Get the current image src if present
       const $img = $item.find("img"); // Check if the clicked item contains an img
 
       // Swap text content
       $textDropdown.text($item.text());
-      
+
       // If the item has an image, swap the img src
       if ($img.length) {
         $textDropdown.html($item.html()); // Swap the entire HTML, including the img
-        
-        if($item.hasClass("language__item")){
+
+        if ($item.hasClass("language__item")) {
           tmpText = `<span>${tmpText}</span>`;
         }
 
@@ -852,10 +869,14 @@ function updSwiperNumericPagination(swiper) {
   }
 
   const paginationElement = swiper.pagination.el;
-  
+
   if (paginationElement) {
-    paginationElement.innerHTML = 
-      '<span class="count">' + currentIndex + '</span>/<span class="total">' + totalSlides + "</span>";
+    paginationElement.innerHTML =
+      '<span class="count">' +
+      currentIndex +
+      '</span>/<span class="total">' +
+      totalSlides +
+      "</span>";
   } else {
     console.warn("Pagination element not found");
   }
@@ -961,11 +982,11 @@ function commingSoon() {
     // Separate animations for content with no scrub but still reverse effect
     panels.forEach((panel, index) => {
       const heading = panel.querySelector(".animate-left h2");
-      const description = panel.querySelector(".animate-left .desc"); 
+      const description = panel.querySelector(".animate-left .desc");
 
       panels.forEach((panel) => {
-        const content = document.querySelectorAll(".animate-left")[index+1];
-  
+        const content = document.querySelectorAll(".animate-left")[index + 1];
+
         // ScrollTrigger for adding the 'show' class
         ScrollTrigger.create({
           trigger: panel,
@@ -1692,11 +1713,11 @@ function mapCompany() {
           ease: "none",
         },
         onComplete: () => {
-          if($(window).width() > 767) {
+          if ($(window).width() > 767) {
             $(".marker-detail.ho-chi-minh").addClass("active");
             $(".map-content-detail[data-hotel='ho-chi-minh']").addClass("show");
           }
-        }
+        },
       }
     );
 
@@ -1765,10 +1786,14 @@ function mapCompanyNew() {
 
     // Phase 3: Show images 4 to 8 after showing image 3
     const imagesCountPhase2 = 4; // From 4 to 8
-    tl.call(() => {
-      // Optionally: Handle any actions before showing phase 2 images
-      console.log("Transitioning to images 4 to 8");
-    }, null, `+=0.75`);
+    tl.call(
+      () => {
+        // Optionally: Handle any actions before showing phase 2 images
+        console.log("Transitioning to images 4 to 8");
+      },
+      null,
+      `+=0.75`
+    );
 
     for (let i = 4; i <= 4 + imagesCountPhase2 - 1; i++) {
       tl.call(
@@ -1803,13 +1828,24 @@ function mapCompanyNew() {
     );
 
     function updateImageSource(scrollPosition) {
-      const currentImage = Math.ceil(scrollPosition * (imagesCountPhase1 + imagesCountPhase2));
-      const finalImageIndex = Math.min(Math.max(currentImage, 1), imagesCountPhase1 + imagesCountPhase2);
+      const currentImage = Math.ceil(
+        scrollPosition * (imagesCountPhase1 + imagesCountPhase2)
+      );
+      const finalImageIndex = Math.min(
+        Math.max(currentImage, 1),
+        imagesCountPhase1 + imagesCountPhase2
+      );
       const dataMobile = $(window).width() < 768 ? "-mobile" : "";
       const imageSrc = `./assets/images/map-new-step-${finalImageIndex}${dataMobile}.png`;
-      $("img[usemap='#vietnam_map'], img[usemap='#vietnam_map_mobile']").attr("src", imageSrc);
-      
-      if (finalImageIndex == imagesCountPhase1 + imagesCountPhase2 && $(window).width() > 767) {
+      $("img[usemap='#vietnam_map'], img[usemap='#vietnam_map_mobile']").attr(
+        "src",
+        imageSrc
+      );
+
+      if (
+        finalImageIndex == imagesCountPhase1 + imagesCountPhase2 &&
+        $(window).width() > 767
+      ) {
         $(".map-content-detail[data-hotel='ho-chi-minh']").addClass("show");
       }
     }
@@ -1905,10 +1941,10 @@ function responsiveImageMap() {
   $("img[usemap]").rwdImageMaps();
 }
 
-function animateRellax(){
-  if($(".rellax").length < 1) return;
-  var rellax = new Rellax('.rellax',{
+function animateRellax() {
+  if ($(".rellax").length < 1) return;
+  var rellax = new Rellax(".rellax", {
     center: true,
-    breakpoints: [576, 768, 1201]
+    breakpoints: [576, 768, 1201],
   });
 }

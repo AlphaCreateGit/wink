@@ -1255,6 +1255,7 @@
 
   .amenities__top .swiper-amenities {
     height: auto;
+    min-height: unset;
   }
 
   .amenities__top .swiper-amenities .swiper__img {

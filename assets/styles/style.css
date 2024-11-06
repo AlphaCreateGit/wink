@@ -3378,7 +3378,8 @@ section.spacer {
   border-bottom: 1px solid var(--color-grey); */
 }
 .amenities__top .swiper-amenities {
-  height: 640px;
+  height: 100%;
+  max-height: 640px;
   width: 100%;
   background-color: red;
 }

@@ -1951,3 +1951,15 @@ function responsiveImageMap() {
 
   $("img[usemap]").rwdImageMaps();
 }
+
+function shareButton(event){
+  event.preventDefault();
+  let thisButton = $(event.currentTarget);
+  const currentUrl = window.location.href;
+
+  if(thisButton.data('cta') === 'copy-link'){
+    navigator.clipboard.writeText(currentUrl);
+
+    thisButton.attr("title", "Copied");
+  }
+}

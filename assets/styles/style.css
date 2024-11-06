@@ -6330,6 +6330,9 @@ select:-webkit-autofill:focus {
   .career-box {
     margin-bottom: 80px;
   }
+  .career-content-sec .career-box{
+    margin-left: 0;
+  }
   .blogs__grid--col,
   .blogs__item.grid-reverse .blogs__grid--col {
     grid-template-columns: 1fr;
@@ -6398,6 +6401,7 @@ select:-webkit-autofill:focus {
 
   .contact-sec .contact__form {
     padding: 40px;
+    margin-right: 0;
   }
   .page-tpl-suites .wink-room__suites .box .box-desc .wink-facilities ul {
     height: auto;

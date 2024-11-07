@@ -1,20 +1,6 @@
 "use strict";
 $ = jQuery;
 $(document).ready(function () {
-  const fileInput = document.getElementById("pdfInput");
-  const textoverlay = document.querySelector("text-overlay");
-
-  fileInput.addEventListener("change", function () {
-    if (fileInput.files.length > 0) {
-      // Add the class to show the filename when a file is selected
-      fileInput.classList.add("has-file");
-      textoverlay.classList.add("hide");
-    } else {
-      // Remove the class if no file is selected
-      fileInput.classList.remove("has-file");
-      textoverlay.classList.remove("hide");
-    }
-  });
   gsapIntro();
   loadToTop();
 
@@ -1169,7 +1155,13 @@ function scrollWinkRewards() {
     }
 
     const viewportWidth = window.innerWidth;
-    const pixelValue = viewportWidth < 991 ? 24 : 80;
+    let pixelValue;
+
+    if (viewportWidth < 991) {
+      pixelValue = 24;
+    } else {
+      pixelValue = document.querySelector(".rewards-sec-event") ? 60 : 80;
+    }
 
     // 24px 4%, 93.6% 4%, 93.6% 96%, 24px 96%
     $(".rewards-sec").each(function () {

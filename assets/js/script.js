@@ -356,12 +356,24 @@ function subMenuHeader() {
     if ($(this).hasClass("menu-item-has-children")) {
       $(".box-img").addClass("hidden");
     }
+
+    const slugMenuItem = $(this).children("a").text();
+    console.log(slugMenuItem);
+    
+    if($(`.box-img[data-name='${slugMenuItem}']`).length){
+      $(`.box-img[data-name='default']`).addClass("hidden");
+      $(`.box-img[data-name='${slugMenuItem}']`).removeClass("hidden");
+    }
   });
 
   menuItem.on("mouseleave", function () {
     if ($(this).hasClass("menu-item-has-children")) {
       $(".box-img").removeClass("hidden");
     }
+
+    // const slugMenuItem = $(".box-img").children("a").text();
+    $(".box-img").addClass("hidden");
+    $(`.box-img[data-name='default']`).removeClass("hidden");
   });
 }
 

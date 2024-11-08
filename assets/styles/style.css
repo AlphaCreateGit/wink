@@ -1165,6 +1165,20 @@ section {
   opacity: 1;
   visibility: visible;
 }
+.header__sub-menu .wrapper-box__img{
+  position: relative;
+}
+.header__sub-menu .box-img.img-city{
+  position: absolute;
+  opacity: 1 !important;
+  visibility: visible !important;
+  top: 0;
+  left: 0;
+}
+.header__sub-menu .box-img.img-city.hidden{
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
 .box-img.hidden {
   opacity: 0;
   visibility: hidden;

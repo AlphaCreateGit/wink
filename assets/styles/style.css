@@ -6040,7 +6040,8 @@ select:-webkit-autofill:focus {
 .map-new .wink-head-office {
   position: absolute;
   right: 64px;
-  bottom: 273px;
+  /* bottom: 273px; */
+  top: calc(50% - 220px);
   max-width: 440px;
   width: 100%;
   /* opacity: 0; */

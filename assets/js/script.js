@@ -1695,7 +1695,7 @@ function mapCompany() {
         scrub: true,
         // markers: true,
         onUpdate: (self) => {
-          const scrollDirection = self.direction; // 1 for down, -1 for up
+          const scrollDirection = self.direction;
 
           if (scrollDirection === -1) {
             document.querySelectorAll(".marker-detail").forEach((marker) => {
@@ -1709,7 +1709,7 @@ function mapCompany() {
           }
         },
         onComplete: () => {
-          console.log("Animation completed!"); // Check if this logs
+          console.log("Animation completed!");
         },
         onLeave: () => {
           $(".map-new").addClass("remove-spacing");
@@ -1717,19 +1717,32 @@ function mapCompany() {
       },
     });
 
-    // Your animation steps here...
-    tl.fromTo(
-      ".ic-wink-head",
-      { opacity: 0, yPercent: 20, zIndex: 2 },
-      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut", zIndex: 0 }
-    );
+    if ($(window).width() <= 767) {
+      $(".wink-head-office").css("opacity", 1);
 
-    tl.fromTo(
-      ".wink-head-office",
-      { opacity: 0, yPercent: 20 },
-      { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" }
-    )
-      .to(
+      tl.fromTo(
+        ".wink-head-office", 
+        { opacity: 1 },
+        { opacity: 0, duration: 2, ease: "power1.inOut" }
+      );
+
+      tl.fromTo(
+        ".ic-wink-head",
+        { opacity: 0, yPercent: 20, zIndex: 2 },
+        { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut", zIndex: 0 }
+      );
+    } else {
+      tl.fromTo(
+        ".ic-wink-head",
+        { opacity: 0, yPercent: 20, zIndex: 2 },
+        { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut", zIndex: 0 }
+      );
+
+      tl.fromTo(
+        ".wink-head-office",
+        { opacity: 0, yPercent: 20 },
+        { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" }
+      ).to(
         ".wink-head-office",
         {
           opacity: 0,
@@ -1739,12 +1752,8 @@ function mapCompany() {
           yPercent: -20,
         },
         "-=0.25"
-      )
-      .to(".ic-wink-head", {
-        opacity: 0,
-        duration: 1,
-        ease: "power1.inOut",
-      });
+      );
+    }
 
     tl.fromTo(
       ".marker-detail",

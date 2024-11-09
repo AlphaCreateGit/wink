@@ -1158,8 +1158,8 @@ function scrollWinkRewards() {
 
     function getClipPathForSmallScreens(pixelValue, viewportWidth) {
       const percentage = (pixelValue / viewportWidth) * 100;
-      const pixelValueTop = viewportWidth < 991 ? 4 : 10;
-      const pixelValueBottom = viewportWidth < 991 ? 96 : 90;
+      const pixelValueTop = viewportWidth < 1080 ? 4 : 10;
+      const pixelValueBottom = viewportWidth < 1080 ? 96 : 90;
       return `polygon(${pixelValue}px ${pixelValueTop}%, ${
         100 - percentage
       }% ${pixelValueTop}%, ${
@@ -1193,7 +1193,7 @@ function scrollWinkRewards() {
     }
 
     const viewportWidth = window.innerWidth;
-    const pixelValue = viewportWidth < 991 ? 24 : 80;
+    const pixelValue = viewportWidth < 1080 ? 24 : 80;
 
     // 24px 4%, 93.6% 4%, 93.6% 96%, 24px 96%
     $(".rewards-sec").each(function () {
@@ -1203,7 +1203,15 @@ function scrollWinkRewards() {
         viewportWidth
       );
 
-      if (viewportWidth <= 767) {
+      if(viewportWidth < 992){
+        applyClipPathAnimation(
+          section,
+          clipPathValue,
+          "top 50%",
+          "bottom bottom"
+        );
+      }
+      else if (viewportWidth <= 767) {
         applyClipPathAnimation(
           section,
           clipPathValue,
@@ -1926,6 +1934,14 @@ function toggleModalFindingRoom(event) {
 }
 
 function toggleOpenDescWinkFacilities() {
+  const $box = $(".wink-room-sec .box");
+  const $boxRead = $box.find(".box-read");
+  if(window.innerHeight < 767){
+    const boxReadHeight = $boxRead.height();
+
+    $box.find(".overlay").css("height", boxReadHeight + "px");
+  }
+
   $(".wink-room-sec .box input[type='checkbox']").on("click", function () {
     const $box = $(this).closest(".box");
     const $desc = $box.find(".box-desc .desc ul");

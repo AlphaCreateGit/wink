@@ -1141,6 +1141,9 @@
   }
   .deals__list {
     padding: 0;
+    padding-left: 0;
+  }
+  .deals__list .swiper-wrapper{
     padding-left: 16px;
   }
   .deals__title h2 {

@@ -5766,6 +5766,12 @@ map area {
   border: none;
   border-bottom: 1px solid var(--color-gray-50);
   padding-bottom: 8px;
+  border-radius: unset;
+}
+.member-contact .form-input[type='password']{
+  -webkit-text-security: disc;
+  -moz-webkit-text-security: disc;
+  -moz-text-security: disc;
 }
 .member-contact .group {
   position: relative;

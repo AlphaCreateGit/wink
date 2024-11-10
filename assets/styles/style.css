@@ -3008,7 +3008,10 @@ section {
     height: 100vh;
     width: 100%;
     position: absolute;
+    /* bottom: 0; */
+
     top: 0;
+    right: 0;
     left: 0;
   }
 
@@ -3055,10 +3058,11 @@ section {
   width: 50%;
   overflow: hidden;
   position: relative;
+  height: 100vh;
 }
+
 .comming-soon .panels .panel {
   background-size: cover;
-  background-position: 50% 0%;
   height: 100vh;
   background-image: var(--img);
 }

@@ -926,7 +926,6 @@ function swiperDeals() {
 }
 
 function commingSoon() {
-  // Kiểm tra nếu màn hình lớn hơn hoặc bằng 991px
   if ($(window).width() >= 991 && $(".cooming-sec").length) {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -940,17 +939,18 @@ function commingSoon() {
     numberStart.text(currentSlide);
     numberEnd.text(totalSlides);
 
-    const postionPinSection = $(window).width() > 767 ? "5%" : "40px";
+    const positionPinSection = $(window).width() > 767 ? 0 : 40;
 
-    // Timeline for panels with scrub true
+    const startPosition = `top+=${positionPinSection}`;
+
     const panelTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".comming-soon",
-        start: `top ${postionPinSection}`,
-        end: () => "+=" + 100 * panels.length + "%",
+        start: startPosition,
+        end: () => "+=" + 150 * panels.length + "%",
         pin: true,
         scrub: true,
-        markers: false,
+        // markers: true,
         onUpdate: (self) => {
           const newSlide = Math.min(
             Math.max(1, Math.ceil(self.progress * totalSlides)),
@@ -959,52 +959,37 @@ function commingSoon() {
           if (newSlide !== currentSlide) {
             currentSlide = newSlide;
             numberStart.text(currentSlide);
+
+            content.forEach((el) => el.classList.remove("show"));
+            // Add 'show' class to the current content element
+            content[currentSlide - 1].classList.add("show");
           }
         },
       },
     });
 
-    // Animate panels with scrub effect
     panels.forEach((panel, index) => {
-      panelTl.from(
+      panelTl.fromTo(
         panel,
         {
-          yPercent: 100,
-          ease: "none",
-          duration: 1,
-          stagger: 0.5,
-          scaleX: 1.3,
+          clipPath: "inset(100% 0% 0% 0%)", // Initially hidden from the bottom
+          zIndex: index === 0 ? 1 : 0,
+        },
+        {
+          clipPath: "inset(0% 0% 0% 0%)", // Fully revealed
+          ease: "power2.out",
+          duration: 1.5,
+          zIndex: 1,
+
+          onStart: () => {
+            gsap.set(panel, { zIndex: 1 });
+          },
+          onComplete: () => {
+            gsap.set(panel, { zIndex: 3 });
+          },
         },
         "+=0.5"
       );
-    });
-
-    // Separate animations for content with no scrub but still reverse effect
-    panels.forEach((panel, index) => {
-      const heading = panel.querySelector(".animate-left h2");
-      const description = panel.querySelector(".animate-left .desc");
-
-      panels.forEach((panel) => {
-        const content = document.querySelectorAll(".animate-left")[index + 1];
-
-        // ScrollTrigger for adding the 'show' class
-        ScrollTrigger.create({
-          trigger: panel,
-          start: "top 40%",
-          end: "bottom 40%",
-          onEnter: () => {
-            document.querySelectorAll(".animate-left").forEach((sibling) => {
-              sibling.classList.remove("show");
-            });
-            // Add 'show' class to the current content
-            content.classList.add("show");
-          },
-          onLeaveBack: () => {
-            document.querySelectorAll(".animate-left")[0].classList.add("show");
-            content.classList.remove("show"); // Optional: remove class when scrolling back
-          },
-        });
-      });
     });
 
     ScrollTrigger.refresh();

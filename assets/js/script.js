@@ -1466,6 +1466,36 @@ function swiperSuites() {
 }
 
 function swiperBookRoom() {
+  if($(".swiper-book-room-main").length){
+    let swiperRoomMain = $(".swiper-book-room-main");
+
+    swiperRoomMain.each(function(){
+      let thisItem = $(this);
+
+      console.log(thisItem.find(".control-main .swiper-pagination")[0]);
+      
+
+      new Swiper(thisItem[0], {
+        slidesPerView: 1,
+        allowTouchMove: false,
+        spaceBetween: 24,
+        speed: 1000,
+        pagination: {
+          el: thisItem.find(".control-main .swiper-pagination")[0],
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: thisItem.find(".control-main .swiper-button-next")[0],
+          prevEl: thisItem.find(".control-main .swiper-button-prev")[0],
+        },
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        keyboardControl: true,
+        loop: false,
+      })
+    })
+  }
+
   if ($(".img-room").length) {
     let interleaveOffsetRoom = 0.75;
     var swiperChildRoom = $(".swiper-book-room");

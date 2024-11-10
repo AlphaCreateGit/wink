@@ -4578,7 +4578,7 @@ map area {
   list-style-type: disc;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding-left: 15px;
+  padding-left: 20px;
 }
 #modalBookRoom .modal-body .deals__view {
   margin-top: 40px;
@@ -6114,6 +6114,57 @@ select:-webkit-autofill:focus {
 .alert-success .alert-inner .progress-type.show,
 .alert-success-sign-in .alert-inner .progress-type.show {
   animation: changeWidth 5s linear forwards;
+}
+
+.swiper-book-room-main{
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.swiper-book-room-main > .swiper-child-control .swiper-button-next,
+.swiper-book-room-main > .swiper-child-control .swiper-button-prev,
+.swiper-book-room-main > .swiper-child-control .swiper-pagination{
+  position: absolute;
+  bottom: -10px;
+  top: unset;
+  left: unset;
+  width: max-content;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: 0.04rem;
+  line-height: 100%;
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 40px;
+}
+
+.swiper-book-room-main > .swiper-child-control .swiper-button-prev{
+  right: 120px;
+}
+
+.swiper-book-room-main > .swiper-child-control .swiper-button-next{
+  right: 0;
+}
+
+.swiper-book-room-main > .swiper-child-control .swiper-pagination{
+  gap: 0;
+  right: 60px;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 767px){
+  .swiper-book-room-main{
+    padding-bottom: 60px;
+  }
+
+  .swiper-book-room-main > .swiper-child-control .swiper-button-next,
+  .swiper-book-room-main > .swiper-child-control .swiper-button-prev,
+  .swiper-book-room-main > .swiper-child-control .swiper-pagination{
+  bottom: 0;
+}
 }
 
 @keyframes changeWidth {

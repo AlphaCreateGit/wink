@@ -28,7 +28,7 @@ $(document).ready(function () {
   commingCareer();
   toggleSubmenuMobile();
   scrollToolbarMobile();
-  stickyFilter();
+  // stickyFilter();
   toggleOpenDescWinkFacilities();
   handlePageVisibilityAndFavicon();
   responsiveImageMap();

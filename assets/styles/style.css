@@ -2669,12 +2669,15 @@ section {
 .hotels__filter.fixed .hotels__filter--location .dropdown-custom__menu {
   top: 34px;
 }
-.hotels__filter.scrolling-down {
+.hotels__filter{
+  top: 60px;
+}
+/* .hotels__filter.scrolling-down {
   top: 60px;
 }
 .hotels__filter.scrolling-up {
   top: 120px;
-}
+} */
 .hotels__filter--location .dropdown-custom__menu,
 .hotels__filter--opening .dropdown-custom__menu {
   top: 24px;
@@ -4888,6 +4891,10 @@ map area {
   color: var(--color-primary);
 }
 .position-list .position-filters {
+  position: sticky;
+  top: 60px;
+  background-color: var(--color-white);
+  z-index: 2;
   padding-bottom: 20px;
   padding-top: 20px;
   border-bottom: 2px solid var(--color-black);

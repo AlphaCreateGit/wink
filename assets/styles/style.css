@@ -530,6 +530,7 @@ section {
   left: 0;
   right: 0;
   z-index: 999;
+  transition: all 0.4s ease;
 }
 .header-hotels__details {
   background-color: var(--color-header-hotels);

@@ -306,7 +306,11 @@ function scrollHeader() {
   let height;
   if ($("body").hasClass("page-details-hotels")) {
     height =
-      ($(".header__top-bar").height() + $(".header__main").height()) * -1;
+      ($(".header__top-bar").height() + $(".header__main").height() + $(".header-hotels__details").outerHeight()) * -1;
+      console.log(height);
+      console.log($(".header-hotels__details").outerHeight());
+      
+      
   } else {
     height = $(".header__top-bar").height() * -1;
   }
@@ -329,7 +333,7 @@ function scrollHeader() {
       end: 99999,
       onUpdate: (self) => {
         // Shrink navTop
-        self.direction === -1 ? navTop.play() : navTop.reverse();
+        self.scroll() <= 0 ? navTop.play() : navTop.reverse();
         // self.refresh();
         if (self.direction === -1) {
           $(".header__sub-menu")
@@ -1158,8 +1162,13 @@ function scrollWinkRewards() {
 
     function getClipPathForSmallScreens(pixelValue, viewportWidth) {
       const percentage = (pixelValue / viewportWidth) * 100;
-      const pixelValueTop = viewportWidth < 1080 ? 4 : 10;
-      const pixelValueBottom = viewportWidth < 1080 ? 96 : 90;
+      let pixelValueTop = viewportWidth < 1080 ? 4 : 10;
+      let pixelValueBottom = viewportWidth < 1080 ? 96 : 90;
+
+      if(viewportWidth > 1080 && viewportWidth < 1300){
+        pixelValueBottom = 94;
+      }
+
       return `polygon(${pixelValue}px ${pixelValueTop}%, ${
         100 - percentage
       }% ${pixelValueTop}%, ${
@@ -1193,7 +1202,11 @@ function scrollWinkRewards() {
     }
 
     const viewportWidth = window.innerWidth;
-    const pixelValue = viewportWidth < 1080 ? 24 : 80;
+    let pixelValue = viewportWidth < 1080 ? 24 : 80;
+
+    if(viewportWidth > 1080 && viewportWidth < 1300){
+      pixelValue = 45;
+    }
 
     // 24px 4%, 93.6% 4%, 93.6% 96%, 24px 96%
     $(".rewards-sec").each(function () {
@@ -1471,9 +1484,6 @@ function swiperBookRoom() {
 
     swiperRoomMain.each(function(){
       let thisItem = $(this);
-
-      console.log(thisItem.find(".control-main .swiper-pagination")[0]);
-      
 
       new Swiper(thisItem[0], {
         slidesPerView: 1,

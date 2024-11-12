@@ -1077,6 +1077,10 @@ function selectMap() {
         `./assets/images/map-default${dataMobile}.png`
       );
     }
+
+    if($(".map.map-new").length){
+      $(".wink-head-office").addClass("show");
+    }
   });
   if ($(window).width() < 767) {
     // Remove 'active' class from all marker-detail elements
@@ -1120,6 +1124,7 @@ function selectMap() {
       );
 
       $(".map-content").removeClass("show");
+      $(".wink-head-office").removeClass("show");
 
       // $(`.map-content[data-city-map="${city}"]`).addClass("show");
 
@@ -1251,47 +1256,47 @@ function scrollWinkRewards() {
 function swiperRoomSuites() {
   if ($(".wink-room-sec").length) {
     let swiperParentRoom;
-    function initSliderWinkRoom() {
-      const swiperParentRoom = new Swiper(".swiper-parent-room", {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 24,
+    // function initSliderWinkRoom() {
+    //   const swiperParentRoom = new Swiper(".swiper-parent-room", {
+    //     slidesPerView: 1,
+    //     slidesPerGroup: 1,
+    //     spaceBetween: 24,
 
-        // loop: true,
-        pagination: {
-          el: ".swiper-control-parent .swiper-pagination",
-          type: "fraction",
-        },
-        navigation: {
-          nextEl: ".swiper-control-parent .swiper-button-next",
-          prevEl: ".swiper-control-parent .swiper-button-prev",
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 40,
-          },
-        },
-        on: {
-          init: function () {
-            updSwiperNumericPagination(this);
-          },
-          slideChange: function () {
-            updSwiperNumericPagination(this);
-          },
-        },
-      });
-    }
-    if (window.innerWidth < 768) {
-      if (swiperParentRoom) {
-        swiperParentRoom.destroy(true, true); // Destroy the Swiper instance
-        swiperParentRoom = null; // Reset the instance
-      }
-    } else {
-      if (!swiperParentRoom) {
-        initSliderWinkRoom(); // Initialize if Swiper isn't already created
-      }
-    }
+    //     // loop: true,
+    //     pagination: {
+    //       el: ".swiper-control-parent .swiper-pagination",
+    //       type: "fraction",
+    //     },
+    //     navigation: {
+    //       nextEl: ".swiper-control-parent .swiper-button-next",
+    //       prevEl: ".swiper-control-parent .swiper-button-prev",
+    //     },
+    //     breakpoints: {
+    //       768: {
+    //         slidesPerView: 2,
+    //         spaceBetween: 40,
+    //       },
+    //     },
+    //     on: {
+    //       init: function () {
+    //         updSwiperNumericPagination(this);
+    //       },
+    //       slideChange: function () {
+    //         updSwiperNumericPagination(this);
+    //       },
+    //     },
+    //   });
+    // }
+    // if (window.innerWidth < 768) {
+    //   if (swiperParentRoom) {
+    //     swiperParentRoom.destroy(true, true); // Destroy the Swiper instance
+    //     swiperParentRoom = null; // Reset the instance
+    //   }
+    // } else {
+    //   if (!swiperParentRoom) {
+    //     initSliderWinkRoom(); // Initialize if Swiper isn't already created
+    //   }
+    // }
 
     let interleaveOffsetChild = 0.9;
     var swiperChildImage = $(".swiper-child-img");
@@ -1726,34 +1731,29 @@ function mapCompany() {
   if ($(".map-new").length) {
     gsap.registerPlugin(ScrollTrigger);
 
+    const pinValue = $(window).width() < 768;
+    let onEnterTriggered = false;
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".map-new",
         start: "top 60px",
         end: "+=120%",
-        pin: true,
+        pin: pinValue,
         scrub: true,
         // markers: true,
         onUpdate: (self) => {
-          const scrollDirection = self.direction;
-
-          if (scrollDirection === -1) {
-            document.querySelectorAll(".marker-detail").forEach((marker) => {
-              marker.classList.remove("active");
-            });
-            document
-              .querySelectorAll(".map-content-detail")
-              .forEach((marker) => {
-                marker.classList.remove("show");
-              });
+          
+        },
+        onEnter: () => {
+          if (!onEnterTriggered) {
+            $(".wink-head-office").addClass("show");
+            onEnterTriggered = true;
           }
         },
         onComplete: () => {
           console.log("Animation completed!");
-        },
-        onLeave: () => {
-          $(".map-new").addClass("remove-spacing");
-        },
+        }
       },
     });
 
@@ -1771,28 +1771,6 @@ function mapCompany() {
         { opacity: 0, yPercent: 20, zIndex: 2 },
         { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut", zIndex: 0 }
       );
-    } else {
-      tl.fromTo(
-        ".ic-wink-head",
-        { opacity: 0, yPercent: 20, zIndex: 2 },
-        { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut", zIndex: 0 }
-      );
-
-      tl.fromTo(
-        ".wink-head-office",
-        { opacity: 0, yPercent: 20 },
-        { opacity: 1, yPercent: 0, duration: 1, ease: "power1.inOut" }
-      ).to(
-        ".wink-head-office",
-        {
-          opacity: 0,
-          duration: 0.5,
-          ease: "power1.inOut",
-          delay: 1,
-          yPercent: -20,
-        },
-        "-=0.25"
-      );
     }
 
     tl.fromTo(
@@ -1801,17 +1779,14 @@ function mapCompany() {
       {
         opacity: 1,
         yPercent: 0,
-        duration: 0.5,
+        duration: 2,
         stagger: {
-          amount: 0.25,
+          amount: 0.5,
           from: "end",
           ease: "none",
         },
         onComplete: () => {
-          if($(window).width() > 767) {
-            $(".marker-detail.ho-chi-minh").addClass("active");
-            $(".map-content-detail[data-hotel='ho-chi-minh']").addClass("show");
-          }
+          
         }
       }
     );

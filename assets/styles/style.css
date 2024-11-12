@@ -3256,6 +3256,22 @@ section.spacer {
 .swiper-parent-room .box:hover .custom__btn span {
   color: var(--color-white);
 } */
+ .swiper-parent-room{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+ }
+ .swiper-parent-room .room-item{
+  width: calc((100% / 2) - 20px);
+ }
+ @media (max-width: 767px){
+ .swiper-parent-room{
+  gap: 32px;
+ }
+ .swiper-parent-room .room-item{
+   width: 100%;
+ }
+ }
 .swiper-parent-room .box {
   height: 100%;
 }
@@ -3627,8 +3643,12 @@ section.map {
   overflow-x: hidden;
   position: relative;
 }
-.map.homepage .map__wrapper{
+.map.homepage .map__wrapper,
+.map.map-new .map__wrapper{
   height: auto;
+}
+.map.map-new .map__wrapper{
+  overflow-y: hidden;
 }
 .map .map__wrapper::-webkit-scrollbar{
   display: none;
@@ -3642,7 +3662,8 @@ section.map {
   height: 100%;
   object-fit: cover;
 }
-.map.homepage .map__wrapper .map-overview img{
+.map.homepage .map__wrapper .map-overview img,
+.map.map-new .map__wrapper .map-overview img{
   aspect-ratio: 1440 / 800;
 }
 .map__marker {
@@ -3722,6 +3743,12 @@ section.map {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease;
+}
+.map-content-wrapper .tag-city-mobile{
+  background-color: transparent;
+  position: absolute;
+  top: 40px;
+  right: 24px;
 }
 map area {
   cursor: pointer;
@@ -6048,11 +6075,22 @@ select:-webkit-autofill:focus {
 .map-new .wink-head-office {
   position: absolute;
   right: 64px;
-  /* bottom: 273px; */
-  top: calc(50% - 220px);
+  top: 50%;
+  transform: translate(10%, -50%);
   max-width: 440px;
   width: 100%;
-  /* opacity: 0; */
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+@media (min-width: 1300px){
+  .map-new .wink-head-office {
+    top: calc(50% - 100px);
+  }
+}
+.map-new .wink-head-office.show{
+  transform: translate(0, -50%);
+  opacity: 1;
+  transition: all 0.6s ease;
 }
 .map-new .wink-head-office h3 {
   margin-bottom: 32px;
@@ -6067,9 +6105,11 @@ select:-webkit-autofill:focus {
 .map-new .map-content-wrapper {
   opacity: 1;
   visibility: visible;
+  display: none;
 }
 .map-new .marker-detail {
   opacity: 1;
+  display: none;
 }
 .footer__container--bottom-overlay .footer__container--bottom {
   position: static;
@@ -6859,6 +6899,7 @@ select:-webkit-autofill:focus {
     bottom: 40%;
     max-width: 90%;
     left: 5%;
+    transform: none;
     padding: 10px;
     background-color: var(--color-gray-10);
   }

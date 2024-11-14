@@ -5049,7 +5049,8 @@ map area {
 .hero-deals .hero-deals__inner {
   position: relative;
   width: calc(100% - 80px);
-  margin: 160px auto 40px;
+  margin: 0 auto 40px;
+  padding-top: 160px;
   height: calc(100vh - 160px);
 }
 .hero-deals__img {
@@ -6077,7 +6078,7 @@ select:-webkit-autofill:focus {
   right: 64px;
   top: 50%;
   transform: translate(10%, -50%);
-  max-width: 440px;
+  max-width: 340px;
   width: 100%;
   opacity: 0;
   transition: all 0.6s ease;
@@ -6091,6 +6092,11 @@ select:-webkit-autofill:focus {
   transform: translate(0, -50%);
   opacity: 1;
   transition: all 0.6s ease;
+}
+@media (max-width: 767px){
+  .map-new .wink-head-office.show{
+    transform: none;
+  }
 }
 .map-new .wink-head-office h3 {
   margin-bottom: 32px;
